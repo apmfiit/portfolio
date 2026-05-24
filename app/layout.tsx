@@ -13,28 +13,28 @@ const siteUrl = "https://petrafanasyev.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Petr Afanasyev — Senior Product Designer",
-    template: "%s — Petr Afanasyev",
+    default: "Петр Афанасьев — Senior Product Designer",
+    template: "%s — Петр Афанасьев",
   },
   description:
-    "Senior product designer based in Moscow. Notifications, fintech, e-commerce, marketplaces.",
+    "Старший продуктовый дизайнер из Москвы. Уведомления, финтех, e-commerce, маркетплейсы.",
   alternates: {
     canonical: "/",
-    languages: { en: "/", ru: "/ru/" },
+    languages: { ru: "/", en: "/en/" },
   },
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Petr Afanasyev — Senior Product Designer",
+    title: "Петр Афанасьев — Senior Product Designer",
     description:
-      "Senior product designer based in Moscow. Notifications, fintech, e-commerce, marketplaces.",
+      "Старший продуктовый дизайнер из Москвы. Уведомления, финтех, e-commerce, маркетплейсы.",
     images: ["/images/avatar.png"],
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="ru" className={inter.variable}>
       <body className="min-h-dvh">{children}</body>
     </html>
   );

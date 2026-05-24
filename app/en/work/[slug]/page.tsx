@@ -15,8 +15,8 @@ export async function generateMetadata({
   const p = projects.find((x) => x.slug === slug);
   if (!p) return {};
   return {
-    title: p.headline.ru,
-    description: p.blurb.ru,
+    title: p.headline.en,
+    description: p.blurb.en,
   };
 }
 
@@ -26,5 +26,5 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  return <ProjectView locale="ru" slug={slug} />;
+  return <ProjectView locale="en" slug={slug} />;
 }

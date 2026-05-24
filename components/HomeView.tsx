@@ -5,7 +5,7 @@ import { FadeIn } from "./FadeIn";
 
 export function HomeView({ locale }: { locale: Locale }) {
   const tr = t[locale];
-  const workPrefix = locale === "en" ? "/work" : "/ru/work";
+  const workPrefix = locale === "en" ? "/en/work" : "/work";
 
   return (
     <>

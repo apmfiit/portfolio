@@ -12,8 +12,8 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
   const p = projects[idx];
   const next = projects[(idx + 1) % projects.length];
   const tr = t[locale];
-  const workPrefix = locale === "en" ? "/work" : "/ru/work";
-  const homeHref = locale === "en" ? "/" : "/ru/";
+  const workPrefix = locale === "en" ? "/en/work" : "/work";
+  const homeHref = locale === "en" ? "/en/" : "/";
 
   return (
     <>
@@ -59,6 +59,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
               <MetaItem label={tr.timeline} values={[p.meta.timeline[locale]]} />
               {p.meta.team && <MetaItem label={tr.team} values={p.meta.team[locale]} />}
               {p.meta.skills && <MetaItem label={tr.skills} values={p.meta.skills[locale]} />}
+              {p.meta.platforms && <MetaItem label={tr.platforms} values={p.meta.platforms[locale]} />}
             </section>
           </FadeIn>
         )}
