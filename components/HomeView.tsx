@@ -1,7 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Locale, links, projects, t } from "@/content";
-import { Header } from "./Header";
+import { Locale, experience, links, projects, t } from "@/content";
+import { Nav } from "./Nav";
+import { ProjectCard } from "./ProjectCard";
 import { FadeIn } from "./FadeIn";
 
 export function HomeView({ locale }: { locale: Locale }) {
@@ -10,34 +9,22 @@ export function HomeView({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <Header locale={locale} />
+      <Nav locale={locale} />
 
-      <main className="mx-auto w-full max-w-3xl px-6 pt-16 pb-24">
+      <main className="mx-auto w-full max-w-6xl px-6 pt-16 pb-24">
         <FadeIn>
-          <section className="flex flex-col gap-6">
-            <Image
-              src="/images/avatar.png"
-              alt="Petr Afanasyev"
-              width={88}
-              height={88}
-              className="rounded-full"
-              priority
-            />
-            <div className="flex flex-col gap-2">
-              <h1 className="text-3xl font-medium tracking-tight">
-                {locale === "ru" ? "Петр Афанасьев" : "Petr Afanasyev"}
-              </h1>
-              <p className="text-muted">{tr.yearsLocation}</p>
-            </div>
-            <p className="max-w-prose text-balance leading-relaxed">{tr.intro}</p>
+          <section className="flex flex-col gap-8 sm:gap-10">
+            <h1 className="max-w-3xl text-4xl font-medium leading-[1.1] tracking-tight text-balance sm:text-5xl">
+              {tr.tagline}
+            </h1>
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
-              <a href={links.telegram} className="underline" target="_blank" rel="noreferrer">
+              <a href={links.telegram} target="_blank" rel="noreferrer" className="underline">
                 Telegram →
               </a>
               <a href={`mailto:${links.email}`} className="underline">
                 {links.email} →
               </a>
-              <a href={links.cv} className="underline" target="_blank" rel="noreferrer">
+              <a href={links.cv} target="_blank" rel="noreferrer" className="underline">
                 {tr.cv} →
               </a>
             </div>
@@ -45,77 +32,70 @@ export function HomeView({ locale }: { locale: Locale }) {
         </FadeIn>
 
         <FadeIn delay={0.05}>
-          <section className="mt-20">
-            <h2 className="mb-6 text-sm uppercase tracking-widest text-muted">
-              {tr.selectedWork}
+          <section className="mt-16 sm:mt-20">
+            <h2 className="mb-4 text-xs uppercase tracking-[0.18em] text-muted">
+              {tr.experience}
             </h2>
             <ul className="flex flex-col">
-              {projects.map((p) => (
-                <li key={p.slug}>
-                  <Link
-                    href={`${workPrefix}/${p.slug}/`}
-                    className="group flex flex-col gap-1 border-t border-rule py-6 transition-colors hover:bg-foreground/[0.02]"
-                  >
-                    <div className="flex items-baseline justify-between gap-4">
-                      <h3 className="text-lg font-medium tracking-tight">
-                        {p.title[locale]}
-                      </h3>
-                      <span className="shrink-0 text-sm text-muted">
-                        {p.company} · {p.year}
-                      </span>
-                    </div>
-                    <p className="text-muted text-sm">{p.blurb[locale]}</p>
-                  </Link>
+              {experience.map((e, i) => (
+                <li
+                  key={i}
+                  className="grid grid-cols-[80px_1fr] items-baseline gap-x-6 gap-y-1 border-t border-rule py-4 sm:grid-cols-[120px_200px_1fr]"
+                >
+                  <span className="text-muted text-sm">{e.year}</span>
+                  {e.href ? (
+                    <a
+                      href={e.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium underline-offset-2 hover:underline"
+                    >
+                      {e.company}
+                    </a>
+                  ) : (
+                    <span className="font-medium">{e.company}</span>
+                  )}
+                  <span className="text-muted text-sm col-start-2 sm:col-start-3">
+                    {e.role[locale]}
+                  </span>
                 </li>
               ))}
+              <li className="border-t border-rule" />
             </ul>
-            <div className="border-t border-rule" />
-          </section>
-        </FadeIn>
-
-        <FadeIn delay={0.05}>
-          <section className="mt-20 grid gap-12 sm:grid-cols-2">
-            <div>
-              <h2 className="mb-3 text-sm uppercase tracking-widest text-muted">
-                {tr.tools}
-              </h2>
-              <ul className="space-y-1.5 text-sm">
-                {tr.toolsItems.map((i) => (
-                  <li key={i}>{i}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h2 className="mb-3 text-sm uppercase tracking-widest text-muted">
-                {tr.growth}
-              </h2>
-              <ul className="space-y-1.5 text-sm">
-                {tr.growthItems.map((i) => (
-                  <li key={i}>{i}</li>
-                ))}
-              </ul>
-            </div>
           </section>
         </FadeIn>
 
         <FadeIn delay={0.05}>
           <section className="mt-20">
-            <h2 className="mb-3 text-sm uppercase tracking-widest text-muted">
-              {tr.about}
+            <h2 className="mb-6 text-xs uppercase tracking-[0.18em] text-muted">
+              {tr.selectedWork}
             </h2>
-            <ul className="space-y-1.5 text-sm">
-              {tr.aboutItems.map((i) => (
-                <li key={i}>{i}</li>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {projects.map((p) => (
+                <ProjectCard
+                  key={p.slug}
+                  project={p}
+                  locale={locale}
+                  href={`${workPrefix}/${p.slug}/`}
+                />
               ))}
-            </ul>
+            </div>
           </section>
         </FadeIn>
 
-        <footer className="mt-24 flex items-center justify-between border-t border-rule pt-8 text-sm text-muted">
-          <span>{tr.rights}</span>
-          <a href={`mailto:${links.email}`} className="underline">
-            {links.email}
-          </a>
+        <footer className="mt-24 flex flex-wrap items-center justify-between gap-4 border-t border-rule pt-8 text-sm text-muted">
+          <span>{tr.designedBy} · {new Date().getFullYear()}</span>
+          <div className="flex gap-5">
+            <a href={links.telegram} target="_blank" rel="noreferrer" className="hover:text-foreground">
+              Telegram
+            </a>
+            <a href={`mailto:${links.email}`} className="hover:text-foreground">
+              Email
+            </a>
+            <a href={links.cv} target="_blank" rel="noreferrer" className="hover:text-foreground">
+              {tr.cv}
+            </a>
+          </div>
         </footer>
       </main>
     </>
