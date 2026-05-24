@@ -223,7 +223,7 @@ export const projects: Project[] = [
 
 export const experience: Experience[] = [
   {
-    year: "2025 – н.в.",
+    year: "2025 — Present",
     company: "ВТБ Онлайн",
     role: { en: "Senior Product Designer", ru: "Старший продуктовый дизайнер" },
   },
