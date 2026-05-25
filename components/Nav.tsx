@@ -23,7 +23,7 @@ export function Nav({ locale }: { locale: Locale }) {
           <span>{isEn ? "Petr Afanasyev" : "Петр Афанасьев"}</span>
           <span className="text-muted hidden sm:inline">{isEn ? "Product Designer" : "Продуктовый дизайнер"}</span>
         </Link>
-        <nav className="flex items-center gap-5 text-muted">
+        <nav className="flex items-center gap-5 text-[15px] text-muted">
           <Link href={homeHref} className="hover:text-foreground transition-colors">
             {tr.work}
           </Link>
