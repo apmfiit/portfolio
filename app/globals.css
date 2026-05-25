@@ -48,28 +48,6 @@ a {
   color: var(--background);
 }
 
-/* — Wave hand (plays a few times on mount, then rests) — */
-.wave-hand {
-  transform-origin: 70% 80%;
-  animation: wave 2.6s ease-in-out 0.4s 1 both;
-  will-change: transform;
-}
-@keyframes wave {
-  0% { transform: rotate(0deg); }
-  15% { transform: rotate(-18deg); }
-  30% { transform: rotate(14deg); }
-  45% { transform: rotate(-12deg); }
-  60% { transform: rotate(10deg); }
-  75% { transform: rotate(-6deg); }
-  90% { transform: rotate(3deg); }
-  100% { transform: rotate(0deg); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .wave-hand {
-    animation: none;
-  }
-}
-
 /* — Frost hover (Ykt.Ru) — */
 .frost-flake {
   position: absolute;
