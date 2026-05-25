@@ -3,6 +3,7 @@ import { Nav } from "./Nav";
 import { ProjectCard } from "./ProjectCard";
 import { FadeIn } from "./FadeIn";
 import { FrostLink } from "./FrostLink";
+import { WaveHand } from "./WaveHand";
 
 export function HomeView({ locale }: { locale: Locale }) {
   const tr = t[locale];
@@ -17,7 +18,16 @@ export function HomeView({ locale }: { locale: Locale }) {
           <section className="grid gap-10 lg:grid-cols-[1fr_minmax(0,560px)] lg:gap-16">
             <div className="flex flex-col gap-5">
               <h1 className="max-w-2xl whitespace-pre-line text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
-                {tr.tagline}
+                {(() => {
+                  const [before, after = ""] = tr.tagline.split("👋");
+                  return (
+                    <>
+                      {before}
+                      <WaveHand />
+                      {after}
+                    </>
+                  );
+                })()}
               </h1>
               <p className="text-base leading-relaxed text-muted sm:text-lg">
                 {tr.taglineSub}
