@@ -977,7 +977,7 @@ export const links = {
 export const t = {
   en: {
     tagline: "Hi! 👋\nI’m a senior product designer at VTB",
-    taglineSub: "I run the design of the whole notification system:\nfeed, pushes, settings and internal admins",
+    taglineSub: "I run the design of the whole notification system: feed, pushes, settings and internal admins",
     location: "Moscow",
     work: "Work",
     experience: "Experience",
@@ -996,7 +996,7 @@ export const t = {
   },
   ru: {
     tagline: "Привет, я Петя 👋\nСтарший продуктовый дизайнер в ВТБ",
-    taglineSub: "Веду дизайн всей системы уведомлений:\nленту, пуши, настройки и внутренние админки",
+    taglineSub: "Веду дизайн всей системы уведомлений: ленту, пуши, настройки и внутренние админки",
     location: "Москва",
     work: "Кейсы",
     experience: "Опыт",

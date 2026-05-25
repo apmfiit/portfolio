@@ -19,7 +19,7 @@ export function HomeView({ locale }: { locale: Locale }) {
               <h1 className="max-w-2xl whitespace-pre-line text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
                 {tr.tagline}
               </h1>
-              <p className="max-w-xl whitespace-pre-line text-base leading-relaxed text-muted sm:text-lg">
+              <p className="text-base leading-relaxed text-muted sm:text-lg">
                 {tr.taglineSub}
               </p>
             </div>
