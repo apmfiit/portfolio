@@ -18,8 +18,8 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
   return (
     <>
       <Nav locale={locale} sticky={false} />
-      <main className="mx-auto grid w-full max-w-[1800px] grid-cols-1 gap-10 px-6 pt-12 pb-24 lg:grid-cols-[1fr_minmax(0,768px)_1fr] lg:gap-12">
-        <aside className="lg:col-start-1 lg:row-start-1 lg:justify-self-end lg:self-start lg:sticky lg:top-12 lg:w-[220px]">
+      <main className="mx-auto grid w-full max-w-[1800px] grid-cols-1 gap-10 px-6 pt-6 pb-24 lg:grid-cols-[1fr_minmax(0,768px)_1fr] lg:gap-12">
+        <aside className="lg:col-start-1 lg:row-start-1 lg:justify-self-end lg:self-start lg:sticky lg:top-6 lg:w-[220px]">
           <div className="flex flex-col gap-8 text-[15px] uppercase tracking-[-0.02em]">
             <Link
               href={homeHref}
