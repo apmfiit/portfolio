@@ -1,4 +1,4 @@
-import { Locale, experience, projects, t } from "@/content";
+import { Locale, experience, links, projects, t } from "@/content";
 import { Nav } from "./Nav";
 import { ProjectCard } from "./ProjectCard";
 import { FadeIn } from "./FadeIn";
