@@ -51,7 +51,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
 
           {p.cover && (
             <FadeIn delay={0.05}>
-              <div className="mt-10 overflow-hidden rounded-2xl border border-rule">
+              <div className="mt-10 overflow-hidden rounded-2xl border border-foreground/10">
                 <Image
                   src={p.cover}
                   alt={p.headline[locale]}
@@ -93,7 +93,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                       </p>
                     ))}
                     {s.image && (
-                      <div className="mt-2 overflow-hidden rounded-xl border border-rule">
+                      <div className="mt-2 overflow-hidden rounded-xl border border-foreground/10">
                         <Image
                           src={s.image}
                           alt={s.heading[locale]}
