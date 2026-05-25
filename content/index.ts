@@ -949,7 +949,7 @@ export const projects: Project[] = [
 export const experience: Experience[] = [
   {
     year: { en: "2025 — Present", ru: "2025 — Сейчас" },
-    company: "ВТБ Онлайн",
+    company: "ВТБ",
     href: "https://www.vtb.ru/personal/online-servisy/vtb-online/",
     role: { en: "Senior Product Designer", ru: "Старший продуктовый дизайнер" },
   },
@@ -976,7 +976,7 @@ export const links = {
 
 export const t = {
   en: {
-    tagline: "Hi! 👋\nI’m a senior product designer at VTB Online",
+    tagline: "Hi! 👋\nI’m a senior product designer at VTB",
     taglineSub: "I run the design of the whole notification system:\nfeed, pushes, settings and internal admins",
     location: "Moscow",
     work: "Work",
@@ -995,7 +995,7 @@ export const t = {
     designedBy: "Designed by Petr",
   },
   ru: {
-    tagline: "Привет, я Петя 👋\nСтарший продуктовый дизайнер в ВТБ Онлайн",
+    tagline: "Привет, я Петя 👋\nСтарший продуктовый дизайнер в ВТБ",
     taglineSub: "Веду дизайн всей системы уведомлений:\nленту, пуши, настройки и внутренние админки",
     location: "Москва",
     work: "Кейсы",
