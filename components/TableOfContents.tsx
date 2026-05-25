@@ -1,7 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Locale, ProjectSection, t } from "@/content";
+import { Locale, ProjectSection } from "@/content";
+
+function sentenceCase(s: string) {
+  const trimmed = s.trim();
+  if (!trimmed) return trimmed;
+  return trimmed.charAt(0).toLocaleUpperCase() + trimmed.slice(1).toLocaleLowerCase();
+}
 
 export function TableOfContents({
   sections,
@@ -11,7 +17,6 @@ export function TableOfContents({
   locale: Locale;
 }) {
   const [active, setActive] = useState<string | null>(sections[0]?.id ?? null);
-  const tr = t[locale];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,11 +36,8 @@ export function TableOfContents({
   }, [sections]);
 
   return (
-    <nav className="hidden lg:block">
-      <p className="mb-3 text-xs uppercase tracking-[0.18em] text-muted">
-        {tr.onThisPage}
-      </p>
-      <ul className="flex flex-col gap-2 text-sm">
+    <nav className="hidden lg:block normal-case tracking-normal">
+      <ul className="flex flex-col gap-2 text-[15px]">
         {sections.map((s) => (
           <li key={s.id}>
             <a
@@ -46,7 +48,7 @@ export function TableOfContents({
                   : "text-muted hover:text-foreground"
               }`}
             >
-              {s.eyebrow[locale]}
+              {sentenceCase(s.eyebrow[locale])}
             </a>
           </li>
         ))}
