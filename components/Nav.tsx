@@ -21,7 +21,7 @@ export function Nav({ locale }: { locale: Locale }) {
       <div className="mx-auto flex w-full max-w-[1800px] items-center justify-between gap-6 px-6 py-4 text-sm uppercase tracking-[0.08em]">
         <Link href={homeHref} className="flex items-baseline gap-2 font-medium">
           <span>{isEn ? "Petr Afanasyev" : "Петр Афанасьев"}</span>
-          <span className="text-muted hidden sm:inline">— {isEn ? "Designer" : "Дизайнер"}</span>
+          <span className="text-muted hidden sm:inline">{isEn ? "Product Designer" : "Продуктовый дизайнер"}</span>
         </Link>
         <nav className="flex items-center gap-5 text-muted">
           <Link href={homeHref} className="hover:text-foreground transition-colors">
