@@ -13,7 +13,7 @@ export function ProjectCard({
 }) {
   return (
     <Link href={href} className="group flex flex-col gap-4">
-      <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-foreground/10 bg-[linear-gradient(135deg,#e7e5e4_0%,#d6d3d1_100%)] dark:bg-[linear-gradient(135deg,#1c1917_0%,#292524_100%)]">
+      <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-foreground/10">
         {project.cover && (
           <Image
             src={project.cover}
