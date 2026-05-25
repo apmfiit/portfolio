@@ -18,12 +18,12 @@ export function Nav({ locale }: { locale: Locale }) {
 
   return (
     <header className="sticky top-0 z-30 backdrop-blur-md bg-[color:var(--background)]/70 border-b border-rule">
-      <div className="mx-auto flex w-full max-w-[1800px] items-center justify-between gap-6 px-6 py-4 text-sm uppercase tracking-[-0.02em]">
-        <Link href={homeHref} className="flex items-baseline gap-2 font-medium">
+      <div className="mx-auto flex w-full max-w-[1800px] items-center justify-between gap-6 px-6 py-4 text-[15px] uppercase tracking-[-0.02em]">
+        <Link href={homeHref} className="flex items-baseline gap-2">
           <span>{isEn ? "Petr Afanasyev" : "Петр Афанасьев"}</span>
           <span className="text-muted hidden sm:inline">{isEn ? "Product Designer" : "Продуктовый дизайнер"}</span>
         </Link>
-        <nav className="flex items-center gap-5 text-[15px] text-muted">
+        <nav className="flex items-center gap-5 text-muted">
           <Link href={homeHref} className="hover:text-foreground transition-colors">
             {tr.work}
           </Link>
