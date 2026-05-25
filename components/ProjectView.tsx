@@ -80,7 +80,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                       {s.heading[locale]}
                     </h2>
                     {s.body?.[locale]?.map((para, i) => (
-                      <p key={i} className="max-w-3xl leading-relaxed text-foreground/80">
+                      <p key={i} className="max-w-[768px] leading-relaxed text-foreground/80">
                         {para}
                       </p>
                     ))}
