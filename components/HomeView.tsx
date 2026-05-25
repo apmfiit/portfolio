@@ -2,6 +2,7 @@ import { Locale, experience, projects, t } from "@/content";
 import { Nav } from "./Nav";
 import { ProjectCard } from "./ProjectCard";
 import { FadeIn } from "./FadeIn";
+import { FrostLink } from "./FrostLink";
 
 export function HomeView({ locale }: { locale: Locale }) {
   const tr = t[locale];
@@ -29,14 +30,18 @@ export function HomeView({ locale }: { locale: Locale }) {
                   <span className="text-muted">{e.year}</span>
                   <div className="flex flex-col">
                     {e.href ? (
-                      <a
-                        href={e.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="font-medium underline underline-offset-2 decoration-rule hover:decoration-foreground"
-                      >
-                        {e.company}
-                      </a>
+                      e.company === "Ykt.Ru" ? (
+                        <FrostLink href={e.href}>{e.company}</FrostLink>
+                      ) : (
+                        <a
+                          href={e.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="font-medium underline underline-offset-2 decoration-rule hover:decoration-foreground"
+                        >
+                          {e.company}
+                        </a>
+                      )
                     ) : (
                       <span className="font-medium">{e.company}</span>
                     )}

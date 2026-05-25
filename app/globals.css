@@ -47,3 +47,61 @@ a {
   background: var(--foreground);
   color: var(--background);
 }
+
+/* — Frost hover (Ykt.Ru) — */
+.frost-flake {
+  position: absolute;
+  pointer-events: none;
+  font-size: 10px;
+  color: #bfe6ff;
+  text-shadow: 0 0 6px rgba(191, 230, 255, 0.7);
+  opacity: 0;
+  transform: translate3d(0, -4px, 0) rotate(0deg);
+  transition: opacity 0.25s ease-out;
+  will-change: transform, opacity;
+}
+.frost-flake-1 {
+  top: -10px;
+  left: 8%;
+}
+.frost-flake-2 {
+  top: -14px;
+  left: 42%;
+  font-size: 8px;
+}
+.frost-flake-3 {
+  top: -8px;
+  left: 78%;
+  font-size: 11px;
+}
+.frost:hover .frost-flake {
+  opacity: 1;
+  animation: frost-fall 1.8s ease-in forwards;
+}
+.frost:hover .frost-flake-2 {
+  animation-delay: 0.15s;
+  animation-duration: 2.1s;
+}
+.frost:hover .frost-flake-3 {
+  animation-delay: 0.3s;
+  animation-duration: 1.6s;
+}
+@keyframes frost-fall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -6px, 0) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(6px, 28px, 0) rotate(140deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .frost:hover .frost-flake {
+    animation: none;
+    opacity: 1;
+  }
+}
