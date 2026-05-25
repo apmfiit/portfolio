@@ -61,7 +61,7 @@ export function HomeView({ locale }: { locale: Locale }) {
             <h2 className="mb-6 text-xs uppercase tracking-[0.18em] text-muted">
               {tr.selectedWork}
             </h2>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2">
               {projects.map((p) => (
                 <ProjectCard
                   key={p.slug}
