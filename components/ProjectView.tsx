@@ -18,58 +18,66 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
   return (
     <>
       <Nav locale={locale} />
-      <main className="mx-auto w-full max-w-[1800px] px-6 pt-12 pb-24">
-        <FadeIn>
-          <Link href={homeHref} className="text-sm text-muted hover:text-foreground">
-            {tr.backHome}
-          </Link>
-
-          <header className="mt-6 flex flex-col gap-4">
-            <p className="text-xs uppercase tracking-[0.18em] text-muted">
-              {p.company} · {p.status[locale]} {p.year}
-            </p>
-            <h1 className="max-w-4xl text-4xl font-medium leading-[1.1] tracking-tight text-balance sm:text-5xl">
-              {p.headline[locale]}
-            </h1>
-            <p className="max-w-3xl text-lg text-muted leading-relaxed text-balance">
-              {p.blurb[locale]}
-            </p>
-          </header>
-        </FadeIn>
-
-        {p.cover && (
-          <FadeIn delay={0.05}>
-            <div className="mt-10 overflow-hidden rounded-2xl border border-rule">
-              <Image
-                src={p.cover}
-                alt={p.headline[locale]}
-                width={1920}
-                height={1200}
-                className="h-auto w-full"
-                priority
-              />
-            </div>
-          </FadeIn>
-        )}
-
-        {p.meta && (
-          <FadeIn delay={0.05}>
-            <section className="mt-12 grid gap-8 border-t border-rule pt-8 sm:grid-cols-2 md:grid-cols-4">
-              <MetaItem label={tr.role} values={[p.meta.role[locale]]} />
-              <MetaItem label={tr.timeline} values={[p.meta.timeline[locale]]} />
-              {p.meta.team && <MetaItem label={tr.team} values={p.meta.team[locale]} />}
-              {p.meta.skills && <MetaItem label={tr.skills} values={p.meta.skills[locale]} />}
-              {p.meta.platforms && <MetaItem label={tr.platforms} values={p.meta.platforms[locale]} />}
-            </section>
-          </FadeIn>
-        )}
-
-        {p.sections && p.sections.length > 0 && (
-          <div className="mt-16 grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
-            <aside className="lg:sticky lg:top-24 lg:self-start">
+      <main className="mx-auto grid w-full max-w-[1800px] grid-cols-1 gap-10 px-6 pt-12 pb-24 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-16">
+        <aside className="lg:sticky lg:top-24 lg:self-start">
+          <div className="flex flex-col gap-8 text-[15px] uppercase tracking-[-0.02em]">
+            <Link
+              href={homeHref}
+              className="inline-flex items-center gap-2 text-muted hover:text-foreground transition-colors"
+            >
+              <span aria-hidden>←</span>
+              {locale === "en" ? "Back" : "Назад"}
+            </Link>
+            {p.sections && p.sections.length > 0 && (
               <TableOfContents sections={p.sections} locale={locale} />
-            </aside>
-            <article className="flex flex-col gap-20">
+            )}
+          </div>
+        </aside>
+
+        <div className="flex flex-col">
+          <FadeIn>
+            <header className="flex flex-col gap-4">
+              <p className="text-xs uppercase tracking-[0.18em] text-muted">
+                {p.company} · {p.status[locale]} {p.year}
+              </p>
+              <h1 className="max-w-4xl text-4xl font-medium leading-[1.1] tracking-tight text-balance sm:text-5xl">
+                {p.headline[locale]}
+              </h1>
+              <p className="max-w-3xl text-lg text-muted leading-relaxed text-balance">
+                {p.blurb[locale]}
+              </p>
+            </header>
+          </FadeIn>
+
+          {p.cover && (
+            <FadeIn delay={0.05}>
+              <div className="mt-10 overflow-hidden rounded-2xl border border-rule">
+                <Image
+                  src={p.cover}
+                  alt={p.headline[locale]}
+                  width={1920}
+                  height={1200}
+                  className="h-auto w-full"
+                  priority
+                />
+              </div>
+            </FadeIn>
+          )}
+
+          {p.meta && (
+            <FadeIn delay={0.05}>
+              <section className="mt-12 grid gap-8 border-t border-rule pt-8 sm:grid-cols-2 md:grid-cols-4">
+                <MetaItem label={tr.role} values={[p.meta.role[locale]]} />
+                <MetaItem label={tr.timeline} values={[p.meta.timeline[locale]]} />
+                {p.meta.team && <MetaItem label={tr.team} values={p.meta.team[locale]} />}
+                {p.meta.skills && <MetaItem label={tr.skills} values={p.meta.skills[locale]} />}
+                {p.meta.platforms && <MetaItem label={tr.platforms} values={p.meta.platforms[locale]} />}
+              </section>
+            </FadeIn>
+          )}
+
+          {p.sections && p.sections.length > 0 && (
+            <article className="mt-16 flex flex-col gap-20">
               {p.sections.map((s) => (
                 <FadeIn key={s.id} delay={0.04}>
                   <section id={s.id} className="scroll-mt-24 flex flex-col gap-5">
@@ -99,27 +107,27 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                 </FadeIn>
               ))}
             </article>
-          </div>
-        )}
+          )}
 
-        <FadeIn delay={0.05}>
-          <nav className="mt-24 flex flex-col gap-4 border-t border-rule pt-8">
-            <p className="text-xs uppercase tracking-[0.18em] text-muted">
-              {locale === "en" ? "Next" : "Дальше"}
-            </p>
-            <Link
-              href={`${workPrefix}/${next.slug}/`}
-              className="group flex items-baseline justify-between gap-6 hover:text-foreground"
-            >
-              <span className="text-2xl font-medium tracking-tight text-balance sm:text-3xl">
-                {next.headline[locale]}
-              </span>
-              <span className="shrink-0 text-muted text-sm">
-                {next.company} · {next.year} →
-              </span>
-            </Link>
-          </nav>
-        </FadeIn>
+          <FadeIn delay={0.05}>
+            <nav className="mt-24 flex flex-col gap-4 border-t border-rule pt-8">
+              <p className="text-xs uppercase tracking-[0.18em] text-muted">
+                {locale === "en" ? "Next" : "Дальше"}
+              </p>
+              <Link
+                href={`${workPrefix}/${next.slug}/`}
+                className="group flex items-baseline justify-between gap-6 hover:text-foreground"
+              >
+                <span className="text-2xl font-medium tracking-tight text-balance sm:text-3xl">
+                  {next.headline[locale]}
+                </span>
+                <span className="shrink-0 text-muted text-sm">
+                  {next.company} · {next.year} →
+                </span>
+              </Link>
+            </nav>
+          </FadeIn>
+        </div>
       </main>
     </>
   );
