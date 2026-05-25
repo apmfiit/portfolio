@@ -984,7 +984,7 @@ export const t = {
     selectedWork: "Selected work",
     about: "About",
     contacts: "Contacts",
-    cv: "Resume / CV",
+    cv: "Resume",
     backHome: "← Back",
     onThisPage: "On this page",
     role: "Role",
