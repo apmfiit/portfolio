@@ -1,10 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Locale, projects, t } from "@/content";
 import { Nav } from "./Nav";
 import { FadeIn } from "./FadeIn";
 import { TableOfContents } from "./TableOfContents";
+import { ZoomableImage } from "./ZoomableImage";
 
 export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) {
   const idx = projects.findIndex((p) => p.slug === slug);
@@ -52,7 +52,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
           {p.cover && (
             <FadeIn delay={0.05}>
               <div className="mt-10 overflow-hidden rounded-2xl border border-foreground/10">
-                <Image
+                <ZoomableImage
                   src={p.cover}
                   alt={p.headline[locale]}
                   width={1920}
@@ -95,7 +95,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                     {s.image && (
                       <figure className="mt-2 flex flex-col gap-2">
                         <div className="overflow-hidden rounded-xl border border-foreground/10">
-                          <Image
+                          <ZoomableImage
                             src={s.image}
                             alt={s.caption?.[locale] ?? s.heading[locale]}
                             width={1600}
@@ -113,7 +113,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                     {s.images?.map((im, i) => (
                       <figure key={i} className="mt-2 flex flex-col gap-2">
                         <div className="overflow-hidden rounded-xl border border-foreground/10">
-                          <Image
+                          <ZoomableImage
                             src={im.src}
                             alt={im.caption?.[locale] ?? s.heading[locale]}
                             width={1600}
