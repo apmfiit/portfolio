@@ -58,9 +58,6 @@ export function HomeView({ locale }: { locale: Locale }) {
 
         <FadeIn delay={0.05}>
           <section className="mt-20">
-            <h2 className="mb-6 text-xs uppercase tracking-[0.18em] text-muted">
-              {tr.selectedWork}
-            </h2>
             <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2">
               {projects.map((p) => (
                 <ProjectCard
