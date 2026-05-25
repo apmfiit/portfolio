@@ -93,16 +93,41 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                       </p>
                     ))}
                     {s.image && (
-                      <div className="mt-2 overflow-hidden rounded-xl border border-foreground/10">
-                        <Image
-                          src={s.image}
-                          alt={s.heading[locale]}
-                          width={1600}
-                          height={1000}
-                          className="h-auto w-full"
-                        />
-                      </div>
+                      <figure className="mt-2 flex flex-col gap-2">
+                        <div className="overflow-hidden rounded-xl border border-foreground/10">
+                          <Image
+                            src={s.image}
+                            alt={s.caption?.[locale] ?? s.heading[locale]}
+                            width={1600}
+                            height={1000}
+                            className="h-auto w-full"
+                          />
+                        </div>
+                        {s.caption?.[locale] && (
+                          <figcaption className="text-sm text-muted leading-relaxed">
+                            {s.caption[locale]}
+                          </figcaption>
+                        )}
+                      </figure>
                     )}
+                    {s.images?.map((im, i) => (
+                      <figure key={i} className="mt-2 flex flex-col gap-2">
+                        <div className="overflow-hidden rounded-xl border border-foreground/10">
+                          <Image
+                            src={im.src}
+                            alt={im.caption?.[locale] ?? s.heading[locale]}
+                            width={1600}
+                            height={1000}
+                            className="h-auto w-full"
+                          />
+                        </div>
+                        {im.caption?.[locale] && (
+                          <figcaption className="text-sm text-muted leading-relaxed">
+                            {im.caption[locale]}
+                          </figcaption>
+                        )}
+                      </figure>
+                    ))}
                   </section>
                 </FadeIn>
               ))}

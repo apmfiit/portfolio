@@ -13,12 +13,19 @@ export type ProjectMeta = {
   platforms?: LocalizedList;
 };
 
+export type SectionImage = {
+  src: string;
+  caption?: LocalizedString;
+};
+
 export type ProjectSection = {
   id: string;
   eyebrow: LocalizedString;
   heading: LocalizedString;
   body?: LocalizedList;
   image?: string;
+  caption?: LocalizedString;
+  images?: SectionImage[];
 };
 
 export type Project = {
@@ -91,6 +98,9 @@ export const projects: Project[] = [
             "Звучит просто, но на пути клиента к пушам много препятствий. Одно из них — неудобный процесс подключения, которым я и занялся.",
           ],
         },
+        images: [
+          { src: "/images/cases/vtb-push-onboarding/img-1.png" },
+        ],
       },
       {
         id: "task",
@@ -117,6 +127,9 @@ export const projects: Project[] = [
             "Критерии успеха: рост доли пользователей с подключёнными пушами.",
           ],
         },
+        images: [
+          { src: "/images/cases/vtb-push-onboarding/img-2.png" },
+        ],
       },
       {
         id: "discovery",
@@ -139,6 +152,12 @@ export const projects: Project[] = [
             "Дальше я пошёл смотреть, как сделано у других. Посмотрел соседние банки, да и в целом бест-практис. Наблюдение оказалось простым: чем меньше тоглов и чем теснее они связаны с системой, тем понятнее пользователю. Наша двухуровневая система выглядела как рудимент. Её можно было сильно упростить.",
           ],
         },
+        images: [
+          {
+            src: "/images/cases/vtb-push-onboarding/img-3.png",
+            caption: { en: "Observation was simple — fewer toggles, tighter tied to OS, clearer for users.", ru: "Наблюдение оказалось простым: чем меньше тоглов и чем теснее они связаны с системой, тем понятнее пользователю" },
+          },
+        ],
       },
       {
         id: "hypothesis",
@@ -353,6 +372,9 @@ export const projects: Project[] = [
             "Цель — развивать единую платформу уведомлений, которая гарантирует стабильную доставку и единый стандарт сообщений.",
           ],
         },
+        images: [
+          { src: "/images/cases/vtb-template-constructor/img-1.png" },
+        ],
       },
       {
         id: "constructor",
@@ -373,6 +395,9 @@ export const projects: Project[] = [
             "В итоге банк получает единый стандарт сообщений, меньше ошибок при создании шаблонов и возможность быстрее масштабировать новые сценарии уведомлений.",
           ],
         },
+        images: [
+          { src: "/images/cases/vtb-template-constructor/img-2.png" },
+        ],
       },
       {
         id: "problem",
@@ -471,6 +496,12 @@ export const projects: Project[] = [
             "Гипотеза 2: если построить интерфейс конструктора так, как выглядит реальное push-уведомление (заголовок, описание, картинка и кнопка с deeplink), и добавить визуальное превью, сотрудники быстрее ориентируются и реже задают уточняющие вопросы.",
           ],
         },
+        images: [
+          {
+            src: "/images/cases/vtb-template-constructor/img-3.png",
+            caption: { en: "Final shortlist of hypotheses.", ru: "В итоге гипотезы получились такими." },
+          },
+        ],
       },
       {
         id: "prioritization",
@@ -524,6 +555,9 @@ export const projects: Project[] = [
             "После передачи в разработку провёл аудит реализации на тестовой среде: корректность полей и статусов, мелкие несоответствия дизайну, соответствие логике сценариев всей админки.",
           ],
         },
+        images: [
+          { src: "/images/cases/vtb-template-constructor/img-4.png" },
+        ],
       },
       {
         id: "drawer-problem",
@@ -542,6 +576,13 @@ export const projects: Project[] = [
             "По гайдам дизайн-системы Drawer должен был использоваться для таких сценариев, но реальный опыт показал ограничения. Я вынес проблему на обсуждение с командой дизайн-системы — согласовали изменение паттерна: вместо боковой панели сделали полностраничную форму.",
           ],
         },
+        images: [
+          {
+            src: "/images/cases/vtb-template-constructor/img-5.png",
+            caption: { en: "List of all created templates.", ru: "Список всех созданных шаблонов" },
+          },
+          { src: "/images/cases/vtb-template-constructor/img-6.png" },
+        ],
       },
       {
         id: "results",
@@ -643,6 +684,10 @@ export const projects: Project[] = [
             "Это формировало у юзеров впечатление «хаотичного лендинга» и мешало росту трафика и конверсий.",
           ],
         },
+        images: [
+          { src: "/images/cases/lofty-homepage/img-1.png" },
+          { src: "/images/cases/lofty-homepage/img-2.png" },
+        ],
       },
       {
         id: "task",
@@ -679,6 +724,9 @@ export const projects: Project[] = [
             "3) Если показать блогеров, это усилит социальное доказательство — новые пользователи останутся дольше, скроллят глубже, чаще переходят к сервисам.",
           ],
         },
+        images: [
+          { src: "/images/cases/lofty-homepage/img-3.png" },
+        ],
       },
       {
         id: "results",
@@ -697,6 +745,12 @@ export const projects: Project[] = [
             "Блок с блогерами, УТП и социальным доказательством визуально выглядел как типичный маркетинг, но по факту дал заметный рост вовлечённости. Новые пользователи видели знакомых блогеров, задерживались на странице дольше, скроллили глубже и чаще переходили к сервисам.",
           ],
         },
+        images: [
+          { src: "/images/cases/lofty-homepage/img-4.png" },
+          { src: "/images/cases/lofty-homepage/img-5.png" },
+          { src: "/images/cases/lofty-homepage/img-6.png" },
+          { src: "/images/cases/lofty-homepage/img-7.png" },
+        ],
       },
       {
         id: "lessons",
@@ -771,6 +825,21 @@ export const projects: Project[] = [
             "8) Создание обновлённого UI-кита и передача в разработку.",
           ],
         },
+        images: [
+          { src: "/images/cases/ykt-jobs/img-1.png" },
+          {
+            src: "/images/cases/ykt-jobs/img-2.png",
+            caption: { en: "Before the redesign", ru: "Как выглядел сайт до" },
+          },
+          { src: "/images/cases/ykt-jobs/img-3.png" },
+          { src: "/images/cases/ykt-jobs/img-4.png" },
+          {
+            src: "/images/cases/ykt-jobs/img-5.png",
+            caption: { en: "After the redesign", ru: "После редизайна" },
+          },
+          { src: "/images/cases/ykt-jobs/img-6.png" },
+          { src: "/images/cases/ykt-jobs/img-7.png" },
+        ],
       },
       {
         id: "always",
@@ -820,6 +889,9 @@ export const projects: Project[] = [
             "Статус: в разработке. Ждём запуска.",
           ],
         },
+        images: [
+          { src: "/images/cases/ykt-jobs/img-8.png" },
+        ],
       },
     ],
   },
@@ -941,6 +1013,15 @@ export const projects: Project[] = [
             "Также не забыли о нашей веб-версии и там тоже запустили самовывоз.",
           ],
         },
+        images: [
+          { src: "/images/cases/ykt-pickup/img-1.png" },
+          { src: "/images/cases/ykt-pickup/img-2.png" },
+          {
+            src: "/images/cases/ykt-pickup/img-3.png",
+            caption: { en: "Web version also got pickup support.", ru: "Также запустили самовывоз и в веб-версии." },
+          },
+          { src: "/images/cases/ykt-pickup/img-4.png" },
+        ],
       },
     ],
   },
