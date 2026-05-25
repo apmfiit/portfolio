@@ -950,6 +950,7 @@ export const experience: Experience[] = [
   {
     year: "2025 — Present",
     company: "ВТБ Онлайн",
+    href: "https://www.vtb.ru/personal/online-servisy/vtb-online/",
     role: { en: "Senior Product Designer", ru: "Старший продуктовый дизайнер" },
   },
   {

@@ -33,7 +33,7 @@ export function HomeView({ locale }: { locale: Locale }) {
                         href={e.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="font-medium underline-offset-2 hover:underline"
+                        className="font-medium underline underline-offset-2 decoration-rule hover:decoration-foreground"
                       >
                         {e.company}
                       </a>
