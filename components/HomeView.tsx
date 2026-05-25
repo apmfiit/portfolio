@@ -30,7 +30,7 @@ export function HomeView({ locale }: { locale: Locale }) {
                   key={i}
                   className="grid grid-cols-[120px_140px_minmax(0,1fr)] items-baseline gap-x-5 whitespace-nowrap"
                 >
-                  <span className="text-muted">{e.year}</span>
+                  <span className="text-muted">{e.year[locale]}</span>
                   <span>
                     {e.href ? (
                       e.company === "Ykt.Ru" ? (

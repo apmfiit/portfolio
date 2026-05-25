@@ -34,7 +34,7 @@ export type Project = {
 };
 
 export type Experience = {
-  year: string;
+  year: LocalizedString;
   company: string;
   href?: string;
   role: LocalizedString;
@@ -948,22 +948,22 @@ export const projects: Project[] = [
 
 export const experience: Experience[] = [
   {
-    year: "2025 — Present",
+    year: { en: "2025 — Present", ru: "2025 — Сейчас" },
     company: "ВТБ Онлайн",
     href: "https://www.vtb.ru/personal/online-servisy/vtb-online/",
     role: { en: "Senior Product Designer", ru: "Старший продуктовый дизайнер" },
   },
   {
-    year: "2024",
+    year: { en: "2024", ru: "2024" },
     company: "Lofty / KUPIKOD",
     href: "https://www.lofty.today/",
     role: { en: "Product Designer", ru: "Продуктовый дизайнер" },
   },
   {
-    year: "2020 – 2024",
+    year: { en: "2020 – 2024", ru: "2020 – 2024" },
     company: "Ykt.Ru",
     href: "https://ykt.ru/about",
-    role: { en: "Lead Designer", ru: "Ведущий дизайнер" },
+    role: { en: "Product Designer", ru: "Продуктовый дизайнер" },
   },
 ];
 
