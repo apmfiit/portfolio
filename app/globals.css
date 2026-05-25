@@ -59,8 +59,7 @@ a {
   will-change: transform, opacity;
   --drift: 0px;
 }
-.frost:hover .frost-flake,
-.frost:focus-within .frost-flake {
+.frost:hover .frost-flake {
   animation: frost-fall var(--dur, 3.2s) linear infinite;
 }
 @keyframes frost-fall {
@@ -80,8 +79,7 @@ a {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .frost:hover .frost-flake,
-  .frost:focus-within .frost-flake {
+  .frost:hover .frost-flake {
     animation: none;
     opacity: 0.8;
   }
