@@ -13,54 +13,48 @@ export function HomeView({ locale }: { locale: Locale }) {
 
       <main className="mx-auto w-full max-w-6xl px-6 pt-16 pb-24">
         <FadeIn>
-          <section className="flex flex-col gap-8 sm:gap-10">
-            <h1 className="max-w-3xl text-4xl font-medium leading-[1.1] tracking-tight text-balance sm:text-5xl">
-              {tr.tagline}
-            </h1>
-            <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
-              <a href={links.telegram} target="_blank" rel="noreferrer" className="underline">
-                Telegram →
-              </a>
-              <a href={`mailto:${links.email}`} className="underline">
-                {links.email} →
-              </a>
-              <a href={links.cv} target="_blank" rel="noreferrer" className="underline">
-                {tr.cv} →
-              </a>
+          <section className="grid gap-10 lg:grid-cols-[1fr_minmax(0,360px)] lg:gap-16">
+            <div className="flex flex-col gap-8">
+              <h1 className="max-w-2xl text-4xl font-medium leading-[1.1] tracking-tight text-balance sm:text-5xl">
+                {tr.tagline}
+              </h1>
+              <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+                <a href={links.telegram} target="_blank" rel="noreferrer" className="underline">
+                  Telegram →
+                </a>
+                <a href={`mailto:${links.email}`} className="underline">
+                  {links.email} →
+                </a>
+                <a href={links.cv} target="_blank" rel="noreferrer" className="underline">
+                  {tr.cv} →
+                </a>
+              </div>
             </div>
-          </section>
-        </FadeIn>
 
-        <FadeIn delay={0.05}>
-          <section className="mt-16 sm:mt-20">
-            <h2 className="mb-4 text-xs uppercase tracking-[0.18em] text-muted">
-              {tr.experience}
-            </h2>
-            <ul className="flex flex-col">
+            <ul className="flex flex-col gap-2 text-sm lg:pt-3">
               {experience.map((e, i) => (
                 <li
                   key={i}
-                  className="grid grid-cols-[80px_1fr] items-baseline gap-x-6 gap-y-1 border-t border-rule py-4 sm:grid-cols-[120px_200px_1fr]"
+                  className="grid grid-cols-[90px_1fr] items-baseline gap-x-4"
                 >
-                  <span className="text-muted text-sm">{e.year}</span>
-                  {e.href ? (
-                    <a
-                      href={e.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="font-medium underline-offset-2 hover:underline"
-                    >
-                      {e.company}
-                    </a>
-                  ) : (
-                    <span className="font-medium">{e.company}</span>
-                  )}
-                  <span className="text-muted text-sm col-start-2 sm:col-start-3">
-                    {e.role[locale]}
-                  </span>
+                  <span className="text-muted">{e.year}</span>
+                  <div className="flex flex-col">
+                    {e.href ? (
+                      <a
+                        href={e.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-medium underline-offset-2 hover:underline"
+                      >
+                        {e.company}
+                      </a>
+                    ) : (
+                      <span className="font-medium">{e.company}</span>
+                    )}
+                    <span className="text-muted">{e.role[locale]}</span>
+                  </div>
                 </li>
               ))}
-              <li className="border-t border-rule" />
             </ul>
           </section>
         </FadeIn>
