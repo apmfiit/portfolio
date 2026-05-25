@@ -3,13 +3,13 @@
 import { ReactNode } from "react";
 
 const FLAKES = [
-  { left: "6%", size: 14, delay: 0, dur: 3.2, drift: 8, variant: 0 },
-  { left: "20%", size: 10, delay: 0.6, dur: 4.0, drift: -6, variant: 1 },
-  { left: "34%", size: 16, delay: 0.2, dur: 3.0, drift: 6, variant: 0 },
-  { left: "48%", size: 11, delay: 0.9, dur: 3.8, drift: -8, variant: 1 },
-  { left: "62%", size: 13, delay: 0.35, dur: 3.4, drift: 5, variant: 0 },
-  { left: "76%", size: 9, delay: 0.75, dur: 4.2, drift: -5, variant: 1 },
-  { left: "90%", size: 15, delay: 0.15, dur: 3.1, drift: 7, variant: 0 },
+  { left: "6%", size: 7, delay: 0, dur: 3.2, drift: 8, variant: 0 },
+  { left: "20%", size: 5, delay: 0.6, dur: 4.0, drift: -6, variant: 1 },
+  { left: "34%", size: 8, delay: 0.2, dur: 3.0, drift: 6, variant: 0 },
+  { left: "48%", size: 6, delay: 0.9, dur: 3.8, drift: -8, variant: 1 },
+  { left: "62%", size: 7, delay: 0.35, dur: 3.4, drift: 5, variant: 0 },
+  { left: "76%", size: 5, delay: 0.75, dur: 4.2, drift: -5, variant: 1 },
+  { left: "90%", size: 8, delay: 0.15, dur: 3.1, drift: 7, variant: 0 },
 ];
 
 // A 6-fold-symmetric dendritic snowflake (viewBox -50..50).
