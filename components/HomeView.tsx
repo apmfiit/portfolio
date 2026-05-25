@@ -14,18 +14,21 @@ export function HomeView({ locale }: { locale: Locale }) {
 
       <main className="mx-auto w-full max-w-[1800px] px-6 pt-16 pb-24">
         <FadeIn>
-          <section className="grid gap-10 lg:grid-cols-[1fr_minmax(0,480px)] lg:gap-16">
-            <div className="flex flex-col gap-8">
-              <h1 className="max-w-2xl text-4xl font-medium leading-[1.1] tracking-tight text-balance sm:text-5xl">
+          <section className="grid gap-10 lg:grid-cols-[1fr_minmax(0,560px)] lg:gap-16">
+            <div className="flex flex-col gap-5">
+              <h1 className="max-w-2xl text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
                 {tr.tagline}
               </h1>
+              <p className="max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+                {tr.taglineSub}
+              </p>
             </div>
 
             <ul className="flex flex-col gap-2 text-sm lg:pt-3">
               {experience.map((e, i) => (
                 <li
                   key={i}
-                  className="grid grid-cols-[110px_minmax(0,1fr)_minmax(0,1.2fr)] items-baseline gap-x-4 whitespace-nowrap"
+                  className="grid grid-cols-[120px_140px_minmax(0,1fr)] items-baseline gap-x-5 whitespace-nowrap"
                 >
                   <span className="text-muted">{e.year}</span>
                   <span>
@@ -46,7 +49,7 @@ export function HomeView({ locale }: { locale: Locale }) {
                       <span className="font-medium">{e.company}</span>
                     )}
                   </span>
-                  <span className="text-muted truncate">{e.role[locale]}</span>
+                  <span className="text-muted">{e.role[locale]}</span>
                 </li>
               ))}
             </ul>
