@@ -1,4 +1,4 @@
-import { Locale, experience, links, projects, t } from "@/content";
+import { Locale, experience, projects, t } from "@/content";
 import { Nav } from "./Nav";
 import { ProjectCard } from "./ProjectCard";
 import { FadeIn } from "./FadeIn";
@@ -18,17 +18,6 @@ export function HomeView({ locale }: { locale: Locale }) {
               <h1 className="max-w-2xl text-4xl font-medium leading-[1.1] tracking-tight text-balance sm:text-5xl">
                 {tr.tagline}
               </h1>
-              <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
-                <a href={links.telegram} target="_blank" rel="noreferrer" className="underline">
-                  Telegram →
-                </a>
-                <a href={`mailto:${links.email}`} className="underline">
-                  {links.email} →
-                </a>
-                <a href={links.cv} target="_blank" rel="noreferrer" className="underline">
-                  {tr.cv} →
-                </a>
-              </div>
             </div>
 
             <ul className="flex flex-col gap-2 text-sm lg:pt-3">

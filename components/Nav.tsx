@@ -28,6 +28,20 @@ export function Nav({ locale }: { locale: Locale }) {
             {tr.work}
           </Link>
           <a
+            href={links.telegram}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-foreground transition-colors"
+          >
+            Telegram
+          </a>
+          <a
+            href={`mailto:${links.email}`}
+            className="hover:text-foreground transition-colors hidden sm:inline"
+          >
+            Email
+          </a>
+          <a
             href={links.cv}
             target="_blank"
             rel="noreferrer"

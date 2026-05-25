@@ -976,7 +976,7 @@ export const links = {
 export const t = {
   en: {
     tagline:
-      "Hi, I'm Petr. Senior product designer at VTB Online — I run the design of the whole notification system: feed, pushes, settings and internal admins.",
+      "Hi, I'm Petr. Senior product designer at VTB Online — I run the design of the whole notification system: feed, pushes, settings and internal admins",
     location: "Moscow",
     work: "Work",
     experience: "Experience",
@@ -995,7 +995,7 @@ export const t = {
   },
   ru: {
     tagline:
-      "Привет, я Петя. Старший продуктовый дизайнер в ВТБ онлайн — веду дизайн всей системы уведомлений: ленту, пуши, настройки и внутренние админки.",
+      "Привет, я Петя. Старший продуктовый дизайнер в ВТБ онлайн — веду дизайн всей системы уведомлений: ленту, пуши, настройки и внутренние админки",
     location: "Москва",
     work: "Кейсы",
     experience: "Опыт",
