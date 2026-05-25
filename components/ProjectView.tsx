@@ -37,7 +37,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
         <div className="flex w-full flex-col lg:col-start-2 lg:row-start-1">
           <FadeIn>
             <header className="flex flex-col gap-4">
-              <p className="text-xs uppercase tracking-[0.18em] text-muted">
+              <p className="text-xs uppercase tracking-[-0.02em] text-muted">
                 {p.company} · {p.status[locale]} {p.year}
               </p>
               <h1 className="max-w-4xl text-4xl font-medium leading-[1.1] tracking-tight text-balance sm:text-5xl">
@@ -81,7 +81,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
               {p.sections.map((s) => (
                 <FadeIn key={s.id} delay={0.04}>
                   <section id={s.id} className="scroll-mt-24 flex flex-col gap-5">
-                    <p className="text-xs uppercase tracking-[0.18em] text-muted">
+                    <p className="text-xs uppercase tracking-[-0.02em] text-muted">
                       {s.eyebrow[locale]}
                     </p>
                     <h2 className="text-2xl font-medium leading-snug tracking-tight text-balance sm:text-3xl">
@@ -136,7 +136,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
 
           <FadeIn delay={0.05}>
             <nav className="mt-24 flex flex-col gap-4 border-t border-rule pt-8">
-              <p className="text-xs uppercase tracking-[0.18em] text-muted">
+              <p className="text-xs uppercase tracking-[-0.02em] text-muted">
                 {locale === "en" ? "Next" : "Дальше"}
               </p>
               <Link
@@ -161,8 +161,8 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
 function MetaItem({ label, values }: { label: string; values: string[] }) {
   return (
     <div className="flex flex-col gap-2">
-      <p className="text-xs uppercase tracking-[0.18em] text-muted">{label}</p>
-      <ul className="flex flex-col gap-1 text-sm">
+      <p className="text-xs uppercase tracking-[-0.02em] text-muted">{label}</p>
+      <ul className="flex flex-col gap-1 text-sm text-muted">
         {values.map((v, i) => (
           <li key={i}>{v}</li>
         ))}
