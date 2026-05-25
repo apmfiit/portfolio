@@ -34,7 +34,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
           </div>
         </aside>
 
-        <div className="flex w-full max-w-[768px] flex-col">
+        <div className="mx-auto flex w-full max-w-[768px] flex-col">
           <FadeIn>
             <header className="flex flex-col gap-4">
               <p className="text-xs uppercase tracking-[0.18em] text-muted">
