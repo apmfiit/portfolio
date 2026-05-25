@@ -1,4 +1,4 @@
-import { Locale, experience, links, projects, t } from "@/content";
+import { Locale, experience, projects, t } from "@/content";
 import { Nav } from "./Nav";
 import { ProjectCard } from "./ProjectCard";
 import { FadeIn } from "./FadeIn";
@@ -66,19 +66,8 @@ export function HomeView({ locale }: { locale: Locale }) {
           </section>
         </FadeIn>
 
-        <footer className="mt-24 flex flex-wrap items-center justify-between gap-4 border-t border-rule pt-8 text-sm text-muted">
-          <span>{tr.designedBy} · {new Date().getFullYear()}</span>
-          <div className="flex gap-5">
-            <a href={links.telegram} target="_blank" rel="noreferrer" className="hover:text-foreground">
-              Telegram
-            </a>
-            <a href={`mailto:${links.email}`} className="hover:text-foreground">
-              Email
-            </a>
-            <a href={links.cv} target="_blank" rel="noreferrer" className="hover:text-foreground">
-              {tr.cv}
-            </a>
-          </div>
+        <footer className="mt-24 border-t border-rule pt-8 text-sm text-muted">
+          <span>{new Date().getFullYear()}</span>
         </footer>
       </main>
     </>
