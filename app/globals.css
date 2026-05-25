@@ -51,57 +51,38 @@ a {
 /* — Frost hover (Ykt.Ru) — */
 .frost-flake {
   position: absolute;
+  top: 0;
   pointer-events: none;
-  font-size: 10px;
-  color: #bfe6ff;
-  text-shadow: 0 0 6px rgba(191, 230, 255, 0.7);
+  color: #9fd5f5;
   opacity: 0;
-  transform: translate3d(0, -4px, 0) rotate(0deg);
-  transition: opacity 0.25s ease-out;
+  transform: translate3d(0, -8px, 0) rotate(0deg);
   will-change: transform, opacity;
+  --drift: 0px;
 }
-.frost-flake-1 {
-  top: -10px;
-  left: 8%;
-}
-.frost-flake-2 {
-  top: -14px;
-  left: 42%;
-  font-size: 8px;
-}
-.frost-flake-3 {
-  top: -8px;
-  left: 78%;
-  font-size: 11px;
-}
-.frost:hover .frost-flake {
-  opacity: 1;
-  animation: frost-fall 1.8s ease-in forwards;
-}
-.frost:hover .frost-flake-2 {
-  animation-delay: 0.15s;
-  animation-duration: 2.1s;
-}
-.frost:hover .frost-flake-3 {
-  animation-delay: 0.3s;
-  animation-duration: 1.6s;
+.frost:hover .frost-flake,
+.frost:focus-within .frost-flake {
+  animation: frost-fall var(--dur, 3.2s) linear infinite;
 }
 @keyframes frost-fall {
   0% {
     opacity: 0;
-    transform: translate3d(0, -6px, 0) rotate(0deg);
+    transform: translate3d(0, -8px, 0) rotate(0deg);
   }
-  20% {
-    opacity: 1;
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.9;
   }
   100% {
     opacity: 0;
-    transform: translate3d(6px, 28px, 0) rotate(140deg);
+    transform: translate3d(var(--drift), 38px, 0) rotate(180deg);
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .frost:hover .frost-flake {
+  .frost:hover .frost-flake,
+  .frost:focus-within .frost-flake {
     animation: none;
-    opacity: 1;
+    opacity: 0.8;
   }
 }
