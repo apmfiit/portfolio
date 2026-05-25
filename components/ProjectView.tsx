@@ -17,7 +17,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
 
   return (
     <>
-      <Nav locale={locale} />
+      <Nav locale={locale} sticky={false} />
       <main className="mx-auto grid w-full max-w-[1800px] grid-cols-1 gap-10 px-6 pt-12 pb-24 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-16">
         <aside className="lg:sticky lg:top-24 lg:self-start">
           <div className="flex flex-col gap-8 text-[15px] uppercase tracking-[-0.02em]">

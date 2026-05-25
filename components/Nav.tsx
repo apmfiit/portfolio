@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Locale, links, t } from "@/content";
 
-export function Nav({ locale }: { locale: Locale }) {
+export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolean }) {
   const pathname = usePathname() || "/";
   const tr = t[locale];
   const [open, setOpen] = useState(false);
@@ -52,7 +52,7 @@ export function Nav({ locale }: { locale: Locale }) {
   );
 
   return (
-    <header className="sticky top-0 z-30 backdrop-blur-md bg-[color:var(--background)]/70 border-b border-rule">
+    <header className={`${sticky ? "sticky top-0" : "relative"} z-30 backdrop-blur-md bg-[color:var(--background)]/70 border-b border-rule`}>
       <div className="mx-auto flex w-full max-w-[1800px] items-center justify-between gap-6 px-6 py-4 text-[15px] uppercase tracking-[-0.02em]">
         {NameBlock}
 
