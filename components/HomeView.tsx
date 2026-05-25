@@ -28,7 +28,7 @@ export function HomeView({ locale }: { locale: Locale }) {
               {experience.map((e, i) => (
                 <li
                   key={i}
-                  className="grid grid-cols-[120px_140px_minmax(0,1fr)] items-baseline gap-x-5 whitespace-nowrap"
+                  className="grid grid-cols-[80px_140px_minmax(0,1fr)] items-baseline gap-x-5 whitespace-nowrap"
                 >
                   <span className="text-muted">{e.year[locale]}</span>
                   <span>
