@@ -18,7 +18,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
   return (
     <>
       <Nav locale={locale} />
-      <main className="mx-auto w-full max-w-6xl px-6 pt-12 pb-24">
+      <main className="mx-auto w-full max-w-[1800px] px-6 pt-12 pb-24">
         <FadeIn>
           <Link href={homeHref} className="text-sm text-muted hover:text-foreground">
             {tr.backHome}
