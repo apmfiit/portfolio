@@ -14,7 +14,7 @@ export function HomeView({ locale }: { locale: Locale }) {
 
       <main className="mx-auto w-full max-w-6xl px-6 pt-16 pb-24">
         <FadeIn>
-          <section className="grid gap-10 lg:grid-cols-[1fr_minmax(0,360px)] lg:gap-16">
+          <section className="grid gap-10 lg:grid-cols-[1fr_minmax(0,480px)] lg:gap-16">
             <div className="flex flex-col gap-8">
               <h1 className="max-w-2xl text-4xl font-medium leading-[1.1] tracking-tight text-balance sm:text-5xl">
                 {tr.tagline}
@@ -25,10 +25,10 @@ export function HomeView({ locale }: { locale: Locale }) {
               {experience.map((e, i) => (
                 <li
                   key={i}
-                  className="grid grid-cols-[90px_1fr] items-baseline gap-x-4"
+                  className="grid grid-cols-[110px_minmax(0,1fr)_minmax(0,1.2fr)] items-baseline gap-x-4 whitespace-nowrap"
                 >
                   <span className="text-muted">{e.year}</span>
-                  <div className="flex flex-col">
+                  <span>
                     {e.href ? (
                       e.company === "Ykt.Ru" ? (
                         <FrostLink href={e.href}>{e.company}</FrostLink>
@@ -45,8 +45,8 @@ export function HomeView({ locale }: { locale: Locale }) {
                     ) : (
                       <span className="font-medium">{e.company}</span>
                     )}
-                    <span className="text-muted">{e.role[locale]}</span>
-                  </div>
+                  </span>
+                  <span className="text-muted truncate">{e.role[locale]}</span>
                 </li>
               ))}
             </ul>
