@@ -2,18 +2,15 @@
 
 My product design portfolio. Built with Next.js, deployed on Vercel.
 
-**Live:** [your-domain.com]
+**Live:** https://petrafanasyev.com/
 
 ## About me
 
-Petr Afanasyev — product designer, 5+ years. Currently at VTB Bank in
-Moscow working on the notifications cluster (push, SMS, in-app). Based
-in Moscow, originally from Yakutsk.
-
-Mostly Figma at work; this site is where I experiment with code.
+Petr Afanasyev — product designer, 5+ years. Currently at VTB Bank (27M+ users) working on the notifications cluster (push, SMS, in-app). Based
+in Moscow, originally from Yakutia.
 
 ## Contact
 
 - Telegram: [@PetrAfanasyev](https://t.me/PetrAfanasyev)
-- Email: [your email]
-- LinkedIn: [your linkedin]
+- Email: apm.x17@gmail.com
+- LinkedIn: https://www.linkedin.com/in/petrafanasyev/
