@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Locale, projects, t } from "@/content";
+import { blur } from "@/content/blur";
 import { Nav } from "./Nav";
 import { FadeIn } from "./FadeIn";
 import { TableOfContents } from "./TableOfContents";
@@ -60,6 +61,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                   height={1200}
                   className="h-auto w-full"
                   priority
+                  blurDataURL={blur[p.cover]}
                 />
               </div>
             </FadeIn>
@@ -102,6 +104,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                             width={1600}
                             height={1000}
                             className="h-auto w-full"
+                            blurDataURL={blur[s.image]}
                           />
                         </div>
                         {s.caption?.[locale] && (
@@ -120,6 +123,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                             width={1600}
                             height={1000}
                             className="h-auto w-full"
+                            blurDataURL={blur[im.src]}
                           />
                         </div>
                         {im.caption?.[locale] && (

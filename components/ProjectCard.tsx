@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Locale, Project } from "@/content";
+import { blur } from "@/content/blur";
 
 export function ProjectCard({
   project,
@@ -20,6 +21,8 @@ export function ProjectCard({
             alt={project.headline[locale]}
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
+            placeholder={blur[project.cover] ? "blur" : "empty"}
+            blurDataURL={blur[project.cover]}
             className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           />
         )}

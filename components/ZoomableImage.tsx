@@ -10,6 +10,7 @@ type Props = {
   height: number;
   className?: string;
   priority?: boolean;
+  blurDataURL?: string;
 };
 
 export function ZoomableImage({
@@ -19,6 +20,7 @@ export function ZoomableImage({
   height,
   className,
   priority,
+  blurDataURL,
 }: Props) {
   const [open, setOpen] = useState(false);
 
@@ -53,6 +55,8 @@ export function ZoomableImage({
           height={height}
           className={className}
           priority={priority}
+          placeholder={blurDataURL ? "blur" : "empty"}
+          blurDataURL={blurDataURL}
         />
       </button>
 
