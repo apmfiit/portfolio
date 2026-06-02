@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Locale, projects, t } from "@/content";
 import { blur } from "@/content/blur";
+import { typo } from "@/lib/typo";
 import { Nav } from "./Nav";
 import { FadeIn } from "./FadeIn";
 import { TableOfContents } from "./TableOfContents";
@@ -43,10 +44,10 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                 {p.company} · {p.status[locale]} {p.year}
               </p>
               <h1 className="max-w-4xl text-4xl font-medium leading-[1.1] tracking-tight text-balance sm:text-5xl">
-                {p.headline[locale]}
+                {typo(p.headline[locale])}
               </h1>
               <p className="max-w-3xl text-lg text-muted leading-relaxed text-balance">
-                {p.blurb[locale]}
+                {typo(p.blurb[locale])}
               </p>
             </header>
           </FadeIn>
@@ -88,11 +89,11 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                       {s.eyebrow[locale]}
                     </p>
                     <h2 className="text-2xl font-medium leading-snug tracking-tight text-balance sm:text-3xl">
-                      {s.heading[locale]}
+                      {typo(s.heading[locale])}
                     </h2>
                     {s.body?.[locale]?.map((para, i) => (
                       <p key={i} className="max-w-[768px] leading-relaxed text-foreground/80">
-                        {para}
+                        {typo(para)}
                       </p>
                     ))}
                     {s.image && (
@@ -109,7 +110,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                         </div>
                         {s.caption?.[locale] && (
                           <figcaption className="text-sm text-muted leading-relaxed">
-                            {s.caption[locale]}
+                            {typo(s.caption[locale])}
                           </figcaption>
                         )}
                       </figure>
@@ -128,7 +129,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                         </div>
                         {im.caption?.[locale] && (
                           <figcaption className="text-sm text-muted leading-relaxed">
-                            {im.caption[locale]}
+                            {typo(im.caption[locale])}
                           </figcaption>
                         )}
                       </figure>
@@ -149,7 +150,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                 className="group flex items-baseline justify-between gap-6 hover:text-foreground"
               >
                 <span className="text-2xl font-medium tracking-tight text-balance sm:text-3xl">
-                  {next.headline[locale]}
+                  {typo(next.headline[locale])}
                 </span>
                 <span className="shrink-0 text-muted text-sm">
                   {next.company} · {next.year} →

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Locale, Project } from "@/content";
 import { blur } from "@/content/blur";
+import { typo } from "@/lib/typo";
 
 export function ProjectCard({
   project,
@@ -29,7 +30,7 @@ export function ProjectCard({
       </div>
       <div className="flex flex-col gap-1">
         <h3 className="text-lg font-medium tracking-tight text-balance">
-          {project.headline[locale]}
+          {typo(project.headline[locale])}
         </h3>
         <p className="text-sm text-muted">
           {project.company} · {project.status[locale]} {project.year}

@@ -4,6 +4,7 @@ import { ProjectCard } from "./ProjectCard";
 import { FadeIn } from "./FadeIn";
 import { FrostLink } from "./FrostLink";
 import { WaveHand } from "./WaveHand";
+import { typo } from "@/lib/typo";
 
 export function HomeView({ locale }: { locale: Locale }) {
   const tr = t[locale];
@@ -23,15 +24,15 @@ export function HomeView({ locale }: { locale: Locale }) {
                   const [before, after = ""] = tr.tagline.split("👋");
                   return (
                     <>
-                      {before}
-                      <WaveHand />
-                      {after}
+                      {typo(before)}{" "}
+                      <WaveHand />{" "}
+                      {typo(after)}
                     </>
                   );
                 })()}
               </h1>
               <p className="text-base leading-relaxed text-muted sm:text-lg">
-                {tr.taglineSub}
+                {typo(tr.taglineSub)}
               </p>
             </div>
 
