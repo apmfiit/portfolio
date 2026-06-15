@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Locale, projects, t } from "@/content";
 import { blur } from "@/content/blur";
+import { imageMeta } from "@/content/imageMeta";
 import { typo } from "@/lib/typo";
 import { Nav } from "./Nav";
 import { FadeIn } from "./FadeIn";
@@ -96,43 +97,16 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                         {typo(para)}
                       </p>
                     ))}
-                    {s.image && (
-                      <figure className="mt-2 flex flex-col gap-2">
-                        <div className="overflow-hidden rounded-xl border border-foreground/10">
-                          <ZoomableImage
-                            src={s.image}
-                            alt={s.caption?.[locale] ?? s.heading[locale]}
-                            width={1600}
-                            height={1000}
-                            className="h-auto w-full"
-                            blurDataURL={blur[s.image]}
-                          />
-                        </div>
-                        {s.caption?.[locale] && (
-                          <figcaption className="text-sm text-muted leading-relaxed">
-                            {typo(s.caption[locale])}
-                          </figcaption>
-                        )}
-                      </figure>
-                    )}
-                    {s.images?.map((im, i) => (
-                      <figure key={i} className="mt-2 flex flex-col gap-2">
-                        <div className="overflow-hidden rounded-xl border border-foreground/10">
-                          <ZoomableImage
-                            src={im.src}
-                            alt={im.caption?.[locale] ?? s.heading[locale]}
-                            width={1600}
-                            height={1000}
-                            className="h-auto w-full"
-                            blurDataURL={blur[im.src]}
-                          />
-                        </div>
-                        {im.caption?.[locale] && (
-                          <figcaption className="text-sm text-muted leading-relaxed">
-                            {typo(im.caption[locale])}
-                          </figcaption>
-                        )}
-                      </figure>
+                    {[
+                      ...(s.image ? [{ src: s.image, caption: s.caption?.[locale] }] : []),
+                      ...(s.images ?? []).map((im) => ({ src: im.src, caption: im.caption?.[locale] })),
+                    ].map((f, i) => (
+                      <CaseFigure
+                        key={i}
+                        src={f.src}
+                        alt={f.caption ?? s.heading[locale]}
+                        caption={f.caption}
+                      />
                     ))}
                   </section>
                 </FadeIn>
@@ -162,6 +136,47 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
         </div>
       </main>
     </>
+  );
+}
+
+function CaseFigure({
+  src,
+  alt,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+}) {
+  const m = imageMeta[src];
+  const w = m?.w ?? 1600;
+  const h = m?.h ?? 1000;
+  const isGif = m?.format === "gif";
+  const isPortrait = m ? m.h > m.w : false;
+  // Phone/portrait screenshots cap at 390px; small gifs (the cat) at 80px.
+  const wrapMax = isGif ? "max-w-[80px]" : isPortrait ? "max-w-[390px]" : "";
+  return (
+    <figure className="mt-2 flex flex-col gap-2">
+      <div
+        className={`overflow-hidden border border-foreground/10 ${
+          isGif ? "rounded-lg" : "rounded-xl"
+        } ${wrapMax}`}
+      >
+        <ZoomableImage
+          src={src}
+          alt={alt}
+          width={w}
+          height={h}
+          className="h-auto w-full"
+          blurDataURL={blur[src]}
+        />
+      </div>
+      {caption && (
+        <figcaption className="max-w-[768px] text-sm text-muted leading-relaxed">
+          {typo(caption)}
+        </figcaption>
+      )}
+    </figure>
   );
 }
 
