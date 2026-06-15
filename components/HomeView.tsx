@@ -40,10 +40,10 @@ export function HomeView({ locale }: { locale: Locale }) {
               {experience.map((e, i) => (
                 <li
                   key={i}
-                  className="grid grid-cols-[80px_140px_minmax(0,1fr)] items-baseline gap-x-5 whitespace-nowrap"
+                  className="grid grid-cols-[64px_minmax(0,1fr)] items-baseline gap-x-4 sm:grid-cols-[80px_160px_minmax(0,1fr)] sm:gap-x-5"
                 >
                   <span className="text-muted">{e.year[locale]}</span>
-                  <span>
+                  <span className="truncate">
                     {e.href ? (
                       e.company === "Ykt.Ru" ? (
                         <FrostLink href={e.href}>{e.company}</FrostLink>
@@ -61,7 +61,7 @@ export function HomeView({ locale }: { locale: Locale }) {
                       <span className="font-medium">{e.company}</span>
                     )}
                   </span>
-                  <span className="text-muted">{e.role[locale]}</span>
+                  <span className="hidden text-muted sm:block">{e.role[locale]}</span>
                 </li>
               ))}
             </ul>
