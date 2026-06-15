@@ -53,6 +53,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
   );
 
   return (
+    <>
     <header className={`${sticky ? "sticky top-0" : "relative"} z-30 backdrop-blur-md bg-[color:var(--background)]/70 border-b border-rule`}>
       <div className="flex justify-center px-6 py-4">
         <div className="flex w-full max-w-[1800px] items-center justify-between gap-6 text-[15px] uppercase tracking-[-0.02em]">
@@ -106,10 +107,12 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
         </button>
         </div>
       </div>
+      </header>
 
-      {/* Mobile overlay */}
+      {/* Mobile overlay — rendered OUTSIDE <header> so the header's backdrop-blur
+          doesn't trap fixed positioning (that left the panel transparent/clipped) */}
       {open && (
-        <div className="fixed inset-0 z-40 flex flex-col bg-[color:var(--background)] md:hidden">
+        <div className="fixed inset-0 z-50 flex flex-col bg-[color:var(--background)] md:hidden">
           <div className="flex items-start justify-between gap-6 border-b border-rule px-6 py-4 text-[15px] uppercase tracking-[-0.02em]">
             {NameBlock}
             <button
@@ -167,6 +170,6 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
           </nav>
         </div>
       )}
-    </header>
+    </>
   );
 }
