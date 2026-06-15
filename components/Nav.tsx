@@ -73,7 +73,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
             email={links.email}
             label="Email"
             copiedLabel={isEn ? "Copied" : "Скопировано"}
-            className="hover:text-foreground transition-colors"
+            className="uppercase hover:text-foreground transition-colors"
           />
           <a
             href={links.cv}
@@ -149,7 +149,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
               email={links.email}
               label="Email"
               copiedLabel={isEn ? "Copied" : "Скопировано"}
-              className="text-left hover:text-foreground transition-colors"
+              className="uppercase text-left hover:text-foreground transition-colors"
             />
             <a
               href={links.cv}
