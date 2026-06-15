@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Locale, links, t } from "@/content";
+import { CopyEmail } from "./CopyEmail";
 
 export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolean }) {
   const pathname = usePathname() || "/";
@@ -67,12 +68,12 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
           >
             Telegram
           </a>
-          <a
-            href={`mailto:${links.email}`}
+          <CopyEmail
+            email={links.email}
+            label="Email"
+            copiedLabel={isEn ? "Copied" : "Скопировано"}
             className="hover:text-foreground transition-colors"
-          >
-            Email
-          </a>
+          />
           <a
             href={links.cv}
             target="_blank"
@@ -141,13 +142,12 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
             >
               Telegram
             </a>
-            <a
-              href={`mailto:${links.email}`}
-              onClick={() => setOpen(false)}
-              className="hover:text-foreground transition-colors"
-            >
-              Email
-            </a>
+            <CopyEmail
+              email={links.email}
+              label="Email"
+              copiedLabel={isEn ? "Copied" : "Скопировано"}
+              className="text-left hover:text-foreground transition-colors"
+            />
             <a
               href={links.cv}
               target="_blank"
