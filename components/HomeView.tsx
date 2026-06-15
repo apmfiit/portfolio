@@ -40,9 +40,9 @@ export function HomeView({ locale }: { locale: Locale }) {
               {experience.map((e, i) => (
                 <li
                   key={i}
-                  className="grid grid-cols-[64px_minmax(0,1fr)] items-baseline gap-x-4 sm:grid-cols-[80px_160px_minmax(0,1fr)] sm:gap-x-5"
+                  className="grid grid-cols-[112px_minmax(0,1fr)] items-baseline gap-x-4 sm:grid-cols-[120px_150px_minmax(0,1fr)] sm:gap-x-5"
                 >
-                  <span className="text-muted">{e.year[locale]}</span>
+                  <span className="whitespace-nowrap text-muted">{e.year[locale]}</span>
                   <span className="truncate">
                     {e.href ? (
                       e.company === "Ykt.Ru" ? (

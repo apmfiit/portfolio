@@ -1029,7 +1029,7 @@ export const projects: Project[] = [
 
 export const experience: Experience[] = [
   {
-    year: { en: "Present", ru: "Сейчас" },
+    year: { en: "2025 – Present", ru: "2025 – Сейчас" },
     company: "ВТБ",
     href: "https://www.vtb.ru/personal/online-servisy/vtb-online/",
     role: { en: "Senior Product Designer", ru: "Старший продуктовый дизайнер" },
