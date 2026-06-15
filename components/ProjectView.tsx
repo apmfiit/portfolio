@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Locale, projects, t } from "@/content";
@@ -154,25 +155,42 @@ function CaseFigure({
   const isGif = m?.format === "gif";
   const isPortrait = m ? m.h > m.w : false;
   // Phone/portrait screenshots cap at 390px; small gifs (the cat) at 80px.
+  // Both are centered in the column.
+  const constrained = isGif || isPortrait;
   const wrapMax = isGif ? "max-w-[80px]" : isPortrait ? "max-w-[390px]" : "";
   return (
-    <figure className="mt-2 flex flex-col gap-2">
+    <figure className={`mt-2 flex flex-col gap-2 ${constrained ? "items-center" : ""}`}>
       <div
         className={`overflow-hidden border border-foreground/10 ${
           isGif ? "rounded-lg" : "rounded-xl"
         } ${wrapMax}`}
       >
-        <ZoomableImage
-          src={src}
-          alt={alt}
-          width={w}
-          height={h}
-          className="h-auto w-full"
-          blurDataURL={blur[src]}
-        />
+        {isGif ? (
+          <Image
+            src={src}
+            alt={alt}
+            width={w}
+            height={h}
+            className="h-auto w-full"
+            unoptimized
+          />
+        ) : (
+          <ZoomableImage
+            src={src}
+            alt={alt}
+            width={w}
+            height={h}
+            className="h-auto w-full"
+            blurDataURL={blur[src]}
+          />
+        )}
       </div>
       {caption && (
-        <figcaption className="max-w-[768px] text-sm text-muted leading-relaxed">
+        <figcaption
+          className={`max-w-[768px] text-sm text-muted leading-relaxed ${
+            constrained ? "text-center" : ""
+          }`}
+        >
           {typo(caption)}
         </figcaption>
       )}
