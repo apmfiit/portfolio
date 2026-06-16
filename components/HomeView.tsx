@@ -4,6 +4,7 @@ import { ProjectCard } from "./ProjectCard";
 import { FadeIn } from "./FadeIn";
 import { FrostLink } from "./FrostLink";
 import { WaveHand } from "./WaveHand";
+import { VtbMark } from "./VtbMark";
 import { typo } from "@/lib/typo";
 
 export function HomeView({ locale }: { locale: Locale }) {
@@ -22,12 +23,34 @@ export function HomeView({ locale }: { locale: Locale }) {
               <h1 className="max-w-2xl text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
                 {(() => {
                   const [before, after = ""] = tr.tagline.split("👋");
+                  const comp = locale === "en" ? "VTB" : "ВТБ";
+                  const idx = after.lastIndexOf(comp);
+                  const afterNode =
+                    idx === -1 ? (
+                      typo(after)
+                    ) : (
+                      <>
+                        {typo(after.slice(0, idx))}
+                        {" "}
+                        <span className="whitespace-nowrap">
+                          <VtbMark
+                            className="inline-block h-[0.47em] w-[0.77em]"
+                            style={{
+                              verticalAlign: "0.43em",
+                              marginRight: "0.16em",
+                            }}
+                          />
+                          {comp}
+                        </span>
+                        {after.slice(idx + comp.length)}
+                      </>
+                    );
                   return (
                     <>
                       {typo(before)}{" "}
                       <WaveHand />{" "}
                       <br className="hidden sm:block" />
-                      {typo(after)}
+                      {afterNode}
                     </>
                   );
                 })()}
