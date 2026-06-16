@@ -7,10 +7,27 @@ import { Nav } from "./Nav";
 import { FadeIn } from "./FadeIn";
 import { CopyEmail } from "./CopyEmail";
 import { ZoomableImage } from "./ZoomableImage";
+import { PinIcon } from "./PinIcon";
+
+const DESIGN_START_YEAR = 2021;
+
+function ruYears(n: number): string {
+  const m10 = n % 10;
+  const m100 = n % 100;
+  if (m10 === 1 && m100 !== 11) return "год";
+  if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return "года";
+  return "лет";
+}
 
 export function AboutView({ locale }: { locale: Locale }) {
   const tr = t[locale];
   const isEn = locale === "en";
+
+  const years = new Date().getFullYear() - DESIGN_START_YEAR;
+  const expLabel = isEn
+    ? `${years} ${years === 1 ? "year" : "years"} of experience`
+    : `${years} ${ruYears(years)} опыта`;
+  const city = isEn ? "Moscow" : "Москва";
 
   return (
     <>
@@ -32,59 +49,19 @@ export function AboutView({ locale }: { locale: Locale }) {
                   blurDataURL={blur["/images/avatar-rectangular.jpg"]}
                   className="h-20 w-20 rounded-2xl border border-foreground/10 object-cover sm:h-24 sm:w-24"
                 />
-                <p className="text-sm uppercase tracking-[-0.02em] text-muted">
-                  {about.location[locale]}
+                <p className="flex items-center gap-2 text-sm uppercase tracking-[-0.02em] text-muted">
+                  <span>{expLabel}</span>
+                  <span aria-hidden>·</span>
+                  <span className="inline-flex items-center gap-1">
+                    <PinIcon className="h-3.5 w-3.5" />
+                    {city}
+                  </span>
                 </p>
               </div>
               <p className="max-w-2xl text-xl leading-relaxed text-balance sm:text-2xl">
                 {typo(about.intro[locale])}
               </p>
             </header>
-          </FadeIn>
-
-          {/* Experience */}
-          <FadeIn delay={0.05}>
-            <Section label={tr.experienceFull}>
-              <div className="flex flex-col gap-10">
-                {about.jobs.map((job, i) => (
-                  <div
-                    key={i}
-                    className="grid grid-cols-1 gap-2 sm:grid-cols-[160px_minmax(0,1fr)] sm:gap-8"
-                  >
-                    <p className="text-sm text-muted sm:pt-0.5">
-                      {job.period[locale]}
-                    </p>
-                    <div className="flex flex-col gap-3">
-                      {job.href ? (
-                        <a
-                          href={job.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="font-medium underline underline-offset-2 decoration-rule hover:decoration-foreground"
-                        >
-                          {job.company}
-                        </a>
-                      ) : (
-                        <span className="font-medium">{job.company}</span>
-                      )}
-                      <p className="text-muted leading-relaxed">
-                        {typo(job.summary[locale])}
-                      </p>
-                      <ul className="flex flex-col gap-1.5">
-                        {job.bullets[locale].map((b, j) => (
-                          <li
-                            key={j}
-                            className="relative pl-4 leading-relaxed text-foreground/80 before:absolute before:left-0 before:text-muted before:content-['—']"
-                          >
-                            {typo(b)}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Section>
           </FadeIn>
 
           {/* Growth & learning */}

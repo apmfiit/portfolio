@@ -5,6 +5,7 @@ import { FadeIn } from "./FadeIn";
 import { FrostLink } from "./FrostLink";
 import { WaveHand } from "./WaveHand";
 import { VtbMark } from "./VtbMark";
+import { MoscowClock } from "./MoscowClock";
 import { typo } from "@/lib/typo";
 
 export function HomeView({ locale }: { locale: Locale }) {
@@ -20,7 +21,7 @@ export function HomeView({ locale }: { locale: Locale }) {
         <FadeIn>
           <section className="grid gap-10 lg:grid-cols-[1fr_minmax(0,560px)] lg:gap-16">
             <div className="flex flex-col gap-5">
-              <h1 className="max-w-2xl text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
+              <h1 className="text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
                 {(() => {
                   const [before, after = ""] = tr.tagline.split("👋");
                   const comp = locale === "en" ? "VTB" : "ВТБ";
@@ -37,7 +38,8 @@ export function HomeView({ locale }: { locale: Locale }) {
                             className="inline-block h-[0.47em] w-[0.77em]"
                             style={{
                               verticalAlign: "0.43em",
-                              marginRight: "0.16em",
+                              marginLeft: "0.18em",
+                              marginRight: "0.18em",
                             }}
                           />
                           {comp}
@@ -107,8 +109,9 @@ export function HomeView({ locale }: { locale: Locale }) {
           </section>
         </FadeIn>
 
-        <footer className="mt-24 border-t border-rule pt-8 text-sm text-muted">
+        <footer className="mt-24 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-rule pt-8 text-sm text-muted">
           <span>{new Date().getFullYear()}</span>
+          <MoscowClock locale={locale} />
         </footer>
         </div>
       </main>
