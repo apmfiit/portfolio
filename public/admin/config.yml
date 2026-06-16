@@ -3,7 +3,7 @@ backend:
   repo: apmfiit/portfolio
   branch: main
   # Cloudflare Worker (sveltia-cms-auth) that holds the GitHub OAuth secret.
-  base_url: https://sveltia-cms-auth.petr.workers.dev
+  base_url: https://sveltia-cms-auth.apm-x17.workers.dev
 
 locale: ru
 media_folder: public/images
