@@ -1169,7 +1169,15 @@ export const about = {
         en: "1st place at the Yandex.Market × Yandex Praktikum hackathon — a warehouse-packer interface",
         ru: "Первое место на хакатоне от Яндекс.Маркета и Яндекс Практикума — интерфейс упаковщика склада",
       },
-      images: ["/images/achievment-1.png", "/images/achievment-3-diploma.jpeg"],
+      images: ["/images/achievment-1.png"],
+    },
+    {
+      year: "2020",
+      text: {
+        en: "Honours diploma, MSc at NEFU — “Fundamental Informatics and Information Technologies”",
+        ru: "Диплом с отличием, магистратура СВФУ «Фундаментальные информатика и информационные технологии»",
+      },
+      images: ["/images/achievment-3-diploma.jpeg"],
     },
     {
       year: "2020",
