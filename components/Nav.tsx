@@ -18,6 +18,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
   const otherCode = isEn ? "RU" : "EN";
 
   const homeHref = isEn ? "/en/" : "/";
+  const aboutHref = isEn ? "/en/about/" : "/about/";
 
   // Lock body scroll while overlay is open
   useEffect(() => {
@@ -61,6 +62,9 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-5 text-muted md:flex">
+          <Link href={aboutHref} className="hover:text-foreground transition-colors">
+            {tr.about}
+          </Link>
           <a
             href={links.telegram}
             target="_blank"
@@ -136,6 +140,13 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
             </button>
           </div>
           <nav className="flex flex-col gap-7 px-6 pt-10 pb-10 text-[15px] uppercase tracking-[-0.02em] text-muted">
+            <Link
+              href={aboutHref}
+              onClick={() => setOpen(false)}
+              className="hover:text-foreground transition-colors"
+            >
+              {tr.about}
+            </Link>
             <a
               href={links.telegram}
               target="_blank"

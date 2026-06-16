@@ -1057,6 +1057,139 @@ export const links = {
   cv: "https://docs.google.com/document/d/1vShnasu4vFiBEl9XZZflFf3KOtvvDots56kp9Mvmpcc/edit?tab=t.0",
 };
 
+export type AboutJob = {
+  period: LocalizedString;
+  company: string;
+  href?: string;
+  summary: LocalizedString;
+  bullets: LocalizedList;
+};
+
+export type AboutAchievement = {
+  year: string;
+  text: LocalizedString;
+};
+
+export const about = {
+  intro: {
+    en: "Hi! 👋 I’m a product designer at VTB Online. Before that, at Lofty I worked on gamer services for KUPIKOD — e-commerce products and a marketplace. At Ykt.Ru I grew Yakutia’s digital service ecosystem ❄️",
+    ru: "Привет! 👋 Я продуктовый дизайнер в ВТБ Онлайн. До этого в Lofty работал над сервисами для геймеров KUPIKOD — проектировал e-commerce продукты и маркетплейс. В Ykt.Ru развивал цифровую экосистему сервисов Якутии ❄️",
+  } as LocalizedString,
+  location: { en: "4 years of experience · Moscow", ru: "4 года опыта · Москва" } as LocalizedString,
+  jobs: [
+    {
+      period: { en: "January 2025 — present", ru: "Январь 2025 — сейчас" },
+      company: "Банк ВТБ",
+      href: "https://www.vtb.ru/personal/online-servisy/vtb-online/",
+      summary: {
+        en: "Notifications cluster — the notifications section in VTB Online and the mobile app, plus the admin panel for sending and configuring push notifications.",
+        ru: "Кластер «Нотификация» — раздел уведомлений в ВТБ Онлайн и мобильном приложении, админка отправки и настроек push-уведомлений.",
+      },
+      bullets: {
+        en: [
+          "Design client-facing web interfaces with a focus on usability and accessibility",
+          "Work within the design system",
+          "Prepare presentations for business teams — clear visuals for internal meetings and strategic planning",
+        ],
+        ru: [
+          "Проектирую клиентские веб-интерфейсы с фокусом на удобство и доступность пользовательского опыта",
+          "Работаю в рамках дизайн-системы",
+          "Готовлю презентации для бизнес-команд — наглядная подача для внутренних встреч и стратегического планирования",
+        ],
+      },
+    },
+    {
+      period: { en: "May 2024 — January 2025", ru: "Май 2024 — Январь 2025" },
+      company: "Lofty / KUPIKOD",
+      href: "https://kupikod.com/",
+      summary: {
+        en: "A gamer service ecosystem at the intersection of e-commerce and IT — digital-goods distribution and game-service top-ups. Product UI/UX designer.",
+        ru: "Экосистема сервисов для геймеров на стыке e-commerce и IT — дистрибуция цифровых товаров и пополнение игровых сервисов. Продуктовый UI/UX дизайнер.",
+      },
+      bullets: {
+        en: [
+          "Concepts and interfaces for the marketplace and e-commerce — desktop and mobile, promo landings, iOS/Android apps; brand identity for new products",
+          "Graphics: icons, illustrations, interface graphics and banners",
+          "Worked with engineers and stakeholders across every stage — from concept to production",
+          "Tested hypotheses and optimized products to lift e-commerce performance",
+        ],
+        ru: [
+          "Концепции и интерфейсы для маркетплейса и e-commerce — десктоп и мобильные версии, промо-лендинги, приложения iOS/Android; фирменный стиль новых продуктов",
+          "Графика: иконки, иллюстрации, интерфейсная графика и баннеры",
+          "Работа с разработчиками и стейкхолдерами на всех этапах — от концепции до продакшна",
+          "Проверка гипотез и оптимизация продуктов для роста эффективности e-commerce",
+        ],
+      },
+    },
+    {
+      period: { en: "August 2020 — May 2024", ru: "Август 2020 — Май 2024" },
+      company: "Ykt.Ru",
+      href: "https://ykt.ru/about",
+      summary: {
+        en: "Yakutia’s digital service ecosystem. Worked across several of its products.",
+        ru: "Цифровая экосистема сервисов Якутии. Работал над несколькими продуктами экосистемы.",
+      },
+      bullets: {
+        en: [
+          "Designed new features and maintained the design system for cross-platform services; followed Android (Material) and iOS (HIG) guidelines",
+          "Defended design to stakeholders, ran design reviews and quality control of shipped features",
+          "Mentored junior designers",
+          "Sinet startup studio: designed a dating app from scratch — deep interviews, usability tests, an interactive Figma prototype",
+          "Ykt.Ru media portal: redesigned the homepage and the comments feed (+5% on recommendation conversion), a weather & air-quality block, a UI kit and brand book",
+        ],
+        ru: [
+          "Дизайн новых функций и поддержка дизайн-системы кроссплатформенных сервисов; гайдлайны Android (Material) и iOS (HIG)",
+          "Защита дизайна перед стейкхолдерами, дизайн-review и контроль качества выпускаемых фич",
+          "Менторство младших дизайнеров",
+          "Стартап-студия Sinet: с нуля спроектировал мобильное приложение для знакомств — глубинные интервью, юзабилити-тесты, интерактивный прототип в Figma",
+          "Медиапортал Ykt.Ru: редизайн главной и ленты комментариев (+5% к конверсии рекомендаций), блок погоды и качества воздуха, UI-кит и брендбук",
+        ],
+      },
+    },
+  ] as AboutJob[],
+  growth: {
+    en: [
+      "Mentored by leads from big-tech companies",
+      "Regularly take design courses, attend design events and join hackathons",
+      "Graduate of Memorisely and Yandex Praktikum 🎓",
+      "English B2–C1 🇬🇧",
+    ],
+    ru: [
+      "Менторюсь у лидов big-tech компаний",
+      "Регулярно прохожу курсы по дизайну, посещаю дизайн-ивенты и участвую в хакатонах",
+      "Выпускник Memorisely и Яндекс Практикума 🎓",
+      "Английский B2–C1 🇬🇧",
+    ],
+  } as LocalizedList,
+  achievements: [
+    {
+      year: "2023",
+      text: {
+        en: "1st place at the Yandex.Market × Yandex Praktikum hackathon — a warehouse-packer interface",
+        ru: "Первое место на хакатоне от Яндекс.Маркета и Яндекс Практикума — интерфейс упаковщика склада",
+      },
+    },
+    {
+      year: "2020",
+      text: {
+        en: "Winner of the “Discovery of the Year” award (Sinet Team Heroes 2020)",
+        ru: "Победитель премии «Открытие года» (Sinet Team Heroes 2020)",
+      },
+    },
+    {
+      year: "2005",
+      text: {
+        en: "Top-2 in the city and top-3 in the republic at school technical-drawing olympiads",
+        ru: "Топ-2 города и топ-3 республики на школьных олимпиадах по черчению",
+      },
+    },
+  ] as AboutAchievement[],
+  personal: {
+    en: "I keep a healthy lifestyle, do fitness, and write a bit of code.",
+    ru: "Веду здоровый образ жизни, занимаюсь фитнесом и немного пишу код.",
+  } as LocalizedString,
+};
+
 export const t = {
   en: {
     tagline: "Hi! 👋\nI’m a senior product designer at VTB",
@@ -1076,6 +1209,10 @@ export const t = {
     skills: "Skills",
     platforms: "Platforms",
     designedBy: "Designed by Petr",
+    experienceFull: "Experience",
+    growth: "Growth & learning",
+    achievements: "Achievements",
+    aboutMe: "About me",
   },
   ru: {
     tagline: "Привет, я Петя 👋\nСтарший продуктовый дизайнер в ВТБ",
@@ -1095,5 +1232,9 @@ export const t = {
     skills: "Навыки",
     platforms: "Платформы",
     designedBy: "Сделано Петром",
+    experienceFull: "Опыт работы",
+    growth: "Развитие и обучение",
+    achievements: "Достижения",
+    aboutMe: "Обо мне",
   },
 } as const;
