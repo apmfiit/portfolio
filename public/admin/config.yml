@@ -1,0 +1,162 @@
+backend:
+  name: github
+  repo: apmfiit/portfolio
+  branch: main
+  # Cloudflare Worker (sveltia-cms-auth) that holds the GitHub OAuth secret.
+  # Replace with your deployed worker URL, e.g. https://sveltia-auth.<you>.workers.dev
+  base_url: https://REPLACE_WITH_YOUR_OAUTH_WORKER
+
+locale: ru
+media_folder: public/images
+public_folder: /images
+
+# Reusable bilingual field shapes (RU + EN). Defined once, referenced below.
+_anchors:
+  loc_string: &loc_string
+    - { name: ru, label: RU, widget: string }
+    - { name: en, label: EN, widget: string }
+  loc_text: &loc_text
+    - { name: ru, label: RU, widget: text }
+    - { name: en, label: EN, widget: text }
+  loc_string_list: &loc_string_list
+    - { name: ru, label: RU, widget: list, field: { name: item, widget: string } }
+    - { name: en, label: EN, widget: list, field: { name: item, widget: string } }
+  loc_text_list: &loc_text_list
+    - { name: ru, label: RU, widget: list, field: { name: para, widget: text } }
+    - { name: en, label: EN, widget: list, field: { name: para, widget: text } }
+  t_fields: &t_fields
+    - { name: tagline, label: Заголовок, widget: string }
+    - { name: taglineSub, label: Описание 1, widget: text }
+    - { name: taglineSub2, label: Описание 2, widget: text }
+    - { name: location, widget: string }
+    - { name: work, widget: string }
+    - { name: experience, widget: string }
+    - { name: selectedWork, widget: string }
+    - { name: about, widget: string }
+    - { name: contacts, widget: string }
+    - { name: cv, widget: string }
+    - { name: backHome, widget: string }
+    - { name: onThisPage, widget: string }
+    - { name: role, widget: string }
+    - { name: timeline, widget: string }
+    - { name: team, widget: string }
+    - { name: skills, widget: string }
+    - { name: platforms, widget: string }
+    - { name: designedBy, widget: string }
+    - { name: experienceFull, widget: string }
+    - { name: growth, widget: string }
+    - { name: achievements, widget: string }
+    - { name: aboutMe, widget: string }
+
+collections:
+  - name: projects
+    label: Кейсы
+    label_singular: Кейс
+    folder: content/data/projects
+    extension: json
+    format: json
+    create: true
+    identifier_field: slug
+    summary: "{{fields.headline.ru}}"
+    fields:
+      - { name: slug, label: Slug (URL), widget: string }
+      - { name: company, label: Компания, widget: string }
+      - { name: year, label: Год, widget: string }
+      - { name: cover, label: Обложка, widget: image, required: false }
+      - { name: status, label: Статус, widget: object, fields: *loc_string }
+      - { name: headline, label: Заголовок, widget: object, fields: *loc_string }
+      - { name: blurb, label: Краткое описание, widget: object, fields: *loc_text }
+      - name: meta
+        label: Мета
+        widget: object
+        required: false
+        fields:
+          - { name: role, label: Роль, widget: object, fields: *loc_string }
+          - { name: timeline, label: Сроки, widget: object, fields: *loc_string }
+          - { name: team, label: Команда, widget: object, required: false, fields: *loc_string_list }
+          - { name: skills, label: Навыки, widget: object, required: false, fields: *loc_string_list }
+          - { name: platforms, label: Платформы, widget: object, required: false, fields: *loc_string_list }
+      - name: sections
+        label: Секции
+        label_singular: Секция
+        widget: list
+        required: false
+        summary: "{{fields.heading.ru}}"
+        fields:
+          - { name: id, label: ID (якорь URL), widget: string }
+          - { name: eyebrow, label: Надзаголовок, widget: object, fields: *loc_string }
+          - { name: heading, label: Заголовок секции, widget: object, fields: *loc_string }
+          - { name: body, label: Текст (абзацы), widget: object, required: false, fields: *loc_text_list }
+          - { name: image, label: Картинка (одиночная), widget: image, required: false }
+          - { name: caption, label: Подпись, widget: object, required: false, fields: *loc_string }
+          - name: images
+            label: Картинки
+            widget: list
+            required: false
+            fields:
+              - { name: src, label: Файл, widget: image }
+              - { name: caption, label: Подпись, widget: object, required: false, fields: *loc_string }
+
+  - name: settings
+    label: Настройки сайта
+    files:
+      - name: experience
+        label: Опыт (главная)
+        file: content/data/experience.json
+        fields:
+          - name: items
+            label: Места работы
+            widget: list
+            summary: "{{fields.company}}"
+            fields:
+              - { name: year, label: Год, widget: object, fields: *loc_string }
+              - { name: company, label: Компания, widget: string }
+              - { name: href, label: Ссылка, widget: string, required: false }
+              - { name: role, label: Роль, widget: object, fields: *loc_string }
+      - name: about
+        label: Обо мне
+        file: content/data/about.json
+        fields:
+          - { name: intro, label: Интро, widget: object, fields: *loc_text }
+          - { name: location, label: Опыт · Город, widget: object, fields: *loc_string }
+          - name: jobs
+            label: Опыт работы (детально)
+            widget: list
+            summary: "{{fields.company}}"
+            fields:
+              - { name: period, label: Период, widget: object, fields: *loc_string }
+              - { name: company, label: Компания, widget: string }
+              - { name: href, label: Ссылка, widget: string, required: false }
+              - { name: summary, label: Кратко, widget: object, fields: *loc_text }
+              - { name: bullets, label: Пункты, widget: object, fields: *loc_text_list }
+          - { name: growth, label: Развитие и обучение, widget: object, fields: *loc_text_list }
+          - name: achievements
+            label: Достижения
+            widget: list
+            fields:
+              - { name: year, label: Год, widget: string }
+              - { name: text, label: Текст, widget: object, fields: *loc_text }
+              - name: images
+                label: Картинки
+                widget: list
+                required: false
+                field: { name: src, label: Файл, widget: image }
+          - { name: personal, label: О себе, widget: object, fields: *loc_text }
+      - name: site
+        label: Тексты UI и контакты
+        file: content/data/site.json
+        fields:
+          - name: links
+            label: Ссылки
+            widget: object
+            fields:
+              - { name: telegram, label: Telegram URL, widget: string }
+              - { name: telegramHandle, label: Telegram @, widget: string }
+              - { name: email, label: Email, widget: string }
+              - { name: cv, label: CV URL, widget: string }
+          - name: t
+            label: Тексты интерфейса
+            widget: object
+            fields:
+              - { name: ru, label: RU, widget: object, fields: *t_fields }
+              - { name: en, label: EN, widget: object, fields: *t_fields }
