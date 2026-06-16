@@ -5,7 +5,7 @@ import { FadeIn } from "./FadeIn";
 import { FrostLink } from "./FrostLink";
 import { WaveHand } from "./WaveHand";
 import { VtbMark } from "./VtbMark";
-import { MoscowClock } from "./MoscowClock";
+import { Footer } from "./Footer";
 import { typo } from "@/lib/typo";
 
 export function HomeView({ locale }: { locale: Locale }) {
@@ -109,10 +109,7 @@ export function HomeView({ locale }: { locale: Locale }) {
           </section>
         </FadeIn>
 
-        <footer className="mt-24 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-rule pt-8 text-sm text-muted">
-          <span>{new Date().getFullYear()}</span>
-          <MoscowClock locale={locale} />
-        </footer>
+        <Footer locale={locale} />
         </div>
       </main>
     </>

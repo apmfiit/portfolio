@@ -8,6 +8,7 @@ import { FadeIn } from "./FadeIn";
 import { CopyEmail } from "./CopyEmail";
 import { ZoomableImage } from "./ZoomableImage";
 import { PinIcon } from "./PinIcon";
+import { Footer } from "./Footer";
 
 // Designing since May 2021 — count only full years.
 const DESIGN_START = { year: 2021, month: 4 }; // month is 0-indexed (4 = May)
@@ -41,7 +42,8 @@ export function AboutView({ locale }: { locale: Locale }) {
     <>
       <Nav locale={locale} />
       <main className="flex justify-center px-6 pt-16 pb-24">
-        <div className="flex w-full max-w-[768px] flex-col gap-16">
+        <div className="w-full max-w-[768px]">
+        <div className="flex flex-col gap-16">
           {/* Intro */}
           <FadeIn>
             <header className="flex flex-col gap-6">
@@ -173,6 +175,8 @@ export function AboutView({ locale }: { locale: Locale }) {
               </div>
             </Section>
           </FadeIn>
+        </div>
+        <Footer locale={locale} />
         </div>
       </main>
     </>
