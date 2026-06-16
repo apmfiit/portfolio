@@ -55,38 +55,83 @@ a {
 }
 
 /* — Frost hover (Ykt.Ru) — */
+
+/* Icy, frozen typography on hover: bright cyan glow with a soft white core. */
+.frost-ice {
+  transition: color 0.5s ease, text-shadow 0.5s ease, text-decoration-color 0.5s ease;
+}
+.frost:hover .frost-ice {
+  color: #eaf9ff;
+  text-decoration-color: #7fdcff;
+  text-shadow:
+    0 0 1px rgba(255, 255, 255, 0.95),
+    0 0 3px rgba(214, 246, 255, 0.9),
+    0 0 8px rgba(90, 210, 255, 0.8),
+    0 0 16px rgba(46, 197, 255, 0.55),
+    0 0 30px rgba(46, 197, 255, 0.4);
+}
+
+/* Cold mist / frosty haze + bloom behind the word. */
+.frost::before {
+  content: "";
+  position: absolute;
+  inset: -0.55em -0.7em;
+  z-index: -1;
+  border-radius: 9999px;
+  background: radial-gradient(
+    60% 130% at 50% 50%,
+    rgba(120, 220, 255, 0.22),
+    rgba(120, 220, 255, 0) 70%
+  );
+  filter: blur(7px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.frost:hover::before {
+  opacity: 1;
+}
+
+/* Soft round snow particles drifting down. */
 .frost-flake {
   position: absolute;
   top: 0;
   pointer-events: none;
-  color: #9fd5f5;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 38%,
+    #ffffff 0%,
+    #d6f3ff 45%,
+    rgba(150, 220, 255, 0) 78%
+  );
+  box-shadow: 0 0 3px rgba(180, 235, 255, 0.85);
   opacity: 0;
-  transform: translate3d(0, -8px, 0) rotate(0deg);
+  transform: translate3d(0, -8px, 0);
   will-change: transform, opacity;
   --drift: 0px;
 }
 .frost:hover .frost-flake {
-  animation: frost-fall var(--dur, 3.2s) linear infinite;
+  animation: frost-fall var(--dur, 3.4s) linear infinite;
 }
 @keyframes frost-fall {
   0% {
     opacity: 0;
-    transform: translate3d(0, -8px, 0) rotate(0deg);
+    transform: translate3d(0, -8px, 0);
   }
   15% {
-    opacity: 0.9;
+    opacity: 0.95;
   }
   85% {
-    opacity: 0.9;
+    opacity: 0.95;
   }
   100% {
     opacity: 0;
-    transform: translate3d(var(--drift), 38px, 0) rotate(180deg);
+    transform: translate3d(var(--drift), 38px, 0);
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .frost:hover .frost-flake {
     animation: none;
-    opacity: 0.8;
+    opacity: 0.85;
   }
 }
