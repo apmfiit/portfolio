@@ -1,10 +1,7 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CopyIcon, CheckIcon } from "./icons";
-
-const useIsoLayoutEffect =
-  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 export function CopyEmail({
   email,
@@ -21,21 +18,6 @@ export function CopyEmail({
 }) {
   const [copied, setCopied] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  // Measure both label widths so the swap animates the button width — neighboring
-  // nav links slide smoothly instead of jumping when "Email" → "Скопировано".
-  const labelSizer = useRef<HTMLSpanElement>(null);
-  const copiedSizer = useRef<HTMLSpanElement>(null);
-  const [width, setWidth] = useState<number>();
-
-  // Reserve the wider of the two labels so the swap never reflows or clips —
-  // the full word is visible instantly, and we just cross-fade between them.
-  useIsoLayoutEffect(() => {
-    const a = labelSizer.current?.offsetWidth ?? 0;
-    const b = copiedSizer.current?.offsetWidth ?? 0;
-    const max = Math.max(a, b);
-    if (max) setWidth(max);
-  }, [label, copiedLabel]);
 
   useEffect(() => () => {
     if (timer.current) clearTimeout(timer.current);
@@ -71,37 +53,10 @@ export function CopyEmail({
       className={`group/copy inline-flex items-center gap-1 ${className ?? ""}`}
     >
       <span
-        className="relative inline-block text-center"
-        style={{ width }}
+        key={copied ? "copied" : "label"}
+        className="whitespace-nowrap animate-[lb-in_150ms_ease-out]"
       >
-        <span
-          className={`block whitespace-nowrap transition-opacity duration-150 ease-out ${
-            copied ? "opacity-0" : "opacity-100"
-          }`}
-        >
-          {label}
-        </span>
-        <span
-          aria-hidden={!copied}
-          className={`absolute inset-0 block whitespace-nowrap text-center transition-opacity duration-150 ease-out ${
-            copied ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          {copiedLabel}
-        </span>
-        {/* hidden sizers (inherit font/case/tracking from context) */}
-        <span
-          aria-hidden
-          className="pointer-events-none invisible absolute left-0 top-0 whitespace-nowrap"
-        >
-          <span ref={labelSizer}>{label}</span>
-        </span>
-        <span
-          aria-hidden
-          className="pointer-events-none invisible absolute left-0 top-0 whitespace-nowrap"
-        >
-          <span ref={copiedSizer}>{copiedLabel}</span>
-        </span>
+        {copied ? copiedLabel : label}
       </span>
       {copied ? (
         <CheckIcon className="h-3.5 w-3.5 shrink-0" />
