@@ -57,13 +57,13 @@ export function HomeView({ locale }: { locale: Locale }) {
                 })()}
               </h1>
 
-            <div className="grid gap-10 lg:grid-cols-[1fr_minmax(0,620px)] lg:gap-16">
-              <div className="flex max-w-xl flex-col gap-3 text-base leading-relaxed text-muted sm:text-lg">
+            <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2">
+              <div className="flex flex-col gap-3 text-base leading-relaxed text-muted">
                 <p>{typo(tr.taglineSub)}</p>
                 <p>{typo(tr.taglineSub2)}</p>
               </div>
 
-              <ul className="flex flex-col gap-2.5 text-base sm:text-lg">
+              <ul className="flex flex-col text-base leading-relaxed">
               {experience.map((e, i) => (
                 <li
                   key={i}
