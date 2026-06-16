@@ -11,6 +11,7 @@ type Props = {
   className?: string;
   priority?: boolean;
   blurDataURL?: string;
+  closeLabel?: string;
 };
 
 export function ZoomableImage({
@@ -21,6 +22,7 @@ export function ZoomableImage({
   className,
   priority,
   blurDataURL,
+  closeLabel = "Close",
 }: Props) {
   const [open, setOpen] = useState(false);
 
@@ -73,14 +75,14 @@ export function ZoomableImage({
             onClick={close}
             className="absolute right-6 top-6 text-[15px] uppercase tracking-[-0.02em] text-foreground hover:text-muted transition-colors"
           >
-            Close
+            {closeLabel}
           </button>
 
           <button
             type="button"
             onClick={close}
             className="relative flex max-h-full max-w-[1600px] cursor-zoom-out items-center justify-center"
-            aria-label="Close"
+            aria-label={closeLabel}
           >
             <Image
               src={src}

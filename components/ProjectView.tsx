@@ -16,6 +16,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
   const p = projects[idx];
   const next = projects[(idx + 1) % projects.length];
   const tr = t[locale];
+  const closeLabel = locale === "en" ? "Close" : "Закрыть";
   const workPrefix = locale === "en" ? "/en/work" : "/work";
   const homeHref = locale === "en" ? "/en/" : "/";
 
@@ -65,6 +66,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                   className="h-auto w-full"
                   priority
                   blurDataURL={blur[p.cover]}
+                  closeLabel={closeLabel}
                 />
               </div>
             </FadeIn>
@@ -107,6 +109,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                         src={f.src}
                         alt={f.caption ?? s.heading[locale]}
                         caption={f.caption}
+                        closeLabel={closeLabel}
                       />
                     ))}
                   </section>
@@ -144,10 +147,12 @@ function CaseFigure({
   src,
   alt,
   caption,
+  closeLabel,
 }: {
   src: string;
   alt: string;
   caption?: string;
+  closeLabel?: string;
 }) {
   const m = imageMeta[src];
   const w = m?.w ?? 1600;
@@ -183,6 +188,7 @@ function CaseFigure({
             height={h}
             className="h-auto w-full"
             blurDataURL={blur[src]}
+            closeLabel={closeLabel}
           />
         )}
       </div>
