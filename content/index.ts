@@ -1205,7 +1205,7 @@ export const about = {
 export const t = {
   en: {
     tagline: "Hi! 👋\nI’m a senior product designer at VTB",
-    taglineSub: "I design a B2C notification system: feed, pushes and settings, plus internal tools.",
+    taglineSub: "I design a B2C notification system: feed, pushes and settings,\nplus internal tools.",
     taglineSub2: "Over the past years I’ve designed e-commerce products and marketplaces.",
     location: "Moscow",
     work: "Work",
@@ -1229,7 +1229,7 @@ export const t = {
   },
   ru: {
     tagline: "Привет, я Петя 👋\nСтарший продуктовый дизайнер в ВТБ",
-    taglineSub: "Проектирую B2C систему уведомлений: ленту, пуши и настройки, а также внутренние инструменты.",
+    taglineSub: "Проектирую B2C систему уведомлений: ленту, пуши и настройки,\nа также внутренние инструменты.",
     taglineSub2: "За последние годы я проектировал e-commerce продукты и маркетплейсы.",
     location: "Москва",
     work: "Кейсы",
