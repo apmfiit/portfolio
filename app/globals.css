@@ -72,6 +72,41 @@ a {
     0 0 12px rgba(50, 180, 255, 0.5);
 }
 
+/* Soft frosty fog / cloud drifting behind the text (not clipped — extends past edges). */
+.frost-fog {
+  position: absolute;
+  inset: -0.7em -0.9em;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 9999px;
+  background:
+    radial-gradient(48% 70% at 26% 42%, rgba(255, 255, 255, 0.6), transparent 72%),
+    radial-gradient(44% 64% at 68% 58%, rgba(224, 246, 255, 0.5), transparent 72%),
+    radial-gradient(38% 58% at 50% 48%, rgba(206, 238, 255, 0.45), transparent 72%);
+  filter: blur(9px);
+  opacity: 0;
+  transition: opacity 0.55s ease;
+  will-change: transform, opacity;
+}
+.frost:hover .frost-fog {
+  opacity: 1;
+  animation: frost-fog-drift 7s ease-in-out infinite;
+}
+@keyframes frost-fog-drift {
+  0%,
+  100% {
+    transform: translate3d(-3px, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(3px, -1px, 0) scale(1.06);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .frost:hover .frost-fog {
+    animation: none;
+  }
+}
+
 /* Soft round snow particles drifting down. */
 .frost-flake {
   position: absolute;

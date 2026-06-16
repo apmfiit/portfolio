@@ -2,16 +2,16 @@
 
 import { ReactNode } from "react";
 
-// Soft round snow particles — small, varied sizes drifting down.
+// Soft round snow particles — varied sizes drifting down.
 const FLAKES = [
-  { left: "6%", size: 4, delay: 0, dur: 3.4, drift: 7 },
-  { left: "18%", size: 2.5, delay: 0.7, dur: 4.2, drift: -5 },
-  { left: "30%", size: 5, delay: 0.2, dur: 3.0, drift: 6 },
-  { left: "42%", size: 3, delay: 1.0, dur: 4.0, drift: -7 },
-  { left: "54%", size: 4, delay: 0.4, dur: 3.6, drift: 5 },
-  { left: "66%", size: 2.5, delay: 0.85, dur: 4.4, drift: -4 },
-  { left: "78%", size: 5, delay: 0.25, dur: 3.2, drift: 7 },
-  { left: "90%", size: 3, delay: 0.6, dur: 3.9, drift: -6 },
+  { left: "4%", size: 5, delay: 0, dur: 3.4, drift: 7 },
+  { left: "17%", size: 3.5, delay: 0.7, dur: 4.2, drift: -5 },
+  { left: "29%", size: 6, delay: 0.2, dur: 3.0, drift: 6 },
+  { left: "41%", size: 4, delay: 1.0, dur: 4.0, drift: -7 },
+  { left: "53%", size: 5.5, delay: 0.4, dur: 3.6, drift: 5 },
+  { left: "65%", size: 3.5, delay: 0.85, dur: 4.4, drift: -4 },
+  { left: "77%", size: 6, delay: 0.25, dur: 3.2, drift: 7 },
+  { left: "89%", size: 4, delay: 0.6, dur: 3.9, drift: -6 },
 ];
 
 export function FrostLink({
@@ -23,11 +23,12 @@ export function FrostLink({
 }) {
   return (
     <span className="frost group relative inline-block">
+      <span aria-hidden className="frost-fog" />
       <a
         href={href}
         target="_blank"
         rel="noreferrer"
-        className="frost-ice font-medium underline underline-offset-2 decoration-rule"
+        className="frost-ice relative font-medium underline underline-offset-2 decoration-rule"
       >
         {children}
       </a>
