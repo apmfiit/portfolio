@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { CopyIcon, CheckIcon } from "./icons";
 
 export function CopyEmail({
   email,
@@ -50,9 +51,14 @@ export function CopyEmail({
       onClick={copy}
       title={email}
       aria-label={`Copy email ${email}`}
-      className={className}
+      className={`group/copy inline-flex items-center gap-1 ${className ?? ""}`}
     >
-      {copied ? copiedLabel : label}
+      <span>{copied ? copiedLabel : label}</span>
+      {copied ? (
+        <CheckIcon className="h-3.5 w-3.5 shrink-0" />
+      ) : (
+        <CopyIcon className="h-3.5 w-3.5 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/copy:translate-x-0 group-hover/copy:opacity-100" />
+      )}
     </button>
   );
 }

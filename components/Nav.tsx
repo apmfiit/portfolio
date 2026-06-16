@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Locale, links, t } from "@/content";
 import { CopyEmail } from "./CopyEmail";
+import { ExternalLinkIcon } from "./icons";
 
 export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolean }) {
   const pathname = usePathname() || "/";
@@ -69,9 +70,10 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
             href={links.telegram}
             target="_blank"
             rel="noreferrer"
-            className="hover:text-foreground transition-colors"
+            className="group/link inline-flex items-center gap-1 hover:text-foreground transition-colors"
           >
             Telegram
+            <ExternalLinkIcon className="h-3 w-3 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
           </a>
           <CopyEmail
             email={links.email}
@@ -83,9 +85,10 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
             href={links.cv}
             target="_blank"
             rel="noreferrer"
-            className="hover:text-foreground transition-colors"
+            className="group/link inline-flex items-center gap-1 hover:text-foreground transition-colors"
           >
             {tr.cv}
+            <ExternalLinkIcon className="h-3 w-3 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
           </a>
           <Link
             href={otherHref}
@@ -152,9 +155,10 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
-              className="hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
             >
               Telegram
+              <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
             </a>
             <CopyEmail
               email={links.email}
@@ -167,9 +171,10 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
-              className="hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
             >
               {tr.cv}
+              <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
             </a>
             <Link
               href={otherHref}
