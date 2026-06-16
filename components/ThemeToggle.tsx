@@ -29,7 +29,13 @@ export function ThemeToggle() {
   };
 
   // Reserve space before mount to avoid layout shift / hydration mismatch.
-  if (!theme) return <span className="inline-block h-5 w-5" aria-hidden />;
+  if (!theme)
+    return (
+      <span
+        className="inline-block h-9 w-9 rounded-full border border-rule"
+        aria-hidden
+      />
+    );
 
   const dark = theme === "dark";
   return (
@@ -38,7 +44,7 @@ export function ThemeToggle() {
       onClick={toggle}
       aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
       title={dark ? "Light theme" : "Dark theme"}
-      className="inline-flex h-5 w-5 items-center justify-center text-muted transition-colors hover:text-foreground"
+      className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-rule text-muted transition-colors hover:border-foreground/30 hover:text-foreground"
     >
       {dark ? (
         <SunIcon className="h-[18px] w-[18px]" />
