@@ -18,9 +18,8 @@ export function HomeView({ locale }: { locale: Locale }) {
 
       <main className="flex justify-center px-6 pt-16 pb-10">
         <div className="w-full max-w-[1800px]">
-        <FadeIn>
           <section className="flex flex-col gap-8">
-              <h1 className="text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
+              <h1 className="shimmer-sweep text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
                 {(() => {
                   const [before, after = ""] = tr.tagline.split("👋");
                   const comp = locale === "en" ? "VTB" : "ВТБ";
@@ -58,7 +57,10 @@ export function HomeView({ locale }: { locale: Locale }) {
               </h1>
 
             <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2">
-              <div className="flex flex-col gap-1 text-base leading-relaxed text-muted">
+              <div
+                className="shimmer-sweep flex flex-col gap-1 text-base leading-relaxed text-muted"
+                style={{ animationDelay: "200ms" }}
+              >
                 <p>
                   {tr.taglineSub.split("\n").map((line, i) => (
                     <span key={i} className="block">
@@ -69,7 +71,10 @@ export function HomeView({ locale }: { locale: Locale }) {
                 <p className="xl:whitespace-nowrap">{typo(tr.taglineSub2)}</p>
               </div>
 
-              <ul className="flex flex-col text-base leading-relaxed">
+              <ul
+                className="shimmer-sweep flex flex-col text-base leading-relaxed"
+                style={{ animationDelay: "400ms" }}
+              >
               {experience.map((e, i) => (
                 <li
                   key={i}
@@ -102,7 +107,6 @@ export function HomeView({ locale }: { locale: Locale }) {
               </ul>
             </div>
           </section>
-        </FadeIn>
 
         <FadeIn delay={0.05}>
           <section className="mt-20">
