@@ -17,6 +17,11 @@ deploys (~1–2 min). No content lives in code anymore.
 
 Images you upload go into `public/images/` and are referenced as `/images/...`.
 
+> ✅ **Configured.** Auth worker: `https://sveltia-cms-auth.apm-x17.workers.dev`
+> (set as `base_url` in `public/admin/config.yml`). The steps below document the
+> one-time setup that's already done — keep for reference / if the worker is ever
+> recreated.
+
 ## One-time setup (login via GitHub)
 
 A static site can't keep the OAuth secret, so logging in needs a tiny free
