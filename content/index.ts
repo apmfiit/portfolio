@@ -685,8 +685,10 @@ export const projects: Project[] = [
           ],
         },
         images: [
-          { src: "/images/cases/lofty-homepage/img-1.png" },
-          { src: "/images/cases/lofty-homepage/img-2.png" },
+          {
+            src: "/images/cases/lofty-homepage/img-2.png",
+            caption: { en: "Previous version", ru: "Прошлая версия" },
+          },
         ],
       },
       {
