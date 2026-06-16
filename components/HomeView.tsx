@@ -58,7 +58,7 @@ export function HomeView({ locale }: { locale: Locale }) {
               </h1>
 
             <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2">
-              <div className="flex flex-col gap-3 text-base leading-relaxed text-muted">
+              <div className="flex flex-col gap-1 text-base leading-relaxed text-muted">
                 <p>
                   {tr.taglineSub.split("\n").map((line, i) => (
                     <span key={i} className="block">
@@ -76,7 +76,7 @@ export function HomeView({ locale }: { locale: Locale }) {
                   className="grid grid-cols-[130px_minmax(0,1fr)] items-baseline gap-x-5 sm:grid-cols-[150px_140px_minmax(0,1fr)] sm:gap-x-6"
                 >
                   <span className="whitespace-nowrap text-muted">{e.year[locale]}</span>
-                  <span className="truncate whitespace-nowrap">
+                  <span className="whitespace-nowrap">
                     {e.href ? (
                       e.company === "Ykt.Ru" ? (
                         <FrostLink href={e.href}>{e.company}</FrostLink>

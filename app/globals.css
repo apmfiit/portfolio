@@ -16,13 +16,21 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Dark theme tokens — applied when the system prefers dark (and the user hasn't
+   forced light), or when the user explicitly picks dark via the footer toggle. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --background: #0a0a0a;
     --foreground: #f5f5f4;
     --muted: #a3a3a3;
     --rule: #262626;
   }
+}
+:root[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #f5f5f4;
+  --muted: #a3a3a3;
+  --rule: #262626;
 }
 
 html,
