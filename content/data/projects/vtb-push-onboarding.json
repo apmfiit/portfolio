@@ -4,61 +4,61 @@
   "year": "2026",
   "cover": "/images/push-onboarding.png",
   "status": {
-    "en": "Rolling out",
-    "ru": "В раскатке"
+    "ru": "В раскатке",
+    "en": "Rolling out"
   },
   "headline": {
-    "en": "Simplifying push-notification onboarding",
-    "ru": "Как я упростил подключение пуш-уведомлений"
+    "ru": "Как я упростил подключение пуш-уведомлений",
+    "en": "Simplifying push-notification onboarding"
   },
   "blurb": {
-    "en": "Cut the reconnect flow from 7 steps to 4 by removing an internal toggle and mirroring system settings. Early rollout shows a meaningful lift in push enablement.",
-    "ru": "Сократил клиентский путь с 7 шагов до 4 для сценария переподключения, убрав внутренний тогл и перейдя на зеркалирование системных настроек. Первые цифры после раскатки на часть аудитории показывают рост подключений пушей."
+    "ru": "Сократил клиентский путь с 7 шагов до 4 для сценария переподключения, убрав внутренний тогл и перейдя на зеркалирование системных настроек. Первые цифры после раскатки на часть аудитории показывают рост подключений пушей.",
+    "en": "Cut the reconnect flow from 7 steps to 4 by removing an internal toggle and mirroring system settings. Early rollout shows a meaningful lift in push enablement."
   },
   "meta": {
     "role": {
-      "en": "Senior Product Designer",
-      "ru": "Старший продуктовый дизайнер"
+      "ru": "Старший продуктовый дизайнер",
+      "en": "Senior Product Designer"
     },
     "timeline": {
-      "en": "2025 – 2026",
-      "ru": "2025 – 2026"
+      "ru": "Q2 2026",
+      "en": "Q2 2026"
     },
     "team": {
-      "en": [
-        "Designer (me)",
-        "Product Owner",
-        "Business Analyst",
-        "Engineering team"
-      ],
       "ru": [
         "Дизайнер (я)",
         "Product Owner",
         "Бизнес-аналитик",
         "Команда разработки"
+      ],
+      "en": [
+        "Designer (me)",
+        "Product Owner",
+        "Business Analyst",
+        "Dev team"
       ]
     },
     "skills": {
-      "en": [
-        "Flow design",
-        "Benchmarking",
-        "Prototyping",
-        "Design system"
-      ],
       "ru": [
-        "Проектирование флоу",
+        "CJM",
         "Бенчмаркинг",
         "Прототипирование",
-        "Дизайн-система"
+        "Гайдлайны нотификаций для Android, iOS"
+      ],
+      "en": [
+        "CJM",
+        "Benchmarking",
+        "Prototyping",
+        "Android, iOS guidelines"
       ]
     },
     "platforms": {
-      "en": [
-        "Android (native)",
-        "iOS PWA"
-      ],
       "ru": [
         "Android (нативное приложение)",
+        "iOS PWA"
+      ],
+      "en": [
+        "Android (native)",
         "iOS PWA"
       ]
     }
@@ -67,23 +67,23 @@
     {
       "id": "context",
       "eyebrow": {
-        "en": "Context",
-        "ru": "Чем занимается наш кластер"
+        "ru": "Чем занимается наш кластер",
+        "en": "Context"
       },
       "heading": {
-        "en": "Pushes are how a bank reaches a client cheaply and reliably.",
-        "ru": "Уведомления — самый дешёвый и надёжный канал банка к клиенту."
+        "ru": "Уведомления — самый дешёвый и надёжный канал банка к клиенту.",
+        "en": "Pushes are how a bank reaches a client cheaply and reliably."
       },
       "body": {
-        "en": [
-          "I'm a senior product designer in the channel-apps team inside the notifications cluster at VTB. In plain terms — I own how a client enables, disables and generally interacts with notifications inside the VTB mobile bank.",
-          "The cluster raises push penetration. More clients on pushes and fewer on SMS means lower costs — SMS are expensive, pushes are practically free, so the strategy is to move communications to pushes wherever we can.",
-          "Sounds simple, but there are a lot of obstacles on the way. One of them — an inconvenient enablement flow — is what I took on."
-        ],
         "ru": [
           "Я старший продуктовый дизайнер команды канальных приложений в кластере нотификаций банка ВТБ. Если по-человечески — отвечаю за то, как клиент подключает, отключает и в целом взаимодействует с уведомлениями внутри мобильного банка ВТБ.",
           "Кластер нотификаций повышает проникновение пушей. Чем больше клиентов на пушах и меньше на СМС — тем меньше расходы банка. СМС стоят денег, пуши практически бесплатные, поэтому глобальная стратегия — максимально увести коммуникации в пуши.",
           "Звучит просто, но на пути клиента к пушам много препятствий. Одно из них — неудобный процесс подключения, которым я и занялся."
+        ],
+        "en": [
+          "I'm a senior product designer in the channel-apps team inside the notifications cluster at VTB. In plain terms — I own how a client enables, disables and generally interacts with notifications inside the VTB mobile bank.",
+          "The cluster raises push penetration. More clients on pushes and fewer on SMS means lower costs — SMS are expensive, pushes are practically free, so the strategy is to move communications to pushes wherever we can.",
+          "Sounds simple, but there are a lot of obstacles on the way. One of them — an inconvenient enablement flow — is what I took on."
         ]
       },
       "images": [
@@ -95,22 +95,14 @@
     {
       "id": "task",
       "eyebrow": {
-        "en": "Where the task came from",
-        "ru": "Откуда появилась задача"
+        "ru": "Откуда появилась задача",
+        "en": "Where the task came from"
       },
       "heading": {
-        "en": "“Optimize the client paths for enabling pushes — somehow.”",
-        "ru": "«Оптимизируй как-то клиентские пути подключения пушей»"
+        "ru": "«Оптимизируй как-то клиентские пути подключения пушей»",
+        "en": "“Optimize the client paths for enabling pushes — somehow.”"
       },
       "body": {
-        "en": [
-          "The brief from leadership was that broad. The bank had a course to maximally move away from SMS — clients had to be able to enable pushes faster and easier.",
-          "I set up a meeting with my team lead and sat down to write the task understanding.",
-          "Mission: simplify enabling and disabling pushes. At the time a user had to deal with two different toggles in two different places — granting OS permission, plus a separate in-app toggle inside the VTB app.",
-          "Business goal: raise push penetration across VTB Online users. Higher penetration → lower SMS spend.",
-          "Audience: VTB's active client base. We support Android (native app) and iOS PWA (no native iOS app yet, but pushes work through the web shortcut).",
-          "Success criterion: growth of the share of users with pushes enabled."
-        ],
         "ru": [
           "Задачу поставили в общих чертах. У банка был курс на максимальный отказ от СМС, и нужно было помочь клиентам подключать пуши быстрее и проще.",
           "Для начала поставил встречу с тимлидом и сел писать понимание задачи.",
@@ -118,6 +110,14 @@
           "Цель в мире бизнеса: поднять проникновение пушей среди пользователей ВТБ Онлайн. Чем выше проникновение, тем меньше банк тратит на СМС.",
           "Аудитория: активная клиентская база ВТБ. Поддерживаем Android (нативное приложение) и iOS PWA (нативки на iOS пока нет, но есть веб-ярлык, через который пуши работают).",
           "Критерии успеха: рост доли пользователей с подключёнными пушами."
+        ],
+        "en": [
+          "The brief from leadership was that broad. The bank had a course to maximally move away from SMS — clients had to be able to enable pushes faster and easier.",
+          "I set up a meeting with my team lead and sat down to write the task understanding.",
+          "Mission: simplify enabling and disabling pushes. At the time a user had to deal with two different toggles in two different places — granting OS permission, plus a separate in-app toggle inside the VTB app.",
+          "Business goal: raise push penetration across VTB Online users. Higher penetration → lower SMS spend.",
+          "Audience: VTB's active client base. We support Android (native app) and iOS PWA (no native iOS app yet, but pushes work through the web shortcut).",
+          "Success criterion: growth of the share of users with pushes enabled."
         ]
       },
       "images": [
@@ -129,33 +129,33 @@
     {
       "id": "discovery",
       "eyebrow": {
-        "en": "Discovery",
-        "ru": "Дискавери"
+        "ru": "Дискавери",
+        "en": "Discovery"
       },
       "heading": {
-        "en": "The worst-case path was 7 steps long.",
-        "ru": "Самый длинный путь занимал 7 шагов"
+        "ru": "Самый длинный путь занимал 7 шагов",
+        "en": "The worst-case path was 7 steps long."
       },
       "body": {
-        "en": [
-          "I mapped every client path. A user has four starting states with respect to pushes, and I walked through every transition between them — that's where I found the bottleneck.",
-          "The longest path looked like this: 1) once at onboarding the client granted push permission; 2) enabled it in the bank via the internal toggle; 3) later turned pushes off in the OS settings (intentionally or by accident); 4) at some point wants pushes back on.",
-          "In that scenario enabling took 7 steps. Seven.",
-          "Then I looked at how others solved it — neighboring banks and broader best practice. The observation was simple: the fewer toggles you have, and the tighter they sit with the OS, the clearer it is for the user. Our two-level system felt like a rudiment that could be cut down a lot."
-        ],
         "ru": [
           "Сел и разобрал все клиентские пути. У пользователя есть четыре стартовых состояния по подключению пушей. Прошёл сценарии перехода между этими состояниями — и нашёл то самое узкое место.",
           "Самый длинный путь выглядел так: 1) когда-то клиент дал разрешение на пуши при онбординге; 2) подключил их в банке через внутренний тогл; 3) потом отключил пуши в системных настройках телефона (вручную или случайно); 4) через какое-то время хочет вернуть пуши обратно.",
           "В этом сценарии подключение занимало 7 шагов. Семь!",
           "Дальше я пошёл смотреть, как сделано у других. Посмотрел соседние банки, да и в целом бест-практис. Наблюдение оказалось простым: чем меньше тоглов и чем теснее они связаны с системой, тем понятнее пользователю. Наша двухуровневая система выглядела как рудимент. Её можно было сильно упростить."
+        ],
+        "en": [
+          "I mapped every client path. A user has four starting states with respect to pushes, and I walked through every transition between them — that's where I found the bottleneck.",
+          "The longest path looked like this: 1) once at onboarding the client granted push permission; 2) enabled it in the bank via the internal toggle; 3) later turned pushes off in the OS settings (intentionally or by accident); 4) at some point wants pushes back on.",
+          "In that scenario enabling took 7 steps. Seven.",
+          "Then I looked at how others solved it — neighboring banks and broader best practice. The observation was simple: the fewer toggles you have, and the tighter they sit with the OS, the clearer it is for the user. Our two-level system felt like a rudiment that could be cut down a lot."
         ]
       },
       "images": [
         {
           "src": "/images/cases/vtb-push-onboarding/img-3.png",
           "caption": {
-            "en": "Observation was simple — fewer toggles, tighter tied to OS, clearer for users.",
-            "ru": "Наблюдение оказалось простым: чем меньше тоглов и чем теснее они связаны с системой, тем понятнее пользователю"
+            "ru": "Наблюдение оказалось простым: чем меньше тоглов и чем теснее они связаны с системой, тем понятнее пользователю",
+            "en": "Observation was simple — fewer toggles, tighter tied to OS, clearer for users."
           }
         }
       ]
@@ -163,193 +163,193 @@
     {
       "id": "hypothesis",
       "eyebrow": {
-        "en": "Hypothesis",
-        "ru": "Гипотеза"
+        "ru": "Гипотеза",
+        "en": "Hypothesis"
       },
       "heading": {
-        "en": "Remove the internal toggle. Mirror the system setting.",
-        "ru": "Убрать внутренний тогл и зеркалировать системные настройки"
+        "ru": "Убрать внутренний тогл и зеркалировать системные настройки",
+        "en": "Remove the internal toggle. Mirror the system setting."
       },
       "body": {
-        "en": [
-          "If we drop the internal toggle and reflect the OS notification permission directly inside the app, the user always sees the actual push status and can jump into system settings with one tap to switch it on or off.",
-          "The 7-step flow collapses to 4 — almost half the length."
-        ],
         "ru": [
           "Если убрать внутренний тогл и зеркалить системные настройки прямо в приложении, то пользователь будет видеть актуальный статус пушей и сможет одной кнопкой попасть в системные настройки, чтобы их включить или выключить.",
           "Флоу с 7 шагов сокращается до 4 — это короче почти в два раза."
+        ],
+        "en": [
+          "If we drop the internal toggle and reflect the OS notification permission directly inside the app, the user always sees the actual push status and can jump into system settings with one tap to switch it on or off.",
+          "The 7-step flow collapses to 4 — almost half the length."
         ]
       }
     },
     {
       "id": "lo-fi",
       "eyebrow": {
-        "en": "Lo-Fi and selling the solution",
-        "ru": "Lo-Fi и защита решения"
+        "ru": "Lo-Fi и защита решения",
+        "en": "Lo-Fi and selling the solution"
       },
       "heading": {
-        "en": "Lo-fi prototypes, picked the working variants with the team, defended with leadership.",
-        "ru": "Собрал lo-fi прототипы и защитил решение у топов кластера"
+        "ru": "Собрал lo-fi прототипы и защитил решение у топов кластера",
+        "en": "Lo-fi prototypes, picked the working variants with the team, defended with leadership."
       },
       "body": {
-        "en": [
-          "I went through where to place the status, how to phrase the jump into settings, what to show in the enabled state (like the list of devices), and how to handle the case where pushes are already allowed.",
-          "Together with the team we picked the working variants. I prepared slides and presented to the cluster's leadership. It went smoothly — the solution was obviously logical, no objections. Then on to hi-fi and handoff."
-        ],
         "ru": [
           "Перебрал варианты: где разместить статус, как сформулировать переход в настройки, что показывать в подключённом состоянии (например, список устройств), как обыграть случай, когда пуши уже разрешены.",
           "С командой выбрали рабочие варианты, подготовил слайды и пошёл защищать решение топам кластера. Прошло гладко — решение оказалось очевидным и логичным, никто не возразил. Дальше перешёл к hi-fi и передаче в разработку."
+        ],
+        "en": [
+          "I went through where to place the status, how to phrase the jump into settings, what to show in the enabled state (like the list of devices), and how to handle the case where pushes are already allowed.",
+          "Together with the team we picked the working variants. I prepared slides and presented to the cluster's leadership. It went smoothly — the solution was obviously logical, no objections. Then on to hi-fi and handoff."
         ]
       }
     },
     {
       "id": "hi-fi",
       "eyebrow": {
-        "en": "Hi-Fi: three states",
-        "ru": "Hi-Fi: три состояния"
+        "ru": "Hi-Fi: три состояния",
+        "en": "Hi-Fi: three states"
       },
       "heading": {
-        "en": "Designed the “Notification methods” screen for every realistic state.",
-        "ru": "Проработал ключевые состояния экрана «Способы уведомлений»"
+        "ru": "Проработал ключевые состояния экрана «Способы уведомлений»",
+        "en": "Designed the “Notification methods” screen for every realistic state."
       },
       "body": {
-        "en": [
-          "Pushes disabled at the OS level — show a banner “Notifications disabled” with a link “How to enable” (on iOS PWA) or a button “Open settings” (on Android, where the deep link is supported).",
-          "Pushes enabled — status “Notifications enabled”, a list of connected devices with the current one marked, plus a “How to disable” link.",
-          "Android is the straightforward path: tap the button, land in system settings for the app, flip the toggle, return, status updates."
-        ],
         "ru": [
           "Пуши отключены в системе — показываем плашку «Уведомления отключены», даём ссылку «Как разрешить» (на iOS PWA) или кнопку «Перейти в настройки» (на Android, где переход программный).",
           "Пуши подключены — статус «Уведомления подключены», список подключённых устройств с пометкой текущего, ссылка «Как отключить».",
           "С Android всё прямолинейно: тап по кнопке — пользователь оказывается в системных настройках приложения, включает тогл, возвращается, статус обновился."
+        ],
+        "en": [
+          "Pushes disabled at the OS level — show a banner “Notifications disabled” with a link “How to enable” (on iOS PWA) or a button “Open settings” (on Android, where the deep link is supported).",
+          "Pushes enabled — status “Notifications enabled”, a list of connected devices with the current one marked, plus a “How to disable” link.",
+          "Android is the straightforward path: tap the button, land in system settings for the app, flip the toggle, return, status updates."
         ]
       }
     },
     {
       "id": "ios-pwa",
       "eyebrow": {
-        "en": "iOS PWA: separate case",
-        "ru": "iOS PWA: отдельный кейс"
+        "ru": "iOS PWA: отдельный кейс",
+        "en": "iOS PWA: separate case"
       },
       "heading": {
-        "en": "Safari blocks deep-links to system settings. So we wrote the route out, plainly.",
-        "ru": "В iOS PWA нельзя открыть системные настройки. Пришлось расписать путь явно"
+        "ru": "В iOS PWA нельзя открыть системные настройки. Пришлось расписать путь явно",
+        "en": "Safari blocks deep-links to system settings. So we wrote the route out, plainly."
       },
       "body": {
-        "en": [
-          "On iOS PWA you can't deep-link into system settings — it's a Safari restriction with no workaround.",
-          "Instead of an “Open settings” button we show “How to enable.” Tapping it opens a bottom sheet with step-by-step instructions: open phone Settings → Apps, pick VTB Online, tap Notifications and allow them.",
-          "From there the user reaches the system layer themselves, flips “Allow Notifications”, comes back. Not perfect — one or two taps longer than on Android — but honest: we say plainly what to tap."
-        ],
         "ru": [
           "В iOS PWA технически нельзя открыть системные настройки телефона — это ограничение Safari, обойти его никак.",
-          "Решение получилось такое: вместо кнопки «Перейти в настройки» показываем ссылку «Как разрешить». По тапу открывается bottom sheet с пошаговой инструкцией: настройки телефона → Приложения → ВТБ Онлайн → уведомления → разрешить.",
+          "Решение получилось такое: вместо кнопки «Перейти в настройки» показываем ссылку «Как разрешить». По тапу открывается bottom sheet с пошаговой инструкцией: настройки телефона → Приложения → ВТБ Онлайн → Уведомления → Разрешить.",
           "Дальше пользователь сам добирается до системы, включает «Допуск уведомлений», возвращается в приложение. Не идеально — на один-два тапа дольше, чем на Android, — но честно: мы прямо рассказываем, что и где нажать."
+        ],
+        "en": [
+          "On iOS PWA you can't deep-link into system settings — it's a Safari restriction with no workaround.",
+          "Instead of an “Open settings” button we show “How to enable.” Tapping it opens a bottom sheet with step-by-step instructions: open phone Settings → Apps, pick ВТБ Онлайн, tap Notifications and allow them.",
+          "From there the user reaches the system layer themselves, flips “Allow Notifications”, comes back. Not perfect — one or two taps longer than on Android — but honest: we say plainly what to tap."
         ]
       }
     },
     {
       "id": "release",
       "eyebrow": {
-        "en": "Release & an unexpected case",
-        "ru": "Релиз и неожиданный кейс"
+        "ru": "Релиз",
+        "en": "Release"
       },
       "heading": {
-        "en": "Some users were quietly moved from SMS to pushes — and complained.",
-        "ru": "Часть пользователей молча переехала с СМС на пуши — и стала жаловаться"
+        "ru": "Часть пользователей молча переехала с СМС на пуши — и стала жаловаться",
+        "en": "Some users were quietly moved from SMS to pushes — and complained."
       },
       "body": {
-        "en": [
-          "We rolled out to a small slice of users. Some had pushes allowed in the OS but disabled by the bank's internal toggle. For them the new logic read: allowed at OS level → pushes go through. They were automatically moved from SMS to pushes.",
-          "Tickets started coming in: “I used to get everything by SMS. Now I'm suddenly getting pushes. Did I do something wrong?”",
-          "From the business side — this was exactly what we wanted. From the user's side — product behavior changed without warning."
-        ],
         "ru": [
           "Раскатили решение на небольшой процент пользователей. У некоторых пуши были разрешены в системе, но отключены внутренним тоглом в банке. Для этой аудитории новая логика означала: разрешено в системе → значит пуши идут. И они автоматически переехали с СМС на пуши.",
           "Через какое-то время в поддержку начали приходить обращения: «Раньше у меня всё приходило по СМС. А теперь резко начали приходить пуши. Я что-то сделал не так?»",
           "С точки зрения бизнеса — мы как раз этого и хотели, ради этого всё и делалось. С точки зрения пользователя — поведение продукта поменялось без предупреждения."
+        ],
+        "en": [
+          "We rolled out to a small slice of users. Some had pushes allowed in the OS but disabled by the bank's internal toggle. For them the new logic read: allowed at OS level → pushes go through. They were automatically moved from SMS to pushes.",
+          "Tickets started coming in: “I used to get everything by SMS. Now I'm suddenly getting pushes. Did I do something wrong?”",
+          "From the business side — this was exactly what we wanted. From the user's side — product behavior changed without warning."
         ]
       }
     },
     {
       "id": "results",
       "eyebrow": {
-        "en": "Results",
-        "ru": "Результаты"
+        "ru": "Результаты",
+        "en": "Results"
       },
       "heading": {
-        "en": "Push penetration is up. Support load for this flow is visibly down.",
-        "ru": "Доля пользователей с пушами растёт, нагрузка на поддержку по подключению заметно упала"
+        "ru": "Доля пользователей с пушами растёт, нагрузка на поддержку по подключению заметно упала",
+        "en": "Push penetration is up. Support load for this flow is visibly down."
       },
       "body": {
-        "en": [
-          "The solution is still rolled out to a partial audience, so final stat-significant numbers aren't in yet. But the early signals are encouraging: push enablement is up, complaints about the enablement flow have dropped noticeably, and the new class of complaints (the silent SMS→push migration) is a signal for a targeted follow-up, not a rollback.",
-          "The main thing: the flow really did become 1.5–2× shorter, and it shows in the product."
-        ],
         "ru": [
           "Решение пока раскатано на небольшой процент аудитории, поэтому финальных цифр у меня нет. Но первые сигналы радуют: доля пользователей с подключёнными пушами растёт, жалоб на сложность подключения в поддержке стало заметно меньше, появился новый класс обращений (про молчаливый переезд с СМС на пуши) — но это сигнал к точечной доработке, а не к откату.",
           "Главное — флоу действительно стал короче в полтора-два раза, и это прямо заметно в продукте."
+        ],
+        "en": [
+          "The solution is still rolled out to a partial audience, so final stat-significant numbers aren't in yet. But the early signals are encouraging: push enablement is up, complaints about the enablement flow have dropped noticeably, and the new class of complaints (the silent SMS→push migration) is a signal for a targeted follow-up, not a rollback.",
+          "The main thing: the flow really did become 1.5–2× shorter, and it shows in the product."
         ]
       }
     },
     {
       "id": "role",
       "eyebrow": {
-        "en": "My role",
-        "ru": "Моя роль"
+        "ru": "Моя роль",
+        "en": "My role"
       },
       "heading": {
-        "en": "End to end: from task understanding through hi-fi and post-release iteration.",
-        "ru": "End-to-end: от понимания задачи до пост-релизной итерации"
+        "ru": "End-to-end: от понимания задачи до пост-релизной итерации",
+        "en": "End to end: from task understanding through hi-fi and post-release iteration."
       },
       "body": {
-        "en": [
-          "Task understanding and alignment with the PO. Analyzing client paths and states, finding bottlenecks. Competitor and best-practice benchmarking. Lo-fi hypotheses and design. Selling the solution to leadership. Hi-fi for three platforms (Android, iOS PWA). Handoff and design review. Post-release metric tracking. Triage of user complaints and writing follow-up design tickets."
-        ],
         "ru": [
-          "Составление понимания задачи и согласование с PO. Аналитика клиентских путей, состояний и поиск узких мест. Бенчмаркинг конкурентов и бест-практисов. Lo-fi гипотезы и проектирование. Защита решения у топов кластера. Hi-fi дизайн под три платформы (Android, iOS PWA). Передача в разработку, дизайн-ревью. Контроль метрик после релиза. Разбор пользовательских обращений и заведение дизайн-задач на следующую итерацию."
+          "Составление понимания задачи и согласование с PO. Аналитика клиентских путей, состояний и поиск узких мест. Бенчмаркинг конкурентов и бест-практисов. Lo-Fi гипотезы и проектирование. Защита решения у топов кластера. Hi-Fi дизайн под три платформы (Android, iOS PWA). Передача в разработку, дизайн-ревью. Контроль метрик после релиза. Разбор пользовательских обращений и заведение дизайн-задач на следующую итерацию."
+        ],
+        "en": [
+          "Task understanding and alignment with the PO. Analyzing client paths and states, finding bottlenecks. Competitor and best-practice benchmarking. Lo-Fi hypotheses and design. Selling the solution to leadership. Hi-Fi for three platforms (Android, iOS PWA). Handoff and design review. Post-release metric tracking. Triage of user complaints and writing follow-up design tickets."
         ]
       }
     },
     {
       "id": "lessons",
       "eyebrow": {
-        "en": "Lessons",
-        "ru": "Уроки"
+        "ru": "Уроки",
+        "en": "Lessons"
       },
       "heading": {
-        "en": "Knowing about a segment is not the same as having designed for them.",
-        "ru": "Знать про сегмент — не значит продумать его опыт"
+        "ru": "Знать про сегмент — не значит продумать его опыт",
+        "en": "Knowing about a segment is not the same as having designed for them."
       },
       "body": {
-        "en": [
-          "1. We knew there was a segment with OS-level pushes allowed but the in-app toggle off. We knew they'd be auto-migrated. We decided it would slip by quietly. It didn't. Lesson: when the change is meaningful for an audience, design not just the tech, but also the way you tell them — even when the change is technically right.",
-          "2. Phased rollout saves you. If we had shipped to 100% on day one we'd have had thousands of tickets instead of dozens. The partial rollout gave us time to notice the case, understand it and think calmly about the fix.",
-          "3. Constraints can always be softened. iOS PWA couldn't deep-link to settings. When you can't make it “like everywhere else,” sometimes the right move is to honestly tell the user where to tap. Not ideal, but better than a wall."
-        ],
         "ru": [
           "1. Мы знали, что есть пользователи с пушами, разрешёнными в системе, но отключёнными внутренним тоглом. Знали, что после релиза они автоматически переедут на пуши. Но решили, что это пройдёт незаметно. Не прошло — люди стали жаловаться. Урок: если меняешь что-то существенное для аудитории, продумай не только техническую часть, но и как им об этом сообщить.",
           "2. Поэтапная раскатка спасает. Если бы мы раскатили на всех сразу, мы бы получили не десятки обращений, а тысячи. Постепенная раскатка дала время заметить кейс, разобраться и спокойно подумать над решением.",
           "3. Ограничения всегда можно смягчить. Для iOS PWA нельзя было вести на системный уровень настроек. Когда нельзя сделать «как везде», иногда нормальное решение — просто честно объяснить пользователю, куда тапнуть. Не идеально, но работает лучше, чем глухая стена."
+        ],
+        "en": [
+          "1. We knew there was a segment with OS-level pushes allowed but the in-app toggle off. We knew they'd be auto-migrated. We decided it would slip by quietly. It didn't. Lesson: when the change is meaningful for an audience, design not just the tech, but also the way you tell them — even when the change is technically right.",
+          "2. Phased rollout saves you. If we had shipped to 100% on day one we'd have had thousands of tickets instead of dozens. The partial rollout gave us time to notice the case, understand it and think calmly about the fix.",
+          "3. Constraints can always be softened. iOS PWA couldn't deep-link to settings. When you can't make it “like everywhere else,” sometimes the right move is to honestly tell the user where to tap. Not ideal, but better than a wall."
         ]
       }
     },
     {
       "id": "next",
       "eyebrow": {
-        "en": "What's next",
-        "ru": "Что дальше"
+        "ru": "Что дальше",
+        "en": "What's next"
       },
       "heading": {
-        "en": "Full 100% rollout, stat-significant metrics, explicit notice for channel-changers.",
-        "ru": "Раскатка на 100%, статзначимые метрики, явное оповещение при смене канала"
+        "ru": "Раскатка на 100% и сбор статзначимых метрик",
+        "en": "Full 100% rollout with significant metrics tracking"
       },
       "body": {
-        "en": [
-          "Finish the rollout, collect stat-significant metrics, and design an explicit notice for users whose channel changes after the migration."
-        ],
         "ru": [
-          "Финальная раскатка на 100% аудитории и сбор статзначимых метрик. Прорабатываем явное оповещение для пользователей, у которых канал поменяется после переезда."
+          "Финальная раскатка на 100% аудитории и сбор статзначимых метрик"
+        ],
+        "en": [
+          "Finish the rollout, collect stat-significant metrics."
         ]
       }
     }
