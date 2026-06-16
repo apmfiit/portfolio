@@ -9,12 +9,14 @@ export function CopyEmail({
   copiedLabel,
   className,
   onCopied,
+  onCopiedChange,
 }: {
   email: string;
   label: string;
   copiedLabel: string;
   className?: string;
   onCopied?: () => void;
+  onCopiedChange?: (copied: boolean) => void;
 }) {
   const [copied, setCopied] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -40,8 +42,12 @@ export function CopyEmail({
     }
     setCopied(true);
     onCopied?.();
+    onCopiedChange?.(true);
     if (timer.current) clearTimeout(timer.current);
-    timer.current = setTimeout(() => setCopied(false), 1600);
+    timer.current = setTimeout(() => {
+      setCopied(false);
+      onCopiedChange?.(false);
+    }, 1600);
   };
 
   return (

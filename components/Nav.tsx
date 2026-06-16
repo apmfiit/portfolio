@@ -3,14 +3,19 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { LayoutGroup, motion } from "motion/react";
 import { Locale, links, t } from "@/content";
 import { CopyEmail } from "./CopyEmail";
 import { ExternalLinkIcon } from "./icons";
+
+const navSpring = { type: "spring", stiffness: 500, damping: 30, mass: 0.6 } as const;
 
 export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolean }) {
   const pathname = usePathname() || "/";
   const tr = t[locale];
   const [open, setOpen] = useState(false);
+  // Bump on email copy/reset so the layout-animated nav items re-measure and hug.
+  const [, bumpLayout] = useState(0);
 
   // RU is the default at /, EN lives under /en/
   const isEn = locale === "en";
@@ -62,42 +67,55 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
         {NameBlock}
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-5 text-muted md:flex">
-          <Link href={aboutHref} className="hover:text-foreground transition-colors">
-            {tr.about}
-          </Link>
-          <a
-            href={links.telegram}
-            target="_blank"
-            rel="noreferrer"
-            className="group/link inline-flex items-center gap-1 hover:text-foreground transition-colors"
-          >
-            Telegram
-            <ExternalLinkIcon className="h-3 w-3 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
-          </a>
-          <CopyEmail
-            email={links.email}
-            label="Email"
-            copiedLabel={isEn ? "Copied" : "Скопировано"}
-            className="uppercase hover:text-foreground transition-colors"
-          />
-          <a
-            href={links.cv}
-            target="_blank"
-            rel="noreferrer"
-            className="group/link inline-flex items-center gap-1 hover:text-foreground transition-colors"
-          >
-            {tr.cv}
-            <ExternalLinkIcon className="h-3 w-3 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
-          </a>
-          <Link
-            href={otherHref}
-            className="hover:text-foreground transition-colors"
-            aria-label={`Switch language to ${otherCode}`}
-          >
-            {otherCode}
-          </Link>
-        </nav>
+        <LayoutGroup>
+          <nav className="hidden items-center gap-5 text-muted md:flex">
+            <motion.span layout="position" transition={navSpring} className="inline-flex">
+              <Link href={aboutHref} className="hover:text-foreground transition-colors">
+                {tr.about}
+              </Link>
+            </motion.span>
+            <motion.span layout="position" transition={navSpring} className="inline-flex">
+              <a
+                href={links.telegram}
+                target="_blank"
+                rel="noreferrer"
+                className="group/link inline-flex items-center gap-1 hover:text-foreground transition-colors"
+              >
+                Telegram
+                <ExternalLinkIcon className="h-3 w-3 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
+              </a>
+            </motion.span>
+            <motion.span layout="position" transition={navSpring} className="inline-flex">
+              <CopyEmail
+                email={links.email}
+                label="Email"
+                copiedLabel={isEn ? "Copied" : "Скопировано"}
+                onCopiedChange={() => bumpLayout((n) => n + 1)}
+                className="uppercase hover:text-foreground transition-colors"
+              />
+            </motion.span>
+            <motion.span layout="position" transition={navSpring} className="inline-flex">
+              <a
+                href={links.cv}
+                target="_blank"
+                rel="noreferrer"
+                className="group/link inline-flex items-center gap-1 hover:text-foreground transition-colors"
+              >
+                {tr.cv}
+                <ExternalLinkIcon className="h-3 w-3 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
+              </a>
+            </motion.span>
+            <motion.span layout="position" transition={navSpring} className="inline-flex">
+              <Link
+                href={otherHref}
+                className="hover:text-foreground transition-colors"
+                aria-label={`Switch language to ${otherCode}`}
+              >
+                {otherCode}
+              </Link>
+            </motion.span>
+          </nav>
+        </LayoutGroup>
 
         {/* Mobile burger */}
         <button
