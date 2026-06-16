@@ -9,7 +9,15 @@ import { CopyEmail } from "./CopyEmail";
 import { ZoomableImage } from "./ZoomableImage";
 import { PinIcon } from "./PinIcon";
 
-const DESIGN_START_YEAR = 2021;
+// Designing since May 2021 — count only full years.
+const DESIGN_START = { year: 2021, month: 4 }; // month is 0-indexed (4 = May)
+
+function fullYearsSince(start: { year: number; month: number }): number {
+  const now = new Date();
+  let years = now.getFullYear() - start.year;
+  if (now.getMonth() < start.month) years -= 1;
+  return Math.max(0, years);
+}
 
 function ruYears(n: number): string {
   const m10 = n % 10;
@@ -23,7 +31,7 @@ export function AboutView({ locale }: { locale: Locale }) {
   const tr = t[locale];
   const isEn = locale === "en";
 
-  const years = new Date().getFullYear() - DESIGN_START_YEAR;
+  const years = fullYearsSince(DESIGN_START);
   const expLabel = isEn
     ? `${years} ${years === 1 ? "year" : "years"} of experience`
     : `${years} ${ruYears(years)} опыта`;
