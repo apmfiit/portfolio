@@ -80,7 +80,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                 <MetaItem label={tr.role} values={[p.meta.role[locale]]} />
                 <MetaItem label={tr.timeline} values={[p.meta.timeline[locale]]} />
                 {p.meta.team && <MetaItem label={tr.team} values={p.meta.team[locale]} />}
-                {p.meta.skills && <MetaItem label={tr.skills} values={p.meta.skills[locale]} />}
+                {p.meta.skills && <MetaItem label={tr.skills} values={p.meta.skills[locale]} nowrap />}
                 {p.meta.platforms && <MetaItem label={tr.platforms} values={p.meta.platforms[locale]} />}
               </section>
             </FadeIn>
@@ -205,13 +205,23 @@ function CaseFigure({
   );
 }
 
-function MetaItem({ label, values }: { label: string; values: string[] }) {
+function MetaItem({
+  label,
+  values,
+  nowrap,
+}: {
+  label: string;
+  values: string[];
+  nowrap?: boolean;
+}) {
   return (
     <div className="flex flex-col gap-2">
       <p className="text-xs uppercase tracking-[-0.02em] text-muted">{label}</p>
       <ul className="flex flex-col gap-1 text-sm text-muted">
         {values.map((v, i) => (
-          <li key={i}>{v}</li>
+          <li key={i} className={nowrap ? "whitespace-nowrap" : undefined}>
+            {v}
+          </li>
         ))}
       </ul>
     </div>

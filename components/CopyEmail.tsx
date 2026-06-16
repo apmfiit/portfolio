@@ -28,10 +28,14 @@ export function CopyEmail({
   const copiedSizer = useRef<HTMLSpanElement>(null);
   const [width, setWidth] = useState<number>();
 
+  // Reserve the wider of the two labels so the swap never reflows or clips —
+  // the full word is visible instantly, and we just cross-fade between them.
   useIsoLayoutEffect(() => {
-    const el = copied ? copiedSizer.current : labelSizer.current;
-    if (el) setWidth(el.offsetWidth);
-  }, [copied, label, copiedLabel]);
+    const a = labelSizer.current?.offsetWidth ?? 0;
+    const b = copiedSizer.current?.offsetWidth ?? 0;
+    const max = Math.max(a, b);
+    if (max) setWidth(max);
+  }, [label, copiedLabel]);
 
   useEffect(() => () => {
     if (timer.current) clearTimeout(timer.current);
@@ -67,11 +71,11 @@ export function CopyEmail({
       className={`group/copy inline-flex items-center gap-1 ${className ?? ""}`}
     >
       <span
-        className="relative inline-block overflow-hidden transition-[width] duration-300 ease-out"
+        className="relative inline-block text-center"
         style={{ width }}
       >
         <span
-          className={`block whitespace-nowrap transition-opacity duration-200 ${
+          className={`block whitespace-nowrap transition-opacity duration-150 ease-out ${
             copied ? "opacity-0" : "opacity-100"
           }`}
         >
@@ -79,7 +83,7 @@ export function CopyEmail({
         </span>
         <span
           aria-hidden={!copied}
-          className={`absolute inset-0 block whitespace-nowrap transition-opacity duration-200 ${
+          className={`absolute inset-0 block whitespace-nowrap text-center transition-opacity duration-150 ease-out ${
             copied ? "opacity-100" : "opacity-0"
           }`}
         >

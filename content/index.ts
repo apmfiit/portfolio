@@ -346,8 +346,8 @@ export const projects: Project[] = [
       role: { en: "Sole Designer", ru: "Единственный дизайнер" },
       timeline: { en: "2025", ru: "2025" },
       team: {
-        en: ["Designer (me)", "Support staff (~50)", "Engineering"],
-        ru: ["Дизайнер (я)", "Сопровождение (~50 человек)", "Разработка"],
+        en: ["Designer (me)", "Product Owner", "Business Analyst", "Engineering"],
+        ru: ["Дизайнер (я)", "Product Owner", "Бизнес-аналитик", "Разработка"],
       },
       skills: {
         en: ["Internal tools", "Form design", "Design system", "Information architecture"],
