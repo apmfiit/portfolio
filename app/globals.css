@@ -6,6 +6,10 @@
   --muted: #32404f95;
   --rule: #e5e5e5;
   --accent: #0a0a0a;
+  /* Snow particle colors — bluish so they stay visible on the light background. */
+  --flake-core: #d4ecff;
+  --flake-mid: #5fb4ec;
+  --flake-glow: rgba(70, 150, 210, 0.55);
 }
 
 @theme inline {
@@ -24,6 +28,9 @@
     --foreground: #f5f5f4;
     --muted: #a3a3a3;
     --rule: #262626;
+    --flake-core: #ffffff;
+    --flake-mid: #d6f3ff;
+    --flake-glow: rgba(180, 235, 255, 0.85);
   }
 }
 :root[data-theme="dark"] {
@@ -31,6 +38,9 @@
   --foreground: #f5f5f4;
   --muted: #a3a3a3;
   --rule: #262626;
+  --flake-core: #ffffff;
+  --flake-mid: #d6f3ff;
+  --flake-glow: rgba(180, 235, 255, 0.85);
 }
 
 html,
@@ -123,11 +133,11 @@ a {
   border-radius: 50%;
   background: radial-gradient(
     circle at 50% 38%,
-    #ffffff 0%,
-    #d6f3ff 45%,
-    rgba(150, 220, 255, 0) 78%
+    var(--flake-core) 0%,
+    var(--flake-mid) 45%,
+    transparent 78%
   );
-  box-shadow: 0 0 3px rgba(180, 235, 255, 0.85);
+  box-shadow: 0 0 3px var(--flake-glow);
   opacity: 0;
   transform: translate3d(0, -8px, 0);
   will-change: transform, opacity;

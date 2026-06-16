@@ -4,14 +4,14 @@ import { ReactNode } from "react";
 
 // Soft round snow particles — varied sizes drifting down.
 const FLAKES = [
-  { left: "4%", size: 5, delay: 0, dur: 3.4, drift: 7 },
-  { left: "17%", size: 3.5, delay: 0.7, dur: 4.2, drift: -5 },
-  { left: "29%", size: 6, delay: 0.2, dur: 3.0, drift: 6 },
-  { left: "41%", size: 4, delay: 1.0, dur: 4.0, drift: -7 },
-  { left: "53%", size: 5.5, delay: 0.4, dur: 3.6, drift: 5 },
-  { left: "65%", size: 3.5, delay: 0.85, dur: 4.4, drift: -4 },
-  { left: "77%", size: 6, delay: 0.25, dur: 3.2, drift: 7 },
-  { left: "89%", size: 4, delay: 0.6, dur: 3.9, drift: -6 },
+  { left: "4%", size: 4, delay: 0, dur: 3.4, drift: 7 },
+  { left: "17%", size: 3, delay: 0.7, dur: 4.2, drift: -5 },
+  { left: "29%", size: 5, delay: 0.2, dur: 3.0, drift: 6 },
+  { left: "41%", size: 3.5, delay: 1.0, dur: 4.0, drift: -7 },
+  { left: "53%", size: 4.5, delay: 0.4, dur: 3.6, drift: 5 },
+  { left: "65%", size: 3, delay: 0.85, dur: 4.4, drift: -4 },
+  { left: "77%", size: 5, delay: 0.25, dur: 3.2, drift: 7 },
+  { left: "89%", size: 3.5, delay: 0.6, dur: 3.9, drift: -6 },
 ];
 
 export function FrostLink({
