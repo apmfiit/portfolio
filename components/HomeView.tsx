@@ -60,7 +60,7 @@ export function HomeView({ locale }: { locale: Locale }) {
             <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2">
               <div className="flex flex-col gap-3 text-base leading-relaxed text-muted">
                 <p>{typo(tr.taglineSub)}</p>
-                <p>{typo(tr.taglineSub2)}</p>
+                <p className="xl:whitespace-nowrap">{typo(tr.taglineSub2)}</p>
               </div>
 
               <ul className="flex flex-col text-base leading-relaxed">
