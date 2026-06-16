@@ -902,7 +902,7 @@ export const projects: Project[] = [
     slug: "ykt-pickup",
     company: "Ykt.Ru",
     year: "2023",
-    cover: "/images/ykt-pickup.png",
+    cover: "/images/cases/ykt-pickup/edaykt-case-cover.png",
     status: { en: "Shipped", ru: "В продакшне" },
     headline: {
       en: "Pickup for a food & goods ordering service",
