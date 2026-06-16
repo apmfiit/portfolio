@@ -16,7 +16,7 @@ export function HomeView({ locale }: { locale: Locale }) {
     <>
       <Nav locale={locale} />
 
-      <main className="flex justify-center px-6 pt-16 pb-24">
+      <main className="flex justify-center px-6 pt-16 pb-10">
         <div className="w-full max-w-[1800px]">
         <FadeIn>
           <section className="grid gap-10 lg:grid-cols-[1fr_minmax(0,560px)] lg:gap-16">
