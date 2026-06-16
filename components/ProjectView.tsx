@@ -163,7 +163,7 @@ function CaseFigure({
   const isPhone = m ? m.w / m.h < 0.6 : false;
   // Phone screenshots cap at 390px; small gifs (the cat) at 80px. Both centered.
   const constrained = isGif || isPhone;
-  const wrapMax = isGif ? "max-w-[80px]" : isPhone ? "max-w-[390px]" : "";
+  const wrapMax = isGif ? "max-w-[160px]" : isPhone ? "max-w-[390px]" : "";
   return (
     <figure className={`mt-2 flex flex-col gap-2 ${constrained ? "items-center" : ""}`}>
       <div

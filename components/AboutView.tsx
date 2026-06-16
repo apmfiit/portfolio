@@ -47,7 +47,7 @@ export function AboutView({ locale }: { locale: Locale }) {
                     blur["/images/avatar-rectangular.jpg"] ? "blur" : "empty"
                   }
                   blurDataURL={blur["/images/avatar-rectangular.jpg"]}
-                  className="h-20 w-20 rounded-2xl border border-foreground/10 object-cover sm:h-24 sm:w-24"
+                  className="h-24 w-24 rounded-2xl border border-foreground/10 object-cover sm:h-28 sm:w-28"
                 />
                 <p className="flex items-center gap-2 text-sm uppercase tracking-[-0.02em] text-muted">
                   <span>{expLabel}</span>
