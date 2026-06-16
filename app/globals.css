@@ -6,10 +6,10 @@
   --muted: #32404f95;
   --rule: #e5e5e5;
   --accent: #0a0a0a;
-  /* Snow particle colors — bluish so they stay visible on the light background. */
-  --flake-core: #d4ecff;
-  --flake-mid: #5fb4ec;
-  --flake-glow: rgba(70, 150, 210, 0.55);
+  /* Snow particle colors — uniform light blue so they stay visible on the light bg. */
+  --flake-core: #8fcaf1;
+  --flake-mid: #8fcaf1;
+  --flake-glow: rgba(90, 160, 215, 0.5);
 }
 
 @theme inline {
