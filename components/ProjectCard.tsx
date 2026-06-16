@@ -14,7 +14,7 @@ export function ProjectCard({
   href: string;
 }) {
   return (
-    <Link href={href} className="group flex flex-col gap-4">
+    <Link href={href} className="group flex flex-col gap-2">
       <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-foreground/10">
         {project.cover && (
           <Image
