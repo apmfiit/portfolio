@@ -2,6 +2,31 @@
 // Intrinsic image dimensions + format for next/image (regenerated on prebuild).
 export type ImageMeta = { w: number; h: number; format?: string };
 export const imageMeta: Record<string, ImageMeta> = {
+  "/images/achievment-1.png": {
+    "w": 1280,
+    "h": 895,
+    "format": "png"
+  },
+  "/images/achievment-2-ykt_heroes.png": {
+    "w": 636,
+    "h": 431,
+    "format": "png"
+  },
+  "/images/achievment-3-diploma.jpeg": {
+    "w": 3508,
+    "h": 2480,
+    "format": "jpeg"
+  },
+  "/images/achievment-4-drawing.jpg": {
+    "w": 3264,
+    "h": 2448,
+    "format": "jpeg"
+  },
+  "/images/avatar-rectangular.jpg": {
+    "w": 1000,
+    "h": 976,
+    "format": "jpeg"
+  },
   "/images/avatar.png": {
     "w": 600,
     "h": 600,

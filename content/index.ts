@@ -1068,6 +1068,7 @@ export type AboutJob = {
 export type AboutAchievement = {
   year: string;
   text: LocalizedString;
+  images?: string[];
 };
 
 export const about = {
@@ -1168,6 +1169,7 @@ export const about = {
         en: "1st place at the Yandex.Market × Yandex Praktikum hackathon — a warehouse-packer interface",
         ru: "Первое место на хакатоне от Яндекс.Маркета и Яндекс Практикума — интерфейс упаковщика склада",
       },
+      images: ["/images/achievment-1.png", "/images/achievment-3-diploma.jpeg"],
     },
     {
       year: "2020",
@@ -1175,6 +1177,7 @@ export const about = {
         en: "Winner of the “Discovery of the Year” award (Sinet Team Heroes 2020)",
         ru: "Победитель премии «Открытие года» (Sinet Team Heroes 2020)",
       },
+      images: ["/images/achievment-2-ykt_heroes.png"],
     },
     {
       year: "2005",
@@ -1182,6 +1185,7 @@ export const about = {
         en: "Top-2 in the city and top-3 in the republic at school technical-drawing olympiads",
         ru: "Топ-2 города и топ-3 республики на школьных олимпиадах по черчению",
       },
+      images: ["/images/achievment-4-drawing.jpg"],
     },
   ] as AboutAchievement[],
   personal: {

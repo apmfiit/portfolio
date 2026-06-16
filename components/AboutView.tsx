@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { Locale, about, links, t } from "@/content";
 import { blur } from "@/content/blur";
+import { imageMeta } from "@/content/imageMeta";
 import { typo } from "@/lib/typo";
 import { Nav } from "./Nav";
 import { FadeIn } from "./FadeIn";
 import { CopyEmail } from "./CopyEmail";
+import { ZoomableImage } from "./ZoomableImage";
 
 export function AboutView({ locale }: { locale: Locale }) {
   const tr = t[locale];
@@ -20,13 +22,15 @@ export function AboutView({ locale }: { locale: Locale }) {
             <header className="flex flex-col gap-6">
               <div className="flex items-center gap-4">
                 <Image
-                  src="/images/avatar.png"
+                  src="/images/avatar-rectangular.jpg"
                   alt="Petr Afanasyev"
-                  width={72}
-                  height={72}
-                  placeholder={blur["/images/avatar.png"] ? "blur" : "empty"}
-                  blurDataURL={blur["/images/avatar.png"]}
-                  className="h-16 w-16 rounded-full border border-foreground/10 object-cover sm:h-[72px] sm:w-[72px]"
+                  width={1000}
+                  height={976}
+                  placeholder={
+                    blur["/images/avatar-rectangular.jpg"] ? "blur" : "empty"
+                  }
+                  blurDataURL={blur["/images/avatar-rectangular.jpg"]}
+                  className="h-20 w-20 rounded-2xl border border-foreground/10 object-cover sm:h-24 sm:w-24"
                 />
                 <p className="text-sm uppercase tracking-[-0.02em] text-muted">
                   {about.location[locale]}
@@ -106,12 +110,40 @@ export function AboutView({ locale }: { locale: Locale }) {
                 {about.achievements.map((a, i) => (
                   <div
                     key={i}
-                    className="grid grid-cols-[56px_minmax(0,1fr)] items-baseline gap-4"
+                    className="grid grid-cols-[56px_minmax(0,1fr)] gap-4"
                   >
                     <p className="text-sm text-muted">{a.year}</p>
-                    <p className="leading-relaxed text-foreground/80">
-                      {typo(a.text[locale])}
-                    </p>
+                    <div className="flex flex-col gap-3">
+                      <p className="leading-relaxed text-foreground/80">
+                        {typo(a.text[locale])}
+                      </p>
+                      {a.images && a.images.length > 0 && (
+                        <div className="flex flex-wrap gap-3">
+                          {a.images.map((src, j) => {
+                            const m = imageMeta[src];
+                            const H = 104;
+                            const W = m ? Math.round((H * m.w) / m.h) : H;
+                            return (
+                              <div
+                                key={j}
+                                style={{ width: W, height: H }}
+                                className="overflow-hidden rounded-lg border border-foreground/10"
+                              >
+                                <ZoomableImage
+                                  src={src}
+                                  alt={a.text[locale]}
+                                  width={m?.w ?? 1280}
+                                  height={m?.h ?? 895}
+                                  className="h-full w-full object-cover"
+                                  blurDataURL={blur[src]}
+                                  closeLabel={isEn ? "Close" : "Закрыть"}
+                                />
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
