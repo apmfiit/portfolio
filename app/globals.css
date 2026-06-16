@@ -111,9 +111,17 @@ a {
   animation: soft-blur-in 648ms cubic-bezier(0.22, 1, 0.36, 1) both;
   will-change: transform, opacity, filter;
 }
+/* Per-unit version for split text (chars / words). */
+.sbi-unit {
+  display: inline-block;
+  white-space: pre;
+  animation: soft-blur-in 648ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity, filter;
+}
 @media (prefers-reduced-motion: reduce) {
   .shimmer-sweep,
-  .soft-blur-in {
+  .soft-blur-in,
+  .sbi-unit {
     animation: none;
   }
 }

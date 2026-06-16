@@ -7,6 +7,7 @@ import { WaveHand } from "./WaveHand";
 import { VtbMark } from "./VtbMark";
 import { Footer } from "./Footer";
 import { typo } from "@/lib/typo";
+import { revealChars, revealWords, revealUnit } from "@/lib/reveal";
 
 export function HomeView({ locale }: { locale: Locale }) {
   const tr = t[locale];
@@ -19,91 +20,98 @@ export function HomeView({ locale }: { locale: Locale }) {
       <main className="flex justify-center px-6 pt-16 pb-10">
         <div className="w-full max-w-[1800px]">
           <section className="flex flex-col gap-8">
-              <h1 className="soft-blur-in text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
-                {(() => {
-                  const [before, after = ""] = tr.tagline.split("👋");
-                  const comp = locale === "en" ? "VTB" : "ВТБ";
-                  const idx = after.lastIndexOf(comp);
-                  const afterNode =
-                    idx === -1 ? (
-                      typo(after)
-                    ) : (
-                      <>
-                        {typo(after.slice(0, idx))}
-                        {" "}
-                        <span className="whitespace-nowrap">
-                          <VtbMark
-                            className="inline-block h-[0.47em] w-[0.77em]"
-                            style={{
-                              verticalAlign: "0.43em",
-                              marginLeft: "0.18em",
-                              marginRight: "0.18em",
-                            }}
-                          />
-                          {comp}
-                        </span>
-                        {after.slice(idx + comp.length)}
-                      </>
-                    );
-                  return (
-                    <>
-                      {typo(before)}{" "}
-                      <WaveHand />{" "}
-                      <br className="hidden sm:block" />
-                      {afterNode}
-                    </>
-                  );
-                })()}
-              </h1>
+            {(() => {
+              const tctx = { i: 0 };
+              const TS = 16;
+              const [before, after = ""] = tr.tagline.split("\u{1F44B}");
+              const comp = locale === "en" ? "VTB" : "ВТБ";
+              const idx = after.lastIndexOf(comp);
+              return (
+                <h1 className="text-3xl font-medium leading-[1.15] tracking-tight sm:text-4xl">
+                  {revealChars(typo(before), tctx, 0, TS, "b")}
+                  <span style={{ whiteSpace: "pre" }}> </span>
+                  {revealUnit(<WaveHand />, tctx, 0, TS, "wave")}
+                  <br className="hidden sm:block" />
+                  {idx === -1
+                    ? revealChars(typo(after), tctx, 0, TS, "a")
+                    : [
+                        ...revealChars(typo(after.slice(0, idx)), tctx, 0, TS, "h"),
+                        <span key="sp" style={{ whiteSpace: "pre" }}> </span>,
+                        revealUnit(
+                          <span className="whitespace-nowrap">
+                            <VtbMark
+                              className="inline-block h-[0.47em] w-[0.77em]"
+                              style={{
+                                verticalAlign: "0.43em",
+                                marginLeft: "0.18em",
+                                marginRight: "0.18em",
+                              }}
+                            />
+                            {comp}
+                          </span>,
+                          tctx,
+                          0,
+                          TS,
+                          "vtb"
+                        ),
+                        ...revealChars(after.slice(idx + comp.length), tctx, 0, TS, "t"),
+                      ]}
+                </h1>
+              );
+            })()}
 
             <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2">
-              <div
-                className="soft-blur-in flex flex-col gap-1 text-base leading-relaxed text-muted"
-                style={{ animationDelay: "200ms" }}
-              >
-                <p>
-                  {tr.taglineSub.split("\n").map((line, i) => (
-                    <span key={i} className="block">
-                      {typo(line)}
-                    </span>
-                  ))}
-                </p>
-                <p className="xl:whitespace-nowrap">{typo(tr.taglineSub2)}</p>
-              </div>
+              {(() => {
+                const dctx = { i: 0 };
+                const DB = 220;
+                const DS = 34;
+                return (
+                  <div className="flex flex-col gap-1 text-base leading-relaxed text-muted">
+                    <p>
+                      {tr.taglineSub.split("\n").map((line, li) => (
+                        <span key={li} className="block">
+                          {revealWords(typo(line), dctx, DB, DS, "l" + li)}
+                        </span>
+                      ))}
+                    </p>
+                    <p className="xl:whitespace-nowrap">
+                      {revealWords(typo(tr.taglineSub2), dctx, DB, DS, "s2")}
+                    </p>
+                  </div>
+                );
+              })()}
 
-              <ul
-                className="soft-blur-in flex flex-col text-base leading-relaxed"
-                style={{ animationDelay: "400ms" }}
-              >
-              {experience.map((e, i) => (
-                <li
-                  key={i}
-                  className="grid grid-cols-[130px_minmax(0,1fr)] items-baseline gap-x-5 sm:grid-cols-[150px_140px_minmax(0,1fr)] sm:gap-x-6"
-                >
-                  <span className="whitespace-nowrap text-muted">{e.year[locale]}</span>
-                  <span className="whitespace-nowrap">
-                    {e.href ? (
-                      e.company === "Ykt.Ru" ? (
-                        <FrostLink href={e.href}>{e.company}</FrostLink>
+              <ul className="flex flex-col text-base leading-relaxed">
+                {experience.map((e, i) => (
+                  <li
+                    key={i}
+                    className="soft-blur-in grid grid-cols-[130px_minmax(0,1fr)] items-baseline gap-x-5 sm:grid-cols-[150px_140px_minmax(0,1fr)] sm:gap-x-6"
+                    style={{ animationDelay: 420 + i * 90 + "ms" }}
+                  >
+                    <span className="whitespace-nowrap text-muted">{e.year[locale]}</span>
+                    <span className="whitespace-nowrap">
+                      {e.href ? (
+                        e.company === "Ykt.Ru" ? (
+                          <FrostLink href={e.href}>{e.company}</FrostLink>
+                        ) : (
+                          <a
+                            href={e.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="font-medium underline underline-offset-2 decoration-rule hover:decoration-foreground"
+                          >
+                            {e.company}
+                          </a>
+                        )
                       ) : (
-                        <a
-                          href={e.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="font-medium underline underline-offset-2 decoration-rule hover:decoration-foreground"
-                        >
-                          {e.company}
-                        </a>
-                      )
-                    ) : (
-                      <span className="font-medium">{e.company}</span>
-                    )}
-                  </span>
-                  <span className="hidden whitespace-nowrap text-muted sm:block">
-                    {e.role[locale]}
-                  </span>
-                </li>
-              ))}
+                        <span className="font-medium">{e.company}</span>
+                      )}
+                    </span>
+                    <span className="hidden whitespace-nowrap text-muted sm:block">
+                      {e.role[locale]}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
           </section>
