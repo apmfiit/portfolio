@@ -1197,8 +1197,8 @@ export const about = {
     },
   ] as AboutAchievement[],
   personal: {
-    en: "I keep a healthy lifestyle, do fitness, and write a bit of code.",
-    ru: "Веду здоровый образ жизни, занимаюсь фитнесом и немного пишу код.",
+    en: "I keep a healthy lifestyle, do fitness, and a bit of vibe coding.",
+    ru: "Веду здоровый образ жизни, занимаюсь фитнесом и немного вайбкожу.",
   } as LocalizedString,
 };
 
