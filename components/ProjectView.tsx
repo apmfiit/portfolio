@@ -186,11 +186,7 @@ function CaseFigure({
         )}
       </div>
       {caption && (
-        <figcaption
-          className={`max-w-[768px] text-sm text-muted leading-relaxed ${
-            constrained ? "text-center" : ""
-          }`}
-        >
+        <figcaption className="max-w-[768px] text-center text-sm text-muted leading-relaxed">
           {typo(caption)}
         </figcaption>
       )}
