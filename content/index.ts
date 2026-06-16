@@ -658,8 +658,8 @@ export const projects: Project[] = [
       role: { en: "Product Designer", ru: "Продуктовый дизайнер" },
       timeline: { en: "2024", ru: "2024" },
       skills: {
-        en: ["Marketing surfaces", "Visual design", "Hypothesis prioritization", "Conversion"],
-        ru: ["Маркетинговые поверхности", "Визуальный дизайн", "Приоритизация гипотез", "Конверсия"],
+        en: ["Visual design", "Hypothesis prioritization", "Conversion"],
+        ru: ["Визуальный дизайн", "Приоритизация гипотез", "Конверсия"],
       },
     },
     sections: [
