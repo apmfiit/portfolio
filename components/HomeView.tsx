@@ -19,8 +19,7 @@ export function HomeView({ locale }: { locale: Locale }) {
       <main className="flex justify-center px-6 pt-16 pb-10">
         <div className="w-full max-w-[1800px]">
         <FadeIn>
-          <section className="grid gap-10 lg:grid-cols-[1fr_minmax(0,560px)] lg:gap-16">
-            <div className="flex flex-col gap-5">
+          <section className="flex flex-col gap-8">
               <h1 className="text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
                 {(() => {
                   const [before, after = ""] = tr.tagline.split("👋");
@@ -57,19 +56,21 @@ export function HomeView({ locale }: { locale: Locale }) {
                   );
                 })()}
               </h1>
-              <p className="text-base leading-relaxed text-muted sm:text-lg">
-                {typo(tr.taglineSub)}
-              </p>
-            </div>
 
-            <ul className="flex flex-col gap-2 text-sm lg:pt-3">
+            <div className="grid gap-10 lg:grid-cols-[1fr_minmax(0,620px)] lg:gap-16">
+              <div className="flex max-w-xl flex-col gap-3 text-base leading-relaxed text-muted sm:text-lg">
+                <p>{typo(tr.taglineSub)}</p>
+                <p>{typo(tr.taglineSub2)}</p>
+              </div>
+
+              <ul className="flex flex-col gap-2.5 text-base sm:text-lg">
               {experience.map((e, i) => (
                 <li
                   key={i}
-                  className="grid grid-cols-[112px_minmax(0,1fr)] items-baseline gap-x-4 sm:grid-cols-[120px_150px_minmax(0,1fr)] sm:gap-x-5"
+                  className="grid grid-cols-[130px_minmax(0,1fr)] items-baseline gap-x-5 sm:grid-cols-[150px_140px_minmax(0,1fr)] sm:gap-x-6"
                 >
                   <span className="whitespace-nowrap text-muted">{e.year[locale]}</span>
-                  <span className="truncate">
+                  <span className="truncate whitespace-nowrap">
                     {e.href ? (
                       e.company === "Ykt.Ru" ? (
                         <FrostLink href={e.href}>{e.company}</FrostLink>
@@ -87,10 +88,13 @@ export function HomeView({ locale }: { locale: Locale }) {
                       <span className="font-medium">{e.company}</span>
                     )}
                   </span>
-                  <span className="hidden text-muted sm:block">{e.role[locale]}</span>
+                  <span className="hidden whitespace-nowrap text-muted sm:block">
+                    {e.role[locale]}
+                  </span>
                 </li>
               ))}
-            </ul>
+              </ul>
+            </div>
           </section>
         </FadeIn>
 
