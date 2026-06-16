@@ -90,7 +90,7 @@ export function AboutView({ locale }: { locale: Locale }) {
                         <span key={k}>
                           {typo(part)}
                           {k < parts.length - 1 && (
-                            <UkFlag className="ml-1 inline-block h-[0.9em] w-auto translate-y-[0.08em] rounded-[2px]" />
+                            <UkFlag className="ml-1 inline-block h-[0.82em] w-auto align-[-0.08em] rounded-[2px]" />
                           )}
                         </span>
                       ))}

@@ -71,27 +71,6 @@ a {
     0 0 30px rgba(46, 197, 255, 0.4);
 }
 
-/* Cold mist / frosty haze + bloom behind the word. */
-.frost::before {
-  content: "";
-  position: absolute;
-  inset: -0.55em -0.7em;
-  z-index: -1;
-  border-radius: 9999px;
-  background: radial-gradient(
-    60% 130% at 50% 50%,
-    rgba(120, 220, 255, 0.22),
-    rgba(120, 220, 255, 0) 70%
-  );
-  filter: blur(7px);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-.frost:hover::before {
-  opacity: 1;
-}
-
 /* Soft round snow particles drifting down. */
 .frost-flake {
   position: absolute;
