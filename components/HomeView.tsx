@@ -19,7 +19,7 @@ export function HomeView({ locale }: { locale: Locale }) {
       <main className="flex justify-center px-6 pt-16 pb-10">
         <div className="w-full max-w-[1800px]">
           <section className="flex flex-col gap-8">
-              <h1 className="shimmer-sweep text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
+              <h1 className="soft-blur-in text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
                 {(() => {
                   const [before, after = ""] = tr.tagline.split("👋");
                   const comp = locale === "en" ? "VTB" : "ВТБ";
@@ -58,7 +58,7 @@ export function HomeView({ locale }: { locale: Locale }) {
 
             <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2">
               <div
-                className="shimmer-sweep flex flex-col gap-1 text-base leading-relaxed text-muted"
+                className="soft-blur-in flex flex-col gap-1 text-base leading-relaxed text-muted"
                 style={{ animationDelay: "200ms" }}
               >
                 <p>
@@ -72,7 +72,7 @@ export function HomeView({ locale }: { locale: Locale }) {
               </div>
 
               <ul
-                className="shimmer-sweep flex flex-col text-base leading-relaxed"
+                className="soft-blur-in flex flex-col text-base leading-relaxed"
                 style={{ animationDelay: "400ms" }}
               >
               {experience.map((e, i) => (
