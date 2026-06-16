@@ -1,0 +1,168 @@
+{
+  "slug": "ykt-jobs",
+  "company": "Ykt.Ru",
+  "year": "2025",
+  "cover": "/images/ykt-jobs.png",
+  "status": {
+    "en": "Shipped",
+    "ru": "В продакшне"
+  },
+  "headline": {
+    "en": "Job & talent platform redesign",
+    "ru": "Редизайн сервиса по поиску работы и персонала"
+  },
+  "blurb": {
+    "en": "Led the full redesign of Ykt.Ru's job platform as the lead and feature designer — for both job seekers and employers in Yakutia.",
+    "ru": "Полный редизайн сервиса по поиску работы и персонала Ykt.Ru. Был ведущим дизайнером и фича-лидером."
+  },
+  "meta": {
+    "role": {
+      "en": "Lead Designer, feature lead",
+      "ru": "Ведущий дизайнер, фича-лидер"
+    },
+    "timeline": {
+      "en": "2023 – 2024",
+      "ru": "2023 – 2024"
+    },
+    "skills": {
+      "en": [
+        "End-to-end product",
+        "Usability research",
+        "Design system",
+        "Mobile + Web"
+      ],
+      "ru": [
+        "End-to-end продукт",
+        "Юзабилити-исследования",
+        "UI-кит",
+        "Mobile + Web"
+      ]
+    }
+  },
+  "sections": [
+    {
+      "id": "process",
+      "eyebrow": {
+        "en": "Process",
+        "ru": "Процесс проектирования"
+      },
+      "heading": {
+        "en": "Eight steps from usability tests to a new UI kit handed off to engineering.",
+        "ru": "Восемь шагов: от ю-тестов текущей версии до нового UI-кита"
+      },
+      "body": {
+        "en": [
+          "1) Usability tests of the current resume-creation flow with students.",
+          "2) Interview guide prepared for qualitative UX research.",
+          "3) Competitor analysis & benchmarking: Headhunter, Superjob, UpWork, Contra.",
+          "4) Insight extraction, results analysis, first new-flow concepts.",
+          "5) Designing new scenarios, improving old ones.",
+          "6) Prototyping for usability tests.",
+          "7) Building a custom profession catalog from current-vacancy data (with the analyst).",
+          "8) Updated UI kit, handed off to engineering."
+        ],
+        "ru": [
+          "1) Usability-тесты текущей версии флоу создания резюме со студентами.",
+          "2) Подготовка гайда глубинного интервью для качественного UX-исследования.",
+          "3) Конкурентный анализ и бенчмаркинг: Headhunter, Superjob, UpWork, Contra.",
+          "4) Получение инсайтов, анализ результатов и первые концепты обновлённых флоу.",
+          "5) Проектирование новых сценариев, улучшение старых.",
+          "6) Прототипирование для usability-тестов.",
+          "7) Создание собственного каталога популярных профессий на базе данных текущих вакансий вместе с аналитиком.",
+          "8) Создание обновлённого UI-кита и передача в разработку."
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/cases/ykt-jobs/img-1.png"
+        },
+        {
+          "src": "/images/cases/ykt-jobs/img-2.png",
+          "caption": {
+            "en": "Before the redesign",
+            "ru": "Как выглядел сайт до"
+          }
+        },
+        {
+          "src": "/images/cases/ykt-jobs/img-3.png"
+        },
+        {
+          "src": "/images/cases/ykt-jobs/img-4.png"
+        },
+        {
+          "src": "/images/cases/ykt-jobs/img-5.png",
+          "caption": {
+            "en": "After the redesign",
+            "ru": "После редизайна"
+          }
+        },
+        {
+          "src": "/images/cases/ykt-jobs/img-6.png"
+        },
+        {
+          "src": "/images/cases/ykt-jobs/img-7.png"
+        }
+      ]
+    },
+    {
+      "id": "always",
+      "eyebrow": {
+        "en": "Working method",
+        "ru": "Как обычно работаю"
+      },
+      "heading": {
+        "en": "Always write a task understanding with stakeholders before touching the design.",
+        "ru": "Всегда заполняю понимание задачи со стейкхолдерами перед работой"
+      },
+      "body": {
+        "en": [
+          "Mission, goal, audience, success criteria — agreed up front so everyone is on the same wave."
+        ],
+        "ru": [
+          "Миссия, цель, аудитория, критерии успеха — фиксируем заранее, чтобы все были на одной волне."
+        ]
+      }
+    },
+    {
+      "id": "results",
+      "eyebrow": {
+        "en": "Results",
+        "ru": "Результаты"
+      },
+      "heading": {
+        "en": "~300 Figma screens, a new revenue lever, lighter auth, profession catalog, Telegram bot.",
+        "ru": "~300 экранов в Figma, новая монетизация, упрощённая регистрация, каталог профессий, Telegram-бот"
+      },
+      "body": {
+        "en": [
+          "Designed ~300 Figma screens.",
+          "Helped shape a new business solution for company branding via a banner system. A major lead was already signed before the redesign even shipped.",
+          "Cut several steps from registration / auth.",
+          "Designed a new pricing plan for employers.",
+          "Assembled the in-house profession catalog tied to specialties and industries.",
+          "Improved vacancy search with a suggest system, and improved filters for both seekers and employers.",
+          "Added direct employer-to-seeker communication via WhatsApp / Telegram chat.",
+          "Designed a new Telegram bot for fast push-style vacancy notifications (the service has no app).",
+          "Status: in development; waiting on launch."
+        ],
+        "ru": [
+          "Задизайнил ~300 страниц в Figma.",
+          "Помог сформировать новое бизнес-решение для брендирования компаний через баннерную систему. До релиза редизайна уже получен жирный лид.",
+          "Облегчил флоу регистрации и авторизации на сервисе на несколько шагов.",
+          "Работал над созданием нового тарифного плана для работодателей.",
+          "Собрал собственный каталог профессий с привязкой к специальностям и отраслям.",
+          "Улучшил флоу поиска вакансий через систему саджестов.",
+          "Улучшил фильтры поиска для работодателей и соискателей.",
+          "Добавлена возможность прямой коммуникации работодателя с соискателем через WhatsApp/Telegram-чат.",
+          "Спроектировал новый Telegram-бот для быстрых push-уведомлений по вакансиям. У сервиса нет приложения.",
+          "Статус: в разработке. Ждём запуска."
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/cases/ykt-jobs/img-8.png"
+        }
+      ]
+    }
+  ]
+}

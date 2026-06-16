@@ -1,0 +1,58 @@
+{
+  "links": {
+    "telegram": "https://t.me/PetrAfanasyev",
+    "telegramHandle": "@PetrAfanasyev",
+    "email": "apm.x17@gmail.com",
+    "cv": "https://docs.google.com/document/d/1vShnasu4vFiBEl9XZZflFf3KOtvvDots56kp9Mvmpcc/edit?tab=t.0"
+  },
+  "t": {
+    "en": {
+      "tagline": "Hi! 👋\nI’m a senior product designer at VTB",
+      "taglineSub": "I design a B2C notification system: feed, pushes and settings,\nplus internal tools.",
+      "taglineSub2": "Over the past years I’ve designed e-commerce products and marketplaces.",
+      "location": "Moscow",
+      "work": "Work",
+      "experience": "Experience",
+      "selectedWork": "Selected work",
+      "about": "About",
+      "contacts": "Contacts",
+      "cv": "Resume",
+      "backHome": "← Back",
+      "onThisPage": "On this page",
+      "role": "Role",
+      "timeline": "Timeline",
+      "team": "Team",
+      "skills": "Skills",
+      "platforms": "Platforms",
+      "designedBy": "Designed by Petr",
+      "experienceFull": "Experience",
+      "growth": "Growth & learning",
+      "achievements": "Achievements",
+      "aboutMe": "About me"
+    },
+    "ru": {
+      "tagline": "Привет, я Петя 👋\nСтарший продуктовый дизайнер в ВТБ",
+      "taglineSub": "Проектирую B2C систему уведомлений: ленту, пуши и настройки,\nа также внутренние инструменты.",
+      "taglineSub2": "За последние годы я проектировал e-commerce продукты и маркетплейсы.",
+      "location": "Москва",
+      "work": "Кейсы",
+      "experience": "Опыт",
+      "selectedWork": "Кейсы",
+      "about": "Обо мне",
+      "contacts": "Контакты",
+      "cv": "Резюме",
+      "backHome": "← Назад",
+      "onThisPage": "В этом кейсе",
+      "role": "Роль",
+      "timeline": "Сроки",
+      "team": "Команда",
+      "skills": "Навыки",
+      "platforms": "Платформы",
+      "designedBy": "Сделано Петром",
+      "experienceFull": "Опыт работы",
+      "growth": "Развитие и обучение",
+      "achievements": "Достижения",
+      "aboutMe": "Обо мне"
+    }
+  }
+}

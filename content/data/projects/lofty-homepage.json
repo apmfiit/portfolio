@@ -1,0 +1,179 @@
+{
+  "slug": "lofty-homepage",
+  "company": "Lofty / KUPIKOD",
+  "year": "2024",
+  "cover": "/images/lofty-homepage.png",
+  "status": {
+    "en": "Shipped",
+    "ru": "В продакшне"
+  },
+  "headline": {
+    "en": "Lofty homepage redesign",
+    "ru": "Редизайн главной страницы KUPIKOD"
+  },
+  "blurb": {
+    "en": "KUPIKOD is a service ecosystem for gamers (2M+ MAU). I redesigned the homepage so it actually functions as a gateway into the ecosystem — not a chaotic landing.",
+    "ru": "KUPIKOD — сервисная экосистема для геймеров с 2M+ MAU. Сделал главную точкой входа в экосистему, а не «хаотичным лендингом»."
+  },
+  "meta": {
+    "role": {
+      "en": "Product Designer",
+      "ru": "Продуктовый дизайнер"
+    },
+    "timeline": {
+      "en": "2024",
+      "ru": "2024"
+    },
+    "skills": {
+      "en": [
+        "Visual design",
+        "Hypothesis prioritization",
+        "Conversion"
+      ],
+      "ru": [
+        "Визуальный дизайн",
+        "Приоритизация гипотез",
+        "Конверсия"
+      ]
+    }
+  },
+  "sections": [
+    {
+      "id": "problem",
+      "eyebrow": {
+        "en": "What was wrong",
+        "ru": "Что было не так с прошлой версией"
+      },
+      "heading": {
+        "en": "Users were only clicking one block. The homepage didn't communicate the ecosystem.",
+        "ru": "Пользователи кликали почти только в один блок и не понимали состав сервиса"
+      },
+      "body": {
+        "en": [
+          "By Yandex Metrika almost all clicks went into a single block.",
+          "There was no clear sense of which products live inside the service.",
+          "Key value propositions — bonus system, 24/7 support, refunds, creators — were absent.",
+          "It felt like a chaotic landing and was holding back traffic and conversion growth."
+        ],
+        "ru": [
+          "Пользователи кликали почти только в один блок (по данным Яндекс.Метрики).",
+          "Не было чёткого понимания, что у нас в сервисе есть из продуктов.",
+          "Не показывались ключевые УТП: бонусная система, поддержка 24/7, возвраты, блогеры.",
+          "Это формировало у юзеров впечатление «хаотичного лендинга» и мешало росту трафика и конверсий."
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/cases/lofty-homepage/img-2.png",
+          "caption": {
+            "en": "Previous version",
+            "ru": "Прошлая версия"
+          }
+        }
+      ]
+    },
+    {
+      "id": "task",
+      "eyebrow": {
+        "en": "Task",
+        "ru": "Задача"
+      },
+      "heading": {
+        "en": "Not a visual refresh. A redesign tied to product and traffic metrics.",
+        "ru": "Не косметика. Редизайн, связанный с продуктовыми метриками и трафиком"
+      },
+      "body": {
+        "en": [
+          "I gathered marketing feedback (users don't see the breadth of services or the value), benchmarked similar service-aggregators (MTS, Avito Career, Tinkoff, Sber, Twitch, Yandex Plus Gaming), picked reference visuals per block, and reworked SEO Title/Description with the SEO specialist."
+        ],
+        "ru": [
+          "Собрал фидбек от маркетинга: пользователи не понимают весь спектр сервисов и не видят ценности. Провёл бенчмаркинг похожих по структуре сервисов: Главная МТС, Авито Career, Тинькофф, Сбер, Twitch, Yandex Plus Gaming. Подобрал референсы по блокам. Проверил SEO и совместно с SEO-специалистом переработал Title и Description."
+        ]
+      }
+    },
+    {
+      "id": "hypotheses",
+      "eyebrow": {
+        "en": "Hypotheses",
+        "ru": "Гипотезы"
+      },
+      "heading": {
+        "en": "Three bets: clear service categories, surfaced USPs, social proof via creators.",
+        "ru": "Категории сервисов, УТП на видном месте, социальное доказательство через блогеров"
+      },
+      "body": {
+        "en": [
+          "1) Splitting services into large category blocks → users find the right one faster. Expected: more clicks distributed across blocks, higher CTR. Metric: CTR per service card, click heatmap.",
+          "2) Surface USPs → trust and conversion go up. Expected: fewer bounces, higher purchase conversion. Metric: clicks-to-action conversion (AppMetrica / GA).",
+          "3) Show creators → social proof, new visitors stay longer. Expected: deeper scroll, longer dwell, more navigation into services."
+        ],
+        "ru": [
+          "1) Если разделить сервисы по большим категорийным блокам, пользователи будут быстрее находить нужное. Ожидание: больше кликов в разные блоки, рост переходов. Метрика: CTR на карточки сервисов, распределение кликов (heatmap).",
+          "2) Если вынести УТП, доверие и конверсия вырастут. Ожидание: меньше отказов, рост конверсии в покупки. Метрика: конверсия из кликов в действия (AppMetrica/GA).",
+          "3) Если показать блогеров, это усилит социальное доказательство — новые пользователи останутся дольше, скроллят глубже, чаще переходят к сервисам."
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/cases/lofty-homepage/img-3.png"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "eyebrow": {
+        "en": "Results",
+        "ru": "Результаты"
+      },
+      "heading": {
+        "en": "Click distribution rebalanced. CTR up. Engagement on the creators block strong.",
+        "ru": "Распределение кликов выровнялось. CTR вырос. Блок с блогерами «зашёл»"
+      },
+      "body": {
+        "en": [
+          "After launch users finally started clicking across all major services — not just one block. CTR rose materially; clicks to Steam, games, digital goods and top-ups became more even. The page now actually behaves like a gateway to the ecosystem rather than a random landing.",
+          "The creators / USP / social proof block looked like typical marketing but materially drove engagement: new users recognized creators, stayed longer, scrolled deeper, and moved on to services more often."
+        ],
+        "ru": [
+          "После запуска пользователи наконец-то начали кликать не только в один блок, а распределялись по всем основным сервисам. CTR вырос кратно, переходы в Steam, игры, цифровые товары и донат стали более равномерными. Теперь страница действительно работает как «ворота в экосистему», а не как случайный лендинг.",
+          "Блок с блогерами, УТП и социальным доказательством визуально выглядел как типичный маркетинг, но по факту дал заметный рост вовлечённости. Новые пользователи видели знакомых блогеров, задерживались на странице дольше, скроллили глубже и чаще переходили к сервисам."
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/cases/lofty-homepage/img-4.png"
+        },
+        {
+          "src": "/images/cases/lofty-homepage/img-5.png"
+        },
+        {
+          "src": "/images/cases/lofty-homepage/img-6.png"
+        },
+        {
+          "src": "/images/cases/lofty-homepage/img-7.png"
+        }
+      ]
+    },
+    {
+      "id": "lessons",
+      "eyebrow": {
+        "en": "Lessons",
+        "ru": "Уроки"
+      },
+      "heading": {
+        "en": "Even a “brand” page can be productized — and move metrics.",
+        "ru": "Даже брендовая страница может быть продуктовой и двигать метрики"
+      },
+      "body": {
+        "en": [
+          "1) Even a brand page can be productized and drive metric growth if you set the goal right.",
+          "2) Don't be afraid to throw together rough concepts quickly. Don't get stuck polishing them to “perfect”."
+        ],
+        "ru": [
+          "1) Даже брендовая страница может быть продуктовой и давать рост метрик, если правильно поставить цель.",
+          "2) Не бояться и накидывать быстро возможные концепты. Не застревать в бесконечном доведении их до идеала."
+        ]
+      }
+    }
+  ]
+}
