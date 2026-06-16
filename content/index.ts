@@ -778,9 +778,9 @@ export const projects: Project[] = [
   {
     slug: "ykt-jobs",
     company: "Ykt.Ru",
-    year: "2023–2024",
+    year: "2025",
     cover: "/images/ykt-jobs.png",
-    status: { en: "In dev", ru: "В разработке" },
+    status: { en: "Shipped", ru: "В продакшне" },
     headline: {
       en: "Job & talent platform redesign",
       ru: "Редизайн сервиса по поиску работы и персонала",
