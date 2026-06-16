@@ -19,13 +19,14 @@ export function HomeView({ locale }: { locale: Locale }) {
         <FadeIn>
           <section className="grid gap-10 lg:grid-cols-[1fr_minmax(0,560px)] lg:gap-16">
             <div className="flex flex-col gap-5">
-              <h1 className="max-w-2xl whitespace-pre-line text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
+              <h1 className="max-w-2xl text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
                 {(() => {
                   const [before, after = ""] = tr.tagline.split("👋");
                   return (
                     <>
                       {typo(before)}{" "}
                       <WaveHand />{" "}
+                      <br className="hidden sm:block" />
                       {typo(after)}
                     </>
                   );
