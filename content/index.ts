@@ -1038,8 +1038,8 @@ export const experience: Experience[] = [
   },
   {
     year: { en: "2024", ru: "2024" },
-    company: "Lofty / KUPIKOD",
-    href: "https://www.lofty.today/",
+    company: "KUPIKOD",
+    href: "https://kupikod.com/",
     role: { en: "Product Designer", ru: "Продуктовый дизайнер" },
   },
   {
@@ -1205,7 +1205,7 @@ export const about = {
 export const t = {
   en: {
     tagline: "Hi! 👋\nI’m a senior product designer at VTB",
-    taglineSub: "I run the design of the whole notification system: feed, pushes, settings and internal admins",
+    taglineSub: "I design a B2C notification system: feed, pushes and settings, plus internal tools.",
     location: "Moscow",
     work: "Work",
     experience: "Experience",
@@ -1228,7 +1228,7 @@ export const t = {
   },
   ru: {
     tagline: "Привет, я Петя 👋\nСтарший продуктовый дизайнер в ВТБ",
-    taglineSub: "Веду дизайн всей системы уведомлений: ленту, пуши, настройки и внутренние админки",
+    taglineSub: "Проектирую B2C систему уведомлений: ленту, пуши и настройки, а также внутренние инструменты.",
     location: "Москва",
     work: "Кейсы",
     experience: "Опыт",
