@@ -19,6 +19,9 @@ export function CopyEmail({
   onCopiedChange?: (copied: boolean) => void;
 }) {
   const [copied, setCopied] = useState(false);
+  // Only fade on an actual copy/un-copy swap — not on initial mount
+  // (otherwise the label flashes in on every page load).
+  const [swapped, setSwapped] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => () => {
@@ -41,6 +44,7 @@ export function CopyEmail({
       ta.remove();
     }
     setCopied(true);
+    setSwapped(true);
     onCopied?.();
     onCopiedChange?.(true);
     if (timer.current) clearTimeout(timer.current);
@@ -60,7 +64,9 @@ export function CopyEmail({
     >
       <span
         key={copied ? "copied" : "label"}
-        className="whitespace-nowrap animate-[lb-in_150ms_ease-out]"
+        className={`whitespace-nowrap ${
+          swapped ? "animate-[lb-in_150ms_ease-out]" : ""
+        }`}
       >
         {copied ? copiedLabel : label}
       </span>
