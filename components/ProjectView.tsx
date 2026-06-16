@@ -91,7 +91,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
               {p.sections.map((s) => (
                 <FadeIn key={s.id} delay={0.04}>
                   <section id={s.id} className="scroll-mt-24 flex flex-col gap-5">
-                    <p className="text-xs uppercase tracking-[-0.02em] text-muted">
+                    <p className="text-sm uppercase tracking-[-0.02em] text-muted">
                       {s.eyebrow[locale]}
                     </p>
                     <h2 className="text-2xl font-medium leading-snug tracking-tight text-balance sm:text-3xl">
@@ -122,7 +122,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
 
           <FadeIn delay={0.05}>
             <nav className="mt-24 flex flex-col gap-4 border-t border-rule pt-8">
-              <p className="text-xs uppercase tracking-[-0.02em] text-muted">
+              <p className="text-sm uppercase tracking-[-0.02em] text-muted">
                 {locale === "en" ? "Next" : "Дальше"}
               </p>
               <Link

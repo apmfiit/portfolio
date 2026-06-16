@@ -3,12 +3,6 @@
 import { useEffect, useState } from "react";
 import { Locale, ProjectSection } from "@/content";
 
-function sentenceCase(s: string) {
-  const trimmed = s.trim();
-  if (!trimmed) return trimmed;
-  return trimmed.charAt(0).toLocaleUpperCase() + trimmed.slice(1).toLocaleLowerCase();
-}
-
 export function TableOfContents({
   sections,
   locale,
@@ -48,7 +42,7 @@ export function TableOfContents({
                   : "text-muted hover:text-foreground"
               }`}
             >
-              {sentenceCase(s.eyebrow[locale])}
+              {s.eyebrow[locale]}
             </a>
           </li>
         ))}

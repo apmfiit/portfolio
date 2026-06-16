@@ -179,7 +179,7 @@ export const projects: Project[] = [
       },
       {
         id: "lo-fi",
-        eyebrow: { en: "Lo-fi and selling the solution", ru: "Lo-fi и защита решения" },
+        eyebrow: { en: "Lo-Fi and selling the solution", ru: "Lo-Fi и защита решения" },
         heading: {
           en: "Lo-fi prototypes, picked the working variants with the team, defended with leadership.",
           ru: "Собрал lo-fi прототипы и защитил решение у топов кластера",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
       },
       {
         id: "hi-fi",
-        eyebrow: { en: "Hi-fi: three states", ru: "Hi-fi: три состояния" },
+        eyebrow: { en: "Hi-Fi: three states", ru: "Hi-Fi: три состояния" },
         heading: {
           en: "Designed the “Notification methods” screen for every realistic state.",
           ru: "Проработал ключевые состояния экрана «Способы уведомлений»",

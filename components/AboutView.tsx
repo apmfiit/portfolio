@@ -8,6 +8,7 @@ import { FadeIn } from "./FadeIn";
 import { CopyEmail } from "./CopyEmail";
 import { ZoomableImage } from "./ZoomableImage";
 import { PinIcon } from "./PinIcon";
+import { UkFlag } from "./UkFlag";
 import { Footer } from "./Footer";
 
 // Designing since May 2021 — count only full years.
@@ -78,14 +79,24 @@ export function AboutView({ locale }: { locale: Locale }) {
           <FadeIn delay={0.05}>
             <Section label={tr.growth}>
               <ul className="flex flex-col gap-2">
-                {about.growth[locale].map((g, i) => (
-                  <li
-                    key={i}
-                    className="relative pl-4 leading-relaxed text-foreground/80 before:absolute before:left-0 before:text-muted before:content-['—']"
-                  >
-                    {typo(g)}
-                  </li>
-                ))}
+                {about.growth[locale].map((g, i) => {
+                  const parts = g.split("🇬🇧");
+                  return (
+                    <li
+                      key={i}
+                      className="relative pl-4 leading-relaxed text-foreground/80 before:absolute before:left-0 before:text-muted before:content-['—']"
+                    >
+                      {parts.map((part, k) => (
+                        <span key={k}>
+                          {typo(part)}
+                          {k < parts.length - 1 && (
+                            <UkFlag className="ml-1 inline-block h-[0.9em] w-auto translate-y-[0.08em] rounded-[2px]" />
+                          )}
+                        </span>
+                      ))}
+                    </li>
+                  );
+                })}
               </ul>
             </Section>
           </FadeIn>
@@ -192,7 +203,7 @@ function Section({
 }) {
   return (
     <section className="flex flex-col gap-6 border-t border-rule pt-8">
-      <h2 className="text-xs uppercase tracking-[-0.02em] text-muted">{label}</h2>
+      <h2 className="text-sm uppercase tracking-[-0.02em] text-muted">{label}</h2>
       <div>{children}</div>
     </section>
   );
