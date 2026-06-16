@@ -332,7 +332,7 @@ export const projects: Project[] = [
     slug: "vtb-template-constructor",
     company: "ВТБ",
     year: "2025",
-    cover: "/images/template-constructor.png",
+    cover: "/images/cases/vtb-template-constructor/vtb-admin-case-cover.png",
     status: { en: "Shipped", ru: "В продакшне" },
     headline: {
       en: "Notification template constructor redesign",

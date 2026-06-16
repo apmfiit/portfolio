@@ -132,6 +132,11 @@ export const imageMeta: Record<string, ImageMeta> = {
     "h": 1450,
     "format": "png"
   },
+  "/images/cases/vtb-template-constructor/vtb-admin-case-cover.png": {
+    "w": 2884,
+    "h": 1819,
+    "format": "png"
+  },
   "/images/cases/ykt-jobs/img-1.png": {
     "w": 1370,
     "h": 1827,
