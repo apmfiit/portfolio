@@ -14,6 +14,9 @@ _anchors:
   loc_string: &loc_string
     - { name: ru, label: RU, widget: string }
     - { name: en, label: EN, widget: string }
+  loc_string_opt: &loc_string_opt
+    - { name: ru, label: RU, widget: string, required: false }
+    - { name: en, label: EN, widget: string, required: false }
   loc_text: &loc_text
     - { name: ru, label: RU, widget: text }
     - { name: en, label: EN, widget: text }
@@ -84,7 +87,7 @@ collections:
         fields:
           - { name: id, label: ID (якорь URL), widget: string }
           - { name: eyebrow, label: Надзаголовок, widget: object, fields: *loc_string }
-          - { name: heading, label: Заголовок секции, widget: object, fields: *loc_string }
+          - { name: heading, label: Заголовок секции (можно оставить пустым), widget: object, required: false, fields: *loc_string_opt }
           - { name: body, label: Текст (абзацы), widget: object, required: false, fields: *loc_text_list }
           - { name: image, label: Картинка (одиночная), widget: image, required: false }
           - { name: caption, label: Подпись, widget: object, required: false, fields: *loc_string }
