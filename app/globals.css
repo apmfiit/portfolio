@@ -202,8 +202,10 @@ a {
   --drift: 0px;
 }
 .frost:hover .frost-flake {
-  animation: frost-fall var(--dur, 3.4s) linear infinite;
+  animation: frost-fall var(--dur, 3.4s) ease-in-out infinite;
 }
+/* Falls steadily downward while swaying left↔right (amplitude = --drift,
+   sign varies per flake) so it reads like real drifting snow, not a straight line. */
 @keyframes frost-fall {
   0% {
     opacity: 0;
@@ -212,12 +214,21 @@ a {
   15% {
     opacity: 0.95;
   }
+  30% {
+    transform: translate3d(var(--drift), 9px, 0);
+  }
+  55% {
+    transform: translate3d(calc(var(--drift) * -0.7), 21px, 0);
+  }
+  80% {
+    transform: translate3d(var(--drift), 31px, 0);
+  }
   85% {
     opacity: 0.95;
   }
   100% {
     opacity: 0;
-    transform: translate3d(var(--drift), 38px, 0);
+    transform: translate3d(calc(var(--drift) * 0.2), 40px, 0);
   }
 }
 @media (prefers-reduced-motion: reduce) {
