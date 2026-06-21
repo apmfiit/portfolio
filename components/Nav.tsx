@@ -7,6 +7,7 @@ import { LayoutGroup, motion } from "motion/react";
 import { Locale, links, t } from "@/content";
 import { CopyEmail } from "./CopyEmail";
 import { ExternalLinkIcon } from "./icons";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navSpring = { type: "spring", stiffness: 500, damping: 30, mass: 0.6 } as const;
 
@@ -69,6 +70,9 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
         {/* Desktop nav */}
         <LayoutGroup>
           <nav className="hidden items-center gap-5 text-muted md:flex">
+            <motion.span layout="position" transition={navSpring} className="inline-flex">
+              <ThemeToggle />
+            </motion.span>
             <motion.span layout="position" transition={navSpring} className="inline-flex">
               <Link href={aboutHref} className="hover:text-foreground transition-colors">
                 {tr.about}
@@ -161,6 +165,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
             </button>
           </div>
           <nav className="flex flex-col gap-7 px-6 pt-10 pb-10 text-[15px] uppercase tracking-[-0.02em] text-muted">
+            <ThemeToggle />
             <Link
               href={aboutHref}
               onClick={() => setOpen(false)}
