@@ -6,11 +6,11 @@
   --muted: #32404f95;
   --rule: #e5e5e5;
   --accent: #0a0a0a;
-  /* Snow particle colors — white-dominant with a soft light-blue fade + faint
-     blue glow so they read as white snow yet stay visible on the light bg. */
-  --flake-core: #f4fbff;
-  --flake-mid: #c9e6f8;
-  --flake-glow: rgba(110, 175, 222, 0.5);
+  /* Light mode: icy-blue hover text + plain white snowflakes (no blue edge). */
+  --ice-text: #2f9fe0;
+  --flake-core: #ffffff;
+  --flake-mid: #ffffff;
+  --flake-glow: rgba(140, 152, 168, 0.4);
 }
 
 @theme inline {
@@ -29,6 +29,7 @@
     --foreground: #f5f5f4;
     --muted: #a3a3a3;
     --rule: #262626;
+    --ice-text: #eafdff;
     --flake-core: #ffffff;
     --flake-mid: #d6f3ff;
     --flake-glow: rgba(180, 235, 255, 0.85);
@@ -39,6 +40,7 @@
   --foreground: #f5f5f4;
   --muted: #a3a3a3;
   --rule: #262626;
+  --ice-text: #eafdff;
   --flake-core: #ffffff;
   --flake-mid: #d6f3ff;
   --flake-glow: rgba(180, 235, 255, 0.85);
@@ -133,7 +135,7 @@ a {
   transition: color 0.5s ease, text-shadow 0.5s ease, text-decoration-color 0.5s ease;
 }
 .frost:hover .frost-ice {
-  color: #eafdff;
+  color: var(--ice-text);
   text-decoration-color: #7fdcff;
   /* Frozen, icy text à la the Dota "ПОИСК ИГРЫ" look: crisp white core +
      a visible cyan glow that still hugs the glyphs (no wide background halo). */
