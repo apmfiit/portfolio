@@ -91,16 +91,16 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
               {p.sections.map((s) => (
                 <FadeIn key={s.id} delay={0.04}>
                   <section id={s.id} className="scroll-mt-24 flex flex-col gap-5">
-                    <p className="mx-auto w-full max-w-[36.375rem] text-sm uppercase tracking-[-0.02em] text-muted">
+                    <p className="mx-auto w-full max-w-[644px] text-sm uppercase tracking-[-0.02em] text-muted">
                       {s.eyebrow[locale]}
                     </p>
                     {s.heading?.[locale]?.trim() && (
-                      <h2 className="mx-auto w-full max-w-[36.375rem] text-2xl font-medium leading-snug tracking-tight text-balance sm:text-3xl">
+                      <h2 className="mx-auto w-full max-w-[644px] text-2xl font-medium leading-snug tracking-tight text-balance sm:text-3xl">
                         {typo(s.heading[locale])}
                       </h2>
                     )}
                     {s.body?.[locale]?.map((para, i) => (
-                      <p key={i} className="mx-auto w-full max-w-[36.375rem] leading-relaxed text-foreground/80">
+                      <p key={i} className="mx-auto w-full max-w-[644px] leading-relaxed text-foreground/80">
                         {typo(para)}
                       </p>
                     ))}
