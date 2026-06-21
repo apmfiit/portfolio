@@ -71,9 +71,6 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
         <LayoutGroup>
           <nav className="hidden items-center gap-5 text-muted md:flex">
             <motion.span layout="position" transition={navSpring} className="inline-flex">
-              <ThemeToggle />
-            </motion.span>
-            <motion.span layout="position" transition={navSpring} className="inline-flex">
               <Link href={aboutHref} className="hover:text-foreground transition-colors">
                 {tr.about}
               </Link>
@@ -117,6 +114,9 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
               >
                 {otherCode}
               </Link>
+            </motion.span>
+            <motion.span layout="position" transition={navSpring} className="inline-flex">
+              <ThemeToggle />
             </motion.span>
           </nav>
         </LayoutGroup>
