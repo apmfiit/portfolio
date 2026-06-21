@@ -77,6 +77,11 @@ export const imageMeta: Record<string, ImageMeta> = {
     "h": 1710,
     "format": "png"
   },
+  "/images/cases/vtb-push-onboarding/flow-comparison.png": {
+    "w": 3840,
+    "h": 2530,
+    "format": "png"
+  },
   "/images/cases/vtb-push-onboarding/img-1.png": {
     "w": 3840,
     "h": 2160,
@@ -95,6 +100,11 @@ export const imageMeta: Record<string, ImageMeta> = {
   "/images/cases/vtb-push-onboarding/img-4.png": {
     "w": 3840,
     "h": 2160,
+    "format": "png"
+  },
+  "/images/cases/vtb-push-onboarding/previous-toggle-flow.png": {
+    "w": 3840,
+    "h": 1520,
     "format": "png"
   },
   "/images/cases/vtb-template-constructor/img-1.png": {

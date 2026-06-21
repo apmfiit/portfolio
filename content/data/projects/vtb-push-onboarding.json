@@ -152,6 +152,9 @@
       },
       "images": [
         {
+          "src": "/images/cases/vtb-push-onboarding/previous-toggle-flow.png"
+        },
+        {
           "src": "/images/cases/vtb-push-onboarding/img-3.png",
           "caption": {
             "ru": "Наблюдение оказалось простым: чем меньше тоглов и чем теснее они связаны с системой, тем понятнее пользователю",
@@ -179,7 +182,12 @@
           "If we drop the internal toggle and reflect the OS notification permission directly inside the app, the user always sees the actual push status and can jump into system settings with one tap to switch it on or off.",
           "The 7-step flow collapses to 4 — almost half the length."
         ]
-      }
+      },
+      "images": [
+        {
+          "src": "/images/cases/vtb-push-onboarding/flow-comparison.png"
+        }
+      ]
     },
     {
       "id": "lo-fi",
