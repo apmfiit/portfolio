@@ -214,14 +214,8 @@ a {
   15% {
     opacity: 0.95;
   }
-  30% {
-    transform: translate3d(var(--drift), 9px, 0);
-  }
-  55% {
-    transform: translate3d(calc(var(--drift) * -0.7), 21px, 0);
-  }
-  80% {
-    transform: translate3d(var(--drift), 31px, 0);
+  50% {
+    transform: translate3d(var(--drift), 16px, 0);
   }
   85% {
     opacity: 0.95;

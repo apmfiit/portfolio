@@ -6,18 +6,18 @@ import { ReactNode } from "react";
 // Staggered delays keep the snowfall continuous; mixed durations add depth
 // (smaller + slower = "farther" flakes). drift = sway amplitude (± per flake).
 const FLAKES = [
-  { left: "3%", size: 4, delay: 0, dur: 3.6, drift: 9 },
-  { left: "12%", size: 3, delay: 1.3, dur: 4.6, drift: -7 },
-  { left: "21%", size: 5, delay: 0.5, dur: 3.1, drift: 11 },
-  { left: "30%", size: 3.5, delay: 2.0, dur: 4.2, drift: -9 },
-  { left: "39%", size: 4.5, delay: 0.9, dur: 3.8, drift: 6 },
-  { left: "47%", size: 3, delay: 1.7, dur: 4.8, drift: -6 },
-  { left: "55%", size: 5, delay: 0.3, dur: 3.3, drift: 10 },
-  { left: "63%", size: 3.5, delay: 2.3, dur: 4.0, drift: -8 },
-  { left: "71%", size: 4, delay: 1.1, dur: 3.5, drift: 8 },
-  { left: "80%", size: 3, delay: 0.6, dur: 4.4, drift: -10 },
-  { left: "88%", size: 4.5, delay: 1.9, dur: 3.2, drift: 7 },
-  { left: "95%", size: 3.5, delay: 0.2, dur: 4.1, drift: -5 },
+  { left: "3%", size: 4, delay: 0, dur: 3.6, drift: 3 },
+  { left: "12%", size: 3, delay: 1.3, dur: 4.6, drift: -2 },
+  { left: "21%", size: 5, delay: 0.5, dur: 3.1, drift: 4 },
+  { left: "30%", size: 3.5, delay: 2.0, dur: 4.2, drift: -3 },
+  { left: "39%", size: 4.5, delay: 0.9, dur: 3.8, drift: 2 },
+  { left: "47%", size: 3, delay: 1.7, dur: 4.8, drift: -2 },
+  { left: "55%", size: 5, delay: 0.3, dur: 3.3, drift: 3 },
+  { left: "63%", size: 3.5, delay: 2.3, dur: 4.0, drift: -3 },
+  { left: "71%", size: 4, delay: 1.1, dur: 3.5, drift: 2 },
+  { left: "80%", size: 3, delay: 0.6, dur: 4.4, drift: -4 },
+  { left: "88%", size: 4.5, delay: 1.9, dur: 3.2, drift: 3 },
+  { left: "95%", size: 3.5, delay: 0.2, dur: 4.1, drift: -2 },
 ];
 
 export function FrostLink({
