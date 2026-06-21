@@ -95,12 +95,12 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                       {s.eyebrow[locale]}
                     </p>
                     {s.heading?.[locale]?.trim() && (
-                      <h2 className="text-2xl font-medium leading-snug tracking-tight text-balance sm:text-3xl">
+                      <h2 className="max-w-[36.375rem] text-2xl font-medium leading-snug tracking-tight text-balance sm:text-3xl">
                         {typo(s.heading[locale])}
                       </h2>
                     )}
                     {s.body?.[locale]?.map((para, i) => (
-                      <p key={i} className="max-w-[768px] leading-relaxed text-foreground/80">
+                      <p key={i} className="max-w-[36.375rem] leading-relaxed text-foreground/80">
                         {typo(para)}
                       </p>
                     ))}
