@@ -23,7 +23,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
 
   return (
     <>
-      <Nav locale={locale} sticky={false} />
+      <Nav locale={locale} />
       <main className="flex justify-center px-6 pt-6 pb-10">
         <div className="w-full max-w-[1800px]">
         <div className="grid w-full grid-cols-1 gap-10 lg:grid-cols-[1fr_minmax(0,768px)_1fr] lg:gap-12">
