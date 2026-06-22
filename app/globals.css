@@ -259,6 +259,12 @@ a {
   background-size: 256px 32px;
   animation: cat-walk-play 0.8s steps(8) infinite;
 }
+.cat-yawn {
+  background-image: url("/cat/cat-yawn.png");
+  background-size: 256px 32px;
+  /* One-shot wake-up yawn, then JS hands off to the walk loop. */
+  animation: cat-walk-play 1.1s steps(8) 1 forwards;
+}
 .cat-sleep {
   background-image: url("/cat/cat-sleep.png");
   background-size: 64px 32px;
@@ -279,6 +285,7 @@ a {
 @media (prefers-reduced-motion: reduce) {
   .cat-idle,
   .cat-walk,
+  .cat-yawn,
   .cat-sleep {
     animation: none;
     background-position: 0 0;

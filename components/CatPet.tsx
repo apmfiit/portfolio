@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Night in Moscow: 22:00–06:59 (Europe/Moscow), independent of the visitor's TZ.
 function isMoscowNight(): boolean {
@@ -14,9 +14,13 @@ function isMoscowNight(): boolean {
   return h >= 22 || h < 7;
 }
 
+const YAWN_MS = 1100; // keep in sync with .cat-yawn duration
+
 export function CatPet() {
   const [night, setNight] = useState(false);
   const [hover, setHover] = useState(false);
+  const [yawning, setYawning] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const update = () => setNight(isMoscowNight());
@@ -25,11 +29,39 @@ export function CatPet() {
     return () => clearInterval(id);
   }, []);
 
-  // Hover: walk by day; at night he just wakes to a sit (idle) — no instant
-  // zoomies from a dead sleep. Otherwise sleep at night, idle by day.
-  const state = hover ? (night ? "idle" : "walk") : night ? "sleep" : "idle";
+  useEffect(() => () => {
+    if (timer.current) clearTimeout(timer.current);
+  }, []);
+
+  // On hover the cat wakes/stretches with a one-shot yawn, then walks.
+  const enter = () => {
+    setHover(true);
+    setYawning(true);
+    if (timer.current) clearTimeout(timer.current);
+    timer.current = setTimeout(() => setYawning(false), YAWN_MS);
+  };
+  const leave = () => {
+    setHover(false);
+    setYawning(false);
+    if (timer.current) clearTimeout(timer.current);
+  };
+
+  const state = hover
+    ? yawning
+      ? "yawn"
+      : "walk"
+    : night
+      ? "sleep"
+      : "idle";
+
   const label =
-    state === "sleep" ? "sleeping cat" : state === "walk" ? "walking cat" : "cat";
+    state === "sleep"
+      ? "sleeping cat"
+      : state === "walk"
+        ? "walking cat"
+        : state === "yawn"
+          ? "yawning cat"
+          : "cat";
 
   return (
     <span
@@ -37,8 +69,8 @@ export function CatPet() {
       role="img"
       aria-label={label}
       title={night ? "zzz…" : "meow"}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      onMouseEnter={enter}
+      onMouseLeave={leave}
     />
   );
 }
