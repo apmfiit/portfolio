@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// Real, self-hosted InterVariable (rsms/inter, latest) with the optical-size
+// axis — the same "Inter Variable" interfaces.dev ships. Defines the
+// "Inter Variable" @font-face; --font-inter points at it in globals.css.
+import "@fontsource-variable/inter/opsz.css";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin", "cyrillic"],
-  display: "swap",
-});
 
 const siteUrl = "https://petrafanasyev.com";
 
@@ -34,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={inter.variable} suppressHydrationWarning>
+    <html lang="ru" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
