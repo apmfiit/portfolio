@@ -25,8 +25,9 @@ export function CatPet() {
     return () => clearInterval(id);
   }, []);
 
-  // Hover wakes him for a walk; otherwise sleep at night, idle by day.
-  const state = hover ? "walk" : night ? "sleep" : "idle";
+  // Hover: walk by day; at night he just wakes to a sit (idle) — no instant
+  // zoomies from a dead sleep. Otherwise sleep at night, idle by day.
+  const state = hover ? (night ? "idle" : "walk") : night ? "sleep" : "idle";
   const label =
     state === "sleep" ? "sleeping cat" : state === "walk" ? "walking cat" : "cat";
 

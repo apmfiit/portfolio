@@ -93,8 +93,8 @@ export function AboutView({ locale }: { locale: Locale }) {
     <>
       <Nav locale={locale} />
       <main className="flex justify-center px-6 pt-16 pb-10">
-        <div className="w-full max-w-[644px]">
-        <div className="flex flex-col gap-16">
+        <div className="w-full max-w-[1800px]">
+        <div className="mx-auto flex w-full max-w-[644px] flex-col gap-16">
           {/* Intro */}
           <FadeIn>
             <header className="flex flex-col gap-6">
