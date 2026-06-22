@@ -69,9 +69,9 @@ export function AboutView({ locale }: { locale: Locale }) {
                   </span>
                 </p>
               </div>
-              <p className="max-w-2xl text-xl leading-relaxed text-balance sm:text-2xl">
+              <h1 className="text-[2rem] font-semibold leading-[1.1] tracking-tight text-balance sm:text-[2.5rem]">
                 {typo(about.intro[locale])}
-              </p>
+              </h1>
             </header>
           </FadeIn>
 
