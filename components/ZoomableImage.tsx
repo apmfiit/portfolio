@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { createPortal } from "react-dom";
 import { useCallback, useEffect, useState } from "react";
 
 type Props = {
@@ -62,14 +63,16 @@ export function ZoomableImage({
         />
       </button>
 
-      {open && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={alt}
-          onClick={close}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[color:var(--background)]/70 backdrop-blur-xl px-6 py-12 animate-[lb-in_180ms_ease-out]"
-        >
+      {open &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={alt}
+            onClick={close}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[color:var(--background)]/70 backdrop-blur-xl px-6 py-12 animate-[lb-in_180ms_ease-out]"
+          >
           <button
             type="button"
             onClick={close}
@@ -93,8 +96,9 @@ export function ZoomableImage({
               priority
             />
           </button>
-        </div>
-      )}
+          </div>,
+          document.body,
+        )}
     </>
   );
 }
