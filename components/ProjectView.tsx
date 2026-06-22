@@ -202,7 +202,7 @@ function CaseFigure({
         )}
       </div>
       {caption && (
-        <figcaption className="mx-auto max-w-[644px] text-center text-sm text-muted leading-relaxed">
+        <figcaption className="mx-auto w-full max-w-[644px] text-left text-sm text-muted leading-relaxed">
           {typo(caption)}
         </figcaption>
       )}
