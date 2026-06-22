@@ -50,7 +50,15 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
   const NameBlock = (
     <Link
       href={homeHref}
-      onClick={() => setOpen(false)}
+      onClick={(e) => {
+        setOpen(false);
+        // Already on this page? Smooth-scroll to top instead of a no-op nav.
+        const norm = (p: string) => p.replace(/\/+$/, "") || "/";
+        if (norm(pathname) === norm(homeHref)) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }}
       className="flex flex-col gap-0.5 md:flex-row md:items-baseline md:gap-2"
     >
       <span>{isEn ? "Petr Afanasyev" : "Петр Афанасьев"}</span>
