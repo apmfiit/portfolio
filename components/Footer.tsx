@@ -10,8 +10,8 @@ export function Footer({ locale }: { locale: Locale }) {
         {locale === "en" ? "Petr Afanasyev" : "Петр Афанасьев"}
       </span>
       <div className="flex items-center gap-2">
-        <CatPet />
         <MoscowClock locale={locale} />
+        <CatPet />
       </div>
     </footer>
   );
