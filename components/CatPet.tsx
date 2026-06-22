@@ -15,8 +15,11 @@ function isMoscowNight(): boolean {
 }
 
 const YAWN_MS = 1100; // matches .cat-yawn duration
-const WALK_MS = 1600; // slide-off duration (keep in sync with the transition below)
-const WALK_DX = 80; // px to the right — enough to clear the footer edge
+const WALK_MS = 4000; // full-width stroll across the footer
+// He pops off-screen left (≈ -30px, since he rests ~30px from the right), then
+// walks all the way across to off the right. Stays in flow so the clock holds.
+const WALK_FROM = "-100vw";
+const WALK_TO = "5vw";
 
 type Phase = "rest" | "yawn" | "walk";
 
@@ -78,8 +81,8 @@ export function CatPet() {
       style={
         phase === "walk"
           ? {
-              transform: `translateX(${slide ? WALK_DX : 0}px)`,
-              transition: `transform ${WALK_MS}ms linear`,
+              transform: `translateX(${slide ? WALK_TO : WALK_FROM})`,
+              transition: slide ? `transform ${WALK_MS}ms linear` : "none",
             }
           : undefined
       }
