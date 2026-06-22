@@ -12,8 +12,8 @@
     "ru": "Редизайн конструктора шаблонов уведомлений"
   },
   "blurb": {
-    "en": "Reworked the core form support staff use to author every SMS, push and rich-push the bank sends. Migrated a legacy admin to the new Omni UI platform.",
-    "ru": "Переработал ключевую форму, через которую сопровождение собирает каждое SMS, push и rich-push банка. Перевёл легаси-админку на новую платформу Omni UI."
+    "en": "Reworked the core form support staff use to author every SMS, push and rich-push the bank sends. Migrated a legacy admin to the new Omni UI platform",
+    "ru": "Переработал ключевую форму, через которую сопровождение собирает каждое SMS, push и rich-push банка. Перевёл легаси-админку на новую платформу Omni UI"
   },
   "meta": {
     "role": {

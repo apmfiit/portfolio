@@ -62,23 +62,15 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
 
   return (
     <>
-    <header className={`${sticky ? "sticky top-0" : "relative"} z-30 backdrop-blur-md bg-[color:var(--background)]/70 border-b border-rule`}>
+    <header className={`${sticky ? "sticky top-0" : "relative"} z-30 backdrop-blur-[20px] bg-[color:var(--background)]/70 border-b border-rule`}>
       <div className="flex justify-center px-6 py-4">
-        <div className="flex w-full max-w-[1800px] items-center justify-between gap-6 text-[15px] uppercase tracking-[-0.02em]">
+        <div className="flex w-full max-w-[1800px] items-center justify-between gap-6 text-[15px] uppercase tracking-[-0.02em] sm:grid sm:grid-cols-2 sm:gap-x-6">
         {NameBlock}
 
-        {/* Desktop nav */}
+        <div className="flex items-center justify-between">
+        {/* Middle: Telegram, Email, Резюме — aligned to the second content column */}
         <LayoutGroup>
           <nav className="hidden items-center gap-3 text-muted md:flex">
-            <motion.span layout="position" transition={navSpring} className="inline-flex">
-              <Link
-                href={aboutHref}
-                className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
-              >
-                {tr.about}
-                <span className="h-3.5 w-3.5 shrink-0" aria-hidden />
-              </Link>
-            </motion.span>
             <motion.span layout="position" transition={navSpring} className="inline-flex">
               <a
                 href={links.telegram}
@@ -110,35 +102,40 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
                 <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
               </a>
             </motion.span>
-            <motion.span layout="position" transition={navSpring} className="inline-flex">
-              <Link
-                href={otherHref}
-                className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
-                aria-label={`Switch language to ${otherCode}`}
-              >
-                {otherCode}
-                <span className="h-3.5 w-3.5 shrink-0" aria-hidden />
-              </Link>
-            </motion.span>
-            <motion.span layout="position" transition={navSpring} className="inline-flex">
-              <ThemeToggle />
-            </motion.span>
           </nav>
         </LayoutGroup>
 
-        {/* Mobile burger */}
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          aria-label="Open menu"
-          aria-expanded={open}
-          className="md:hidden inline-flex h-9 w-9 items-center justify-center -mr-2"
-        >
-          <span className="relative block h-[14px] w-6">
-            <span className="absolute left-0 top-1 h-[1.5px] w-6 bg-foreground" />
-            <span className="absolute left-0 top-[11px] h-[1.5px] w-6 bg-foreground" />
-          </span>
-        </button>
+        {/* Right: About, EN, theme toggle (+ mobile burger) */}
+        <div className="flex items-center gap-3">
+          <nav className="hidden items-center gap-3 text-muted md:flex">
+            <Link href={aboutHref} className="hover:text-foreground transition-colors">
+              {tr.about}
+            </Link>
+            <Link
+              href={otherHref}
+              className="hover:text-foreground transition-colors"
+              aria-label={`Switch language to ${otherCode}`}
+            >
+              {otherCode}
+            </Link>
+            <ThemeToggle />
+          </nav>
+
+          {/* Mobile burger */}
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label="Open menu"
+            aria-expanded={open}
+            className="md:hidden inline-flex h-9 w-9 items-center justify-center -mr-2"
+          >
+            <span className="relative block h-[14px] w-6">
+              <span className="absolute left-0 top-1 h-[1.5px] w-6 bg-foreground" />
+              <span className="absolute left-0 top-[11px] h-[1.5px] w-6 bg-foreground" />
+            </span>
+          </button>
+        </div>
+        </div>
         </div>
       </div>
       </header>
