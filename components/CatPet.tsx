@@ -14,13 +14,18 @@ function isMoscowNight(): boolean {
   return h >= 22 || h < 7;
 }
 
-const YAWN_MS = 1100; // keep in sync with .cat-yawn duration
+const YAWN_MS = 1100; // matches .cat-yawn duration
+const WALK_MS = 1600; // slide-off duration (keep in sync with the transition below)
+const WALK_DX = 80; // px to the right — enough to clear the footer edge
+
+type Phase = "rest" | "yawn" | "walk";
 
 export function CatPet() {
   const [night, setNight] = useState(false);
-  const [hover, setHover] = useState(false);
-  const [yawning, setYawning] = useState(false);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [phase, setPhase] = useState<Phase>("rest");
+  const [slide, setSlide] = useState(false);
+  const [gone, setGone] = useState(false);
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
     const update = () => setNight(isMoscowNight());
@@ -29,31 +34,31 @@ export function CatPet() {
     return () => clearInterval(id);
   }, []);
 
-  useEffect(() => () => {
-    if (timer.current) clearTimeout(timer.current);
-  }, []);
+  useEffect(
+    () => () => {
+      timers.current.forEach(clearTimeout);
+    },
+    [],
+  );
 
-  // On hover the cat wakes/stretches with a one-shot yawn, then walks.
+  // First hover wakes him: yawn → walk off to the right → gone until reload.
   const enter = () => {
-    setHover(true);
-    setYawning(true);
-    if (timer.current) clearTimeout(timer.current);
-    timer.current = setTimeout(() => setYawning(false), YAWN_MS);
-  };
-  const leave = () => {
-    setHover(false);
-    setYawning(false);
-    if (timer.current) clearTimeout(timer.current);
+    if (gone || phase !== "rest") return;
+    setPhase("yawn");
+    timers.current.push(
+      setTimeout(() => {
+        setPhase("walk");
+        // next frame so the transform transition actually animates
+        requestAnimationFrame(() => setSlide(true));
+        timers.current.push(setTimeout(() => setGone(true), WALK_MS));
+      }, YAWN_MS),
+    );
   };
 
-  const state = hover
-    ? yawning
-      ? "yawn"
-      : "walk"
-    : night
-      ? "sleep"
-      : "idle";
+  // Reserve the space once he's left so the clock doesn't shift.
+  if (gone) return <span className="cat" aria-hidden style={{ visibility: "hidden" }} />;
 
+  const state = phase === "rest" ? (night ? "sleep" : "idle") : phase;
   const label =
     state === "sleep"
       ? "sleeping cat"
@@ -70,7 +75,14 @@ export function CatPet() {
       aria-label={label}
       title={night ? "zzz…" : "meow"}
       onMouseEnter={enter}
-      onMouseLeave={leave}
+      style={
+        phase === "walk"
+          ? {
+              transform: `translateX(${slide ? WALK_DX : 0}px)`,
+              transition: `transform ${WALK_MS}ms linear`,
+            }
+          : undefined
+      }
     />
   );
 }
