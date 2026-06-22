@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import { MoonIcon, SunIcon } from "./icons";
 
 type Theme = "light" | "dark";
@@ -46,11 +47,24 @@ export function ThemeToggle() {
       title={dark ? "Light theme" : "Dark theme"}
       className="relative inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-rule text-muted transition hover:border-foreground/30 hover:text-foreground active:scale-[0.96] before:absolute before:-inset-0.5 before:content-['']"
     >
-      {dark ? (
-        <SunIcon className="h-[18px] w-[18px]" />
-      ) : (
-        <MoonIcon className="h-[18px] w-[18px]" />
-      )}
+      {/* Contextual icon swap: scale/opacity/blur in, spring with bounce 0.
+         initial={false} skips the animation on first paint. */}
+      <AnimatePresence initial={false}>
+        <motion.span
+          key={dark ? "sun" : "moon"}
+          initial={{ scale: 0.25, opacity: 0, filter: "blur(4px)" }}
+          animate={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
+          exit={{ scale: 0.25, opacity: 0, filter: "blur(4px)" }}
+          transition={{ type: "spring", duration: 0.3, bounce: 0 }}
+          className="absolute inline-flex items-center justify-center"
+        >
+          {dark ? (
+            <SunIcon className="h-[18px] w-[18px]" />
+          ) : (
+            <MoonIcon className="h-[18px] w-[18px]" />
+          )}
+        </motion.span>
+      </AnimatePresence>
     </button>
   );
 }
