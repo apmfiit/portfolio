@@ -43,7 +43,7 @@ export function AboutView({ locale }: { locale: Locale }) {
     <>
       <Nav locale={locale} />
       <main className="flex justify-center px-6 pt-16 pb-10">
-        <div className="w-full max-w-[768px]">
+        <div className="w-full max-w-[644px]">
         <div className="flex flex-col gap-16">
           {/* Intro */}
           <FadeIn>
@@ -58,7 +58,7 @@ export function AboutView({ locale }: { locale: Locale }) {
                     blur["/images/avatar-rectangular.jpg"] ? "blur" : "empty"
                   }
                   blurDataURL={blur["/images/avatar-rectangular.jpg"]}
-                  className="h-24 w-24 rounded-2xl border border-foreground/10 object-cover sm:h-28 sm:w-28"
+                  className="h-24 w-24 rounded-2xl border border-[color:var(--image-edge)] object-cover sm:h-28 sm:w-28"
                 />
                 <p className="flex items-center gap-2 text-sm uppercase tracking-[-0.02em] text-muted">
                   <span>{expLabel}</span>
@@ -84,7 +84,7 @@ export function AboutView({ locale }: { locale: Locale }) {
                   return (
                     <li
                       key={i}
-                      className="relative pl-4 leading-relaxed text-foreground/80 before:absolute before:left-0 before:text-muted before:content-['—']"
+                      className="relative pl-4 text-base md:text-lg font-normal text-pretty text-foreground/80 before:absolute before:left-0 before:text-muted before:content-['—']"
                     >
                       {parts.map((part, k) => (
                         <span key={k}>
@@ -112,7 +112,7 @@ export function AboutView({ locale }: { locale: Locale }) {
                   >
                     <p className="text-sm text-muted">{a.year}</p>
                     <div className="flex flex-col gap-3">
-                      <p className="leading-relaxed text-foreground/80">
+                      <p className="text-base md:text-lg font-normal text-pretty text-foreground/80">
                         {typo(a.text[locale])}
                       </p>
                       {a.images && a.images.length > 0 && (
@@ -125,7 +125,7 @@ export function AboutView({ locale }: { locale: Locale }) {
                               <div
                                 key={j}
                                 style={{ width: W, height: H }}
-                                className="overflow-hidden rounded-lg border border-foreground/10"
+                                className="overflow-hidden rounded-lg border border-[color:var(--image-edge)]"
                               >
                                 <ZoomableImage
                                   src={src}
@@ -151,7 +151,7 @@ export function AboutView({ locale }: { locale: Locale }) {
           {/* About me */}
           <FadeIn delay={0.05}>
             <Section label={tr.aboutMe}>
-              <p className="leading-relaxed text-foreground/80">
+              <p className="text-base md:text-lg font-normal text-pretty text-foreground/80">
                 {typo(about.personal[locale])}
               </p>
             </Section>
