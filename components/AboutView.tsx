@@ -69,7 +69,7 @@ export function AboutView({ locale }: { locale: Locale }) {
                   </span>
                 </p>
               </div>
-              <h1 className="text-[2rem] font-semibold leading-[1.1] tracking-tight text-balance sm:text-[2.5rem]">
+              <h1 className="text-[2rem] font-semibold leading-[1.1] tracking-tight text-balance">
                 {typo(about.intro[locale])}
               </h1>
             </header>
