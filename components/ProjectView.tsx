@@ -121,18 +121,18 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
           )}
 
           <FadeIn delay={0.05}>
-            <nav className="mt-24 flex flex-col gap-4 border-t border-rule pt-8">
-              <p className="text-sm uppercase tracking-[-0.02em] text-muted">
-                {locale === "en" ? "Next" : "Дальше"}
-              </p>
+            <nav className="mx-auto mt-24 w-full max-w-[644px] border-t border-rule pt-8">
               <Link
                 href={`${workPrefix}/${next.slug}/`}
-                className="group flex items-baseline justify-between gap-6 hover:text-foreground"
+                className="group flex flex-col items-end gap-1 text-right"
               >
-                <span className="text-2xl font-medium tracking-tight text-balance sm:text-3xl">
+                <span className="text-sm uppercase tracking-[-0.02em] text-muted">
+                  {locale === "en" ? "Next" : "Дальше"}
+                </span>
+                <span className="text-lg font-medium tracking-tight text-foreground/90 transition-colors group-hover:text-foreground sm:text-xl">
                   {typo(next.headline[locale])}
                 </span>
-                <span className="shrink-0 text-muted text-sm">
+                <span className="text-sm text-muted">
                   {next.company} · {next.year} →
                 </span>
               </Link>
