@@ -76,11 +76,9 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
 
           {p.meta && (
             <FadeIn delay={0.05}>
-              <section className="mt-12 grid gap-8 border-t border-rule pt-8 sm:grid-cols-2 md:grid-cols-4">
-                <MetaItem label={tr.role} values={[p.meta.role[locale]]} />
+              <section className="mx-auto mt-12 grid w-full max-w-[644px] gap-8 border-t border-rule pt-8 sm:grid-cols-2 md:grid-cols-3">
                 <MetaItem label={tr.timeline} values={[p.meta.timeline[locale]]} />
                 {p.meta.team && <MetaItem label={tr.team} values={p.meta.team[locale]} />}
-                {p.meta.skills && <MetaItem label={tr.skills} values={p.meta.skills[locale]} nowrap />}
                 {p.meta.platforms && <MetaItem label={tr.platforms} values={p.meta.platforms[locale]} />}
               </section>
             </FadeIn>
