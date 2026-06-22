@@ -69,10 +69,14 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
 
         {/* Desktop nav */}
         <LayoutGroup>
-          <nav className="hidden items-center gap-5 text-muted md:flex">
+          <nav className="hidden items-center gap-3 text-muted md:flex">
             <motion.span layout="position" transition={navSpring} className="inline-flex">
-              <Link href={aboutHref} className="hover:text-foreground transition-colors">
+              <Link
+                href={aboutHref}
+                className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
+              >
                 {tr.about}
+                <span className="h-3.5 w-3.5 shrink-0" aria-hidden />
               </Link>
             </motion.span>
             <motion.span layout="position" transition={navSpring} className="inline-flex">
@@ -80,10 +84,10 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
                 href={links.telegram}
                 target="_blank"
                 rel="noreferrer"
-                className="group/link relative inline-flex items-center hover:text-foreground transition-colors"
+                className="group/link inline-flex items-center gap-1 hover:text-foreground transition-colors"
               >
                 Telegram
-                <ExternalLinkIcon className="pointer-events-none absolute left-full top-1/2 ml-0.5 h-3 w-3 -translate-x-1 -translate-y-1/2 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
+                <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
               </a>
             </motion.span>
             <motion.span layout="position" transition={navSpring} className="inline-flex">
@@ -100,19 +104,20 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
                 href={links.cv}
                 target="_blank"
                 rel="noreferrer"
-                className="group/link relative inline-flex items-center hover:text-foreground transition-colors"
+                className="group/link inline-flex items-center gap-1 hover:text-foreground transition-colors"
               >
                 {tr.cv}
-                <ExternalLinkIcon className="pointer-events-none absolute left-full top-1/2 ml-0.5 h-3 w-3 -translate-x-1 -translate-y-1/2 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
+                <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
               </a>
             </motion.span>
             <motion.span layout="position" transition={navSpring} className="inline-flex">
               <Link
                 href={otherHref}
-                className="hover:text-foreground transition-colors"
+                className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
                 aria-label={`Switch language to ${otherCode}`}
               >
                 {otherCode}
+                <span className="h-3.5 w-3.5 shrink-0" aria-hidden />
               </Link>
             </motion.span>
             <motion.span layout="position" transition={navSpring} className="inline-flex">
