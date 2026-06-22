@@ -5,6 +5,7 @@ import { imageMeta } from "@/content/imageMeta";
 import { typo } from "@/lib/typo";
 import { Nav } from "./Nav";
 import { FadeIn } from "./FadeIn";
+import { FrostLink } from "./FrostLink";
 import { CopyEmail } from "./CopyEmail";
 import { ZoomableImage } from "./ZoomableImage";
 import { PinIcon } from "./PinIcon";
@@ -19,6 +20,55 @@ function fullYearsSince(start: { year: number; month: number }): number {
   let years = now.getFullYear() - start.year;
   if (now.getMonth() < start.month) years -= 1;
   return Math.max(0, years);
+}
+
+const COMPANY_LINK =
+  "underline underline-offset-2 decoration-foreground/30 transition-colors hover:decoration-foreground";
+
+// Render the intro statement, linking the companies it names. Ykt.Ru gets the
+// frosty snow hover; ВТБ Онлайн and KUPIKOD are subtle underlined links.
+function renderIntro(text: string, locale: Locale): React.ReactNode[] {
+  const vtb = locale === "en" ? "VTB Online" : "ВТБ Онлайн";
+  const names = [vtb, "KUPIKOD", "Ykt.Ru"];
+  const out: React.ReactNode[] = [];
+  let rest = text;
+  let key = 0;
+  while (rest.length) {
+    let best: { idx: number; name: string } | null = null;
+    for (const n of names) {
+      const idx = rest.indexOf(n);
+      if (idx !== -1 && (best === null || idx < best.idx)) best = { idx, name: n };
+    }
+    if (!best) {
+      out.push(<span key={key++}>{typo(rest)}</span>);
+      break;
+    }
+    if (best.idx > 0)
+      out.push(<span key={key++}>{typo(rest.slice(0, best.idx))}</span>);
+    if (best.name === "Ykt.Ru") {
+      out.push(
+        <FrostLink key={key++} href="https://ykt.ru/about">
+          Ykt.Ru
+        </FrostLink>,
+      );
+    } else {
+      const href =
+        best.name === "KUPIKOD" ? "https://kupikod.com/" : "https://www.vtb.ru/";
+      out.push(
+        <a
+          key={key++}
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          className={COMPANY_LINK}
+        >
+          {best.name}
+        </a>,
+      );
+    }
+    rest = rest.slice(best.idx + best.name.length);
+  }
+  return out;
 }
 
 function ruYears(n: number): string {
@@ -70,7 +120,7 @@ export function AboutView({ locale }: { locale: Locale }) {
                 </p>
               </div>
               <h1 className="text-[2rem] font-semibold leading-[1.1] tracking-tight text-balance">
-                {typo(about.intro[locale])}
+                {renderIntro(about.intro[locale], locale)}
               </h1>
             </header>
           </FadeIn>
