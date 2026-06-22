@@ -8,7 +8,10 @@ export function Footer({ locale }: { locale: Locale }) {
         © {new Date().getFullYear()}{" "}
         {locale === "en" ? "Petr Afanasyev" : "Петр Афанасьев"}
       </span>
-      <MoscowClock locale={locale} />
+      <div className="flex items-center gap-2">
+        <span className="cat-idle" aria-hidden title="meow" />
+        <MoscowClock locale={locale} />
+      </div>
     </footer>
   );
 }

@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Source art pack (only the extracted sprite in public/cat is used)
+Free pack/
