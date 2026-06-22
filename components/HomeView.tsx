@@ -85,7 +85,7 @@ export function HomeView({ locale }: { locale: Locale }) {
                 {experience.map((e, i) => (
                   <li
                     key={i}
-                    className="soft-blur-in grid grid-cols-[130px_minmax(0,1fr)] items-baseline gap-x-5 sm:grid-cols-[150px_140px_minmax(0,1fr)] sm:gap-x-6"
+                    className="soft-blur-in grid grid-cols-[110px_minmax(0,1fr)] items-baseline gap-x-5 sm:grid-cols-[150px_minmax(0,1fr)] sm:gap-x-6 xl:grid-cols-[150px_140px_minmax(0,1fr)]"
                     style={{ animationDelay: 420 + i * 90 + "ms" }}
                   >
                     <span className="whitespace-nowrap text-muted">{e.year[locale]}</span>
@@ -107,7 +107,7 @@ export function HomeView({ locale }: { locale: Locale }) {
                         <span className="font-medium">{e.company}</span>
                       )}
                     </span>
-                    <span className="hidden whitespace-nowrap text-muted sm:block">
+                    <span className="hidden whitespace-nowrap text-muted xl:block">
                       {e.role[locale]}
                     </span>
                   </li>

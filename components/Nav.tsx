@@ -64,13 +64,14 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
     <>
     <header className={`${sticky ? "sticky top-0" : "relative"} z-30 backdrop-blur-[20px] bg-[color:var(--background)]/70 border-b border-rule`}>
       <div className="flex justify-center px-6 py-4">
-        <div className="flex w-full max-w-[1800px] items-center justify-between gap-6 text-[15px] uppercase tracking-[-0.02em] sm:grid sm:grid-cols-2 sm:gap-x-6">
+        <div className="flex w-full max-w-[1800px] items-center justify-between gap-6 text-[15px] uppercase tracking-[-0.02em] lg:grid lg:grid-cols-2 lg:gap-x-6">
         {NameBlock}
 
-        <div className="flex items-center justify-between">
+        {/* Full nav — lg and up */}
+        <div className="hidden items-center justify-between lg:flex">
         {/* Middle: Telegram, Email, Резюме — aligned to the second content column */}
         <LayoutGroup>
-          <nav className="hidden items-center gap-3 text-muted md:flex">
+          <nav className="flex items-center gap-3 text-muted">
             <motion.span layout="position" transition={navSpring} className="inline-flex">
               <a
                 href={links.telegram}
@@ -105,36 +106,44 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
           </nav>
         </LayoutGroup>
 
-        {/* Right: About, EN, theme toggle (+ mobile burger) */}
-        <div className="flex items-center gap-3">
-          <nav className="hidden items-center gap-3 text-muted md:flex">
-            <Link href={aboutHref} className="hover:text-foreground transition-colors">
-              {tr.about}
-            </Link>
-            <Link
-              href={otherHref}
-              className="hover:text-foreground transition-colors"
-              aria-label={`Switch language to ${otherCode}`}
-            >
-              {otherCode}
-            </Link>
-            <ThemeToggle />
-          </nav>
+        {/* Right: About, EN, theme toggle */}
+        <nav className="flex items-center gap-3 text-muted">
+          <Link href={aboutHref} className="hover:text-foreground transition-colors">
+            {tr.about}
+          </Link>
+          <Link
+            href={otherHref}
+            className="hover:text-foreground transition-colors"
+            aria-label={`Switch language to ${otherCode}`}
+          >
+            {otherCode}
+          </Link>
+          <ThemeToggle />
+        </nav>
+        </div>
 
-          {/* Mobile burger */}
+        {/* Compact — below lg: keep Telegram, everything else in the menu */}
+        <div className="flex items-center gap-4 lg:hidden">
+          <a
+            href={links.telegram}
+            target="_blank"
+            rel="noreferrer"
+            className="text-muted hover:text-foreground transition-colors"
+          >
+            Telegram
+          </a>
           <button
             type="button"
             onClick={() => setOpen(true)}
             aria-label="Open menu"
             aria-expanded={open}
-            className="relative md:hidden inline-flex h-9 w-9 items-center justify-center -mr-2 transition active:scale-[0.96] before:absolute before:-inset-0.5 before:content-['']"
+            className="relative inline-flex h-9 w-9 items-center justify-center -mr-2 transition active:scale-[0.96] before:absolute before:-inset-0.5 before:content-['']"
           >
             <span className="relative block h-[14px] w-6">
               <span className="absolute left-0 top-1 h-[1.5px] w-6 bg-foreground" />
               <span className="absolute left-0 top-[11px] h-[1.5px] w-6 bg-foreground" />
             </span>
           </button>
-        </div>
         </div>
         </div>
       </div>
