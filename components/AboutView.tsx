@@ -38,8 +38,14 @@ function renderIntro(text: string, locale: Locale): React.ReactNode[] {
   const pushText = (s: string) => {
     if (!s) return;
     const lead = /^\s/.test(s) ? " " : "";
-    const trail = /\s$/.test(s) ? " " : "";
+    const hasTrail = /\s$/.test(s);
     const core = s.trim();
+    // If the run ends with a short word (RU preposition/conjunction like "в"/"В"),
+    // glue it to the following link with a non-breaking space so it never
+    // dangles at the end of a line.
+    const lastWord = (core.split(/\s+/).pop() ?? "").replace(/[^\p{L}\p{N}]/gu, "");
+    const short = lastWord.length > 0 && lastWord.length <= 2;
+    const trail = hasTrail ? (short ? " " : " ") : "";
     out.push(
       <span key={key++}>
         {lead}
