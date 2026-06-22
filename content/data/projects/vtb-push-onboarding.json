@@ -196,17 +196,17 @@
         "en": "Lo-Fi and selling the solution"
       },
       "heading": {
-        "ru": "Собрал lo-fi прототипы и защитил решение у топов кластера",
-        "en": "Lo-fi prototypes, picked the working variants with the team, defended with leadership."
+        "ru": "Собрал Lo-Fi прототипы и защитил решение у топов кластера",
+        "en": "Lo-Fi prototypes, picked the working variants with the team, defended with leadership."
       },
       "body": {
         "ru": [
           "Перебрал варианты: где разместить статус, как сформулировать переход в настройки, что показывать в подключённом состоянии (например, список устройств), как обыграть случай, когда пуши уже разрешены.",
-          "С командой выбрали рабочие варианты, подготовил слайды и пошёл защищать решение топам кластера. Прошло гладко — решение оказалось очевидным и логичным, никто не возразил. Дальше перешёл к hi-fi и передаче в разработку."
+          "С командой выбрали рабочие варианты, подготовил слайды и пошёл защищать решение топам кластера. Прошло гладко — решение оказалось очевидным и логичным, никто не возразил. Дальше перешёл к Hi-Fi и передаче в разработку."
         ],
         "en": [
           "I went through where to place the status, how to phrase the jump into settings, what to show in the enabled state (like the list of devices), and how to handle the case where pushes are already allowed.",
-          "Together with the team we picked the working variants. I prepared slides and presented to the cluster's leadership. It went smoothly — the solution was obviously logical, no objections. Then on to hi-fi and handoff."
+          "Together with the team we picked the working variants. I prepared slides and presented to the cluster's leadership. It went smoothly — the solution was obviously logical, no objections. Then on to Hi-Fi and handoff."
         ]
       }
     },
@@ -308,7 +308,7 @@
       },
       "heading": {
         "ru": "End-to-end: от понимания задачи до пост-релизной итерации",
-        "en": "End to end: from task understanding through hi-fi and post-release iteration."
+        "en": "End to end: from task understanding through Hi-Fi and post-release iteration."
       },
       "body": {
         "ru": [
