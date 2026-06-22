@@ -106,11 +106,12 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
           </nav>
         </LayoutGroup>
 
-        {/* Right: About, EN, theme toggle */}
+        {/* Right: About | EN, theme toggle */}
         <nav className="flex items-center gap-3 text-muted">
           <Link href={aboutHref} className="hover:text-foreground transition-colors">
             {tr.about}
           </Link>
+          <span className="h-4 w-px bg-rule" aria-hidden />
           <Link
             href={otherHref}
             className="hover:text-foreground transition-colors"
