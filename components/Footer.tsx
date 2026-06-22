@@ -1,5 +1,6 @@
 import { Locale } from "@/content";
 import { MoscowClock } from "./MoscowClock";
+import { CatPet } from "./CatPet";
 
 export function Footer({ locale }: { locale: Locale }) {
   return (
@@ -9,7 +10,7 @@ export function Footer({ locale }: { locale: Locale }) {
         {locale === "en" ? "Petr Afanasyev" : "Петр Афанасьев"}
       </span>
       <div className="flex items-center gap-2">
-        <span className="cat-idle" aria-hidden title="meow" />
+        <CatPet />
         <MoscowClock locale={locale} />
       </div>
     </footer>

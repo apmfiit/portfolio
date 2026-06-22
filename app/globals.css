@@ -239,27 +239,47 @@ a {
   }
 }
 
-/* Pixel cat — 6-frame sit-idle sprite (32x32 frames) by the footer clock. */
-.cat-idle {
+/* Pixel cat (32x32 frames) by the footer clock — idle by day, asleep on a
+   Moscow night, walking on hover. Each state is its own sprite strip. */
+.cat {
   width: 32px;
   height: 32px;
   flex: none;
-  background-image: url("/cat/cat-idle.png");
   background-repeat: no-repeat;
-  background-size: 192px 32px;
+  background-position: 0 0;
   image-rendering: pixelated;
-  animation: cat-idle-play 1.3s steps(6) infinite;
+}
+.cat-idle {
+  background-image: url("/cat/cat-idle.png");
+  background-size: 192px 32px;
+  animation: cat-idle-play 2.8s steps(6) infinite;
+}
+.cat-walk {
+  background-image: url("/cat/cat-walk.png");
+  background-size: 256px 32px;
+  animation: cat-walk-play 0.8s steps(8) infinite;
+}
+.cat-sleep {
+  background-image: url("/cat/cat-sleep.png");
+  background-size: 64px 32px;
+  animation: cat-sleep-play 1.8s steps(2) infinite;
 }
 @keyframes cat-idle-play {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -192px 0;
-  }
+  from { background-position: 0 0; }
+  to { background-position: -192px 0; }
+}
+@keyframes cat-walk-play {
+  from { background-position: 0 0; }
+  to { background-position: -256px 0; }
+}
+@keyframes cat-sleep-play {
+  from { background-position: 0 0; }
+  to { background-position: -64px 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .cat-idle {
+  .cat-idle,
+  .cat-walk,
+  .cat-sleep {
     animation: none;
     background-position: 0 0;
   }
