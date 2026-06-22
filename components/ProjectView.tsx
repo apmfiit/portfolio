@@ -48,10 +48,10 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
               <p className="text-xs uppercase tracking-[-0.02em] text-muted">
                 {p.company} · {p.status[locale]} {p.year}
               </p>
-              <h1 className="max-w-4xl text-4xl font-medium leading-[1.1] tracking-tight text-balance sm:text-5xl">
+              <h1 className="max-w-4xl text-[2rem] font-semibold leading-[1.1] tracking-tight text-balance sm:text-[2.5rem]">
                 {typo(p.headline[locale])}
               </h1>
-              <p className="max-w-3xl text-lg text-muted leading-relaxed text-balance">
+              <p className="max-w-3xl text-lg text-foreground/80 leading-relaxed text-balance">
                 {typo(p.blurb[locale])}
               </p>
             </header>
