@@ -12,8 +12,8 @@
     "en": "Simplifying push-notification onboarding"
   },
   "blurb": {
-    "ru": "Сократил клиентский путь с 7 шагов до 4 для сценария переподключения, убрав внутренний тогл и перейдя на зеркалирование системных настроек",
-    "en": "Cut the reconnect flow from 7 steps to 4 by removing an internal toggle and mirroring system settings"
+    "ru": "Сократил клиентский путь с 7 шагов до 4 для сценария переподключения, убрав внутренний тогл и перейдя на зеркалирование системного разрешения на показ уведомлений",
+    "en": "Cut the reconnect flow from 7 steps to 4 by removing an internal toggle and mirroring system notification permissions"
   },
   "meta": {
     "role": {
