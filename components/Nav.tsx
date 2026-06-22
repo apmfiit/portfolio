@@ -80,10 +80,10 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
                 href={links.telegram}
                 target="_blank"
                 rel="noreferrer"
-                className="group/link inline-flex items-center gap-1 hover:text-foreground transition-colors"
+                className="group/link relative inline-flex items-center hover:text-foreground transition-colors"
               >
                 Telegram
-                <ExternalLinkIcon className="h-3 w-3 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
+                <ExternalLinkIcon className="pointer-events-none absolute left-full top-1/2 ml-0.5 h-3 w-3 -translate-x-1 -translate-y-1/2 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
               </a>
             </motion.span>
             <motion.span layout="position" transition={navSpring} className="inline-flex">
@@ -100,10 +100,10 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
                 href={links.cv}
                 target="_blank"
                 rel="noreferrer"
-                className="group/link inline-flex items-center gap-1 hover:text-foreground transition-colors"
+                className="group/link relative inline-flex items-center hover:text-foreground transition-colors"
               >
                 {tr.cv}
-                <ExternalLinkIcon className="h-3 w-3 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
+                <ExternalLinkIcon className="pointer-events-none absolute left-full top-1/2 ml-0.5 h-3 w-3 -translate-x-1 -translate-y-1/2 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
               </a>
             </motion.span>
             <motion.span layout="position" transition={navSpring} className="inline-flex">
