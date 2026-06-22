@@ -46,16 +46,16 @@ export function TableOfContents({
               )}
               <a
                 href={`#${s.id}`}
-                className="group relative flex items-start gap-[10px]"
+                className="group relative flex h-px items-center gap-[10px] before:absolute before:inset-x-0 before:-inset-y-3.5 before:content-['']"
               >
                 <span
-                  className={`mt-[9px] h-px shrink-0 transition-[width,background-color] duration-[250ms] ease-out ${
+                  className={`h-px shrink-0 transition-[width,background-color] duration-[250ms] ease-out ${
                     isActive ? "w-7 bg-foreground" : "w-5 bg-rule"
                   }`}
                   aria-hidden
                 />
                 <span
-                  className={`select-none font-[450] text-[13px] leading-snug transition-colors duration-[250ms] ease-out ${
+                  className={`select-none whitespace-nowrap font-[450] text-[13px] transition-colors duration-[250ms] ease-out ${
                     isActive ? "text-foreground" : "text-muted group-hover:text-foreground"
                   }`}
                 >
