@@ -123,15 +123,31 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
         </nav>
         </div>
 
-        {/* Compact — below lg: keep Telegram, everything else in the menu */}
-        <div className="flex items-center gap-4 lg:hidden">
+        {/* Compact — below lg: reveal links as space allows, rest in the menu */}
+        <div className="flex items-center gap-4 text-muted lg:hidden">
           <a
             href={links.telegram}
             target="_blank"
             rel="noreferrer"
-            className="text-muted hover:text-foreground transition-colors"
+            className="hover:text-foreground transition-colors"
           >
             Telegram
+          </a>
+          <span className="hidden md:inline-flex">
+            <CopyEmail
+              email={links.email}
+              label="Email"
+              copiedLabel={isEn ? "Copied" : "Скопировано"}
+              className="uppercase hover:text-foreground"
+            />
+          </span>
+          <a
+            href={links.cv}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden hover:text-foreground transition-colors sm:inline-flex"
+          >
+            {tr.cv}
           </a>
           <button
             type="button"
@@ -153,7 +169,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
       {/* Mobile overlay — rendered OUTSIDE <header> so the header's backdrop-blur
           doesn't trap fixed positioning (that left the panel transparent/clipped) */}
       {open && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-[color:var(--background)] md:hidden">
+        <div className="fixed inset-0 z-50 flex flex-col bg-[color:var(--background)] lg:hidden">
           <div className="flex items-start justify-between gap-6 border-b border-rule px-6 py-4 text-[15px] uppercase tracking-[-0.02em]">
             {NameBlock}
             <button
