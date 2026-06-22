@@ -162,18 +162,23 @@ function CaseFigure({
   const w = m?.w ?? 1600;
   const h = m?.h ?? 1000;
   const isGif = m?.format === "gif";
-  // Only genuinely phone-proportioned shots (clearly taller than wide) cap at 390px —
-  // tall desktop full-page captures (aspect ~0.8) stay full width.
-  const isPhone = m ? m.w / m.h < 0.6 : false;
-  // Phone screenshots cap at 390px; small gifs (the cat) at 80px. Both centered.
-  const constrained = isGif || isPhone;
-  const wrapMax = isGif ? "max-w-[160px]" : isPhone ? "max-w-[390px]" : "";
+  const ratio = m ? m.w / m.h : 1.6;
+  const isPortrait = !isGif && ratio < 1;
+  // Apple-style sizing: wide (landscape) shots break out past the text column to
+  // ~980px on large screens (≥2xl, where the breakout clears the left TOC);
+  // portrait/mobile shots cap at the 644px text width; the small cat gif stays
+  // tiny. Everything centered on the column.
+  const wrap = isGif
+    ? "mx-auto max-w-[160px]"
+    : isPortrait
+      ? "mx-auto w-full max-w-[644px]"
+      : "mx-auto w-full 2xl:relative 2xl:left-1/2 2xl:w-[980px] 2xl:max-w-[calc(100vw-3rem)] 2xl:-translate-x-1/2";
   return (
-    <figure className={`mt-2 flex flex-col gap-2 ${constrained ? "items-center" : ""}`}>
+    <figure className="mt-2 flex flex-col gap-2">
       <div
         className={`overflow-hidden border border-foreground/10 ${
           isGif ? "rounded-lg" : "rounded-xl"
-        } ${wrapMax}`}
+        } ${wrap}`}
       >
         {isGif ? (
           <Image
@@ -197,7 +202,7 @@ function CaseFigure({
         )}
       </div>
       {caption && (
-        <figcaption className="max-w-[768px] text-center text-sm text-muted leading-relaxed">
+        <figcaption className="mx-auto max-w-[644px] text-center text-sm text-muted leading-relaxed">
           {typo(caption)}
         </figcaption>
       )}
