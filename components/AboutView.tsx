@@ -33,6 +33,21 @@ function renderIntro(text: string, locale: Locale): React.ReactNode[] {
   const out: React.ReactNode[] = [];
   let rest = text;
   let key = 0;
+  // typo() trims, which would swallow the space between a word and a linked
+  // company name — preserve a single leading/trailing space around each run.
+  const pushText = (s: string) => {
+    if (!s) return;
+    const lead = /^\s/.test(s) ? " " : "";
+    const trail = /\s$/.test(s) ? " " : "";
+    const core = s.trim();
+    out.push(
+      <span key={key++}>
+        {lead}
+        {core ? typo(core) : ""}
+        {trail}
+      </span>,
+    );
+  };
   while (rest.length) {
     let best: { idx: number; name: string } | null = null;
     for (const n of names) {
@@ -40,11 +55,10 @@ function renderIntro(text: string, locale: Locale): React.ReactNode[] {
       if (idx !== -1 && (best === null || idx < best.idx)) best = { idx, name: n };
     }
     if (!best) {
-      out.push(<span key={key++}>{typo(rest)}</span>);
+      pushText(rest);
       break;
     }
-    if (best.idx > 0)
-      out.push(<span key={key++}>{typo(rest.slice(0, best.idx))}</span>);
+    if (best.idx > 0) pushText(rest.slice(0, best.idx));
     if (best.name === "Ykt.Ru") {
       out.push(
         <FrostLink key={key++} href="https://ykt.ru/about">
