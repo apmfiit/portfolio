@@ -59,7 +59,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
 
           {p.cover && (
             <FadeIn delay={0.05}>
-              <div className="mt-10 overflow-hidden rounded-2xl border border-foreground/10">
+              <div className="mt-10 overflow-hidden rounded-2xl border border-[color:var(--image-edge)]">
                 <ZoomableImage
                   src={p.cover}
                   alt={p.headline[locale]}
@@ -176,7 +176,7 @@ function CaseFigure({
   return (
     <figure className="mt-2 flex flex-col gap-2">
       <div
-        className={`overflow-hidden border border-foreground/10 ${
+        className={`overflow-hidden border border-[color:var(--image-edge)] ${
           isGif ? "rounded-lg" : "rounded-xl"
         } ${wrap}`}
       >

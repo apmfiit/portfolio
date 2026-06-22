@@ -44,7 +44,7 @@ export function ThemeToggle() {
       onClick={toggle}
       aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
       title={dark ? "Light theme" : "Dark theme"}
-      className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-rule text-muted transition-colors hover:border-foreground/30 hover:text-foreground"
+      className="relative inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-rule text-muted transition hover:border-foreground/30 hover:text-foreground active:scale-[0.96] before:absolute before:-inset-0.5 before:content-['']"
     >
       {dark ? (
         <SunIcon className="h-[18px] w-[18px]" />

@@ -7,6 +7,9 @@
   --muted: #32404f95;
   --rule: #e5e5e5;
   --accent: #0a0a0a;
+  /* Image edge: pure black (light) / pure white (dark), low opacity — a tinted
+     neutral would read as dirt on the image border. */
+  --image-edge: rgba(0, 0, 0, 0.1);
   /* Light mode: icy-blue hover text + plain white snowflakes (no blue edge). */
   --ice-text: #2f9fe0;
   --flake-core: #ffffff;
@@ -30,6 +33,7 @@
     --foreground: #f5f5f4;
     --muted: #a3a3a3;
     --rule: #262626;
+    --image-edge: rgba(255, 255, 255, 0.1);
     --ice-text: #eafdff;
     --flake-core: #ffffff;
     --flake-mid: #d6f3ff;
@@ -41,6 +45,7 @@
   --foreground: #f5f5f4;
   --muted: #a3a3a3;
   --rule: #262626;
+  --image-edge: rgba(255, 255, 255, 0.1);
   --ice-text: #eafdff;
   --flake-core: #ffffff;
   --flake-mid: #d6f3ff;
@@ -57,6 +62,7 @@ body {
 body {
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 

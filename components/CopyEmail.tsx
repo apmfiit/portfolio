@@ -60,7 +60,7 @@ export function CopyEmail({
       onClick={copy}
       title={email}
       aria-label={`Copy email ${email}`}
-      className={`group/copy inline-flex items-center gap-1 ${className ?? ""}`}
+      className={`group/copy inline-flex items-center gap-1 transition active:scale-[0.96] ${className ?? ""}`}
     >
       <span
         key={copied ? "copied" : "label"}

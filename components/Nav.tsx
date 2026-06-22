@@ -88,7 +88,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
                 label="Email"
                 copiedLabel={isEn ? "Copied" : "Скопировано"}
                 onCopiedChange={() => bumpLayout((n) => n + 1)}
-                className="uppercase hover:text-foreground transition-colors"
+                className="uppercase hover:text-foreground"
               />
             </motion.span>
             <motion.span layout="position" transition={navSpring} className="inline-flex">
@@ -127,7 +127,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
             onClick={() => setOpen(true)}
             aria-label="Open menu"
             aria-expanded={open}
-            className="md:hidden inline-flex h-9 w-9 items-center justify-center -mr-2"
+            className="relative md:hidden inline-flex h-9 w-9 items-center justify-center -mr-2 transition active:scale-[0.96] before:absolute before:-inset-0.5 before:content-['']"
           >
             <span className="relative block h-[14px] w-6">
               <span className="absolute left-0 top-1 h-[1.5px] w-6 bg-foreground" />
@@ -150,7 +150,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close menu"
-              className="inline-flex h-9 w-9 items-center justify-center -mr-2 text-foreground"
+              className="relative inline-flex h-9 w-9 items-center justify-center -mr-2 text-foreground transition active:scale-[0.96] before:absolute before:-inset-0.5 before:content-['']"
             >
               <svg
                 width="20"
@@ -189,7 +189,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
               email={links.email}
               label="Email"
               copiedLabel={isEn ? "Copied" : "Скопировано"}
-              className="uppercase text-left hover:text-foreground transition-colors"
+              className="uppercase text-left hover:text-foreground"
             />
             <a
               href={links.cv}
