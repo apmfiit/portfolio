@@ -36,7 +36,7 @@ export function HomeView({ locale }: { locale: Locale }) {
                     ? revealChars(typo(after), tctx, 0, TS, "a")
                     : [
                         ...revealChars(typo(after.slice(0, idx)), tctx, 0, TS, "h"),
-                        {/* NBSP so the preposition ("в"/"at") never breaks off the mark+ВТБ */}
+                        // NBSP so the preposition glues to the mark+VTB
                         <span key="sp">{" "}</span>,
                         revealUnit(
                           <span className="whitespace-nowrap">
