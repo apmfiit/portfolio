@@ -4,38 +4,47 @@
   "year": "2025",
   "cover": "/images/ykt-jobs.png",
   "status": {
-    "en": "Shipped",
-    "ru": "На проде"
+    "ru": "На проде",
+    "en": "Shipped"
   },
   "headline": {
-    "en": "Job & talent platform redesign",
-    "ru": "Редизайн сервиса по поиску работы и персонала"
+    "ru": "Редизайн сервиса по поиску работы и персонала",
+    "en": "Job & talent platform redesign"
   },
   "blurb": {
-    "en": "Led the full redesign of Ykt.Ru's job platform as the lead and feature designer — for both job seekers and employers in Yakutia",
-    "ru": "Полный редизайн сервиса по поиску работы и персонала Ykt.Ru. Был ведущим дизайнером и фича-лидером"
+    "ru": "Полный редизайн сервиса по поиску работы и персонала Ykt.Ru. Был ведущим дизайнером и фича-лидером",
+    "en": "Led the full redesign of Ykt.Ru's job platform as the lead and feature designer — for both job seekers and employers in Yakutia"
   },
   "meta": {
     "role": {
-      "en": "Lead Designer, feature lead",
-      "ru": "Ведущий дизайнер, фича-лидер"
+      "ru": "Ведущий дизайнер, фича-лидер",
+      "en": "Lead Designer, feature lead"
     },
     "timeline": {
-      "en": "2023 – 2024",
-      "ru": "2023 – 2024"
+      "ru": "Q3 2023 - Q1 2024",
+      "en": "Q3 2023 - Q1 2024"
     },
-    "skills": {
-      "en": [
-        "End-to-end product",
-        "Usability research",
-        "Design system",
-        "Mobile + Web"
-      ],
+    "team": {
       "ru": [
-        "End-to-end продукт",
-        "Юзабилити-исследования",
-        "UI-кит",
-        "Mobile + Web"
+        "Дизайнер (я)",
+        "Product Manager",
+        "Аналитик",
+        "Команда разработки"
+      ],
+      "en": [
+        "Designer (me)",
+        "Product manager",
+        "Analyst",
+        "Dev team"
+      ]
+    },
+    "skills": null,
+    "platforms": {
+      "ru": [
+        "Web"
+      ],
+      "en": [
+        "Web"
       ]
     }
   },
@@ -43,24 +52,14 @@
     {
       "id": "process",
       "eyebrow": {
-        "en": "Process",
-        "ru": "Процесс проектирования"
+        "ru": "Процесс проектирования",
+        "en": "Process"
       },
       "heading": {
-        "en": "Eight steps from usability tests to a new UI kit handed off to engineering.",
-        "ru": "Восемь шагов: от ю-тестов текущей версии до нового UI-кита"
+        "ru": "Восемь шагов: от ю-тестов текущей версии до нового UI-кита",
+        "en": "Eight steps from usability tests to a new UI kit handed off to engineering."
       },
       "body": {
-        "en": [
-          "1) Usability tests of the current resume-creation flow with students.",
-          "2) Interview guide prepared for qualitative UX research.",
-          "3) Competitor analysis & benchmarking: Headhunter, Superjob, UpWork, Contra.",
-          "4) Insight extraction, results analysis, first new-flow concepts.",
-          "5) Designing new scenarios, improving old ones.",
-          "6) Prototyping for usability tests.",
-          "7) Building a custom profession catalog from current-vacancy data (with the analyst).",
-          "8) Updated UI kit, handed off to engineering."
-        ],
         "ru": [
           "1) Usability-тесты текущей версии флоу создания резюме со студентами.",
           "2) Подготовка гайда глубинного интервью для качественного UX-исследования.",
@@ -70,6 +69,16 @@
           "6) Прототипирование для usability-тестов.",
           "7) Создание собственного каталога популярных профессий на базе данных текущих вакансий вместе с аналитиком.",
           "8) Создание обновлённого UI-кита и передача в разработку."
+        ],
+        "en": [
+          "1) Usability tests of the current resume-creation flow with students.",
+          "2) Interview guide prepared for qualitative UX research.",
+          "3) Competitor analysis & benchmarking: Headhunter, Superjob, UpWork, Contra.",
+          "4) Insight extraction, results analysis, first new-flow concepts.",
+          "5) Designing new scenarios, improving old ones.",
+          "6) Prototyping for usability tests.",
+          "7) Building a custom profession catalog from current-vacancy data (with the analyst).",
+          "8) Updated UI kit, handed off to engineering."
         ]
       },
       "images": [
@@ -79,8 +88,8 @@
         {
           "src": "/images/cases/ykt-jobs/img-2.png",
           "caption": {
-            "en": "Before the redesign",
-            "ru": "Как выглядел сайт до"
+            "ru": "Как выглядел сайт до",
+            "en": "Before the redesign"
           }
         },
         {
@@ -92,8 +101,8 @@
         {
           "src": "/images/cases/ykt-jobs/img-5.png",
           "caption": {
-            "en": "After the redesign",
-            "ru": "После редизайна"
+            "ru": "После редизайна",
+            "en": "After the redesign"
           }
         },
         {
@@ -107,44 +116,33 @@
     {
       "id": "always",
       "eyebrow": {
-        "en": "Working method",
-        "ru": "Как обычно работаю"
+        "ru": "Как обычно работаю",
+        "en": "Working method"
       },
       "heading": {
-        "en": "Always write a task understanding with stakeholders before touching the design.",
-        "ru": "Всегда заполняю понимание задачи со стейкхолдерами перед работой"
+        "ru": "Всегда заполняю понимание задачи со стейкхолдерами перед работой",
+        "en": "Always write a task understanding with stakeholders before touching the design."
       },
       "body": {
-        "en": [
-          "Mission, goal, audience, success criteria — agreed up front so everyone is on the same wave."
-        ],
         "ru": [
           "Миссия, цель, аудитория, критерии успеха — фиксируем заранее, чтобы все были на одной волне."
+        ],
+        "en": [
+          "Mission, goal, audience, success criteria — agreed up front so everyone is on the same wave."
         ]
       }
     },
     {
       "id": "results",
       "eyebrow": {
-        "en": "Results",
-        "ru": "Результаты"
+        "ru": "Результаты",
+        "en": "Results"
       },
       "heading": {
-        "en": "~300 Figma screens, a new revenue lever, lighter auth, profession catalog, Telegram bot.",
-        "ru": "~300 экранов в Figma, новая монетизация, упрощённая регистрация, каталог профессий, Telegram-бот"
+        "ru": "~300 экранов в Figma, новая монетизация, упрощённая регистрация, каталог профессий, Telegram-бот",
+        "en": "~300 Figma screens, a new revenue lever, lighter auth, profession catalog, Telegram bot."
       },
       "body": {
-        "en": [
-          "Designed ~300 Figma screens.",
-          "Helped shape a new business solution for company branding via a banner system. A major lead was already signed before the redesign even shipped.",
-          "Cut several steps from registration / auth.",
-          "Designed a new pricing plan for employers.",
-          "Assembled the in-house profession catalog tied to specialties and industries.",
-          "Improved vacancy search with a suggest system, and improved filters for both seekers and employers.",
-          "Added direct employer-to-seeker communication via WhatsApp / Telegram chat.",
-          "Designed a new Telegram bot for fast push-style vacancy notifications (the service has no app).",
-          "Status: in development; waiting on launch."
-        ],
         "ru": [
           "Задизайнил ~300 страниц в Figma.",
           "Помог сформировать новое бизнес-решение для брендирования компаний через баннерную систему. До релиза редизайна уже получен жирный лид.",
@@ -156,6 +154,17 @@
           "Добавлена возможность прямой коммуникации работодателя с соискателем через WhatsApp/Telegram-чат.",
           "Спроектировал новый Telegram-бот для быстрых push-уведомлений по вакансиям. У сервиса нет приложения.",
           "Статус: в разработке. Ждём запуска."
+        ],
+        "en": [
+          "Designed ~300 Figma screens.",
+          "Helped shape a new business solution for company branding via a banner system. A major lead was already signed before the redesign even shipped.",
+          "Cut several steps from registration / auth.",
+          "Designed a new pricing plan for employers.",
+          "Assembled the in-house profession catalog tied to specialties and industries.",
+          "Improved vacancy search with a suggest system, and improved filters for both seekers and employers.",
+          "Added direct employer-to-seeker communication via WhatsApp / Telegram chat.",
+          "Designed a new Telegram bot for fast push-style vacancy notifications (the service has no app).",
+          "Status: in development; waiting on launch."
         ]
       },
       "images": [
