@@ -4,36 +4,49 @@
   "year": "2024",
   "cover": "/images/lofty-homepage.png",
   "status": {
-    "en": "Shipped",
-    "ru": "На проде"
+    "ru": "На проде",
+    "en": "Shipped"
   },
   "headline": {
-    "en": "Lofty homepage redesign",
-    "ru": "Редизайн главной страницы KUPIKOD"
+    "ru": "Редизайн главной страницы KUPIKOD",
+    "en": "Lofty homepage redesign"
   },
   "blurb": {
-    "en": "KUPIKOD is a service ecosystem for gamers (2M+ MAU). I redesigned the homepage so it actually functions as a gateway into the ecosystem — not a chaotic landing",
-    "ru": "KUPIKOD — сервисная экосистема для геймеров с 2M+ MAU. Сделал главную точкой входа в экосистему, а не «хаотичным лендингом»"
+    "ru": "KUPIKOD — сервисная экосистема для геймеров с 2M+ MAU. Сделал главную точкой входа в экосистему, а не «хаотичным лендингом»",
+    "en": "KUPIKOD is a service ecosystem for gamers (2M+ MAU). I redesigned the homepage so it actually functions as a gateway into the ecosystem — not a chaotic landing"
   },
   "meta": {
     "role": {
-      "en": "Product Designer",
-      "ru": "Продуктовый дизайнер"
+      "ru": "Продуктовый дизайнер",
+      "en": "Product Designer"
     },
     "timeline": {
-      "en": "2024",
-      "ru": "2024"
+      "ru": "Q3 2024",
+      "en": "Q3 2024"
     },
-    "skills": {
-      "en": [
-        "Visual design",
-        "Hypothesis prioritization",
-        "Conversion"
-      ],
+    "team": {
       "ru": [
-        "Визуальный дизайн",
-        "Приоритизация гипотез",
-        "Конверсия"
+        "Дизайнер (я)",
+        "CPO",
+        "Маркетолог",
+        "SEO-специалист",
+        "Фронтендер"
+      ],
+      "en": [
+        "Designer (me)",
+        "CPO",
+        "Marketing specialist",
+        "SEO-specialist",
+        "Frontend dev"
+      ]
+    },
+    "skills": null,
+    "platforms": {
+      "ru": [
+        "Web"
+      ],
+      "en": [
+        "Web"
       ]
     }
   },
@@ -41,33 +54,33 @@
     {
       "id": "problem",
       "eyebrow": {
-        "en": "What was wrong",
-        "ru": "Что было не так с прошлой версией"
+        "ru": "Что было не так с прошлой версией",
+        "en": "What was wrong"
       },
       "heading": {
-        "en": "Users were only clicking one block. The homepage didn't communicate the ecosystem.",
-        "ru": "Пользователи кликали почти только в один блок и не понимали состав сервиса"
+        "ru": "Пользователи кликали почти только в один блок и не понимали состав сервиса",
+        "en": "Users were only clicking one block. The homepage didn't communicate the ecosystem."
       },
       "body": {
-        "en": [
-          "By Yandex Metrika almost all clicks went into a single block.",
-          "There was no clear sense of which products live inside the service.",
-          "Key value propositions — bonus system, 24/7 support, refunds, creators — were absent.",
-          "It felt like a chaotic landing and was holding back traffic and conversion growth."
-        ],
         "ru": [
           "Пользователи кликали почти только в один блок (по данным Яндекс.Метрики).",
           "Не было чёткого понимания, что у нас в сервисе есть из продуктов.",
           "Не показывались ключевые УТП: бонусная система, поддержка 24/7, возвраты, блогеры.",
           "Это формировало у юзеров впечатление «хаотичного лендинга» и мешало росту трафика и конверсий."
+        ],
+        "en": [
+          "By Yandex Metrika almost all clicks went into a single block.",
+          "There was no clear sense of which products live inside the service.",
+          "Key value propositions — bonus system, 24/7 support, refunds, creators — were absent.",
+          "It felt like a chaotic landing and was holding back traffic and conversion growth."
         ]
       },
       "images": [
         {
           "src": "/images/cases/lofty-homepage/img-2.png",
           "caption": {
-            "en": "Previous version",
-            "ru": "Прошлая версия"
+            "ru": "Прошлая версия",
+            "en": "Previous version"
           }
         }
       ]
@@ -75,42 +88,42 @@
     {
       "id": "task",
       "eyebrow": {
-        "en": "Task",
-        "ru": "Задача"
+        "ru": "Задача",
+        "en": "Task"
       },
       "heading": {
-        "en": "Not a visual refresh. A redesign tied to product and traffic metrics.",
-        "ru": "Не косметика. Редизайн, связанный с продуктовыми метриками и трафиком"
+        "ru": "Не косметика. Редизайн, связанный с продуктовыми метриками и трафиком",
+        "en": "Not a visual refresh. A redesign tied to product and traffic metrics."
       },
       "body": {
-        "en": [
-          "I gathered marketing feedback (users don't see the breadth of services or the value), benchmarked similar service-aggregators (MTS, Avito Career, Tinkoff, Sber, Twitch, Yandex Plus Gaming), picked reference visuals per block, and reworked SEO Title/Description with the SEO specialist."
-        ],
         "ru": [
           "Собрал фидбек от маркетинга: пользователи не понимают весь спектр сервисов и не видят ценности. Провёл бенчмаркинг похожих по структуре сервисов: Главная МТС, Авито Career, Тинькофф, Сбер, Twitch, Yandex Plus Gaming. Подобрал референсы по блокам. Проверил SEO и совместно с SEO-специалистом переработал Title и Description."
+        ],
+        "en": [
+          "I gathered marketing feedback (users don't see the breadth of services or the value), benchmarked similar service-aggregators (MTS, Avito Career, Tinkoff, Sber, Twitch, Yandex Plus Gaming), picked reference visuals per block, and reworked SEO Title/Description with the SEO specialist."
         ]
       }
     },
     {
       "id": "hypotheses",
       "eyebrow": {
-        "en": "Hypotheses",
-        "ru": "Гипотезы"
+        "ru": "Гипотезы",
+        "en": "Hypotheses"
       },
       "heading": {
-        "en": "Three bets: clear service categories, surfaced USPs, social proof via creators.",
-        "ru": "Категории сервисов, УТП на видном месте, социальное доказательство через блогеров"
+        "ru": "Категории сервисов, УТП на видном месте, социальное доказательство через блогеров",
+        "en": "Three bets: clear service categories, surfaced USPs, social proof via creators."
       },
       "body": {
-        "en": [
-          "1) Splitting services into large category blocks → users find the right one faster. Expected: more clicks distributed across blocks, higher CTR. Metric: CTR per service card, click heatmap.",
-          "2) Surface USPs → trust and conversion go up. Expected: fewer bounces, higher purchase conversion. Metric: clicks-to-action conversion (AppMetrica / GA).",
-          "3) Show creators → social proof, new visitors stay longer. Expected: deeper scroll, longer dwell, more navigation into services."
-        ],
         "ru": [
           "1) Если разделить сервисы по большим категорийным блокам, пользователи будут быстрее находить нужное. Ожидание: больше кликов в разные блоки, рост переходов. Метрика: CTR на карточки сервисов, распределение кликов (heatmap).",
           "2) Если вынести УТП, доверие и конверсия вырастут. Ожидание: меньше отказов, рост конверсии в покупки. Метрика: конверсия из кликов в действия (AppMetrica/GA).",
           "3) Если показать блогеров, это усилит социальное доказательство — новые пользователи останутся дольше, скроллят глубже, чаще переходят к сервисам."
+        ],
+        "en": [
+          "1) Splitting services into large category blocks → users find the right one faster. Expected: more clicks distributed across blocks, higher CTR. Metric: CTR per service card, click heatmap.",
+          "2) Surface USPs → trust and conversion go up. Expected: fewer bounces, higher purchase conversion. Metric: clicks-to-action conversion (AppMetrica / GA).",
+          "3) Show creators → social proof, new visitors stay longer. Expected: deeper scroll, longer dwell, more navigation into services."
         ]
       },
       "images": [
@@ -122,21 +135,21 @@
     {
       "id": "results",
       "eyebrow": {
-        "en": "Results",
-        "ru": "Результаты"
+        "ru": "Результаты",
+        "en": "Results"
       },
       "heading": {
-        "en": "Click distribution rebalanced. CTR up. Engagement on the creators block strong.",
-        "ru": "Распределение кликов выровнялось. CTR вырос. Блок с блогерами «зашёл»"
+        "ru": "Распределение кликов выровнялось. CTR вырос. Блок с блогерами «зашёл»",
+        "en": "Click distribution rebalanced. CTR up. Engagement on the creators block strong."
       },
       "body": {
-        "en": [
-          "After launch users finally started clicking across all major services — not just one block. CTR rose materially; clicks to Steam, games, digital goods and top-ups became more even. The page now actually behaves like a gateway to the ecosystem rather than a random landing.",
-          "The creators / USP / social proof block looked like typical marketing but materially drove engagement: new users recognized creators, stayed longer, scrolled deeper, and moved on to services more often."
-        ],
         "ru": [
           "После запуска пользователи наконец-то начали кликать не только в один блок, а распределялись по всем основным сервисам. CTR вырос кратно, переходы в Steam, игры, цифровые товары и донат стали более равномерными. Теперь страница действительно работает как «ворота в экосистему», а не как случайный лендинг.",
           "Блок с блогерами, УТП и социальным доказательством визуально выглядел как типичный маркетинг, но по факту дал заметный рост вовлечённости. Новые пользователи видели знакомых блогеров, задерживались на странице дольше, скроллили глубже и чаще переходили к сервисам."
+        ],
+        "en": [
+          "After launch users finally started clicking across all major services — not just one block. CTR rose materially; clicks to Steam, games, digital goods and top-ups became more even. The page now actually behaves like a gateway to the ecosystem rather than a random landing.",
+          "The creators / USP / social proof block looked like typical marketing but materially drove engagement: new users recognized creators, stayed longer, scrolled deeper, and moved on to services more often."
         ]
       },
       "images": [
@@ -157,21 +170,21 @@
     {
       "id": "lessons",
       "eyebrow": {
-        "en": "Lessons",
-        "ru": "Уроки"
+        "ru": "Уроки",
+        "en": "Lessons"
       },
       "heading": {
-        "en": "Even a “brand” page can be productized — and move metrics.",
-        "ru": "Даже брендовая страница может быть продуктовой и двигать метрики"
+        "ru": "Даже брендовая страница может быть продуктовой и двигать метрики",
+        "en": "Even a “brand” page can be productized — and move metrics."
       },
       "body": {
-        "en": [
-          "1) Even a brand page can be productized and drive metric growth if you set the goal right.",
-          "2) Don't be afraid to throw together rough concepts quickly. Don't get stuck polishing them to “perfect”."
-        ],
         "ru": [
           "1) Даже брендовая страница может быть продуктовой и давать рост метрик, если правильно поставить цель.",
           "2) Не бояться и накидывать быстро возможные концепты. Не застревать в бесконечном доведении их до идеала."
+        ],
+        "en": [
+          "1) Even a brand page can be productized and drive metric growth if you set the goal right.",
+          "2) Don't be afraid to throw together rough concepts quickly. Don't get stuck polishing them to “perfect”."
         ]
       }
     }
