@@ -88,7 +88,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
             <article className="mt-16 flex flex-col gap-20">
               {p.sections.map((s) => (
                 <FadeIn key={s.id} delay={0.04}>
-                  <section id={s.id} className="scroll-mt-24 flex flex-col gap-5">
+                  <section id={s.id} className="scroll-mt-24 flex flex-col gap-4">
                     <p className="mx-auto w-full max-w-[644px] text-sm uppercase tracking-[-0.02em] text-muted">
                       {s.eyebrow[locale]}
                     </p>
