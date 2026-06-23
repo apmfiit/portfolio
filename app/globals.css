@@ -271,7 +271,7 @@ a {
 .cat-meow {
   background-image: url("/cat/cat-meow.png");
   background-size: 96px 32px;
-  animation: cat-meow-play 1.6s steps(3) infinite;
+  animation: cat-meow-play 2.4s steps(3) infinite;
 }
 @keyframes cat-meow-play {
   from { background-position: 0 0; }

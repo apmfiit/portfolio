@@ -14,16 +14,12 @@ function isMoscowNight(): boolean {
   return h >= 22 || h < 7;
 }
 
-const YAWN_MS = 1100; // matches .cat-yawn duration
 const SPEED = 110; // px per second walking pace
-
-type Phase = "yawn" | "walk";
 
 export function CatPet() {
   const [night, setNight] = useState(false);
   const [hovering, setHovering] = useState(false);
   const [leaving, setLeaving] = useState(false); // click started the walk-away
-  const [phase, setPhase] = useState<Phase>("yawn");
   const [walk, setWalk] = useState<{ dx: number; ms: number } | null>(null);
   const [slide, setSlide] = useState(false);
   const [gone, setGone] = useState(false);
@@ -37,6 +33,14 @@ export function CatPet() {
     return () => clearInterval(id);
   }, []);
 
+  // Preload every sprite so switching state never flashes a blank frame.
+  useEffect(() => {
+    ["walk", "yawn", "meow", "sleep"].forEach((n) => {
+      const img = new Image();
+      img.src = `/cat/cat-${n}.png`;
+    });
+  }, []);
+
   useEffect(
     () => () => {
       timers.current.forEach(clearTimeout);
@@ -44,37 +48,26 @@ export function CatPet() {
     [],
   );
 
-  // Hover: a light meow. Click: he yawns, then walks right off the screen edge
-  // and is gone until reload (distance measured so he exits any viewport width;
-  // body clips overflow-x, so no scrollbar).
-  const leave = () => {
+  // Click: he walks right off the screen edge and is gone until reload. Distance
+  // is measured from where he sits so he exits any viewport width (body clips
+  // overflow-x — no scrollbar).
+  const walkAway = () => {
     if (leaving || gone) return;
-    setLeaving(true);
     setHovering(false);
-    setPhase("yawn");
-    timers.current.push(
-      setTimeout(() => {
-        const rect = ref.current?.getBoundingClientRect();
-        const dx = rect ? Math.ceil(window.innerWidth - rect.left + 24) : 240;
-        const ms = Math.min(6000, Math.max(900, Math.round((dx / SPEED) * 1000)));
-        setWalk({ dx, ms });
-        setPhase("walk");
-        requestAnimationFrame(() => setSlide(true));
-        timers.current.push(setTimeout(() => setGone(true), ms));
-      }, YAWN_MS),
-    );
+    const rect = ref.current?.getBoundingClientRect();
+    const dx = rect ? Math.ceil(window.innerWidth - rect.left + 24) : 240;
+    const ms = Math.min(6000, Math.max(900, Math.round((dx / SPEED) * 1000)));
+    setWalk({ dx, ms });
+    setLeaving(true);
+    requestAnimationFrame(() => setSlide(true));
+    timers.current.push(setTimeout(() => setGone(true), ms));
   };
 
   // Reserve the space once he's left so the clock doesn't shift.
   if (gone) return <span className="cat" aria-hidden style={{ visibility: "hidden" }} />;
 
-  const state = leaving
-    ? phase
-    : hovering
-      ? "meow"
-      : night
-        ? "sleep"
-        : "idle";
+  // Default: a calm meow (asleep at night). Hover: a one-shot yawn. Click: walk.
+  const state = leaving ? "walk" : hovering ? "yawn" : night ? "sleep" : "meow";
   const label =
     state === "sleep"
       ? "sleeping cat"
@@ -82,9 +75,7 @@ export function CatPet() {
         ? "walking cat"
         : state === "yawn"
           ? "yawning cat"
-          : state === "meow"
-            ? "meowing cat"
-            : "cat";
+          : "cat";
 
   return (
     <span
@@ -96,15 +87,15 @@ export function CatPet() {
       title={night ? "zzz…" : "meow"}
       onMouseEnter={() => !leaving && setHovering(true)}
       onMouseLeave={() => setHovering(false)}
-      onClick={leave}
+      onClick={walkAway}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          leave();
+          walkAway();
         }
       }}
       style={
-        leaving && phase === "walk" && walk
+        leaving && walk
           ? {
               transform: `translateX(${slide ? walk.dx : 0}px)`,
               transition: slide ? `transform ${walk.ms}ms linear` : "none",
