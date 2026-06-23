@@ -108,25 +108,23 @@
     {
       "id": "design",
       "eyebrow": {
-        "ru": "Проектирование",
-        "en": "Design"
+        "ru": "Процесс",
+        "en": "Design process"
       },
       "heading": {
-        "ru": "Анализ текущего флоу, бенчмаркинг, прототип, ю-тесты, макеты под все платформы",
-        "en": "Analyze the current flow, benchmark, prototype, run usability tests, mock for every platform."
+        "ru": "Анализ текущих флоу заказа, бенчмаркинг похожих сервисов и тесты на пользователях",
+        "en": "Analyze the current flow, benchmark, prototype, run usability tests"
       },
       "body": {
         "ru": [
-          "Я проанализировал текущий клиентский путь в приложении, провёл дизайн-бенчмаркинг сервисов-конкурентов и схожих продуктов.",
-          "Нарисовал быстрый прототип для проверки общего ощущения флоу и проделал несколько ю-тестов. Получил несколько инсайтов — например, люди заполняли корзину и только затем задумывались о способе заказа перед оформлением.",
-          "Узнал, что людям важно, а что неважно при оформлении заказа, получил фидбек для последующего улучшения фичи. Большие исследования не проводились — возможность заказа на самовывоз есть в большинстве популярных e-commerce сервисах.",
-          "Затем предложил команде возможные изменения в дизайне приложения с новым функционалом. Макетирование для всех платформ: Web Desktop, Mobile, iOS, Android."
+          "Я проанализировал текущий пользовательский путь, провёл дизайн-бенчмаркинг аналогичных сервисов и сделал быстрый прототип.",
+          "Затем провёл несколько юзабилити-тестов. Один из ключевых инсайтов — пользователи сначала собирают корзину и только потом задумываются о способе получения заказа. Скорее всего, из-за привычки.",
+          "После этого я доработал цельный флоу завершения заказа, предложил дизайн-решения команде."
         ],
         "en": [
-          "Walked through the existing client path and benchmarked competitor and adjacent-product flows.",
-          "Built a quick prototype to feel out the flow and ran a few usability tests. Insight: people would fill up the cart and only then think about the ordering method right before checkout.",
-          "Found what mattered to users and what didn't at checkout, gathered feedback for follow-ups. Pickup is a well-established e-commerce pattern, so no big research was needed.",
-          "Then proposed possible design changes to the team and mocked them for every platform: Web Desktop, Mobile, iOS, Android."
+          "I analyzed the current user journey, conducted design benchmarking of similar services, and created a quick prototype.",
+          "Then I ran several usability tests. One of the key insights was that users tend to build their cart first and only then consider the delivery method at the checkout stage—most likely out of habit.",
+          "After that, I refined the end-to-end checkout flow and proposed design solutions to the team."
         ]
       }
     },
