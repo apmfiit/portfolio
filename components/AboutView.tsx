@@ -7,6 +7,7 @@ import { Nav } from "./Nav";
 import { FadeIn } from "./FadeIn";
 import { FrostLink } from "./FrostLink";
 import { CopyEmail } from "./CopyEmail";
+import { ExternalLinkIcon } from "./icons";
 import { ZoomableImage } from "./ZoomableImage";
 import { PinIcon } from "./PinIcon";
 import { UkFlag } from "./UkFlag";
@@ -230,28 +231,30 @@ export function AboutView({ locale }: { locale: Locale }) {
           {/* Contacts */}
           <FadeIn delay={0.05}>
             <Section label={tr.contacts}>
-              <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm uppercase tracking-[-0.02em] text-muted">
                 <a
                   href={links.telegram}
                   target="_blank"
                   rel="noreferrer"
-                  className="underline underline-offset-2 decoration-rule hover:decoration-foreground"
+                  className="group/link inline-flex items-center gap-1 hover:text-foreground transition-colors"
                 >
                   Telegram
+                  <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
                 </a>
                 <CopyEmail
                   email={links.email}
-                  label={links.email}
+                  label="Email"
                   copiedLabel={isEn ? "Copied" : "Скопировано"}
-                  className="underline underline-offset-2 decoration-rule hover:decoration-foreground"
+                  className="uppercase hover:text-foreground"
                 />
                 <a
                   href={links.cv}
                   target="_blank"
                   rel="noreferrer"
-                  className="underline underline-offset-2 decoration-rule hover:decoration-foreground"
+                  className="group/link inline-flex items-center gap-1 hover:text-foreground transition-colors"
                 >
                   {tr.cv}
+                  <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
                 </a>
               </div>
             </Section>
