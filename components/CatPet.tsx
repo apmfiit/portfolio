@@ -17,11 +17,13 @@ function isMoscowNight(): boolean {
 const YAWN_MS = 1100; // matches .cat-yawn duration
 const SPEED = 110; // px per second walking pace
 
-type Phase = "rest" | "yawn" | "walk";
+type Phase = "yawn" | "walk";
 
 export function CatPet() {
   const [night, setNight] = useState(false);
-  const [phase, setPhase] = useState<Phase>("rest");
+  const [hovering, setHovering] = useState(false);
+  const [leaving, setLeaving] = useState(false); // click started the walk-away
+  const [phase, setPhase] = useState<Phase>("yawn");
   const [walk, setWalk] = useState<{ dx: number; ms: number } | null>(null);
   const [slide, setSlide] = useState(false);
   const [gone, setGone] = useState(false);
@@ -42,11 +44,13 @@ export function CatPet() {
     [],
   );
 
-  // First hover wakes him: yawn, then he walks right off the screen edge and is
-  // gone until reload. Distance is measured from where he sits, so he always
-  // exits the real viewport edge (the body clips overflow-x — no scrollbar).
-  const enter = () => {
-    if (gone || phase !== "rest") return;
+  // Hover: a light meow. Click: he yawns, then walks right off the screen edge
+  // and is gone until reload (distance measured so he exits any viewport width;
+  // body clips overflow-x, so no scrollbar).
+  const leave = () => {
+    if (leaving || gone) return;
+    setLeaving(true);
+    setHovering(false);
     setPhase("yawn");
     timers.current.push(
       setTimeout(() => {
@@ -64,7 +68,13 @@ export function CatPet() {
   // Reserve the space once he's left so the clock doesn't shift.
   if (gone) return <span className="cat" aria-hidden style={{ visibility: "hidden" }} />;
 
-  const state = phase === "rest" ? (night ? "sleep" : "idle") : phase;
+  const state = leaving
+    ? phase
+    : hovering
+      ? "meow"
+      : night
+        ? "sleep"
+        : "idle";
   const label =
     state === "sleep"
       ? "sleeping cat"
@@ -72,18 +82,29 @@ export function CatPet() {
         ? "walking cat"
         : state === "yawn"
           ? "yawning cat"
-          : "cat";
+          : state === "meow"
+            ? "meowing cat"
+            : "cat";
 
   return (
     <span
       ref={ref}
-      className={`cat cat-${state}`}
-      role="img"
+      className={`cat cat-${state} ${leaving ? "" : "cursor-pointer"}`}
+      role="button"
+      tabIndex={0}
       aria-label={label}
       title={night ? "zzz…" : "meow"}
-      onMouseEnter={enter}
+      onMouseEnter={() => !leaving && setHovering(true)}
+      onMouseLeave={() => setHovering(false)}
+      onClick={leave}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          leave();
+        }
+      }}
       style={
-        phase === "walk" && walk
+        leaving && phase === "walk" && walk
           ? {
               transform: `translateX(${slide ? walk.dx : 0}px)`,
               transition: slide ? `transform ${walk.ms}ms linear` : "none",
