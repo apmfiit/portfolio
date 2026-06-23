@@ -4,36 +4,45 @@
   "year": "2023",
   "cover": "/images/cases/ykt-pickup/edaykt-case-cover.png",
   "status": {
-    "en": "Shipped",
-    "ru": "На проде"
+    "ru": "В проде",
+    "en": "Shipped"
   },
   "headline": {
-    "en": "Pickup for a food & goods ordering service",
-    "ru": "Самовывоз для сервиса заказа еды и товаров"
+    "ru": "Самовывоз для сервиса заказа еды и товаров",
+    "en": "Pickup for a food & goods ordering service"
   },
   "blurb": {
-    "en": "Launched a new pickup feature on EdaYkt — 5% of all orders in the first month after release",
-    "ru": "Запустил новую фичу самовывоза в EdaYkt — 5% от всех заказов уже в первом месяце после релиза"
+    "ru": "Запустил новую фичу самовывоза в EdaYkt — 5% от всех заказов уже в первом месяце после релиза",
+    "en": "Launched a new pickup feature on EdaYkt — 5% of all orders in the first month after release"
   },
   "meta": {
     "role": {
-      "en": "Product Designer",
-      "ru": "Продуктовый дизайнер"
+      "ru": "Продуктовый дизайнер",
+      "en": "Product Designer"
     },
     "timeline": {
-      "en": "2023",
-      "ru": "2023"
+      "ru": "Q4 2022",
+      "en": "Q4 2022"
     },
-    "skills": {
-      "en": [
-        "Feature launch",
-        "User flows",
-        "Web + iOS + Android"
-      ],
+    "team": {
       "ru": [
-        "Запуск фичи",
-        "Пользовательские флоу",
-        "Web + iOS + Android"
+        "Продуктовый дизайнер (я)",
+        "Продакт",
+        "Команда разработки"
+      ],
+      "en": [
+        "Designer (me)",
+        "Product Owner",
+        "Dev team"
+      ]
+    },
+    "skills": null,
+    "platforms": {
+      "ru": [
+        "Android, iOS"
+      ],
+      "en": [
+        "Android, iOS"
       ]
     }
   },
@@ -41,110 +50,110 @@
     {
       "id": "feature",
       "eyebrow": {
-        "en": "Feature",
-        "ru": "Фича"
+        "ru": "Фича",
+        "en": "Feature"
       },
       "heading": {
-        "en": "A pickup ordering flow for an app that previously only supported address delivery.",
-        "ru": "Новый способ заказа: самовывоз. До этого можно было только доставку"
+        "ru": "Новый способ заказа: самовывоз. До этого можно было только доставку",
+        "en": "A pickup ordering flow for an app that previously only supported address delivery."
       },
       "body": {
-        "en": [
-          "EdaYkt has been around since 2013 — the design hadn't changed in years and there was a lot of legacy."
-        ],
         "ru": [
           "Сам сервис EdaYkt существует с 2013 года, с тех пор не менялся дизайн и было много легаси."
+        ],
+        "en": [
+          "EdaYkt has been around since 2013 — the design hadn't changed in years and there was a lot of legacy."
         ]
       }
     },
     {
       "id": "problem",
       "eyebrow": {
-        "en": "Problem",
-        "ru": "Проблема"
+        "ru": "Проблема",
+        "en": "Problem"
       },
       "heading": {
-        "en": "Wait times could hit 2–3 hours. Restaurants without couriers were blocked from the service.",
-        "ru": "Ожидание заказа доходило до 2–3 часов. Рестораны без курьеров были отрезаны"
+        "ru": "Ожидание заказа доходило до 2–3 часов. Рестораны без курьеров были отрезаны",
+        "en": "Wait times could hit 2–3 hours. Restaurants without couriers were blocked from the service."
       },
       "body": {
+        "ru": [
+          "Ресторанный бизнес большими темпами развивается в Якутске, открывается много новых ресторанов и магазинов, но не все имеют курьерскую доставку (у сервиса своих курьеров тоже нет). Ожидание для клиента могло достигать до 2–3 часов. Это был большой минус, учитывая небольшие расстояния по городу."
+        ],
         "en": [
           "Yakutsk's restaurant scene was growing fast — lots of new venues, but not all had courier delivery, and the service itself doesn't run its own couriers.",
           "For a city with short distances, 2–3 hour waits were a huge downside."
-        ],
-        "ru": [
-          "Ресторанный бизнес большими темпами развивается в Якутске, открывается много новых ресторанов и магазинов, но не все имеют курьерскую доставку (у сервиса своих курьеров тоже нет). Ожидание для клиента могло достигать до 2–3 часов. Это был большой минус, учитывая небольшие расстояния по городу."
         ]
       }
     },
     {
       "id": "solution",
       "eyebrow": {
-        "en": "Solution",
-        "ru": "Решение"
+        "ru": "Решение",
+        "en": "Solution"
       },
       "heading": {
-        "en": "Introduce pickup ordering. Add distance calc. Show the option on the card. Discount 20%.",
-        "ru": "Ввести самовывоз, считать дистанцию, метить карточки, дать скидку 20%"
+        "ru": "Ввести самовывоз, считать дистанцию, метить карточки, дать скидку 20%",
+        "en": "Introduce pickup ordering. Add distance calc. Show the option on the card. Discount 20%."
       },
       "body": {
-        "en": [
-          "Pickup means faster receipt and savings on delivery (200–300 ₽ on average).",
-          "Calculate distance from the user's location to the venue address.",
-          "Give a 20% discount on the whole order when pickup is selected.",
-          "Show a “Pickup available” sticker on venue cards."
-        ],
         "ru": [
           "Ввести возможность заказа на самовывоз. Это позволит пользователям ускорить получение заказа, а также сэкономить на доставке. Стоимость доставки у ресторанов в среднем 200–300 руб.",
           "Добавить расчёт дистанции от местоположения пользователя до адреса компании.",
           "Предоставить скидку 20% на весь заказ при самовывозе.",
           "На карточках компаний показываем стикер «Есть самовывоз»."
+        ],
+        "en": [
+          "Pickup means faster receipt and savings on delivery (200–300 ₽ on average).",
+          "Calculate distance from the user's location to the venue address.",
+          "Give a 20% discount on the whole order when pickup is selected.",
+          "Show a “Pickup available” sticker on venue cards."
         ]
       }
     },
     {
       "id": "design",
       "eyebrow": {
-        "en": "Design",
-        "ru": "Проектирование"
+        "ru": "Проектирование",
+        "en": "Design"
       },
       "heading": {
-        "en": "Analyze the current flow, benchmark, prototype, run usability tests, mock for every platform.",
-        "ru": "Анализ текущего флоу, бенчмаркинг, прототип, ю-тесты, макеты под все платформы"
+        "ru": "Анализ текущего флоу, бенчмаркинг, прототип, ю-тесты, макеты под все платформы",
+        "en": "Analyze the current flow, benchmark, prototype, run usability tests, mock for every platform."
       },
       "body": {
-        "en": [
-          "Walked through the existing client path and benchmarked competitor and adjacent-product flows.",
-          "Built a quick prototype to feel out the flow and ran a few usability tests. Insight: people would fill up the cart and only then think about the ordering method right before checkout.",
-          "Found what mattered to users and what didn't at checkout, gathered feedback for follow-ups. Pickup is a well-established e-commerce pattern, so no big research was needed.",
-          "Then proposed possible design changes to the team and mocked them for every platform: Web Desktop, Mobile, iOS, Android."
-        ],
         "ru": [
           "Я проанализировал текущий клиентский путь в приложении, провёл дизайн-бенчмаркинг сервисов-конкурентов и схожих продуктов.",
           "Нарисовал быстрый прототип для проверки общего ощущения флоу и проделал несколько ю-тестов. Получил несколько инсайтов — например, люди заполняли корзину и только затем задумывались о способе заказа перед оформлением.",
           "Узнал, что людям важно, а что неважно при оформлении заказа, получил фидбек для последующего улучшения фичи. Большие исследования не проводились — возможность заказа на самовывоз есть в большинстве популярных e-commerce сервисах.",
           "Затем предложил команде возможные изменения в дизайне приложения с новым функционалом. Макетирование для всех платформ: Web Desktop, Mobile, iOS, Android."
+        ],
+        "en": [
+          "Walked through the existing client path and benchmarked competitor and adjacent-product flows.",
+          "Built a quick prototype to feel out the flow and ran a few usability tests. Insight: people would fill up the cart and only then think about the ordering method right before checkout.",
+          "Found what mattered to users and what didn't at checkout, gathered feedback for follow-ups. Pickup is a well-established e-commerce pattern, so no big research was needed.",
+          "Then proposed possible design changes to the team and mocked them for every platform: Web Desktop, Mobile, iOS, Android."
         ]
       }
     },
     {
       "id": "results",
       "eyebrow": {
-        "en": "Results",
-        "ru": "Результаты"
+        "ru": "Результаты",
+        "en": "Results"
       },
       "heading": {
-        "en": "5% of all orders in the first month. Also launched on web.",
-        "ru": "5% от всех заказов в первом месяце. Запустили и на вебе"
+        "ru": "5% от всех заказов в первом месяце. Запустили и на вебе",
+        "en": "5% of all orders in the first month. Also launched on web."
       },
       "body": {
-        "en": [
-          "Pain points addressed for both users and restaurants. In the first month after release, pickup orders were 5% of all orders.",
-          "We also launched pickup on the web version."
-        ],
         "ru": [
           "Устранены боли пользователей и ресторанов. Уже в первом месяце после релиза количество заказов на самовывоз составляло 5% от общих заказов.",
           "Также не забыли о нашей веб-версии и там тоже запустили самовывоз."
+        ],
+        "en": [
+          "Pain points addressed for both users and restaurants. In the first month after release, pickup orders were 5% of all orders.",
+          "We also launched pickup on the web version."
         ]
       },
       "images": [
@@ -157,8 +166,8 @@
         {
           "src": "/images/cases/ykt-pickup/img-3.png",
           "caption": {
-            "en": "Web version also got pickup support.",
-            "ru": "Также запустили самовывоз и в веб-версии."
+            "ru": "Также запустили самовывоз и в веб-версии.",
+            "en": "Web version also got pickup support."
           }
         },
         {
