@@ -287,6 +287,11 @@ a {
   background-size: 64px 32px;
   animation: cat-sleep-play 4s steps(2) infinite;
 }
+.cat-rest {
+  background-image: url("/cat/cat-rest.png");
+  background-size: 64px 32px;
+  animation: cat-sleep-play 3.5s steps(2) infinite;
+}
 @keyframes cat-idle-play {
   from { background-position: 0 0; }
   to { background-position: -192px 0; }
@@ -304,6 +309,7 @@ a {
   .cat-walk,
   .cat-yawn,
   .cat-meow,
+  .cat-rest,
   .cat-sleep {
     animation: none;
     background-position: 0 0;
