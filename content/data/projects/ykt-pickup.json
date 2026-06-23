@@ -98,16 +98,10 @@
       },
       "body": {
         "ru": [
-          "Подход включал несколько продуктовых решений:\n\n1. Введение нового сценария самовывоза\nДобавили самовывоз как полноценный вариант в flow оформления заказа — вместо только доставки по адресу.\n\n2. Упрощение принятия решения\nДобавили отображение расстояния от пользователя до точки выдачи, чтобы снизить неопределённость и помочь выбрать между доставкой и самовывозом.\n\n3. Экономический стимул\nВвели скидку 20% на заказ при самовывозе, чтобы повысить привлекательность нового сценария.\n\n4. Обнаруживаемость на уровне выбора\nДобавили стикер «Есть самовывоз» на карточках компаний, чтобы пользователь мог учитывать это ещё до оформления заказа.",
-          "Добавить расчёт дистанции от местоположения пользователя до адреса компании.",
-          "Предоставить скидку 20% на весь заказ при самовывозе.",
-          "На карточках компаний показываем стикер «Есть самовывоз»."
+          "Подход включал несколько продуктовых решений:\n\n1. Введение нового сценария самовывоза\nДобавили самовывоз как полноценный вариант в flow оформления заказа — вместо только доставки по адресу.\n\n2. Упрощение принятия решения\nДобавили отображение расстояния от пользователя до точки выдачи, чтобы снизить неопределённость и помочь выбрать между доставкой и самовывозом.\n\n3. Экономический стимул\nВвели скидку 20% на заказ при самовывозе, чтобы повысить привлекательность нового сценария.\n\n4. Обнаруживаемость на уровне выбора\nДобавили стикер «Есть самовывоз» на карточках компаний, чтобы пользователь мог учитывать это ещё до оформления заказа."
         ],
         "en": [
-          "Pickup means faster receipt and savings on delivery (200–300 ₽ on average).",
-          "Calculate distance from the user's location to the venue address.",
-          "Give a 20% discount on the whole order when pickup is selected.",
-          "Show a “Pickup available” sticker on venue cards."
+          "The approach included several product design solutions:\n\n1. Introducing a new pickup flow\nWe added self-pickup as a full option in the order flow, instead of delivery-only ordering.\n\n2. Reducing decision uncertainty\nWe introduced distance display from the user’s location to the pickup point to help users better understand convenience and choose between delivery and pickup.\n\n3. Economic incentive\nWe added a 20% discount for orders with self-pickup to increase the attractiveness of the new option.\n\n4. Improving discoverability at the selection stage\nWe added a “Pickup available” badge on company cards so users could take this into account even before starting the checkout process."
         ]
       }
     },
