@@ -59,10 +59,10 @@
       },
       "body": {
         "ru": [
-          "Сам сервис EdaYkt существует с 2013 года, с тех пор не менялся дизайн и было много легаси."
+          "EdaYkt — сервис доставки еды и товаров в г. Якутске, 50K MAU. Сам сервис существует с 2013 года, с тех пор не менялся дизайн и было много легаси."
         ],
         "en": [
-          "EdaYkt has been around since 2013 — the design hadn't changed in years and there was a lot of legacy."
+          "EdaYkt — food and goods delivery service based in Yakutsk, 50K MAU. It has been around since 2013 — the design hadn't changed in years and there was a lot of legacy."
         ]
       }
     },
@@ -135,13 +135,13 @@
         "en": "Results"
       },
       "heading": {
-        "ru": "5% от всех заказов в первом месяце. Запустили и на вебе",
-        "en": "5% of all orders in the first month. Also launched on web."
+        "ru": "В первый месяц после релиза самовывоз составил около 5% от всех заказов, став новым устойчивым способом получения заказов в продукте",
+        "en": "In the first month after launch, self-pickup accounted for about 5% of all orders, becoming a new stable order fulfillment method within the product"
       },
       "body": {
         "ru": [
-          "Устранены боли пользователей и ресторанов. Уже в первом месяце после релиза количество заказов на самовывоз составляло 5% от общих заказов.",
-          "Также не забыли о нашей веб-версии и там тоже запустили самовывоз."
+          "Фича помогла снизить влияние проблем с доставкой и расширить сценарии использования сервиса.",
+          "После хороших цифр занялись раскаткой на веб."
         ],
         "en": [
           "Pain points addressed for both users and restaurants. In the first month after release, pickup orders were 5% of all orders.",
