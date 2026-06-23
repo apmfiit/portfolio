@@ -137,7 +137,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
             href={links.telegram}
             target="_blank"
             rel="noreferrer"
-            className="hover:text-foreground transition-colors"
+            className="hidden hover:text-foreground transition-colors sm:inline-flex"
           >
             Telegram
           </a>
@@ -153,7 +153,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
             href={links.cv}
             target="_blank"
             rel="noreferrer"
-            className="hidden hover:text-foreground transition-colors sm:inline-flex"
+            className="hover:text-foreground transition-colors"
           >
             {tr.cv}
           </a>
