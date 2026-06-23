@@ -54,11 +54,11 @@
     },
     "platforms": {
       "ru": [
-        "Android (нативное приложение)",
+        "Android",
         "iOS PWA"
       ],
       "en": [
-        "Android (native)",
+        "Android",
         "iOS PWA"
       ]
     }
@@ -67,11 +67,11 @@
     {
       "id": "context",
       "eyebrow": {
-        "ru": "Чем занимается наш кластер",
+        "ru": "Чем занимается моя команда",
         "en": "Context"
       },
       "heading": {
-        "ru": "Уведомления — самый дешёвый и надёжный канал банка к клиенту.",
+        "ru": "Пуш-уведомления — самый дешёвый и надёжный канал банка к клиенту.",
         "en": "Pushes are how a bank reaches a client cheaply and reliably."
       },
       "body": {
