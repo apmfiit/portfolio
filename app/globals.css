@@ -265,8 +265,13 @@ a {
 .cat-yawn {
   background-image: url("/cat/cat-yawn.png");
   background-size: 256px 32px;
-  /* One-shot wake-up yawn, then JS hands off to the walk loop. */
-  animation: cat-walk-play 1.1s steps(8) 1 forwards;
+  /* One-shot yawn that holds the LAST real frame (-224px). Ending on the
+     keyframe's -256px would land one frame past the strip → blank. */
+  animation: cat-yawn-play 1.1s steps(8, jump-none) 1 forwards;
+}
+@keyframes cat-yawn-play {
+  from { background-position: 0 0; }
+  to { background-position: -224px 0; }
 }
 .cat-meow {
   background-image: url("/cat/cat-meow.png");
