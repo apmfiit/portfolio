@@ -32,7 +32,11 @@ export function MoscowClock({ locale }: { locale: Locale }) {
   }).format(now);
 
   return (
-    <span className="tabular-nums">
+    <span className="inline-flex items-center gap-1.5 tabular-nums">
+      <span className="relative inline-flex h-2 w-2" aria-hidden>
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75 motion-reduce:animate-none" />
+        <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+      </span>
       {locale === "en" ? "Moscow" : "Москва"} · {date}, {time}
     </span>
   );
