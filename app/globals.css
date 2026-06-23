@@ -64,6 +64,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  /* Clip horizontal overflow at the viewport so the cat can walk off the right
+     edge without a scrollbar. `clip` (not hidden) keeps the sticky nav working. */
+  overflow-x: clip;
 }
 
 a {

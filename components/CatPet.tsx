@@ -15,19 +15,17 @@ function isMoscowNight(): boolean {
 }
 
 const YAWN_MS = 1100; // matches .cat-yawn duration
-const WALK_MS = 4000; // full-width stroll across the footer
-// He pops off-screen left (≈ -30px, since he rests ~30px from the right), then
-// walks all the way across to off the right. Stays in flow so the clock holds.
-const WALK_FROM = "-100vw";
-const WALK_TO = "5vw";
+const SPEED = 110; // px per second walking pace
 
 type Phase = "rest" | "yawn" | "walk";
 
 export function CatPet() {
   const [night, setNight] = useState(false);
   const [phase, setPhase] = useState<Phase>("rest");
+  const [walk, setWalk] = useState<{ dx: number; ms: number } | null>(null);
   const [slide, setSlide] = useState(false);
   const [gone, setGone] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
@@ -44,16 +42,21 @@ export function CatPet() {
     [],
   );
 
-  // First hover wakes him: yawn → walk off to the right → gone until reload.
+  // First hover wakes him: yawn, then he walks right off the screen edge and is
+  // gone until reload. Distance is measured from where he sits, so he always
+  // exits the real viewport edge (the body clips overflow-x — no scrollbar).
   const enter = () => {
     if (gone || phase !== "rest") return;
     setPhase("yawn");
     timers.current.push(
       setTimeout(() => {
+        const rect = ref.current?.getBoundingClientRect();
+        const dx = rect ? Math.ceil(window.innerWidth - rect.left + 24) : 240;
+        const ms = Math.min(6000, Math.max(900, Math.round((dx / SPEED) * 1000)));
+        setWalk({ dx, ms });
         setPhase("walk");
-        // next frame so the transform transition actually animates
         requestAnimationFrame(() => setSlide(true));
-        timers.current.push(setTimeout(() => setGone(true), WALK_MS));
+        timers.current.push(setTimeout(() => setGone(true), ms));
       }, YAWN_MS),
     );
   };
@@ -73,16 +76,17 @@ export function CatPet() {
 
   return (
     <span
+      ref={ref}
       className={`cat cat-${state}`}
       role="img"
       aria-label={label}
       title={night ? "zzz…" : "meow"}
       onMouseEnter={enter}
       style={
-        phase === "walk"
+        phase === "walk" && walk
           ? {
-              transform: `translateX(${slide ? WALK_TO : WALK_FROM})`,
-              transition: slide ? `transform ${WALK_MS}ms linear` : "none",
+              transform: `translateX(${slide ? walk.dx : 0}px)`,
+              transition: slide ? `transform ${walk.ms}ms linear` : "none",
             }
           : undefined
       }
