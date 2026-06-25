@@ -100,13 +100,18 @@
             "ru": "Как выглядел сайт до",
             "en": "Before the redesign"
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "after",
+      "eyebrow": {
+        "ru": "После редизайна",
+        "en": "After the redesign"
+      },
+      "images": [
         {
-          "src": "/images/cases/ykt-jobs/img-5.png",
-          "caption": {
-            "ru": "После редизайна",
-            "en": "After the redesign"
-          }
+          "src": "/images/cases/ykt-jobs/img-5.png"
         },
         {
           "src": "/images/cases/ykt-jobs/img-6.png"
