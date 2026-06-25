@@ -227,14 +227,14 @@ export const imageMeta: Record<string, ImageMeta> = {
     "h": 1152,
     "format": "png"
   },
-  "/images/push-onboarding.png": {
-    "w": 3840,
-    "h": 2160,
-    "format": "png"
-  },
   "/images/template-constructor.png": {
     "w": 2361,
     "h": 1398,
+    "format": "png"
+  },
+  "/images/vtb-push-case-cover.png": {
+    "w": 3840,
+    "h": 2400,
     "format": "png"
   },
   "/images/wave.png": {
