@@ -102,19 +102,34 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                         {typo(para)}
                       </p>
                     ))}
-                    {[
-                      ...(s.image ? [{ src: s.image, caption: s.caption?.[locale], width: undefined }] : []),
-                      ...(s.images ?? []).map((im) => ({ src: im.src, caption: im.caption?.[locale], width: im.width })),
-                    ].map((f, i) => (
+                    {s.image && (
                       <CaseFigure
-                        key={i}
-                        src={f.src}
-                        alt={f.caption ?? s.heading[locale]}
-                        caption={f.caption}
-                        width={f.width}
+                        src={s.image}
+                        alt={s.caption?.[locale] ?? s.heading[locale]}
+                        caption={s.caption?.[locale]}
                         closeLabel={closeLabel}
                       />
-                    ))}
+                    )}
+                    {(s.images ?? []).map((im, i) =>
+                      im.row && im.row.length > 0 ? (
+                        <CaseRow
+                          key={i}
+                          srcs={im.row}
+                          caption={im.caption?.[locale]}
+                          alt={s.heading[locale]}
+                          closeLabel={closeLabel}
+                        />
+                      ) : im.src ? (
+                        <CaseFigure
+                          key={i}
+                          src={im.src}
+                          alt={im.caption?.[locale] ?? s.heading[locale]}
+                          caption={im.caption?.[locale]}
+                          width={im.width}
+                          closeLabel={closeLabel}
+                        />
+                      ) : null,
+                    )}
                   </section>
                 </FadeIn>
               ))}
@@ -206,6 +221,50 @@ function CaseFigure({
             closeLabel={closeLabel}
           />
         )}
+      </div>
+      {caption && (
+        <figcaption className="mx-auto w-full max-w-[644px] text-left text-sm text-muted leading-relaxed">
+          {typo(caption)}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+// Several images side by side in one horizontal row, with a shared caption.
+function CaseRow({
+  srcs,
+  caption,
+  alt,
+  closeLabel,
+}: {
+  srcs: string[];
+  caption?: string;
+  alt: string;
+  closeLabel?: string;
+}) {
+  return (
+    <figure className="mx-auto mt-2 flex w-full flex-col gap-2 2xl:relative 2xl:left-1/2 2xl:w-[980px] 2xl:max-w-[calc(100vw-3rem)] 2xl:-translate-x-1/2">
+      <div className="flex items-start gap-3">
+        {srcs.map((src, i) => {
+          const m = imageMeta[src];
+          return (
+            <div
+              key={i}
+              className="min-w-0 flex-1 overflow-hidden rounded-xl border border-[color:var(--image-edge)]"
+            >
+              <ZoomableImage
+                src={src}
+                alt={alt}
+                width={m?.w ?? 1600}
+                height={m?.h ?? 1000}
+                className="h-auto w-full"
+                blurDataURL={blur[src]}
+                closeLabel={closeLabel}
+              />
+            </div>
+          );
+        })}
       </div>
       {caption && (
         <figcaption className="mx-auto w-full max-w-[644px] text-left text-sm text-muted leading-relaxed">

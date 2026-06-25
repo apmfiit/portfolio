@@ -96,7 +96,9 @@ collections:
             required: false
             add_to_top: false
             fields:
-              - { name: src, label: Файл (загрузить или выбрать), widget: image }
+              - { name: src, label: Файл (загрузить или выбрать), widget: image, required: false }
+              - { name: row, label: Ряд (несколько файлов в одну строку), widget: list, required: false, field: { name: img, label: Файл, widget: image } }
+              - { name: width, label: Ширина (text = по ширине текста), widget: select, required: false, options: ["text"] }
               - { name: caption, label: Подпись, widget: object, required: false, fields: *loc_string }
 
   - name: settings

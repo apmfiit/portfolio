@@ -26,10 +26,12 @@ export type ProjectMeta = {
 };
 
 export type SectionImage = {
-  src: string;
+  src?: string;
   caption?: LocalizedString;
   // Optional width override: "text" caps the image at the 644px reading column.
   width?: "text";
+  // Optional horizontal group: several images shown side by side in one row.
+  row?: string[];
 };
 
 export type ProjectSection = {

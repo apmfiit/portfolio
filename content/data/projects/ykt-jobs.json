@@ -87,17 +87,15 @@
           "width": "text"
         },
         {
-          "src": "/images/cases/ykt-jobs/img-2.png",
+          "row": [
+            "/images/cases/ykt-jobs/img-2.png",
+            "/images/cases/ykt-jobs/img-3.png",
+            "/images/cases/ykt-jobs/img-4.png"
+          ],
           "caption": {
             "ru": "Как выглядел сайт до",
             "en": "Before the redesign"
           }
-        },
-        {
-          "src": "/images/cases/ykt-jobs/img-3.png"
-        },
-        {
-          "src": "/images/cases/ykt-jobs/img-4.png"
         },
         {
           "src": "/images/cases/ykt-jobs/img-5.png",
