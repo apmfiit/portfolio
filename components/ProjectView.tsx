@@ -195,7 +195,7 @@ function CaseFigure({
         ? "mx-auto w-full max-w-[420px]"
         : "mx-auto w-full 2xl:relative 2xl:left-1/2 2xl:w-[980px] 2xl:max-w-[calc(100vw-3rem)] 2xl:-translate-x-1/2";
   return (
-    <figure className="mt-2 flex flex-col gap-2">
+    <figure className="mt-7 flex flex-col gap-2">
       <div
         className={`overflow-hidden border border-[color:var(--image-edge)] ${
           isGif ? "rounded-lg" : "rounded-xl"
@@ -244,7 +244,7 @@ function CaseRow({
   closeLabel?: string;
 }) {
   return (
-    <figure className="mx-auto mt-2 flex w-full flex-col gap-2 2xl:relative 2xl:left-1/2 2xl:w-[980px] 2xl:max-w-[calc(100vw-3rem)] 2xl:-translate-x-1/2">
+    <figure className="mx-auto mt-7 flex w-full flex-col gap-2 2xl:relative 2xl:left-1/2 2xl:w-[980px] 2xl:max-w-[calc(100vw-3rem)] 2xl:-translate-x-1/2">
       <div className="flex items-start gap-3">
         {srcs.map((src, i) => {
           const m = imageMeta[src];
