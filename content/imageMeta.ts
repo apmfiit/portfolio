@@ -243,8 +243,8 @@ export const imageMeta: Record<string, ImageMeta> = {
     "format": "png"
   },
   "/images/ykt-jobs.png": {
-    "w": 1993,
-    "h": 1120,
+    "w": 1920,
+    "h": 1200,
     "format": "png"
   },
   "/images/ykt-pickup.png": {
