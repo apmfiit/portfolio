@@ -163,15 +163,16 @@ function CaseFigure({
   const h = m?.h ?? 1000;
   const isGif = m?.format === "gif";
   const ratio = m ? m.w / m.h : 1.6;
-  const isPortrait = !isGif && ratio < 1;
-  // Apple-style sizing: wide (landscape) shots break out past the text column to
-  // ~980px on large screens (≥2xl, where the breakout clears the left TOC);
-  // portrait/mobile shots cap at the 644px text width; the small cat gif stays
-  // tiny. Everything centered on the column.
+  // Only genuinely phone-proportioned shots (clearly taller than wide) cap narrow;
+  // tall desktop full-page captures (aspect ~0.8) stay in the wide bucket.
+  const isPhone = !isGif && ratio < 0.62;
+  // Apple-style sizing: wide shots (incl. tall desktop captures) break out past
+  // the text column to ~980px on large screens (≥2xl, where the breakout clears
+  // the left TOC); mobile/phone shots cap at 420px; the small cat gif stays tiny.
   const wrap = isGif
     ? "mx-auto max-w-[160px]"
-    : isPortrait
-      ? "mx-auto w-full max-w-[644px]"
+    : isPhone
+      ? "mx-auto w-full max-w-[420px]"
       : "mx-auto w-full 2xl:relative 2xl:left-1/2 2xl:w-[980px] 2xl:max-w-[calc(100vw-3rem)] 2xl:-translate-x-1/2";
   return (
     <figure className="mt-2 flex flex-col gap-2">
