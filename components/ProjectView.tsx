@@ -105,7 +105,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                     {s.image && (
                       <CaseFigure
                         src={s.image}
-                        alt={s.caption?.[locale] ?? s.heading[locale]}
+                        alt={s.caption?.[locale] ?? s.heading?.[locale] ?? s.eyebrow[locale]}
                         caption={s.caption?.[locale]}
                         closeLabel={closeLabel}
                       />
@@ -116,14 +116,14 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                           key={i}
                           srcs={im.row}
                           caption={im.caption?.[locale]}
-                          alt={s.heading[locale]}
+                          alt={s.heading?.[locale] ?? s.eyebrow[locale]}
                           closeLabel={closeLabel}
                         />
                       ) : im.src ? (
                         <CaseFigure
                           key={i}
                           src={im.src}
-                          alt={im.caption?.[locale] ?? s.heading[locale]}
+                          alt={im.caption?.[locale] ?? s.heading?.[locale] ?? s.eyebrow[locale]}
                           caption={im.caption?.[locale]}
                           width={im.width}
                           closeLabel={closeLabel}
