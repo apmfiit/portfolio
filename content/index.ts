@@ -28,6 +28,8 @@ export type ProjectMeta = {
 export type SectionImage = {
   src: string;
   caption?: LocalizedString;
+  // Optional width override: "text" caps the image at the 644px reading column.
+  width?: "text";
 };
 
 export type ProjectSection = {

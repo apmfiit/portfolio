@@ -103,14 +103,15 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                       </p>
                     ))}
                     {[
-                      ...(s.image ? [{ src: s.image, caption: s.caption?.[locale] }] : []),
-                      ...(s.images ?? []).map((im) => ({ src: im.src, caption: im.caption?.[locale] })),
+                      ...(s.image ? [{ src: s.image, caption: s.caption?.[locale], width: undefined }] : []),
+                      ...(s.images ?? []).map((im) => ({ src: im.src, caption: im.caption?.[locale], width: im.width })),
                     ].map((f, i) => (
                       <CaseFigure
                         key={i}
                         src={f.src}
                         alt={f.caption ?? s.heading[locale]}
                         caption={f.caption}
+                        width={f.width}
                         closeLabel={closeLabel}
                       />
                     ))}
@@ -151,11 +152,13 @@ function CaseFigure({
   src,
   alt,
   caption,
+  width,
   closeLabel,
 }: {
   src: string;
   alt: string;
   caption?: string;
+  width?: "text";
   closeLabel?: string;
 }) {
   const m = imageMeta[src];
@@ -171,9 +174,11 @@ function CaseFigure({
   // the left TOC); mobile/phone shots cap at 420px; the small cat gif stays tiny.
   const wrap = isGif
     ? "mx-auto max-w-[160px]"
-    : isPhone
-      ? "mx-auto w-full max-w-[420px]"
-      : "mx-auto w-full 2xl:relative 2xl:left-1/2 2xl:w-[980px] 2xl:max-w-[calc(100vw-3rem)] 2xl:-translate-x-1/2";
+    : width === "text"
+      ? "mx-auto w-full max-w-[644px]"
+      : isPhone
+        ? "mx-auto w-full max-w-[420px]"
+        : "mx-auto w-full 2xl:relative 2xl:left-1/2 2xl:w-[980px] 2xl:max-w-[calc(100vw-3rem)] 2xl:-translate-x-1/2";
   return (
     <figure className="mt-2 flex flex-col gap-2">
       <div

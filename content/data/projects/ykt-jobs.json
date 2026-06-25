@@ -83,7 +83,8 @@
       },
       "images": [
         {
-          "src": "/images/cases/ykt-jobs/img-1.png"
+          "src": "/images/cases/ykt-jobs/img-1.png",
+          "width": "text"
         },
         {
           "src": "/images/cases/ykt-jobs/img-2.png",
