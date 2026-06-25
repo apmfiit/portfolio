@@ -151,8 +151,7 @@
           "Улучшил флоу поиска вакансий через систему саджестов.",
           "Улучшил фильтры поиска для работодателей и соискателей.",
           "Добавлена возможность прямой коммуникации работодателя с соискателем через WhatsApp/Telegram-чат.",
-          "Спроектировал новый Telegram-бот для быстрых push-уведомлений по вакансиям. У сервиса нет приложения.",
-          "Статус: в разработке. Ждём запуска."
+          "Спроектировал новый Telegram-бот для быстрых push-уведомлений по вакансиям. У сервиса нет приложения."
         ],
         "en": [
           "Designed ~300 Figma screens.",
@@ -162,8 +161,7 @@
           "Assembled the in-house profession catalog tied to specialties and industries.",
           "Improved vacancy search with a suggest system, and improved filters for both seekers and employers.",
           "Added direct employer-to-seeker communication via WhatsApp / Telegram chat.",
-          "Designed a new Telegram bot for fast push-style vacancy notifications (the service has no app).",
-          "Status: in development; waiting on launch."
+          "Designed a new Telegram bot for fast push-style vacancy notifications (the service has no app)."
         ]
       },
       "images": [
