@@ -84,7 +84,11 @@
       "images": [
         {
           "src": "/images/cases/ykt-jobs/img-1.png",
-          "width": "text"
+          "width": "text",
+          "caption": {
+            "ru": "Выявили проблемы с авторизацией на юзабилити тестах",
+            "en": "Usability testing surfaced problems with authorization"
+          }
         },
         {
           "row": [
