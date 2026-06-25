@@ -6,6 +6,7 @@ import { typo } from "@/lib/typo";
 import { Nav } from "./Nav";
 import { FadeIn } from "./FadeIn";
 import { FrostLink } from "./FrostLink";
+import { VtbMark } from "./VtbMark";
 import { CopyEmail } from "./CopyEmail";
 import { ExternalLinkIcon } from "./icons";
 import { ZoomableImage } from "./ZoomableImage";
@@ -72,19 +73,35 @@ function renderIntro(text: string, locale: Locale): React.ReactNode[] {
           Ykt.Ru
         </FrostLink>,
       );
-    } else {
-      const href =
-        best.name === "KUPIKOD" ? "https://kupikod.com/" : "https://www.vtb.ru/";
+    } else if (best.name === "KUPIKOD") {
       out.push(
         <a
           key={key++}
-          href={href}
+          href="https://kupikod.com/"
           target="_blank"
           rel="noreferrer"
           className={COMPANY_LINK}
         >
-          {best.name}
+          KUPIKOD
         </a>,
+      );
+    } else {
+      // ВТБ Онлайн / VTB Online — three-stripe mark + linked name.
+      out.push(
+        <span key={key++} className="whitespace-nowrap">
+          <VtbMark
+            className="inline-block h-[0.47em] w-[0.77em]"
+            style={{ verticalAlign: "0.43em", marginRight: "0.18em" }}
+          />
+          <a
+            href="https://www.vtb.ru/"
+            target="_blank"
+            rel="noreferrer"
+            className={COMPANY_LINK}
+          >
+            {best.name}
+          </a>
+        </span>,
       );
     }
     rest = rest.slice(best.idx + best.name.length);
