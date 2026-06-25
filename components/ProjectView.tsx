@@ -59,7 +59,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
 
           {p.cover && (
             <FadeIn delay={0.05}>
-              <div className="mt-10 overflow-hidden rounded-2xl border border-[color:var(--image-edge)]">
+              <div className="mx-auto mt-10 w-full overflow-hidden rounded-2xl border border-[color:var(--image-edge)] 2xl:relative 2xl:left-1/2 2xl:w-[980px] 2xl:max-w-[calc(100vw-3rem)] 2xl:-translate-x-1/2">
                 <ZoomableImage
                   src={p.cover}
                   alt={p.headline[locale]}
