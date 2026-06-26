@@ -67,6 +67,7 @@ function renderIntro(text: string, locale: Locale): React.ReactNode[] {
       break;
     }
     if (best.idx > 0) pushText(rest.slice(0, best.idx));
+    let consumed = 0;
     if (best.name === "Ykt.Ru") {
       out.push(
         <FrostLink key={key++} href="https://ykt.ru/about">
@@ -74,16 +75,21 @@ function renderIntro(text: string, locale: Locale): React.ReactNode[] {
         </FrostLink>,
       );
     } else if (best.name === "KUPIKOD") {
+      // Keep a trailing 🎮 on the same line as KUPIKOD.
+      const m = rest.slice(best.idx + best.name.length).match(/^(\s*🎮)/u);
+      consumed = m ? m[1].length : 0;
       out.push(
-        <a
-          key={key++}
-          href="https://kupikod.com/"
-          target="_blank"
-          rel="noreferrer"
-          className={COMPANY_LINK}
-        >
-          KUPIKOD
-        </a>,
+        <span key={key++} className="whitespace-nowrap">
+          <a
+            href="https://kupikod.com/"
+            target="_blank"
+            rel="noreferrer"
+            className={COMPANY_LINK}
+          >
+            KUPIKOD
+          </a>
+          {m ? m[1] : ""}
+        </span>,
       );
     } else {
       // ВТБ Онлайн / VTB Online — three-stripe mark + linked name.
@@ -104,7 +110,7 @@ function renderIntro(text: string, locale: Locale): React.ReactNode[] {
         </span>,
       );
     }
-    rest = rest.slice(best.idx + best.name.length);
+    rest = rest.slice(best.idx + best.name.length + consumed);
   }
   return out;
 }
