@@ -52,6 +52,21 @@
   },
   "sections": [
     {
+      "id": "context",
+      "eyebrow": {
+        "ru": "Контекст",
+        "en": "Context"
+      },
+      "body": {
+        "ru": [
+          "KUPIKOD — сервисная экосистема для геймеров с более чем 2 млн MAU, где можно пополнять баланс Steam, покупать игры, цифровые товары и игровую валюту."
+        ],
+        "en": [
+          "KUPIKOD is a service ecosystem for gamers with 2M+ MAU, where you can top up your Steam balance and buy games, digital goods and in-game currency."
+        ]
+      }
+    },
+    {
       "id": "problem",
       "eyebrow": {
         "ru": "Что было не так с прошлой версией",

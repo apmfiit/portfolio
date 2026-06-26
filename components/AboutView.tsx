@@ -66,15 +66,17 @@ function renderIntro(text: string, locale: Locale): React.ReactNode[] {
       pushText(rest);
       break;
     }
-    if (best.idx > 0) pushText(rest.slice(0, best.idx));
+    const before = rest.slice(0, best.idx);
     let consumed = 0;
     if (best.name === "Ykt.Ru") {
+      if (before) pushText(before);
       out.push(
         <FrostLink key={key++} href="https://ykt.ru/about">
           Ykt.Ru
         </FrostLink>,
       );
     } else if (best.name === "KUPIKOD") {
+      if (before) pushText(before);
       // Keep a trailing 🎮 on the same line as KUPIKOD.
       const m = rest.slice(best.idx + best.name.length).match(/^(\s*🎮)/u);
       consumed = m ? m[1].length : 0;
@@ -92,9 +94,16 @@ function renderIntro(text: string, locale: Locale): React.ReactNode[] {
         </span>,
       );
     } else {
-      // ВТБ Онлайн / VTB Online — three-stripe mark + linked name.
+      // ВТБ Онлайн / VTB Online — three-stripe mark + linked name. Pull a
+      // preceding short preposition («в»/«at») INTO the nowrap unit so it
+      // can never dangle at a line end before the mark.
+      const pm = before.match(/^([\s\S]*?\s)(\p{L}{1,2})\s+$/u);
+      const head = pm ? pm[1] : before;
+      const prep = pm ? pm[2] : "";
+      if (head) pushText(head);
       out.push(
         <span key={key++} className="whitespace-nowrap">
+          {prep ? <>{typo(prep)} </> : ""}
           <VtbMark
             className="inline-block h-[0.47em] w-[0.77em]"
             style={{ verticalAlign: "0.43em", marginRight: "0.18em" }}
