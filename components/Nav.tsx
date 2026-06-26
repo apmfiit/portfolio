@@ -171,7 +171,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
           doesn't trap fixed positioning (that left the panel transparent/clipped) */}
       {open && (
         <div className="fixed inset-0 z-50 flex flex-col bg-[color:var(--background)] lg:hidden">
-          <div className="flex items-start justify-between gap-6 border-b border-rule px-6 py-4 text-[15px] uppercase tracking-[-0.02em]">
+          <div className="flex items-center justify-between gap-6 border-b border-rule px-6 py-4 text-[15px] uppercase tracking-[-0.02em]">
             {NameBlock}
             <button
               type="button"
@@ -194,7 +194,6 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
             </button>
           </div>
           <nav className="flex flex-col gap-7 px-6 pt-10 pb-10 text-[15px] uppercase tracking-[-0.02em] text-muted">
-            <ThemeToggle />
             <Link
               href={aboutHref}
               onClick={() => setOpen(false)}
@@ -236,6 +235,9 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
               {otherCode}
             </Link>
           </nav>
+          <div className="mt-auto px-6 pb-10">
+            <ThemeToggle />
+          </div>
         </div>
       )}
     </>
