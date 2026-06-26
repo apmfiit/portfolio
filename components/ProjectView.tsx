@@ -12,23 +12,59 @@ import { Footer } from "./Footer";
 import { TableOfContents } from "./TableOfContents";
 import { ZoomableImage } from "./ZoomableImage";
 
-// Link Rabota.Ykt.Ru inside body text (frost hover), preserving the boundary
-// space that typo() would otherwise trim.
-function renderPara(para: string): React.ReactNode {
-  const token = "Rabota.Ykt.Ru";
-  const idx = para.indexOf(token);
-  if (idx === -1) return typo(para);
-  const before = para.slice(0, idx);
-  const after = para.slice(idx + token.length);
-  const beforeTrail = /\s$/.test(before) ? " " : "";
-  const afterLead = /^\s/.test(after) ? " " : "";
+// Company names that become links inside body/blurb text. Ykt-branded ones get
+// the frosty hover; others a plain underline.
+const BODY_LINKS: { token: string; href: string; frost?: boolean }[] = [
+  { token: "Rabota.Ykt.Ru", href: "https://rabota.ykt.ru/", frost: true },
+  { token: "EdaYkt", href: "https://eda.ykt.ru/", frost: true },
+  { token: "KUPIKOD", href: "https://kupikod.com/" },
+];
+
+// typo() a text run while preserving its boundary spaces (typo trims), and
+// NBSP-gluing a short trailing word (e.g. «в») to the following link.
+function typoSeg(s: string): React.ReactNode {
+  if (!s) return "";
+  const lead = /^\s/.test(s) ? " " : "";
+  const hasTrail = /\s$/.test(s);
+  const core = s.trim();
+  const lastWord = (core.split(/\s+/).pop() ?? "").replace(/[^\p{L}\p{N}]/gu, "");
+  const short = lastWord.length > 0 && lastWord.length <= 2;
+  const trail = hasTrail ? (short ? " " : " ") : "";
   return (
     <>
-      {before.trim() ? typo(before.trim()) : ""}
-      {beforeTrail}
-      <FrostLink href="https://rabota.ykt.ru/">{token}</FrostLink>
-      {afterLead}
-      {after.trim() ? typo(after.trim()) : ""}
+      {lead}
+      {core ? typo(core) : ""}
+      {trail}
+    </>
+  );
+}
+
+function renderPara(para: string): React.ReactNode {
+  let best: { idx: number; rule: (typeof BODY_LINKS)[number] } | null = null;
+  for (const rule of BODY_LINKS) {
+    const idx = para.indexOf(rule.token);
+    if (idx !== -1 && (best === null || idx < best.idx)) best = { idx, rule };
+  }
+  if (!best) return typoSeg(para);
+  const before = para.slice(0, best.idx);
+  const after = para.slice(best.idx + best.rule.token.length);
+  const link = best.rule.frost ? (
+    <FrostLink href={best.rule.href}>{best.rule.token}</FrostLink>
+  ) : (
+    <a
+      href={best.rule.href}
+      target="_blank"
+      rel="noreferrer"
+      className="underline underline-offset-2 decoration-rule transition-colors hover:decoration-foreground"
+    >
+      {best.rule.token}
+    </a>
+  );
+  return (
+    <>
+      {typoSeg(before)}
+      {link}
+      {renderPara(after)}
     </>
   );
 }
@@ -74,7 +110,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                 {typo(p.headline[locale])}
               </h1>
               <p className="mx-auto w-full max-w-[644px] text-lg text-foreground/80 leading-relaxed text-balance">
-                {typo(p.blurb[locale])}
+                {renderPara(p.blurb[locale])}
               </p>
             </header>
           </FadeIn>
