@@ -157,6 +157,7 @@
     },
     {
       "id": "results",
+      "bullets": true,
       "eyebrow": {
         "ru": "Результаты",
         "en": "Results"

@@ -152,11 +152,24 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                         {typo(s.heading[locale])}
                       </h2>
                     )}
-                    {s.body?.[locale]?.map((para, i) => (
-                      <p key={i} className="mx-auto w-full max-w-[644px] text-base font-normal text-pretty text-foreground/80 md:text-lg">
-                        {renderPara(para)}
-                      </p>
-                    ))}
+                    {s.bullets ? (
+                      <ul className="mx-auto flex w-full max-w-[644px] flex-col gap-2 text-base font-normal text-pretty text-foreground/80 md:text-lg">
+                        {s.body?.[locale]?.map((item, i) => (
+                          <li
+                            key={i}
+                            className="relative pl-5 before:absolute before:left-0 before:text-muted before:content-['—']"
+                          >
+                            {renderPara(item)}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      s.body?.[locale]?.map((para, i) => (
+                        <p key={i} className="mx-auto w-full max-w-[644px] text-base font-normal text-pretty text-foreground/80 md:text-lg">
+                          {renderPara(para)}
+                        </p>
+                      ))
+                    )}
                     {s.image && (
                       <CaseFigure
                         src={s.image}

@@ -89,6 +89,7 @@ collections:
           - { name: eyebrow, label: Надзаголовок, widget: object, fields: *loc_string }
           - { name: heading, label: Заголовок секции (можно оставить пустым), widget: object, required: false, fields: *loc_string_opt }
           - { name: body, label: Текст (абзацы), widget: object, required: false, fields: *loc_text_list }
+          - { name: bullets, label: Список с маркерами (тире), widget: boolean, required: false, default: false }
           - name: images
             label: Картинки (нажми «+» чтобы добавить)
             label_singular: Картинка

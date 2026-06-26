@@ -39,6 +39,8 @@ export type ProjectSection = {
   eyebrow: LocalizedString;
   heading: LocalizedString;
   body?: LocalizedList;
+  // Render the body paragraphs as a dash bullet list.
+  bullets?: boolean;
   image?: string;
   caption?: LocalizedString;
   images?: SectionImage[];
