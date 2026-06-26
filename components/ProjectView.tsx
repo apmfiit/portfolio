@@ -157,7 +157,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                         {s.body?.[locale]?.map((item, i) => (
                           <li
                             key={i}
-                            className="relative pl-5 before:absolute before:left-0 before:text-muted before:content-['—']"
+                            className="relative pl-6 before:absolute before:left-0 before:text-muted before:content-['•']"
                           >
                             {renderPara(item)}
                           </li>
