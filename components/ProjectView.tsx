@@ -107,7 +107,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                 {typo(p.headline[locale])}
               </h1>
               <p className="mx-auto w-full max-w-[644px] text-lg text-foreground/80 leading-relaxed text-balance">
-                {renderPara(p.blurb[locale])}
+                {typo(p.blurb[locale])}
               </p>
             </header>
           </FadeIn>
