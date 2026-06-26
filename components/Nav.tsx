@@ -72,14 +72,12 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
     <>
     <header className={`${sticky ? "sticky top-0" : "relative"} z-30 backdrop-blur-[20px] bg-[color:var(--background)]/70 border-b border-rule`}>
       <div className="flex justify-center px-6 py-4">
-        <div className="flex w-full max-w-[1800px] items-center justify-between gap-6 text-[15px] uppercase tracking-[-0.02em] lg:grid lg:grid-cols-2 lg:gap-x-6">
+        <div className="flex w-full max-w-[1800px] items-center justify-between gap-6 text-[15px] uppercase tracking-[-0.02em]">
         {NameBlock}
 
-        {/* Full nav — lg and up */}
-        <div className="hidden items-center justify-between lg:flex">
-        {/* Middle: Telegram, Email, Резюме — aligned to the second content column */}
+        {/* Full nav — lg and up: contacts first, then About | EN, toggle. */}
         <LayoutGroup>
-          <nav className="flex items-center gap-3 text-muted">
+          <nav className="hidden items-center gap-3 text-muted lg:flex">
             <motion.span layout="position" transition={navSpring} className="inline-flex">
               <a
                 href={links.telegram}
@@ -111,25 +109,20 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
                 <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
               </a>
             </motion.span>
+            <Link href={aboutHref} className="hover:text-foreground transition-colors">
+              {tr.about}
+            </Link>
+            <span className="h-4 w-px bg-rule" aria-hidden />
+            <Link
+              href={otherHref}
+              className="hover:text-foreground transition-colors"
+              aria-label={`Switch language to ${otherCode}`}
+            >
+              {otherCode}
+            </Link>
+            <ThemeToggle />
           </nav>
         </LayoutGroup>
-
-        {/* Right: About | EN, theme toggle */}
-        <nav className="flex items-center gap-3 text-muted">
-          <Link href={aboutHref} className="hover:text-foreground transition-colors">
-            {tr.about}
-          </Link>
-          <span className="h-4 w-px bg-rule" aria-hidden />
-          <Link
-            href={otherHref}
-            className="hover:text-foreground transition-colors"
-            aria-label={`Switch language to ${otherCode}`}
-          >
-            {otherCode}
-          </Link>
-          <ThemeToggle />
-        </nav>
-        </div>
 
         {/* Compact — below lg: reveal links as space allows, rest in the menu */}
         <div className="flex items-center gap-4 text-muted lg:hidden">
