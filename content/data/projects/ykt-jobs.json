@@ -50,6 +50,21 @@
   },
   "sections": [
     {
+      "id": "context",
+      "eyebrow": {
+        "ru": "Контекст",
+        "en": "Context"
+      },
+      "body": {
+        "ru": [
+          "Rabota.Ykt.Ru — первый сайт по поиску работы и сотрудников в Якутске. С 2012 года помогает найти людям работу, а работодателям — специалистов."
+        ],
+        "en": [
+          "Rabota.Ykt.Ru is the first job-search and recruitment site in Yakutsk. Since 2012 it has helped people find work and employers find the right specialists."
+        ]
+      }
+    },
+    {
       "id": "process",
       "eyebrow": {
         "ru": "Процесс проектирования",

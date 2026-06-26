@@ -7,9 +7,31 @@ import { imageMeta } from "@/content/imageMeta";
 import { typo } from "@/lib/typo";
 import { Nav } from "./Nav";
 import { FadeIn } from "./FadeIn";
+import { FrostLink } from "./FrostLink";
 import { Footer } from "./Footer";
 import { TableOfContents } from "./TableOfContents";
 import { ZoomableImage } from "./ZoomableImage";
+
+// Link Rabota.Ykt.Ru inside body text (frost hover), preserving the boundary
+// space that typo() would otherwise trim.
+function renderPara(para: string): React.ReactNode {
+  const token = "Rabota.Ykt.Ru";
+  const idx = para.indexOf(token);
+  if (idx === -1) return typo(para);
+  const before = para.slice(0, idx);
+  const after = para.slice(idx + token.length);
+  const beforeTrail = /\s$/.test(before) ? " " : "";
+  const afterLead = /^\s/.test(after) ? " " : "";
+  return (
+    <>
+      {before.trim() ? typo(before.trim()) : ""}
+      {beforeTrail}
+      <FrostLink href="https://rabota.ykt.ru/">{token}</FrostLink>
+      {afterLead}
+      {after.trim() ? typo(after.trim()) : ""}
+    </>
+  );
+}
 
 export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) {
   const idx = projects.findIndex((p) => p.slug === slug);
@@ -99,7 +121,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                     )}
                     {s.body?.[locale]?.map((para, i) => (
                       <p key={i} className="mx-auto w-full max-w-[644px] text-base font-normal text-pretty text-foreground/80 md:text-lg">
-                        {typo(para)}
+                        {renderPara(para)}
                       </p>
                     ))}
                     {s.image && (
