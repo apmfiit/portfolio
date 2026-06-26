@@ -7,16 +7,15 @@ import { imageMeta } from "@/content/imageMeta";
 import { typo } from "@/lib/typo";
 import { Nav } from "./Nav";
 import { FadeIn } from "./FadeIn";
-import { FrostLink } from "./FrostLink";
 import { Footer } from "./Footer";
 import { TableOfContents } from "./TableOfContents";
 import { ZoomableImage } from "./ZoomableImage";
 
-// Company names that become links inside body/blurb text. Ykt-branded ones get
-// the frosty hover; others a plain underline.
-const BODY_LINKS: { token: string; href: string; frost?: boolean }[] = [
-  { token: "Rabota.Ykt.Ru", href: "https://rabota.ykt.ru/", frost: true },
-  { token: "EdaYkt", href: "https://eda.ykt.ru/", frost: true },
+// Company names that become plain blue links inside body/blurb text.
+// (The frosty/ice hover is reserved for the home page and the About title.)
+const BODY_LINKS: { token: string; href: string }[] = [
+  { token: "Rabota.Ykt.Ru", href: "https://rabota.ykt.ru/" },
+  { token: "EdaYkt", href: "https://eda.ykt.ru/" },
   { token: "KUPIKOD", href: "https://kupikod.com/" },
 ];
 
@@ -48,14 +47,12 @@ function renderPara(para: string): React.ReactNode {
   if (!best) return typoSeg(para);
   const before = para.slice(0, best.idx);
   const after = para.slice(best.idx + best.rule.token.length);
-  const link = best.rule.frost ? (
-    <FrostLink href={best.rule.href}>{best.rule.token}</FrostLink>
-  ) : (
+  const link = (
     <a
       href={best.rule.href}
       target="_blank"
       rel="noreferrer"
-      className="underline underline-offset-2 decoration-rule transition-colors hover:decoration-foreground"
+      className="text-[#2f9fe0] underline underline-offset-2 decoration-[#2f9fe0]/40 transition-colors hover:decoration-[#2f9fe0]"
     >
       {best.rule.token}
     </a>
