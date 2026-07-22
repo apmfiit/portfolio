@@ -12,8 +12,8 @@
     "en": "Simplifying push-notification onboarding"
   },
   "blurb": {
-    "ru": "Сократил клиентский путь с 7 шагов до 4 для сценария переподключения, убрав внутренний тогл и перейдя на зеркалирование системного разрешения на показ уведомлений",
-    "en": "Cut the reconnect flow from 7 steps to 4 by removing an internal toggle and mirroring system notification permissions"
+    "ru": "Сократил клиентский путь с 7 шагов до 4 для сценария переподключения, убрав внутренний тогл и перейдя на зеркалирование системного разрешения на показ уведомлений. После раскатки на 85% регистрации пуш-устройств выросли почти в полтора раза",
+    "en": "Cut the reconnect flow from 7 steps to 4 by removing an internal toggle and mirroring system notification permissions. After rolling out to 85%, push-device registrations grew almost 1.5×"
   },
   "meta": {
     "role": {
@@ -291,11 +291,11 @@
       },
       "body": {
         "ru": [
-          "Решение пока раскатано на небольшой процент аудитории, поэтому финальных цифр у меня нет. Но первые сигналы радуют: доля пользователей с подключёнными пушами растёт, жалоб на сложность подключения в поддержке стало заметно меньше, появился новый класс обращений (про молчаливый переезд с СМС на пуши) — но это сигнал к точечной доработке, а не к откату.",
+          "На старте раскатки первые сигналы радовали: доля пользователей с подключёнными пушами росла, жалоб на сложность подключения в поддержке стало заметно меньше, появился новый класс обращений (про молчаливый переезд с СМС на пуши) — но это был сигнал к точечной доработке, а не к откату.",
           "Главное — флоу действительно стал короче в полтора-два раза, и это прямо заметно в продукте."
         ],
         "en": [
-          "The solution is still rolled out to a partial audience, so final stat-significant numbers aren't in yet. But the early signals are encouraging: push enablement is up, complaints about the enablement flow have dropped noticeably, and the new class of complaints (the silent SMS→push migration) is a signal for a targeted follow-up, not a rollback.",
+          "Early in the rollout the signals were encouraging: push enablement was up, complaints about the enablement flow dropped noticeably, and the new class of complaints (the silent SMS→push migration) was a signal for a targeted follow-up, not a rollback.",
           "The main thing: the flow really did become 1.5–2× shorter, and it shows in the product."
         ]
       },
@@ -364,10 +364,10 @@
       },
       "body": {
         "ru": [
-          "Финальная раскатка на 100% аудитории и сбор статзначимых метрик"
+          "Довести раскатку с 85% до 100%"
         ],
         "en": [
-          "Finish the rollout, collect stat-significant metrics."
+          "Take the rollout from 85% to 100%."
         ]
       }
     }
