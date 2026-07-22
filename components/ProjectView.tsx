@@ -171,7 +171,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                       ))
                     )}
                     {s.callout && s.callout[locale]?.length > 0 && (
-                      <div className="mx-auto mt-2 flex w-full max-w-[644px] flex-col gap-3 rounded-2xl p-6 shadow-[0_0_0_1px_var(--image-edge),0_2px_12px_rgba(0,0,0,0.05)]">
+                      <div className="mx-auto mt-2 flex w-full max-w-[644px] flex-col gap-3 rounded-2xl border border-[color:var(--image-edge)] p-6">
                         {s.callout[locale].map((para, i) => (
                           <p
                             key={i}
