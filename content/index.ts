@@ -41,6 +41,8 @@ export type ProjectSection = {
   body?: LocalizedList;
   // Render the body paragraphs as a dash bullet list.
   bullets?: boolean;
+  // Highlighted update/callout card (subtle shadow stroke) shown after the body.
+  callout?: LocalizedList;
   image?: string;
   caption?: LocalizedString;
   images?: SectionImage[];

@@ -298,6 +298,16 @@
           "The solution is still rolled out to a partial audience, so final stat-significant numbers aren't in yet. But the early signals are encouraging: push enablement is up, complaints about the enablement flow have dropped noticeably, and the new class of complaints (the silent SMS→push migration) is a signal for a targeted follow-up, not a rollback.",
           "The main thing: the flow really did become 1.5–2× shorter, and it shows in the product."
         ]
+      },
+      "callout": {
+        "ru": [
+          "Апдейт: В июне довели раскатку до 85% — и регистрация пуш-устройств подскочила с обычных 3,2–3,4 млн в месяц до 4,8 млн, почти в полтора раза.",
+          "По регистрациям хорошо видно проникновение пушей: больше устройств на пушах — меньше расходов на резервные СМС."
+        ],
+        "en": [
+          "Update: in June we pushed the rollout to 85% — and push-device registrations jumped from the usual 3.2–3.4M a month to 4.8M, almost 1.5×.",
+          "Registrations are a good proxy for push penetration: more devices on pushes — less spend on fallback SMS."
+        ]
       }
     },
     {

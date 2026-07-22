@@ -170,6 +170,18 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                         </p>
                       ))
                     )}
+                    {s.callout && s.callout[locale]?.length > 0 && (
+                      <div className="mx-auto mt-2 flex w-full max-w-[644px] flex-col gap-3 rounded-2xl p-6 shadow-[0_0_0_1px_var(--image-edge),0_2px_12px_rgba(0,0,0,0.05)]">
+                        {s.callout[locale].map((para, i) => (
+                          <p
+                            key={i}
+                            className="text-base font-normal text-pretty text-foreground/80 md:text-lg"
+                          >
+                            {renderPara(para)}
+                          </p>
+                        ))}
+                      </div>
+                    )}
                     {s.image && (
                       <CaseFigure
                         src={s.image}
