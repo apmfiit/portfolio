@@ -4,8 +4,8 @@
   "year": "2026",
   "cover": "/images/vtb-push-case-cover.png",
   "status": {
-    "ru": "В раскатке",
-    "en": "Rolling out"
+    "ru": "На проде",
+    "en": "Shipped"
   },
   "headline": {
     "ru": "Как я упростил подключение пуш-уведомлений",

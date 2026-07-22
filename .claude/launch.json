@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "bills",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve", "-l", "8734", "C:/Users/Yooo/Documents/webprojects/bills"],
+      "port": 8734
+    }
+  ]
+}
