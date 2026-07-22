@@ -25,7 +25,21 @@ export const metadata: Metadata = {
     title: "Петр Афанасьев — Senior Product Designer",
     description:
       "Старший продуктовый дизайнер из Москвы. Уведомления, финтех, e-commerce, маркетплейсы.",
-    images: ["/images/avatar.png"],
+    images: [
+      {
+        url: "/images/og_image-petrafanasyev.png",
+        width: 1800,
+        height: 945,
+        alt: "Petr Afanasyev — Product Designer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Петр Афанасьев — Senior Product Designer",
+    description:
+      "Старший продуктовый дизайнер из Москвы. Уведомления, финтех, e-commerce, маркетплейсы.",
+    images: ["/images/og_image-petrafanasyev.png"],
   },
 };
 

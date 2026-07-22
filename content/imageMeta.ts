@@ -227,6 +227,11 @@ export const imageMeta: Record<string, ImageMeta> = {
     "h": 1152,
     "format": "png"
   },
+  "/images/og_image-petrafanasyev.png": {
+    "w": 1800,
+    "h": 945,
+    "format": "png"
+  },
   "/images/template-constructor.png": {
     "w": 2361,
     "h": 1398,
