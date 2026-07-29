@@ -85,12 +85,7 @@
           "The cluster raises push penetration. More clients on pushes and fewer on SMS means lower costs — SMS are expensive, pushes are practically free, so the strategy is to move communications to pushes wherever we can.",
           "Sounds simple, but there are a lot of obstacles on the way. One of them — an inconvenient enablement flow — is what I took on."
         ]
-      },
-      "images": [
-        {
-          "src": "/images/cases/vtb-push-onboarding/img-1.png"
-        }
-      ]
+      }
     },
     {
       "id": "task",
@@ -277,7 +272,12 @@
           "Tickets started coming in: “I used to get everything by SMS. Now I'm suddenly getting pushes. Did I do something wrong?”",
           "From the business side — this was exactly what we wanted. From the user's side — product behavior changed without warning."
         ]
-      }
+      },
+      "images": [
+        {
+          "src": "/images/cases/vtb-push-onboarding/img-1.png"
+        }
+      ]
     },
     {
       "id": "results",
