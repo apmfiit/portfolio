@@ -220,17 +220,33 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
             <nav className="mx-auto mt-24 w-full max-w-[644px] border-t border-rule pt-8">
               <Link
                 href={`${workPrefix}/${next.slug}/`}
-                className="group flex flex-col items-end gap-1 text-right"
+                className="group flex items-center justify-end gap-5"
               >
-                <span className="text-sm uppercase tracking-[-0.02em] text-muted">
-                  {locale === "en" ? "Next" : "Дальше"}
+                <span className="flex min-w-0 flex-col items-end gap-1 text-right">
+                  <span className="text-sm uppercase tracking-[-0.02em] text-muted">
+                    {locale === "en" ? "Next" : "Дальше"}
+                  </span>
+                  <span className="text-lg font-medium tracking-tight text-balance text-foreground/90 transition-colors group-hover:text-foreground sm:text-xl">
+                    {typo(next.headline[locale])}
+                  </span>
+                  <span className="text-sm text-muted">
+                    {next.company} · {next.year} →
+                  </span>
                 </span>
-                <span className="text-lg font-medium tracking-tight text-foreground/90 transition-colors group-hover:text-foreground sm:text-xl">
-                  {typo(next.headline[locale])}
-                </span>
-                <span className="text-sm text-muted">
-                  {next.company} · {next.year} →
-                </span>
+                {next.cover && (
+                  <span className="aspect-[16/10] w-24 shrink-0 overflow-hidden rounded-lg border border-[color:var(--image-edge)] sm:w-32">
+                    <Image
+                      src={next.cover}
+                      alt=""
+                      width={640}
+                      height={400}
+                      sizes="128px"
+                      placeholder={blur[next.cover] ? "blur" : "empty"}
+                      blurDataURL={blur[next.cover]}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                  </span>
+                )}
               </Link>
             </nav>
           </FadeIn>
