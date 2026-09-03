@@ -1,21 +1,17 @@
-name: Deploy to GitHub Pages
+name: Build & deploy to reg.ru
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
+# Не даём двум деплоям идти одновременно (иначе FTP перетрёт друг друга)
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: deploy-regru
+  cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,21 +26,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      # prebuild (genblur) + next build -> статика в out/
+      - name: Build static site
         run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      # FTP-пользователь смотрит в корень сайта (/www/petrafanasyev.com),
+      # поэтому server-dir = ./ . Первый запуск зальёт всё, дальше — только изменения.
+      - name: Upload to reg.ru via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          path: ./out
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./out/
+          server-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
