@@ -187,7 +187,7 @@ export function AboutView({ locale }: { locale: Locale }) {
                   return (
                     <li
                       key={i}
-                      className="relative pl-4 text-base md:text-lg font-normal text-pretty text-foreground/80 before:absolute before:left-0 before:text-muted before:content-['—']"
+                      className="relative pl-6 text-base md:text-lg font-normal text-pretty text-foreground/80 before:absolute before:left-0 before:text-muted before:content-['•']"
                     >
                       {parts.map((part, k) => (
                         <span key={k}>
