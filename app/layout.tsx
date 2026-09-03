@@ -10,11 +10,11 @@ const siteUrl = "https://petrafanasyev.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Петр Афанасьев — Senior Product Designer",
+    default: "Петр Афанасьев — Product Designer",
     template: "%s — Петр Афанасьев",
   },
   description:
-    "Старший продуктовый дизайнер из Москвы. Уведомления, финтех, e-commerce, маркетплейсы.",
+    "Продуктовый дизайнер из Москвы. Уведомления, финтех, e-commerce, маркетплейсы.",
   alternates: {
     canonical: "/",
     languages: { ru: "/", en: "/en/" },
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Петр Афанасьев — Senior Product Designer",
+    title: "Петр Афанасьев — Product Designer",
     description:
-      "Старший продуктовый дизайнер из Москвы. Уведомления, финтех, e-commerce, маркетплейсы.",
+      "Продуктовый дизайнер из Москвы. Уведомления, финтех, e-commerce, маркетплейсы.",
     images: [
       {
         url: "/images/og_image-petrafanasyev.png",
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Петр Афанасьев — Senior Product Designer",
+    title: "Петр Афанасьев — Product Designer",
     description:
-      "Старший продуктовый дизайнер из Москвы. Уведомления, финтех, e-commerce, маркетплейсы.",
+      "Продуктовый дизайнер из Москвы. Уведомления, финтех, e-commerce, маркетплейсы.",
     images: ["/images/og_image-petrafanasyev.png"],
   },
 };

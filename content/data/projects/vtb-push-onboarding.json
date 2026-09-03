@@ -17,8 +17,8 @@
   },
   "meta": {
     "role": {
-      "ru": "Старший продуктовый дизайнер",
-      "en": "Senior Product Designer"
+      "ru": "Продуктовый дизайнер",
+      "en": "Product Designer"
     },
     "timeline": {
       "ru": "Q2 2026",
@@ -76,12 +76,12 @@
       },
       "body": {
         "ru": [
-          "Я старший продуктовый дизайнер команды канальных приложений в кластере нотификаций банка ВТБ. Если по-человечески — отвечаю за то, как клиент подключает, отключает и в целом взаимодействует с уведомлениями внутри мобильного банка ВТБ.",
+          "Я продуктовый дизайнер команды канальных приложений в кластере нотификаций банка ВТБ. Если по-человечески — отвечаю за то, как клиент подключает, отключает и в целом взаимодействует с уведомлениями внутри мобильного банка ВТБ.",
           "Кластер нотификаций повышает проникновение пушей. Чем больше клиентов на пушах и меньше на СМС — тем меньше расходы банка. СМС стоят денег, пуши практически бесплатные, поэтому глобальная стратегия — максимально увести коммуникации в пуши.",
           "Звучит просто, но на пути клиента к пушам много препятствий. Одно из них — неудобный процесс подключения, которым я и занялся."
         ],
         "en": [
-          "I'm a senior product designer in the channel-apps team inside the notifications cluster at VTB. In plain terms — I own how a client enables, disables and generally interacts with notifications inside the VTB mobile bank.",
+          "I'm a product designer in the channel-apps team inside the notifications cluster at VTB. In plain terms — I own how a client enables, disables and generally interacts with notifications inside the VTB mobile bank.",
           "The cluster raises push penetration. More clients on pushes and fewer on SMS means lower costs — SMS are expensive, pushes are practically free, so the strategy is to move communications to pushes wherever we can.",
           "Sounds simple, but there are a lot of obstacles on the way. One of them — an inconvenient enablement flow — is what I took on."
         ]
