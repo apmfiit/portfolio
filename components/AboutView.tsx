@@ -172,7 +172,7 @@ export function AboutView({ locale }: { locale: Locale }) {
                   </span>
                 </p>
               </div>
-              <h1 className="text-[2rem] font-semibold leading-[1.1] tracking-tight text-balance">
+              <h1 className="text-[1.5rem] font-semibold leading-[1.1] tracking-tight text-balance sm:text-[2rem]">
                 {renderIntro(about.intro[locale], locale)}
               </h1>
             </header>
@@ -263,29 +263,33 @@ export function AboutView({ locale }: { locale: Locale }) {
           {/* Contacts */}
           <FadeIn delay={0.05}>
             <Section label={tr.contacts}>
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm uppercase tracking-[-0.02em] text-muted">
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm uppercase tracking-[-0.02em] text-foreground">
                 <a
                   href={links.telegram}
                   target="_blank"
                   rel="noreferrer"
-                  className="group/link inline-flex items-center gap-1 hover:text-foreground transition-colors"
+                  className="group/link inline-flex items-center gap-1"
                 >
-                  Telegram
+                  <span className="underline underline-offset-4 decoration-foreground/40 transition-colors group-hover/link:decoration-foreground">
+                    Telegram
+                  </span>
                   <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
                 </a>
                 <CopyEmail
                   email={links.email}
                   label="Email"
                   copiedLabel={isEn ? "Copied" : "Скопировано"}
-                  className="uppercase hover:text-foreground"
+                  className="uppercase underline underline-offset-4 decoration-foreground/40 transition-colors hover:decoration-foreground"
                 />
                 <a
                   href={links.cv}
                   target="_blank"
                   rel="noreferrer"
-                  className="group/link inline-flex items-center gap-1 hover:text-foreground transition-colors"
+                  className="group/link inline-flex items-center gap-1"
                 >
-                  {tr.cv}
+                  <span className="underline underline-offset-4 decoration-foreground/40 transition-colors group-hover/link:decoration-foreground">
+                    {tr.cv}
+                  </span>
                   <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0 -translate-x-1 opacity-0 transition duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100" />
                 </a>
               </div>
