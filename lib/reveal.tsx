@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { Key, ReactNode } from "react";
 
 /* Server-side text splitters for the soft-blur-in queued hero load.
@@ -44,11 +45,9 @@ export function revealChars(
   text.split(/(\s+)/).forEach((part, pi) => {
     if (part === "") return;
     if (/^\s+$/.test(part)) {
-      out.push(
-        <span key={`${keyp}s${pi}`} style={{ whiteSpace: "pre" }}>
-          {part}
-        </span>,
-      );
+      // Обычный пробел (не pre): при переносе строки он схлопывается и
+      // не оставляет лишний отступ в начале новой строки.
+      out.push(<Fragment key={`${keyp}s${pi}`}> </Fragment>);
       return;
     }
     const glyphs = Array.from(part).map((ch, ci) => (
@@ -81,11 +80,9 @@ export function revealWords(
   text.split(/(\s+)/).forEach((part, pi) => {
     if (part === "") return;
     if (/^\s+$/.test(part)) {
-      out.push(
-        <span key={`${keyp}s${pi}`} style={{ whiteSpace: "pre" }}>
-          {part}
-        </span>,
-      );
+      // Обычный пробел (не pre): при переносе строки он схлопывается и
+      // не оставляет лишний отступ в начале новой строки.
+      out.push(<Fragment key={`${keyp}s${pi}`}> </Fragment>);
       return;
     }
     out.push(

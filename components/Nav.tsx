@@ -77,7 +77,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
 
         {/* Full nav — lg and up: contacts first, then About | EN, toggle. */}
         <LayoutGroup>
-          <nav className="hidden items-center gap-3 text-muted lg:flex">
+          <nav className="nav-trim hidden items-center gap-3 text-muted lg:flex">
             <motion.span layout="position" transition={navSpring} className="inline-flex">
               <a
                 href={links.telegram}
@@ -125,7 +125,7 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
         </LayoutGroup>
 
         {/* Compact — below lg: reveal links as space allows, rest in the menu */}
-        <div className="flex items-center gap-4 text-muted lg:hidden">
+        <div className="nav-trim flex items-center gap-4 text-muted lg:hidden">
           <a
             href={links.telegram}
             target="_blank"
@@ -157,9 +157,9 @@ export function Nav({ locale, sticky = true }: { locale: Locale; sticky?: boolea
             aria-expanded={open}
             className="relative inline-flex h-9 w-9 items-center justify-center -mr-2 transition active:scale-[0.96] before:absolute before:-inset-0.5 before:content-['']"
           >
-            <span className="relative block h-[14px] w-6">
-              <span className="absolute left-0 top-1 h-[1.5px] w-6 bg-foreground" />
-              <span className="absolute left-0 top-[11px] h-[1.5px] w-6 bg-foreground" />
+            <span className="flex h-[14px] w-6 flex-col justify-center gap-[5.5px]">
+              <span className="h-[1.5px] w-full bg-foreground" />
+              <span className="h-[1.5px] w-full bg-foreground" />
             </span>
           </button>
         </div>

@@ -32,31 +32,38 @@ export function HomeView({ locale }: { locale: Locale }) {
                   <span style={{ whiteSpace: "pre" }}> </span>
                   {revealUnit(<WaveHand />, tctx, 0, TS, "wave")}
                   <br className="hidden sm:block" />
-                  {idx === -1
-                    ? revealChars(typo(after), tctx, 0, TS, "a")
-                    : [
-                        ...revealChars(typo(after.slice(0, idx)), tctx, 0, TS, "h"),
-                        // NBSP so the preposition glues to the mark+VTB
-                        <span key="sp">{" "}</span>,
-                        revealUnit(
-                          <span className="whitespace-nowrap">
-                            <VtbMark
-                              className="inline-block h-[0.47em] w-[0.77em]"
-                              style={{
-                                verticalAlign: "0.43em",
-                                marginLeft: "0.18em",
-                                marginRight: "0.18em",
-                              }}
-                            />
-                            {comp}
-                          </span>,
-                          tctx,
-                          0,
-                          TS,
-                          "vtb"
-                        ),
-                        ...revealChars(after.slice(idx + comp.length), tctx, 0, TS, "t"),
-                      ]}
+                  {(() => {
+                    if (idx === -1) return revealChars(typo(after), tctx, 0, TS, "a");
+                    // Предлог перед знаком ВТБ («в»/«at») уносим ВНУТРЬ неразрывного
+                    // блока, иначе он повисает в конце строки при переносе.
+                    const beforeVtb = typo(after.slice(0, idx));
+                    const m = beforeVtb.match(/^([\s\S]*\s)(\p{L}{1,2})$/u);
+                    const head = m ? m[1] : beforeVtb;
+                    const prep = m ? m[2] : "";
+                    return [
+                      ...revealChars(head, tctx, 0, TS, "h"),
+                      revealUnit(
+                        <span className="whitespace-nowrap">
+                          {prep}
+                          {" "}
+                          <VtbMark
+                            className="inline-block h-[0.47em] w-[0.77em]"
+                            style={{
+                              verticalAlign: "0.43em",
+                              marginLeft: "0.18em",
+                              marginRight: "0.18em",
+                            }}
+                          />
+                          {comp}
+                        </span>,
+                        tctx,
+                        0,
+                        TS,
+                        "vtb",
+                      ),
+                      ...revealChars(after.slice(idx + comp.length), tctx, 0, TS, "t"),
+                    ];
+                  })()}
                 </h1>
               );
             })()}
