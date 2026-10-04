@@ -48,11 +48,18 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq lftp
+          # REG.RU's FTP endpoint omits its GlobalSign intermediate certificate.
+          # Verify the official intermediate against OS roots before supplying
+          # the missing chain locally; certificate/hostname checks stay enabled.
+          openssl verify -CAfile /etc/ssl/certs/ca-certificates.crt .github/certs/globalsign-alphassl-r6-2025.pem
+          cat /etc/ssl/certs/ca-certificates.crt .github/certs/globalsign-alphassl-r6-2025.pem > "$RUNNER_TEMP/ftp-ca-bundle.pem"
           lftp -c "
             set cmd:fail-exit true;
             set ftp:ssl-force true;
             set ftp:ssl-protect-data false;
             set ssl:verify-certificate yes;
+            set ssl:ca-file '$RUNNER_TEMP/ftp-ca-bundle.pem';
+            set ssl:check-hostname yes;
             set ftp:passive-mode true;
             set net:timeout 20;
             set net:max-retries 3;
