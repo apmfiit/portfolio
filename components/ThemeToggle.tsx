@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { MoonIcon, SunIcon } from "./icons";
+import { trackGoal } from "./Analytics";
 
 type Theme = "light" | "dark";
 
@@ -25,6 +26,14 @@ export function ThemeToggle() {
     const next: Theme = theme === "dark" ? "light" : "dark";
     setTheme(next);
     document.documentElement.setAttribute("data-theme", next);
+    const page = window.location.pathname;
+    trackGoal("theme_switch", {
+      theme: next,
+      previous_theme: theme ?? "",
+      page,
+      case: page.match(/\/work\/([^/]+)/)?.[1] ?? "",
+      language: page.startsWith("/en/") ? "en" : "ru",
+    });
     try {
       localStorage.setItem("theme", next);
     } catch {}

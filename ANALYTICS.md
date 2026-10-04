@@ -17,6 +17,7 @@ Create JavaScript-event goals with these exact identifiers in Metrica:
 | resume_click | Opened the CV link |
 | telegram_click | Opened Telegram |
 | email_copy | Successfully copied email |
+| theme_switch | Manual theme switch; theme and previous_theme indicate direction |
 | next_case_click | Recommendation click; source case and next_case are separate parameters |
 | case_image_zoom | Zoom opened; image path and section identify the exact image |
 | experience_link_hover | Company link hover lasting 500ms, once per company per pageview |
