@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 // axis — the same "Inter Variable" interfaces.dev ships. Defines the
 // "Inter Variable" @font-face; --font-inter points at it in globals.css.
 import "@fontsource-variable/inter/opsz.css";
-import "./globals.css";
+import "@/app/globals.css";
 
 const siteUrl = "https://petrafanasyev.com";
 
-export const metadata: Metadata = {
+export const siteMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: "Петр Афанасьев — Product Designer",
@@ -43,9 +43,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export function SiteLayout({ children, locale }: { children: React.ReactNode; locale: "ru" | "en" }) {
   return (
-    <html lang="ru" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
+      {/* Root document head: this script must run before paint to avoid a theme flash. */}
+      {/* eslint-disable-next-line @next/next/no-head-element */}
       <head>
         <script
           dangerouslySetInnerHTML={{

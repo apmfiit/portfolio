@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "predev": "node scripts/genprojects.cjs",
     "genblur": "node scripts/genblur.cjs",
-    "prebuild": "node scripts/genblur.cjs",
+    "prebuild": "node scripts/genprojects.cjs && node scripts/genblur.cjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:export": "node scripts/check-export.cjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",

@@ -1,11 +1,7 @@
 // Content is stored as editable JSON under content/data/ (managed via /admin,
 // Sveltia CMS). This module assembles those files into the typed exports the
 // app consumes — component imports from "@/content" are unchanged.
-import vtbPush from "./data/projects/vtb-push-onboarding.json";
-import vtbTemplate from "./data/projects/vtb-template-constructor.json";
-import loftyHome from "./data/projects/lofty-homepage.json";
-import yktJobs from "./data/projects/ykt-jobs.json";
-import yktPickup from "./data/projects/ykt-pickup.json";
+import projectData from "./projects.generated.json";
 import experienceData from "./data/experience.json";
 import aboutData from "./data/about.json";
 import site from "./data/site.json";
@@ -37,7 +33,7 @@ export type SectionImage = {
 export type ProjectSection = {
   id: string;
   eyebrow: LocalizedString;
-  heading: LocalizedString;
+  heading?: LocalizedString;
   body?: LocalizedList;
   // Render the body paragraphs as a dash bullet list.
   bullets?: boolean;
@@ -100,13 +96,7 @@ export type Links = {
 export type Translations = Record<Locale, Record<string, string>>;
 
 // Order here defines the order projects appear on the home page.
-export const projects = [
-  vtbPush,
-  vtbTemplate,
-  loftyHome,
-  yktJobs,
-  yktPickup,
-] as unknown as Project[];
+export const projects = projectData as unknown as Project[];
 
 export const experience = experienceData.items as unknown as Experience[];
 export const about = aboutData as unknown as About;

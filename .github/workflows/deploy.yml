@@ -7,7 +7,7 @@ on:
 
 concurrency:
   group: deploy-regru
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -29,6 +29,12 @@ jobs:
       - name: Build static site
         run: npm run build
 
+      - name: Check code
+        run: npm run lint
+
+      - name: Check exported pages
+        run: npm run check:export
+
       # FTPS: TLS обязателен на управляющем канале (логин/пароль шифруются).
       # Канал данных не шифруем — reg.ru его не поднимает (ошибка 425),
       # а файлы сайта и так публичные, секретов в них нет.
@@ -46,7 +52,7 @@ jobs:
             set cmd:fail-exit true;
             set ftp:ssl-force true;
             set ftp:ssl-protect-data false;
-            set ssl:verify-certificate no;
+            set ssl:verify-certificate yes;
             set ftp:passive-mode true;
             set net:timeout 20;
             set net:max-retries 3;

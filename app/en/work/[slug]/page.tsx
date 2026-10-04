@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { ProjectView } from "@/components/ProjectView";
 import { projects } from "@/content";
 
@@ -15,6 +16,7 @@ export async function generateMetadata({
   const p = projects.find((x) => x.slug === slug);
   if (!p) return {};
   return {
+    ...pageMetadata("en", `/work/${slug}/`, p.headline.en, p.blurb.en),
     title: p.headline.en,
     description: p.blurb.en,
   };

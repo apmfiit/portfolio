@@ -10,9 +10,12 @@ export function MoscowClock({ locale }: { locale: Locale }) {
   const [now, setNow] = useState<Date | null>(null);
 
   useEffect(() => {
-    setNow(new Date());
+    const initial = setTimeout(() => setNow(new Date()), 0);
     const id = setInterval(() => setNow(new Date()), 1000);
-    return () => clearInterval(id);
+    return () => {
+      clearTimeout(initial);
+      clearInterval(id);
+    };
   }, []);
 
   if (!now) return <span className="tabular-nums" aria-hidden />;

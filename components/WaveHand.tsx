@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 const SRC = "/images/wave.png";
 
@@ -27,7 +28,8 @@ export function WaveHand({ size = 36 }: { size?: number }) {
 
   return (
     <span className="inline-block align-[-0.18em]">
-      <img
+      <Image
+        unoptimized
         ref={ref}
         src={SRC}
         alt="👋"

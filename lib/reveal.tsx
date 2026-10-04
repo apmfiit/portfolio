@@ -42,9 +42,9 @@ export function revealChars(
   keyp = "",
 ): ReactNode[] {
   const out: ReactNode[] = [];
-  text.split(/(\s+)/).forEach((part, pi) => {
+  text.split(/([^\S\u00a0]+)/).forEach((part, pi) => {
     if (part === "") return;
-    if (/^\s+$/.test(part)) {
+    if (/^[^\S\u00a0]+$/.test(part)) {
       // Обычный пробел (не pre): при переносе строки он схлопывается и
       // не оставляет лишний отступ в начале новой строки.
       out.push(<Fragment key={`${keyp}s${pi}`}> </Fragment>);
@@ -77,9 +77,9 @@ export function revealWords(
   keyp = "",
 ): ReactNode[] {
   const out: ReactNode[] = [];
-  text.split(/(\s+)/).forEach((part, pi) => {
+  text.split(/([^\S\u00a0]+)/).forEach((part, pi) => {
     if (part === "") return;
-    if (/^\s+$/.test(part)) {
+    if (/^[^\S\u00a0]+$/.test(part)) {
       // Обычный пробел (не pre): при переносе строки он схлопывается и
       // не оставляет лишний отступ в начале новой строки.
       out.push(<Fragment key={`${keyp}s${pi}`}> </Fragment>);
