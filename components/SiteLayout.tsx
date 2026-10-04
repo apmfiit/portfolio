@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "./Analytics";
 // Real, self-hosted InterVariable (rsms/inter, latest) with the optical-size
 // axis — the same "Inter Variable" interfaces.dev ships. Defines the
 // "Inter Variable" @font-face; --font-inter points at it in globals.css.
@@ -56,7 +57,7 @@ export function SiteLayout({ children, locale }: { children: React.ReactNode; lo
           }}
         />
       </head>
-      <body className="min-h-dvh">{children}</body>
+      <body className="min-h-dvh">{children}<Analytics /></body>
     </html>
   );
 }

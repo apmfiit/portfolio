@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { CopyIcon, CheckIcon } from "./icons";
+import { trackGoal } from "./Analytics";
 
 export function CopyEmail({
   email,
@@ -29,8 +30,10 @@ export function CopyEmail({
   }, []);
 
   const copy = async () => {
+    let success = false;
     try {
       await navigator.clipboard.writeText(email);
+      success = true;
     } catch {
       const ta = document.createElement("textarea");
       ta.value = email;
@@ -39,10 +42,12 @@ export function CopyEmail({
       document.body.appendChild(ta);
       ta.select();
       try {
-        document.execCommand("copy");
+        success = document.execCommand("copy");
       } catch {}
       ta.remove();
     }
+    if (!success) return;
+    trackGoal("email_copy", { page: window.location.pathname });
     setCopied(true);
     setSwapped(true);
     onCopied?.();
