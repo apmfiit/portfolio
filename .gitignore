@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+!/.github/certs/globalsign-alphassl-r6-2025.pem
 
 # debug
 npm-debug.log*
