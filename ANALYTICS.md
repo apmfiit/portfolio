@@ -17,6 +17,29 @@ Create JavaScript-event goals with these exact identifiers in Metrica:
 | resume_click | Opened the CV link |
 | telegram_click | Opened Telegram |
 | email_copy | Successfully copied email |
+| next_case_click | Recommendation click; source case and next_case are separate parameters |
+| case_image_zoom | Zoom opened; image path and section identify the exact image |
+| experience_link_hover | Company link hover lasting 500ms, once per company per pageview |
+| experience_link_click | Company link clicked on the homepage |
+| cat_visible | At least half of the footer cat entered the viewport, once per pageview |
+| cat_hover | 500ms hover on an interactive cat, once per pageview |
+| cat_click | Click starting the cat's walk-away, with current animation state |
+| case_progress | Periodic/leave snapshot: section, section_title, max_scroll, active_seconds, reason, destination |
+
+All events are shared across projects but retain the unique case slug and page.
+Section titles supplement stable section IDs for human-readable reports.
+Zoom reopens are separate events; use unique visitors to measure audience share.
+Hover requires a hover-capable device and is cancelled if the pointer leaves
+before 500ms or the tab becomes hidden. Automatic cat animation is not a click.
+
+`case_progress` is sent every 15 seconds while visible, when visibility changes,
+on link clicks, route cleanup and pagehide. Hidden does **not** mean closed:
+the visitor may have switched tabs. Treat the final snapshot in a visit as the
+last observed position, not a confirmed close or rejection. Delivery on exit is
+best-effort; periodic snapshots retain a recent position if the browser is killed.
+Active time excludes hidden periods and inactivity beyond 30 seconds.
+Compare maximum depth separately from last section (visitors may scroll back).
+Outbound destinations contain only a hostname, never full external query strings.
 
 Scroll depth and section visibility measure exposure, not proof of reading.
 Use Content → Popular for case rankings; Webvisor and scroll maps for exits and behaviour.

@@ -224,6 +224,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
             <nav className="mx-auto mt-24 w-full max-w-[644px] border-t border-rule pt-8">
               <Link
                 href={`${workPrefix}/${next.slug}/`}
+                data-next-case={next.slug}
                 className="group flex items-center justify-end gap-5"
               >
                 <span className="flex min-w-0 flex-col items-end gap-1 text-right">

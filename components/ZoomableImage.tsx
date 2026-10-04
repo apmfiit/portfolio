@@ -48,6 +48,7 @@ export function ZoomableImage({
       <button
         type="button"
         onClick={() => setOpen(true)}
+        data-zoom-image={src}
         aria-label={alt}
         className="block w-full cursor-zoom-in appearance-none border-0 bg-transparent p-0 text-left"
       >

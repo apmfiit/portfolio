@@ -97,6 +97,9 @@ export function CatPet() {
   return (
     <span
       ref={ref}
+      data-footer-cat="true"
+      data-cat-state={state}
+      data-cat-interactive={leaving ? "false" : "true"}
       className={`cat cat-${state} ${leaving ? "" : "cursor-pointer"}`}
       role="button"
       tabIndex={0}

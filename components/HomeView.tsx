@@ -97,7 +97,7 @@ export function HomeView({ locale }: { locale: Locale }) {
                     style={{ animationDelay: 420 + i * 90 + "ms" }}
                   >
                     <span className="whitespace-nowrap text-muted">{e.year[locale]}</span>
-                    <span className="whitespace-nowrap">
+                    <span className="whitespace-nowrap" data-experience-company={e.href ? e.company : undefined}>
                       {e.href ? (
                         e.company === "Ykt.Ru" ? (
                           <FrostLink href={e.href}>{e.company}</FrostLink>
