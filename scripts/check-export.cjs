@@ -27,6 +27,13 @@ for (const prefix of ["", "/en"]) {
 }
 assert.ok(fs.statSync(path.join(root, "out/images/vtb-ecosystem/omega-ui-geometric-vf.ttf")).size > 0, "Omega UI font must ship with the diagram");
 
+// Catch prefix optimization regressions in the shipped CSS, not just the source.
+const chunks = path.join(root, "out/_next/static/chunks");
+const css = fs.readdirSync(chunks).filter((file) => file.endsWith(".css"))
+  .map((file) => fs.readFileSync(path.join(chunks, file), "utf8")).join("\n");
+const glassRule = css.match(/\.VtbEcosystem[^{}]*__disc\s*\{([^}]+)\}/)?.[1];
+assert.ok(glassRule && /(?:^|;)\s*backdrop-filter:\s*blur\(/.test(glassRule), "Glass discs must retain unprefixed backdrop blur in the production build");
+
 // Exercise the actual TSX text splitters, not a duplicated implementation.
 const compiled = ts.transpileModule(fs.readFileSync(path.join(root, "lib/reveal.tsx"), "utf8"), {
   compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX },
