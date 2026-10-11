@@ -20,6 +20,14 @@ for (const locale of ["ru", "en"]) {
   }
 }
 // Exercise the actual TSX text splitters, not a duplicated implementation.
+for (const prefix of ["", "/en"]) {
+  const html = fs.readFileSync(path.join(root, "out", prefix, "work/vtb-push-onboarding/index.html"), "utf8");
+  assert.ok(html.includes('data-vtb-ecosystem="live"'), "VTB case must include its live ecosystem diagram");
+  assert.ok(!/<img[^>]+src="\/images\/cases\/vtb-push-onboarding\/img-2\.png"/.test(html), "Static ecosystem image must be replaced");
+}
+assert.ok(fs.statSync(path.join(root, "out/images/vtb-ecosystem/omega-ui-geometric-vf.ttf")).size > 0, "Omega UI font must ship with the diagram");
+
+// Exercise the actual TSX text splitters, not a duplicated implementation.
 const compiled = ts.transpileModule(fs.readFileSync(path.join(root, "lib/reveal.tsx"), "utf8"), {
   compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX },
 }).outputText;

@@ -17,6 +17,8 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
     ".agents/**",
+    "prototypes/**",
+    "lib/vendor/*.mjs",
   ]),
 ]);
 

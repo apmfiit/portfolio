@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "VTB Omega UI";
+  src: url("/images/vtb-ecosystem/omega-ui-geometric-vf.ttf") format("truetype");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+.container { container-type: inline-size; width: 100%; }
+.viewport { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; isolation: isolate; border-radius: 24px; background: #000; color: #fff; }
+.stage { position: absolute; top: 0; left: 0; width: 1920px; height: 1080px; transform: scale(0); transform-origin: 0 0; background: #000; font-family: "VTB Omega UI", sans-serif; -webkit-font-smoothing: antialiased; --dash-offset: 0; }
+.background { position: absolute; width: 1600px; height: 1000px; left: 166px; top: 217px; pointer-events: none; }
+.rotatedBackground { width: 100%; height: 100%; transform: rotate(180deg); filter: blur(2.7px); }
+.eclipse { position: absolute; left: 190px; top: 336px; max-width: none; }
+.blueLight { position: absolute; left: 603px; top: 481px; width: 394px; height: 508px; background: linear-gradient(transparent, rgba(23,74,255,.7)); filter: blur(100px); }
+.texture { position: absolute; left: 0; top: -100px; width: 1600px; height: 1200px; background: url("/images/vtb-ecosystem/6847f.png") 0 0 / 134px 134px; mix-blend-mode: overlay; }
+.signals { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: visible; fill: none; stroke-linecap: round; }
+.rail { stroke: rgba(255,255,255,.18); stroke-width: 4; }
+.flow { stroke: #fff; stroke-width: 4; stroke-dasharray: 18 26; stroke-dashoffset: var(--dash-offset); }
+.surface { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; overflow: visible; }
+.hub { position: absolute; left: 596px; top: 242px; width: 728px; height: 299px; display: flex; align-items: center; justify-content: center; isolation: isolate; }
+.hubTitle { display: flex; align-items: flex-start; gap: 16px; }
+.title { margin: 0; font-size: 58px; font-weight: 487; line-height: 60px; letter-spacing: -.055em; text-align: center; white-space: nowrap; }
+.title > span { display: block; margin-top: 13px; font-weight: 400; }
+.markWrap { position: relative; display: block; flex: none; width: 68px; height: 67px; isolation: isolate; --gradient-x: 50%; --gradient-y: 62%; --gradient-angle: 0deg; }
+.mark { display: block; width: 100%; height: 100%; object-fit: cover; }
+.markWrap::before { content: ""; position: absolute; inset: 0; z-index: 1; background: conic-gradient(from var(--gradient-angle) at var(--gradient-x) var(--gradient-y),#e0f6fc 0deg,#94d9ef 55deg,#3933d6 135deg,#af48d8 205deg,#ed71b7 260deg,#ffc26d 310deg,#e0f6fc 360deg); mask: url("/images/vtb-ecosystem/55133.png") center / cover no-repeat; mix-blend-mode: color; pointer-events: none; }
+.channel { position: absolute; top: 604px; width: 420px; height: 230px; }
+.channel[data-channel="0"] { left: 179px; }
+.channel[data-channel="1"] { left: 750px; }
+.channel[data-channel="2"] { left: 1321px; }
+.card { position: absolute; top: 86px; width: 420px; height: 144px; display: flex; align-items: center; justify-content: center; isolation: isolate; font-size: 32px; font-weight: 500; line-height: 60px; }
+.disc { position: absolute; left: 150px; top: 0; width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,.04); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; box-shadow: inset 0 -1px 1px rgba(255,255,255,.12); }
+.disc::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(135deg,rgba(255,255,255,.48),rgba(255,255,255,.025) 40%,rgba(255,255,255,.025) 65%,rgba(255,255,255,.3)); mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); mask-composite: exclude; pointer-events: none; }
+.icon, .bell { position: relative; width: 80px; height: 80px; }
+.icon img, .bell img { position: absolute; max-width: none; }
+.bellBody { left: 11.708px; top: 11.421px; }
+.bellClapper { left: 24px; top: 61.384px; }
+.bellTop { left: 35px; top: 7.504px; }
+.pause { position: absolute; right: 10px; bottom: 6px; min-width: 44px; min-height: 40px; padding: 0 10px; background: transparent; color: #aaa; border: 0; border-radius: 8px; font: 12px / 1.2 var(--font-inter),sans-serif; cursor: pointer; transition: color 180ms,transform 180ms; }
+.pause:hover { color: #fff; }
+.pause:active { transform: scale(.96); }
+.pause:focus-visible { outline: 2px solid #fff; outline-offset: -3px; }
+
+@container (max-width: 600px) {
+  .viewport { aspect-ratio: 640 / 620; border-radius: 16px; }
+  .stage { width: 640px; height: 620px; }
+  .background { left: -480px; top: 0; transform: scale(.65); transform-origin: 800px 0; }
+  .signals { width: 640px; height: 620px; }
+  .hub { left: 40px; top: 60px; width: 560px; height: 190px; }
+  .hubTitle { gap: 12px; }
+  .title { font-size: 42px; line-height: 46px; }
+  .title > span { margin-top: 8px; }
+  .markWrap { width: 52px; height: 51.24px; }
+  .channel { top: 360px; width: 180px; height: 192px; }
+  .channel[data-channel="0"] { left: 30px; }
+  .channel[data-channel="1"] { left: 230px; }
+  .channel[data-channel="2"] { left: 430px; }
+  .card { top: 80px; width: 180px; height: 112px; }
+  .disc { left: 42px; width: 96px; height: 96px; }
+  .icon, .bell { transform: scale(.8); }
+  .pause { bottom: 0; right: 6px; font-size: 11px; }
+}

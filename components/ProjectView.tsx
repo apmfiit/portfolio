@@ -10,6 +10,7 @@ import { FadeIn } from "./FadeIn";
 import { Footer } from "./Footer";
 import { TableOfContents } from "./TableOfContents";
 import { ZoomableImage } from "./ZoomableImage";
+import { VtbEcosystem } from "./VtbEcosystem";
 
 // Company names that become plain blue links inside body/blurb text.
 // (The frosty/ice hover is reserved for the home page and the About title.)
@@ -188,6 +189,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                     )}
                     {s.image && (
                       <CaseFigure
+                        locale={locale}
                         src={s.image}
                         alt={s.caption?.[locale] ?? s.heading?.[locale] ?? s.eyebrow[locale]}
                         caption={s.caption?.[locale]}
@@ -205,6 +207,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                         />
                       ) : im.src ? (
                         <CaseFigure
+                          locale={locale}
                           key={i}
                           src={im.src}
                           alt={im.caption?.[locale] ?? s.heading?.[locale] ?? s.eyebrow[locale]}
@@ -265,12 +268,14 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
 }
 
 function CaseFigure({
+  locale = "ru",
   src,
   alt,
   caption,
   width,
   closeLabel,
 }: {
+  locale?: Locale;
   src: string;
   alt: string;
   caption?: string;
@@ -281,6 +286,7 @@ function CaseFigure({
   const w = m?.w ?? 1600;
   const h = m?.h ?? 1000;
   const isGif = m?.format === "gif";
+  const isEcosystem = src === "/images/cases/vtb-push-onboarding/img-2.png";
   const ratio = m ? m.w / m.h : 1.6;
   // Only genuinely phone-proportioned shots (clearly taller than wide) cap narrow;
   // tall desktop full-page captures (aspect ~0.8) stay in the wide bucket.
@@ -298,11 +304,13 @@ function CaseFigure({
   return (
     <figure className="mt-7 flex flex-col gap-2">
       <div
-        className={`overflow-hidden border border-[color:var(--image-edge)] ${
+        className={`${isEcosystem ? "" : "overflow-hidden border border-[color:var(--image-edge)]"} ${
           isGif ? "rounded-lg" : "rounded-xl"
         } ${wrap}`}
       >
-        {isGif ? (
+        {isEcosystem ? (
+          <VtbEcosystem locale={locale} />
+        ) : isGif ? (
           <Image
             src={src}
             alt={alt}

@@ -237,6 +237,16 @@ export const imageMeta: Record<string, ImageMeta> = {
     "h": 1398,
     "format": "png"
   },
+  "/images/vtb-ecosystem/55133.png": {
+    "w": 1024,
+    "h": 1005,
+    "format": "png"
+  },
+  "/images/vtb-ecosystem/6847f.png": {
+    "w": 220,
+    "h": 220,
+    "format": "png"
+  },
   "/images/vtb-push-case-cover.png": {
     "w": 3840,
     "h": 2400,
