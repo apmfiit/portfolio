@@ -39,8 +39,7 @@ export function VtbEcosystem() {
       const mobile = width <= 600;
       setCompact(mobile);
       stage.style.transform = `scale(${width / (mobile ? 640 : 1920)})`;
-      stage.style.setProperty("--mobile-font-size", `${16 * 640 / width}px`);
-      stage.style.setProperty("--mobile-line-height", `${20 * 640 / width}px`);
+      stage.style.setProperty("--mobile-label-font-size", `${16 * 640 / width}px`);
       viewport.style.clipPath = `path('${getSvgPath({ width, height, cornerRadius: mobile ? 16 : 24, cornerSmoothing: .6 })}')`;
     });
     observer.observe(viewport);
@@ -104,7 +103,7 @@ export function VtbEcosystem() {
             {(compact ? mobilePaths : desktopPaths).map((d, i) => <g key={i}><path className={styles.rail} d={d} /><path className={styles.flow} d={d} /></g>)}
           </svg>
           <div className={styles.hub}>
-            <Surface width={compact ? 480 : 728} height={compact ? 156 : 299} radius={compact ? 32 : 56} />
+            <Surface width={compact ? 560 : 728} height={compact ? 156 : 299} radius={compact ? 32 : 56} />
             <div className={styles.hubTitle}>
               <span ref={markRef} className={styles.markWrap}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}

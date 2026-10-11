@@ -45,16 +45,16 @@
   .stage { width: 640px; height: 480px; }
   .background { left: -480px; top: 0; transform: scale(.65); transform-origin: 800px 0; }
   .signals { width: 640px; height: 480px; }
-  .hub { left: 80px; top: 40px; width: 480px; height: 156px; }
+  .hub { left: 40px; top: 40px; width: 560px; height: 156px; }
   .hubTitle { gap: 12px; }
-  .title { font-size: var(--mobile-font-size,30px); line-height: var(--mobile-line-height,37.5px); }
+  .title { font-size: 42px; line-height: 46px; }
   .title > span { margin-top: 8px; }
-  .markWrap { width: 42px; height: 41.38px; }
+  .markWrap { width: 52px; height: 51.24px; }
   .channel { top: 268px; width: 180px; height: 154px; }
   .channel[data-channel="0"] { left: 30px; }
   .channel[data-channel="1"] { left: 230px; }
   .channel[data-channel="2"] { left: 430px; }
-  .card { top: 62px; width: 180px; height: 92px; font-size: var(--mobile-font-size,30px); }
+  .card { top: 62px; width: 180px; height: 92px; font-size: var(--mobile-label-font-size,30px); }
   .disc { left: 50px; width: 80px; height: 80px; }
   .disc::after { top: 77%; }
   .icon, .bell { transform: scale(.65); }
