@@ -11,9 +11,9 @@ const desktopPaths = [
   "M1324 415 H1481 Q1531 415 1531 465 V604",
 ];
 const mobilePaths = [
-  "M320 250 V288 H160 Q120 288 120 328 V360",
-  "M320 250 V360",
-  "M320 250 V288 H480 Q520 288 520 328 V360",
+  "M320 196 V224 H160 Q120 224 120 264 V268",
+  "M320 196 V268",
+  "M320 196 V224 H480 Q520 224 520 264 V268",
 ];
 
 function Surface({ width, height, radius }: { width: number; height: number; radius: number }) {
@@ -39,6 +39,8 @@ export function VtbEcosystem() {
       const mobile = width <= 600;
       setCompact(mobile);
       stage.style.transform = `scale(${width / (mobile ? 640 : 1920)})`;
+      stage.style.setProperty("--mobile-font-size", `${16 * 640 / width}px`);
+      stage.style.setProperty("--mobile-line-height", `${20 * 640 / width}px`);
       viewport.style.clipPath = `path('${getSvgPath({ width, height, cornerRadius: mobile ? 16 : 24, cornerSmoothing: .6 })}')`;
     });
     observer.observe(viewport);
@@ -98,11 +100,11 @@ export function VtbEcosystem() {
             <img className={styles.eclipse} src={`${ASSETS}13009.svg`} alt="" />
             <div className={styles.blueLight} /><div className={styles.texture} />
           </div></div>
-          <svg className={styles.signals} viewBox={compact ? "0 0 640 620" : "0 0 1920 1080"} aria-hidden="true">
+          <svg className={styles.signals} viewBox={compact ? "0 0 640 480" : "0 0 1920 1080"} aria-hidden="true">
             {(compact ? mobilePaths : desktopPaths).map((d, i) => <g key={i}><path className={styles.rail} d={d} /><path className={styles.flow} d={d} /></g>)}
           </svg>
           <div className={styles.hub}>
-            <Surface width={compact ? 560 : 728} height={compact ? 190 : 299} radius={compact ? 40 : 56} />
+            <Surface width={compact ? 480 : 728} height={compact ? 156 : 299} radius={compact ? 32 : 56} />
             <div className={styles.hubTitle}>
               <span ref={markRef} className={styles.markWrap}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -113,7 +115,7 @@ export function VtbEcosystem() {
           </div>
           {["Push", "SMS", "In-App"].map((label, i) => (
             <div key={label} className={styles.channel} data-channel={i}>
-              <div className={styles.card}><Surface width={compact ? 180 : 420} height={compact ? 112 : 144} radius={24} /><span>{label}</span></div>
+              <div className={styles.card}><Surface width={compact ? 180 : 420} height={compact ? 92 : 144} radius={24} /><span>{label}</span></div>
               <div className={styles.disc}>
                 {i === 0 ? <div className={styles.bell}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}

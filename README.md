@@ -16,7 +16,7 @@ Deployments are queued rather than interrupted midway through an upload.
 
 **Live:** https://petrafanasyev.com/
 
-The VTB push case replaces its `img-2.png` ecosystem figure with `VtbEcosystem` in both languages. Its local Omega UI font and Figma artwork live in `public/images/vtb-ecosystem/`. The desktop composition matches the motion prototype; containers up to 600px use a compact 640 × 620 composition with larger labels. Playback pauses outside the viewport, in background tabs, and by default for reduced-motion preferences.
+The VTB push case replaces its `img-2.png` ecosystem figure with `VtbEcosystem` in both languages. Its local Omega UI font and Figma artwork live in `public/images/vtb-ecosystem/`. The desktop composition matches the motion prototype; containers up to 600px use a compact 640 × 480 composition with 16px labels. Playback pauses outside the viewport, in background tabs, and by default for reduced-motion preferences.
 
 ## About me
 
