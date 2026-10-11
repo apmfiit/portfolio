@@ -189,7 +189,6 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                     )}
                     {s.image && (
                       <CaseFigure
-                        locale={locale}
                         src={s.image}
                         alt={s.caption?.[locale] ?? s.heading?.[locale] ?? s.eyebrow[locale]}
                         caption={s.caption?.[locale]}
@@ -207,7 +206,6 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                         />
                       ) : im.src ? (
                         <CaseFigure
-                          locale={locale}
                           key={i}
                           src={im.src}
                           alt={im.caption?.[locale] ?? s.heading?.[locale] ?? s.eyebrow[locale]}
@@ -268,14 +266,12 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
 }
 
 function CaseFigure({
-  locale = "ru",
   src,
   alt,
   caption,
   width,
   closeLabel,
 }: {
-  locale?: Locale;
   src: string;
   alt: string;
   caption?: string;
@@ -309,7 +305,7 @@ function CaseFigure({
         } ${wrap}`}
       >
         {isEcosystem ? (
-          <VtbEcosystem locale={locale} />
+          <VtbEcosystem />
         ) : isGif ? (
           <Image
             src={src}

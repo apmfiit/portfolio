@@ -25,11 +25,10 @@ function Surface({ width, height, radius }: { width: number; height: number; rad
 }
 
 /** The approved motion study, with an enlarged, compact composition below 600px. */
-export function VtbEcosystem({ locale = "ru" }: { locale?: "ru" | "en" }) {
+export function VtbEcosystem() {
   const viewportRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const markRef = useRef<HTMLSpanElement>(null);
-  const pauseRef = useRef<HTMLButtonElement>(null);
   const [compact, setCompact] = useState(false);
 
   useEffect(() => {
@@ -50,7 +49,6 @@ export function VtbEcosystem({ locale = "ru" }: { locale?: "ru" | "en" }) {
     const viewport = viewportRef.current!;
     const stage = stageRef.current!;
     const mark = markRef.current!;
-    const button = pauseRef.current!;
     const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
     let paused = reducedMotion.matches;
     let visible = false;
@@ -58,10 +56,6 @@ export function VtbEcosystem({ locale = "ru" }: { locale?: "ru" | "en" }) {
     let previous = 0;
     let raf = 0;
 
-    const syncButton = () => {
-      button.textContent = paused ? (locale === "ru" ? "Воспроизвести" : "Play") : (locale === "ru" ? "Пауза" : "Pause");
-      button.setAttribute("aria-pressed", String(paused));
-    };
     const draw = () => {
       const phase = elapsed * Math.PI * 2 / (8 / 3);
       mark.style.setProperty("--gradient-x", `${50 + Math.sin(phase) * 12}%`);
@@ -80,23 +74,19 @@ export function VtbEcosystem({ locale = "ru" }: { locale?: "ru" | "en" }) {
       previous = 0;
       if (!paused && visible && !document.hidden) raf = requestAnimationFrame(frame);
     };
-    const toggle = () => { paused = !paused; syncButton(); schedule(); };
-    const preferenceChanged = () => { paused = reducedMotion.matches; syncButton(); schedule(); };
+    const preferenceChanged = () => { paused = reducedMotion.matches; schedule(); };
     const intersection = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; schedule(); });
     intersection.observe(viewport);
-    button.addEventListener("click", toggle);
     reducedMotion.addEventListener("change", preferenceChanged);
     document.addEventListener("visibilitychange", schedule);
-    syncButton();
     draw();
     return () => {
       cancelAnimationFrame(raf);
       intersection.disconnect();
-      button.removeEventListener("click", toggle);
       reducedMotion.removeEventListener("change", preferenceChanged);
       document.removeEventListener("visibilitychange", schedule);
     };
-  }, [locale]);
+  }, []);
 
   return (
     <div className={styles.container} data-vtb-ecosystem="live">
@@ -140,7 +130,6 @@ export function VtbEcosystem({ locale = "ru" }: { locale?: "ru" | "en" }) {
             </div>
           ))}
         </div>
-        <button ref={pauseRef} type="button" className={styles.pause} aria-pressed="false">{locale === "ru" ? "Пауза" : "Pause"}</button>
       </div>
     </div>
   );
