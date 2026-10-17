@@ -292,11 +292,13 @@
       "body": {
         "ru": [
           "На старте раскатки первые сигналы радовали: доля пользователей с подключёнными пушами росла, жалоб на сложность подключения в поддержке стало заметно меньше, появился новый класс обращений (про молчаливый переезд с СМС на пуши) — но это был сигнал к точечной доработке, а не к откату.",
-          "Главное — флоу действительно стал короче в полтора-два раза, и это прямо заметно в продукте."
+          "Главное — флоу действительно стал короче в полтора-два раза, и это прямо заметно в продукте.",
+          "Раскатка завершена: решение доступно 100% аудитории."
         ],
         "en": [
           "Early in the rollout the signals were encouraging: push enablement was up, complaints about the enablement flow dropped noticeably, and the new class of complaints (the silent SMS→push migration) was a signal for a targeted follow-up, not a rollback.",
-          "The main thing: the flow really did become 1.5–2× shorter, and it shows in the product."
+          "The main thing: the flow really did become 1.5–2× shorter, and it shows in the product.",
+          "The rollout is complete: the solution is available to 100% of the audience."
         ]
       },
       "callout": {
@@ -349,25 +351,6 @@
           "1. We knew there was a segment with OS-level pushes allowed but the in-app toggle off. We knew they'd be auto-migrated. We decided it would slip by quietly. It didn't. Lesson: when the change is meaningful for an audience, design not just the tech, but also the way you tell them — even when the change is technically right.",
           "2. Phased rollout saves you. If we had shipped to 100% on day one we'd have had thousands of tickets instead of dozens. The partial rollout gave us time to notice the case, understand it and think calmly about the fix.",
           "3. Constraints can always be softened. iOS PWA couldn't deep-link to settings. When you can't make it “like everywhere else,” sometimes the right move is to honestly tell the user where to tap. Not ideal, but better than a wall."
-        ]
-      }
-    },
-    {
-      "id": "next",
-      "eyebrow": {
-        "ru": "Что дальше",
-        "en": "What's next"
-      },
-      "heading": {
-        "ru": "",
-        "en": ""
-      },
-      "body": {
-        "ru": [
-          "Довести раскатку с 85% до 100%"
-        ],
-        "en": [
-          "Take the rollout from 85% to 100%."
         ]
       }
     }
