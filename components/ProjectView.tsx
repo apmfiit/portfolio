@@ -12,6 +12,7 @@ import { TableOfContents } from "./TableOfContents";
 import { ZoomableImage } from "./ZoomableImage";
 import { VtbEcosystem } from "./VtbEcosystem";
 import styles from "./ProjectTypography.module.css";
+import { NotificationPipeline } from "./NotificationPipeline";
 
 // Company names that become plain blue links inside body/blurb text.
 // (The frosty/ice hover is reserved for the home page and the About title.)
@@ -158,7 +159,9 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                         {typo(s.heading?.[locale]?.trim() || s.eyebrow[locale])}
                       </h2>
                     )}
-                    {s.bullets ? (
+                    {slug === "vtb-template-constructor" && s.id === "pipeline" ? (
+                      <NotificationPipeline locale={locale} />
+                    ) : s.bullets ? (
                       <ul className="reading-copy mx-auto flex w-full max-w-[644px] flex-col gap-2">
                         {s.body?.[locale]?.map((item, i) => (
                           <li
