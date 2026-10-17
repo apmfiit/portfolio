@@ -13,7 +13,6 @@ export function IosPushNotification({ locale }: { locale: Locale }) {
       <div className={styles.appIcon} aria-hidden><VtbMark className="h-4 w-6" /></div>
       <div className={styles.message}>
         <div className={styles.appRow}><span>{en ? "VTB Online" : "ВТБ Онлайн"}</span><span className={styles.time}>{en ? "now" : "сейчас"}</span></div>
-        <p className={styles.pushTitle}>{en ? "Card purchase" : "Покупка по карте"}</p>
         <p>{en ? "1,050.50 ₽ debited from card *4977. Balance: 251.51 ₽" : "Списание 1 050,50 ₽ с карты *4977. Баланс: 251,51 ₽"}</p>
       </div>
     </div>
