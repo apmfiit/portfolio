@@ -30,7 +30,7 @@ export function IosPushNotification({ locale }: { locale: Locale }) {
       <div className={styles.appIcon} style={{ clipPath: `path('${iconOutline}')`, borderRadius: 0 }} aria-hidden><VtbMark className="h-4 w-6" /></div>
       <div className={styles.message}>
         <div className={styles.appRow}><span>{en ? "VTB Online" : "ВТБ Онлайн"}</span><span className={styles.time}>{en ? "now" : "сейчас"}</span></div>
-        <p>{en ? "1,050.50 ₽ debited from card *4977. Balance: 251.51 ₽" : "Списание 1 050,50 ₽ с карты *4977. Баланс: 251,51 ₽"}</p>
+        <p>{en ? "1,050.50 ₽ debited from card *4977." : "Списание 1 050,50 ₽ с карты *4977."}<br />{en ? "Balance: 251.51 ₽" : "Баланс: 251,51 ₽"}</p>
       </div>
       {outline && <svg className={styles.outline} aria-hidden><path d={outline} fill="none" stroke="rgba(255,255,255,.3)" strokeWidth="1" /></svg>}
     </div>
