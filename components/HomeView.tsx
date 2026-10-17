@@ -74,7 +74,7 @@ export function HomeView({ locale }: { locale: Locale }) {
                 const DB = 220;
                 const DS = 34;
                 return (
-                  <div className="flex flex-col gap-1 text-base leading-relaxed text-muted">
+                  <div className="reading-copy flex flex-col gap-1">
                     <p>
                       {tr.taglineSub.split("\n").map((line, li) => (
                         <span key={li} className="block">
@@ -89,7 +89,7 @@ export function HomeView({ locale }: { locale: Locale }) {
                 );
               })()}
 
-              <ul className="flex flex-col text-base leading-relaxed">
+              <ul className="reading-copy flex flex-col">
                 {experience.map((e, i) => (
                   <li
                     key={i}

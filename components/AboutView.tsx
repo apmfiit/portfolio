@@ -187,7 +187,7 @@ export function AboutView({ locale }: { locale: Locale }) {
                   return (
                     <li
                       key={i}
-                      className="relative pl-6 text-base md:text-lg font-normal text-pretty text-foreground/80 before:absolute before:left-0 before:text-muted before:content-['•']"
+                      className="reading-copy relative pl-6 before:absolute before:left-0 before:text-muted before:content-['•']"
                     >
                       {parts.map((part, k) => (
                         <span key={k}>
@@ -215,7 +215,7 @@ export function AboutView({ locale }: { locale: Locale }) {
                   >
                     <p className="text-sm text-muted">{a.year}</p>
                     <div className="flex flex-col gap-3">
-                      <p className="text-base md:text-lg font-normal text-pretty text-foreground/80">
+                      <p className="reading-copy">
                         {typo(a.text[locale])}
                       </p>
                       {a.images && a.images.length > 0 && (
@@ -254,7 +254,7 @@ export function AboutView({ locale }: { locale: Locale }) {
           {/* About me */}
           <FadeIn delay={0.05}>
             <Section label={tr.aboutMe}>
-              <p className="text-base md:text-lg font-normal text-pretty text-foreground/80">
+              <p className="reading-copy">
                 {typo(about.personal[locale])}
               </p>
             </Section>
@@ -312,7 +312,7 @@ function Section({
 }) {
   return (
     <section className="flex flex-col gap-6 border-t border-rule pt-8">
-      <h2 className="text-sm uppercase tracking-[-0.02em] text-muted">{label}</h2>
+      <h2 className="section-title">{label}</h2>
       <div>{children}</div>
     </section>
   );

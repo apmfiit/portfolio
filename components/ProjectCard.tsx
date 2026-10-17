@@ -29,10 +29,10 @@ export function ProjectCard({
         )}
       </div>
       <div className="flex flex-col gap-1">
-        <h3 className="text-lg font-medium tracking-tight text-balance">
+        <h3 className="section-title">
           {typo(project.headline[locale])}
         </h3>
-        <p className="text-sm text-muted">
+        <p className="quiet-label">
           {project.company} · {project.status[locale]} {project.year}
         </p>
       </div>

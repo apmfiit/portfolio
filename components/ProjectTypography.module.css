@@ -1,0 +1,11 @@
+/* Case headings share the reading column's left edge at a shorter measure. */
+.article section > h2 {
+  max-width: 560px;
+  margin-inline-start: max(0px, calc((100% - 644px) / 2));
+  margin-inline-end: auto;
+}
+
+/* Group the navigation landmark closely with the meaningful heading. */
+.article section:has(> h2) > p:first-child {
+  margin-bottom: -8px;
+}

@@ -11,6 +11,7 @@ import { Footer } from "./Footer";
 import { TableOfContents } from "./TableOfContents";
 import { ZoomableImage } from "./ZoomableImage";
 import { VtbEcosystem } from "./VtbEcosystem";
+import styles from "./ProjectTypography.module.css";
 
 // Company names that become plain blue links inside body/blurb text.
 // (The frosty/ice hover is reserved for the home page and the About title.)
@@ -107,7 +108,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
               <h1 className="mx-auto w-full max-w-[644px] text-[2rem] font-semibold leading-[1.1] tracking-tight text-balance sm:text-[2.5rem]">
                 {typo(p.headline[locale])}
               </h1>
-              <p className="mx-auto w-full max-w-[644px] text-lg text-foreground/80 leading-relaxed text-balance">
+              <p className="reading-copy mx-auto w-full max-w-[644px]">
                 {p.blurb[locale].split("\n").map((line, i) => (
                   <span key={i} className="block">
                     {typo(line)}
@@ -145,20 +146,20 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
           )}
 
           {p.sections && p.sections.length > 0 && (
-            <article className="mt-16 flex flex-col gap-20">
+            <article className={`mt-16 flex flex-col gap-20 ${styles.article}`}>
               {p.sections.map((s) => (
                 <FadeIn key={s.id} delay={0.04}>
                   <section id={s.id} className="scroll-mt-24 flex flex-col gap-4">
-                    <p className="mx-auto w-full max-w-[644px] text-sm uppercase tracking-[-0.02em] text-muted">
+                    <p className="quiet-label mx-auto w-full max-w-[644px]">
                       {s.eyebrow[locale]}
                     </p>
                     {s.heading?.[locale]?.trim() && (
-                      <h2 className="mx-auto w-full max-w-[644px] text-2xl font-medium tracking-[-0.0125em] text-pretty">
-                        {typo(s.heading[locale])}
+                      <h2 className="section-title mx-auto w-full max-w-[644px]">
+                        {typo(s.heading?.[locale]?.trim() || s.eyebrow[locale])}
                       </h2>
                     )}
                     {s.bullets ? (
-                      <ul className="mx-auto flex w-full max-w-[644px] flex-col gap-2 text-base font-normal text-pretty text-foreground/80 md:text-lg">
+                      <ul className="reading-copy mx-auto flex w-full max-w-[644px] flex-col gap-2">
                         {s.body?.[locale]?.map((item, i) => (
                           <li
                             key={i}
@@ -170,7 +171,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                       </ul>
                     ) : (
                       s.body?.[locale]?.map((para, i) => (
-                        <p key={i} className="mx-auto w-full max-w-[644px] text-base font-normal text-pretty text-foreground/80 md:text-lg">
+                        <p key={i} className="reading-copy mx-auto w-full max-w-[644px]">
                           {renderPara(para)}
                         </p>
                       ))
@@ -180,7 +181,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                         {s.callout[locale].map((para, i) => (
                           <p
                             key={i}
-                            className="text-base font-normal text-pretty text-foreground/80 md:text-lg"
+                            className="reading-copy"
                           >
                             {renderPara(para)}
                           </p>
@@ -232,7 +233,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                   <span className="text-sm uppercase tracking-[-0.02em] text-muted">
                     {locale === "en" ? "Next" : "Дальше"}
                   </span>
-                  <span className="text-lg font-medium tracking-tight text-balance text-foreground/90 transition-colors group-hover:text-foreground sm:text-xl">
+                  <span className="section-title">
                     {typo(next.headline[locale])}
                   </span>
                   <span className="text-sm text-muted">

@@ -2,8 +2,8 @@
 
 :root {
   --font-inter: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  --background: #fafaf9;
-  --foreground: #0a0a0a;
+  --background: #FDFDFC;
+  --foreground: #111;
   --muted: #32404f95;
   --rule: #e5e5e5;
   --accent: #0a0a0a;
@@ -72,6 +72,33 @@ body {
 a {
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+}
+
+.reading-copy {
+  color: var(--foreground);
+  font-size: 16px;
+  font-weight: 440;
+  line-height: 24px;
+  letter-spacing: -0.00563rem;
+  text-wrap: pretty;
+}
+
+.section-title {
+  color: var(--foreground);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.0125em;
+  text-wrap: pretty;
+}
+
+.quiet-label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 ::selection {
