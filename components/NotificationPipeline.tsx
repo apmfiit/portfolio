@@ -43,7 +43,7 @@ export function NotificationPipeline({ locale }: { locale: Locale }) {
   return (
     <ol className={styles.pipeline}>
       <li className={styles.step}>
-        <p className="reading-copy"><span className={styles.stepNumber}>1</span>{en ? "Start with raw data: the amount, balance and card number." : "Берём исходные данные: сумму, баланс и номер карты."}</p>
+        <p className="reading-copy"><span className={styles.stepNumber}>1</span>{en ? "Start with raw data: the amount, balance and card number" : "Берём исходные данные: сумму, баланс и номер карты"}</p>
         <div className={styles.codePanel}>
           <p className={styles.panelLabel}>{en ? "Raw data · XML" : "Исходные данные · XML"}</p>
           <pre className={styles.code}><code>
@@ -56,14 +56,14 @@ export function NotificationPipeline({ locale }: { locale: Locale }) {
         </div>
       </li>
       <li className={styles.step}>
-        <p className="reading-copy"><span className={styles.stepNumber}>2</span>{en ? "The template inserts the values into readable text." : "Шаблон подставляет значения в понятный текст."}</p>
+        <p className="reading-copy"><span className={styles.stepNumber}>2</span>{en ? "The template inserts the values into readable text" : "Шаблон подставляет значения в понятный текст"}</p>
         <div className={styles.codePanel}>
           <p className={styles.panelLabel}>{en ? "Template · simplified example" : "Шаблон · упрощённый пример"}</p>
           <p className={styles.template}>{en ? "Debited " : "Списание "}<span>{"{SUM}"}</span>{en ? " ₽ from card " : " ₽ с карты "}<span>{"{CARD}"}</span>{en ? ". Balance: " : ". Баланс: "}<span>{"{BALANCE}"}</span> ₽</p>
         </div>
       </li>
       <li className={styles.step}>
-        <p className="reading-copy"><span className={styles.stepNumber}>3</span>{en ? "The client receives a notification on their phone." : "Клиент получает уведомление на телефоне."}</p>
+        <p className="reading-copy"><span className={styles.stepNumber}>3</span>{en ? "The client receives a notification on their phone" : "Клиент получает уведомление на телефоне"}</p>
         <div className={styles.preview}><IosPushNotification locale={locale} /></div>
       </li>
     </ol>
