@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ВТБ — новый формат кейса</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><a href="http://127.0.0.1:3000/">Петр Афанасьев</a><div><span class="muted">Локальный прототип</span><button id="theme" aria-label="Переключить тему">Тёмная тема</button></div></header>
+<aside><a href="#overview">Обзор</a><a href="#comparison">До и после</a><a href="#phone">Экран в телефоне</a><a href="#image">Компактное изображение</a></aside>
+<main>
+<section id="overview" class="intro"><p class="label">ВТБ · Новый кейс</p><h1>Уведомления, которые<br>проще читать</h1><p class="reading">Пробуем новый способ показывать интерфейсы: сравнение изменений, отдельный экран в телефоне и компактные изображения с увеличением.</p></section>
+<section id="comparison"><div class="copy"><p class="label">До и после</p><h2>Изменения видны в одном движении</h2></div>
+<figure class="media"><div class="compare-stage"><div id="comparison-viewer"></div></div></figure></section>
+<section id="phone"><div class="copy"><p class="label">Новый интерфейс</p><h2>Один экран — всё внимание на деталях</h2></div><figure class="media"><div class="stage" id="phone-stage"></div></figure></section>
+<section id="image"><div class="copy"><p class="label">Контейнер 530px</p><h2>Изображение заполняет весь блок</h2></div><figure class="media"><div class="stage stage-large stage-fill"><button class="image-button" data-zoom="/existing/pickup.png" aria-label="Увеличить макет оформления заказа"><img src="/existing/pickup.png" alt="Оформление заказа: адрес самовывоза и скидка" class="compact-image"></button></div></figure></section>
+<section id="small"><div class="copy"><p class="label">Контейнер 300px</p><h2>Компактный вариант для отдельного экрана</h2></div><figure class="media"><div class="stage stage-small" id="small-phone-stage"></div></figure></section>
+<section id="large-image"><div class="copy"><p class="label">Большой скриншот</p><h2>Исходные пропорции без обрезки</h2></div><figure class="media media-natural"><button class="image-button" data-zoom="assets/jobs.png" aria-label="Увеличить макет RabotaYkt"><img src="assets/jobs.png" alt="Главная страница RabotaYkt для работодателей" loading="lazy"></button></figure></section>
+<footer><span>© 2026 Петр Афанасьев</span><span>Прототип · Не опубликован</span></footer>
+</main>
+<dialog id="zoom"><button class="close" aria-label="Закрыть изображение">Закрыть</button><div class="zoom-content"></div></dialog>
+<script src="vendor/before-after.min.js"></script><script src="media.js"></script>
+</body></html>

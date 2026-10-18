@@ -103,7 +103,49 @@ a {
 }
 
 .quiet-label.card-label {
+  font-size: 13px;
   font-weight: 440;
+  line-height: 18px;
+}
+
+/* Shared case surfaces: no layout-changing border, no image cropping. */
+.case-media {
+  overflow: hidden;
+  border-radius: 8px;
+  outline: 1px solid var(--image-edge);
+  outline-offset: -1px;
+}
+
+.case-media-caption {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 440;
+  line-height: 18px;
+}
+
+.case-media-compact > button {
+  height: 530px;
+}
+
+.case-media-compact > button > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.case-media-phone > button {
+  padding: 40px 24px;
+}
+
+.case-media-pickup {
+  background: #e8e8e8;
+}
+
+@media (max-width: 600px) {
+  .case-media-compact > button { height: 480px; }
+  .case-media-phone > button { padding: 32px 20px; }
+  .case-media-pickup > button { height: auto; }
+  .case-media-pickup > button > img { height: auto; }
 }
 
 ::selection {

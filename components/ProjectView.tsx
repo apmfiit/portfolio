@@ -103,7 +103,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
         <div className="flex w-full flex-col lg:col-start-2 lg:row-start-1">
           <FadeIn>
             <header className="flex flex-col gap-4">
-              <p className="mx-auto w-full max-w-[644px] text-xs uppercase tracking-[-0.02em] text-muted">
+              <p className="quiet-label card-label mx-auto w-full max-w-[644px]">
                 {p.company} · {p.status[locale]} {p.year}
               </p>
               <h1 className="mx-auto w-full max-w-[644px] text-[2rem] font-semibold leading-[1.1] tracking-tight text-balance sm:text-[2.5rem]">
@@ -121,7 +121,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
 
           {p.cover && (
             <FadeIn delay={0.05}>
-              <div className="mx-auto mt-10 w-full overflow-hidden rounded-2xl border border-[color:var(--image-edge)] 2xl:relative 2xl:left-1/2 2xl:w-[980px] 2xl:max-w-[calc(100vw-3rem)] 2xl:-translate-x-1/2">
+              <div className="case-media mx-auto mt-10 w-full 2xl:relative 2xl:left-1/2 2xl:w-[980px] 2xl:max-w-[calc(100vw-3rem)] 2xl:-translate-x-1/2">
                 <ZoomableImage
                   src={p.cover}
                   alt={p.headline[locale]}
@@ -239,12 +239,12 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                   <span className="section-title">
                     {typo(next.headline[locale])}
                   </span>
-                  <span className="text-sm text-muted">
+                  <span className="quiet-label card-label">
                     {next.company} · {next.year} →
                   </span>
                 </span>
                 {next.cover && (
-                  <span className="aspect-[16/10] w-24 shrink-0 overflow-hidden rounded-lg border border-[color:var(--image-edge)] sm:w-32">
+                  <span className="case-media aspect-[16/10] w-24 shrink-0 sm:w-32">
                     <Image
                       src={next.cover}
                       alt=""
@@ -291,6 +291,7 @@ function CaseFigure({
   // Only genuinely phone-proportioned shots (clearly taller than wide) cap narrow;
   // tall desktop full-page captures (aspect ~0.8) stay in the wide bucket.
   const isPhone = !isGif && ratio < 0.62;
+  const isPickup = src === "/images/cases/ykt-pickup/img-2.png";
   // Apple-style sizing: wide shots (incl. tall desktop captures) break out past
   // the text column to ~980px on large screens (≥2xl, where the breakout clears
   // the left TOC); mobile/phone shots cap at 420px; the small cat gif stays tiny.
@@ -304,9 +305,7 @@ function CaseFigure({
   return (
     <figure className="mt-7 flex flex-col gap-2">
       <div
-        className={`${isEcosystem ? "" : "overflow-hidden border border-[color:var(--image-edge)]"} ${
-          isGif ? "rounded-lg" : "rounded-xl"
-        } ${wrap}`}
+        className={`${isEcosystem ? "" : "case-media"} ${isPhone ? "case-media-compact case-media-phone" : ""} ${isPickup ? "case-media-compact case-media-pickup" : ""} ${wrap}`}
       >
         {isEcosystem ? (
           <VtbEcosystem />
@@ -332,7 +331,7 @@ function CaseFigure({
         )}
       </div>
       {caption && (
-        <figcaption className="mx-auto w-full max-w-[644px] text-left text-sm text-muted leading-relaxed">
+        <figcaption className="case-media-caption mx-auto w-full max-w-[644px] text-left">
           {typo(caption)}
         </figcaption>
       )}
@@ -360,7 +359,7 @@ function CaseRow({
           return (
             <div
               key={i}
-              className="min-w-0 flex-1 overflow-hidden rounded-xl border border-[color:var(--image-edge)]"
+              className="case-media min-w-0 flex-1"
             >
               <ZoomableImage
                 src={src}
@@ -376,7 +375,7 @@ function CaseRow({
         })}
       </div>
       {caption && (
-        <figcaption className="mx-auto w-full max-w-[644px] text-left text-sm text-muted leading-relaxed">
+        <figcaption className="case-media-caption mx-auto w-full max-w-[644px] text-left">
           {typo(caption)}
         </figcaption>
       )}
