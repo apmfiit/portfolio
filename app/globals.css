@@ -74,6 +74,7 @@ a {
   text-underline-offset: 3px;
 }
 
+/* Shared reading typography for home, about and case pages. */
 .reading-copy {
   color: var(--foreground);
   font-size: 16px;

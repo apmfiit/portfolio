@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { MoonIcon, SunIcon } from "./icons";
 import { trackGoal } from "./Analytics";
@@ -9,6 +9,28 @@ type Theme = "light" | "dark";
 
 export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme | null>(null);
+  const sounds = useRef<Partial<Record<Theme, HTMLAudioElement>>>({});
+
+  useEffect(() => {
+    const clips = {
+      dark: new Audio("/sounds/switch-off.mp3"),
+      light: new Audio("/sounds/switch-on.mp3"),
+    };
+    for (const clip of Object.values(clips)) {
+      clip.volume = 0.15;
+      clip.preload = "auto";
+      clip.load();
+    }
+    sounds.current = clips;
+    return () => {
+      for (const clip of Object.values(clips)) {
+        clip.pause();
+        clip.removeAttribute("src");
+        clip.load();
+      }
+      sounds.current = {};
+    };
+  }, []);
 
   useEffect(() => {
     let stored: string | null = null;
@@ -24,6 +46,14 @@ export function ThemeToggle() {
 
   const toggle = () => {
     const next: Theme = theme === "dark" ? "light" : "dark";
+    const clip = sounds.current[next];
+    if (clip) {
+      for (const sound of Object.values(sounds.current)) {
+        sound.pause();
+        sound.currentTime = 0;
+      }
+      void clip.play().catch(() => {});
+    }
     setTheme(next);
     document.documentElement.setAttribute("data-theme", next);
     const page = window.location.pathname;

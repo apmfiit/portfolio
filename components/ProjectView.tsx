@@ -151,7 +151,7 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
               {p.sections.map((s) => (
                 <FadeIn key={s.id} delay={0.04}>
                   <section id={s.id} className="scroll-mt-24 flex flex-col gap-4">
-                    <p className="quiet-label mx-auto w-full max-w-[644px]">
+                    <p className={`quiet-label mx-auto w-full max-w-[644px] ${styles.sectionLabel}`}>
                       {s.eyebrow[locale]}
                     </p>
                     {s.heading?.[locale]?.trim() && (

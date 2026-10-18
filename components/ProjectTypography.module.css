@@ -1,4 +1,9 @@
 /* Case headings share the reading column's left edge at a shorter measure. */
+.article .sectionLabel {
+  font-size: 13px;
+  color: var(--muted);
+}
+
 .article section > h2 {
   max-width: 560px;
   margin-inline-start: max(0px, calc((100% - 644px) / 2));
