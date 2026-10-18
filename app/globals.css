@@ -102,6 +102,10 @@ a {
   text-transform: none;
 }
 
+.quiet-label.card-label {
+  font-weight: 440;
+}
+
 ::selection {
   background: var(--foreground);
   color: var(--background);

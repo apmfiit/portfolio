@@ -32,7 +32,7 @@ export function ProjectCard({
         <h3 className="section-title">
           {typo(project.headline[locale])}
         </h3>
-        <p className="quiet-label">
+        <p className="quiet-label card-label">
           {project.company} · {project.status[locale]} {project.year}
         </p>
       </div>
