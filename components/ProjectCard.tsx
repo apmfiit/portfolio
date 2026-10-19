@@ -15,7 +15,7 @@ export function ProjectCard({
 }) {
   return (
     <Link href={href} className="group flex flex-col gap-2">
-      <div className="case-media relative aspect-[16/10]">
+      <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[color:var(--image-edge)]">
         {project.cover && (
           <Image
             src={project.cover}
@@ -29,7 +29,7 @@ export function ProjectCard({
         )}
       </div>
       <div className="flex flex-col gap-1">
-        <h3 className="section-title">
+        <h3 className="text-[20px] leading-7 font-medium tracking-[-0.0125em] text-pretty text-foreground">
           {typo(project.headline[locale])}
         </h3>
         <p className="quiet-label card-label">
