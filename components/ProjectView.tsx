@@ -292,6 +292,7 @@ function CaseFigure({
   // tall desktop full-page captures (aspect ~0.8) stay in the wide bucket.
   const isPhone = !isGif && ratio < 0.62;
   const isPickup = src === "/images/cases/ykt-pickup/img-2.png";
+  const isResearchPhoto = src === "/images/cases/ykt-jobs/img-1.png";
   // Apple-style sizing: wide shots (incl. tall desktop captures) break out past
   // the text column to ~980px on large screens (≥2xl, where the breakout clears
   // the left TOC); mobile/phone shots cap at 420px; the small cat gif stays tiny.
@@ -305,7 +306,7 @@ function CaseFigure({
   return (
     <figure className="mt-7 flex flex-col gap-2">
       <div
-        className={`${isEcosystem ? "" : "case-media"} ${isPhone ? "case-media-compact case-media-phone" : ""} ${isPickup ? "case-media-compact case-media-pickup" : ""} ${wrap}`}
+        className={`${isEcosystem ? "" : "case-media"} ${isPhone ? "case-media-compact case-media-phone" : ""} ${isPickup ? "case-media-compact case-media-pickup" : ""} ${isResearchPhoto ? "case-media-research-photo" : ""} ${wrap}`}
       >
         {isEcosystem ? (
           <VtbEcosystem />
@@ -331,7 +332,7 @@ function CaseFigure({
         )}
       </div>
       {caption && (
-        <figcaption className="case-media-caption mx-auto w-full max-w-[644px] text-left">
+        <figcaption className="case-media-caption mx-auto w-full max-w-[644px] text-center">
           {typo(caption)}
         </figcaption>
       )}
@@ -375,7 +376,7 @@ function CaseRow({
         })}
       </div>
       {caption && (
-        <figcaption className="case-media-caption mx-auto w-full max-w-[644px] text-left">
+        <figcaption className="case-media-caption mx-auto w-full max-w-[644px] text-center">
           {typo(caption)}
         </figcaption>
       )}

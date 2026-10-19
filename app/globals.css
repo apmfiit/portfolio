@@ -141,6 +141,14 @@ a {
   background: #e8e8e8;
 }
 
+/* Preserve the entire research photo, capped at the approved stage height. */
+.case-media-research-photo > button > img {
+  width: 100%;
+  height: auto;
+  max-height: 530px;
+  object-fit: contain;
+}
+
 @media (max-width: 600px) {
   .case-media-compact > button { height: 480px; }
   .case-media-phone > button { padding: 32px 20px; }
