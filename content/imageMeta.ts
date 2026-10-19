@@ -147,6 +147,11 @@ export const imageMeta: Record<string, ImageMeta> = {
     "h": 1819,
     "format": "png"
   },
+  "/images/cases/ykt-jobs/company-type.png": {
+    "w": 3840,
+    "h": 2200,
+    "format": "png"
+  },
   "/images/cases/ykt-jobs/img-1.png": {
     "w": 1370,
     "h": 1827,
@@ -185,6 +190,16 @@ export const imageMeta: Record<string, ImageMeta> = {
   "/images/cases/ykt-jobs/img-8.png": {
     "w": 940,
     "h": 1851,
+    "format": "png"
+  },
+  "/images/cases/ykt-jobs/search-results.png": {
+    "w": 3840,
+    "h": 2160,
+    "format": "png"
+  },
+  "/images/cases/ykt-jobs/vacancy-preview.png": {
+    "w": 3840,
+    "h": 2200,
     "format": "png"
   },
   "/images/cases/ykt-pickup/edaykt-case-cover.png": {
