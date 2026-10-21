@@ -374,6 +374,13 @@ function CaseRow({
   alt: string;
   closeLabel?: string;
 }) {
+  // Crop only this legacy-screen row; keep full sources in the zoom overlay.
+  const cropToShortest = srcs.length === 3 && srcs.every((src, i) =>
+    src === `/images/cases/ykt-jobs/img-${i + 2}.png`,
+  );
+  const rowAspect = cropToShortest
+    ? Math.max(...srcs.map((src) => imageMeta[src].w / imageMeta[src].h))
+    : undefined;
   return (
     <figure className="mx-auto mt-7 flex w-full flex-col gap-2 2xl:relative 2xl:left-1/2 2xl:w-[980px] 2xl:max-w-[calc(100vw-3rem)] 2xl:-translate-x-1/2">
       <div className="flex items-start gap-3">
@@ -382,7 +389,8 @@ function CaseRow({
           return (
             <div
               key={i}
-              className="case-media min-w-0 flex-1"
+              className={`case-media min-w-0 flex-1 ${cropToShortest ? styles.croppedRowImage : ""}`}
+              style={rowAspect ? { aspectRatio: rowAspect } : undefined}
             >
               <ZoomableImage
                 src={src}

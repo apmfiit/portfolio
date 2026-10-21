@@ -1,4 +1,20 @@
 /* Case headings share the reading column's left edge at a shorter measure. */
+.croppedRowImage {
+  position: relative;
+}
+
+.croppedRowImage > button {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.croppedRowImage > button > img {
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
 .article .sectionLabel {
   font-size: 13px;
   color: var(--muted);
