@@ -1027,46 +1027,20 @@
         }
       },
       {
-        "id": "process",
+        "id": "why",
         "eyebrow": {
-          "ru": "Процесс проектирования",
-          "en": "Process"
-        },
-        "heading": {
-          "ru": "Восемь шагов: от ю-тестов текущей версии до нового UI-кита",
-          "en": "Eight steps from usability tests to a new UI kit handed off to engineering."
+          "ru": "Почему понадобился редизайн",
+          "en": "Why a redesign was needed"
         },
         "body": {
           "ru": [
-            "1) Usability-тесты текущей версии флоу создания резюме со студентами.",
-            "2) Подготовка гайда глубинного интервью для качественного UX-исследования.",
-            "3) Конкурентный анализ и бенчмаркинг: Headhunter, Superjob, UpWork, Contra.",
-            "4) Получение инсайтов, анализ результатов и первые концепты обновлённых флоу.",
-            "5) Проектирование новых сценариев, улучшение старых.",
-            "6) Прототипирование для usability-тестов.",
-            "7) Создание собственного каталога популярных профессий на базе данных текущих вакансий вместе с аналитиком.",
-            "8) Создание обновлённого UI-кита и передача в разработку."
+            "Начали с обновления устаревшего интерфейса и мобильной версии. Но обратная связь показала проблемы в самих сценариях: работодатели не находили регистрацию, путались в оплате, а некоторые приходили в офис, чтобы разместить вакансию."
           ],
           "en": [
-            "1) Usability tests of the current resume-creation flow with students.",
-            "2) Interview guide prepared for qualitative UX research.",
-            "3) Competitor analysis & benchmarking: Headhunter, Superjob, UpWork, Contra.",
-            "4) Insight extraction, results analysis, first new-flow concepts.",
-            "5) Designing new scenarios, improving old ones.",
-            "6) Prototyping for usability tests.",
-            "7) Building a custom profession catalog from current-vacancy data (with the analyst).",
-            "8) Updated UI kit, handed off to engineering."
+            "We started by updating the outdated interface and mobile version. But feedback revealed problems with the flows themselves: employers could not find registration, were confused by payments, and some came to the office to post a vacancy."
           ]
         },
         "images": [
-          {
-            "src": "/images/cases/ykt-jobs/img-1.png",
-            "width": "text",
-            "caption": {
-              "ru": "Выявили проблемы с авторизацией на юзабилити тестах",
-              "en": "Usability testing surfaced problems with authorization"
-            }
-          },
           {
             "row": [
               "/images/cases/ykt-jobs/img-2.png",
@@ -1077,6 +1051,96 @@
               "ru": "Как выглядел сайт до",
               "en": "Before the redesign"
             }
+          }
+        ]
+      },
+      {
+        "id": "goals",
+        "eyebrow": {
+          "ru": "Что хотели изменить",
+          "en": "What we wanted to change"
+        },
+        "body": {
+          "ru": [
+            "Помочь соискателям находить подходящую работу и откликаться, а работодателям — самостоятельно регистрировать компанию, публиковать вакансии и искать сотрудников."
+          ],
+          "en": [
+            "Help job seekers find suitable jobs and apply, and enable employers to register a company, post vacancies, and find employees on their own."
+          ]
+        }
+      },
+      {
+        "id": "process",
+        "eyebrow": {
+          "ru": "Как подошёл к задаче",
+          "en": "How I approached the task"
+        },
+        "heading": {
+          "ru": "Начал с проверки привычных сценариев",
+          "en": "Started by testing familiar flows"
+        },
+        "body": {
+          "ru": [
+            "На тестах со студентами-соискателями посмотрели, как они создают резюме в текущей версии. Уже на этапе авторизации обнаружились проблемы. Параллельно изучил, как устроены похожие сценарии в HeadHunter, SuperJob, Upwork и Contra."
+          ],
+          "en": [
+            "In tests with student job seekers, we observed how they created resumes in the current version. Problems emerged as early as sign-in. In parallel, I studied similar flows in HeadHunter, SuperJob, Upwork, and Contra."
+          ]
+        },
+        "images": [
+          {
+            "src": "/images/cases/ykt-jobs/img-1.png",
+            "width": "text",
+            "caption": {
+              "ru": "Выявили проблемы с авторизацией на юзабилити тестах",
+              "en": "Usability testing surfaced problems with authorization"
+            }
+          }
+        ],
+        "blocks": [
+          {
+            "heading": {
+              "ru": "Пересмотрел сценарии и структуру профессий",
+              "en": "Reworked the flows and profession structure"
+            },
+            "body": {
+              "ru": [
+                "На основе собранных наблюдений спроектировал обновлённые пути соискателя и работодателя. Вместе с аналитиком собрал каталог профессий из данных текущих вакансий — он стал основой для выбора специальности и поисковых подсказок."
+              ],
+              "en": [
+                "Based on these observations, I designed updated journeys for job seekers and employers. Together with an analyst, I built a profession catalog from current vacancy data, which became the foundation for specialty selection and search suggestions."
+              ]
+            },
+            "images": [
+              {
+                "src": "/images/cases/ykt-jobs/img-7.png"
+              },
+              {
+                "src": "/images/cases/ykt-jobs/search-results.png"
+              }
+            ]
+          },
+          {
+            "heading": {
+              "ru": "Подготовил интерфейс к проверке и разработке",
+              "en": "Prepared the interface for testing and development"
+            },
+            "body": {
+              "ru": [
+                "Собрал интерактивные прототипы для тестирования и обновил UI-кит, чтобы использовать единые компоненты в новых экранах. Подготовил макеты и передал их разработчикам."
+              ],
+              "en": [
+                "I built interactive prototypes for testing and updated the UI kit to use consistent components across the new screens. I prepared the designs and handed them off to developers."
+              ]
+            },
+            "images": [
+              {
+                "src": "/images/cases/ykt-jobs/company-type.png"
+              },
+              {
+                "src": "/images/cases/ykt-jobs/vacancy-preview.png"
+              }
+            ]
           }
         ]
       },
@@ -1096,39 +1160,8 @@
           },
           {
             "src": "/images/cases/ykt-jobs/img-6.png"
-          },
-          {
-            "src": "/images/cases/ykt-jobs/img-7.png"
-          },
-          {
-            "src": "/images/cases/ykt-jobs/company-type.png"
-          },
-          {
-            "src": "/images/cases/ykt-jobs/vacancy-preview.png"
-          },
-          {
-            "src": "/images/cases/ykt-jobs/search-results.png"
           }
         ]
-      },
-      {
-        "id": "always",
-        "eyebrow": {
-          "ru": "Как обычно работаю",
-          "en": "Working method"
-        },
-        "heading": {
-          "ru": "Всегда заполняю понимание задачи со стейкхолдерами перед работой",
-          "en": "Always write a task understanding with stakeholders before touching the design."
-        },
-        "body": {
-          "ru": [
-            "Миссия, цель, аудитория, критерии успеха — фиксируем заранее, чтобы все были на одной волне."
-          ],
-          "en": [
-            "Mission, goal, audience, success criteria — agreed up front so everyone is on the same wave."
-          ]
-        }
       },
       {
         "id": "results",

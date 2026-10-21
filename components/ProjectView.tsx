@@ -219,6 +219,28 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                         />
                       ) : null,
                     )}
+                    {s.blocks?.map((block, index) => (
+                      <section key={index} className="mt-12 flex flex-col gap-4">
+                        <h2 className="section-title mx-auto w-full max-w-[644px] text-balance">
+                          {typo(block.heading[locale])}
+                        </h2>
+                        {block.body?.[locale]?.map((para, i) => (
+                          <p key={i} className="reading-copy mx-auto w-full max-w-[644px]">
+                            {renderPara(para)}
+                          </p>
+                        ))}
+                        {block.images?.map((im, i) =>
+                          im.row?.length ? (
+                            <CaseRow key={i} srcs={im.row} caption={im.caption?.[locale]}
+                              alt={block.heading[locale]} closeLabel={closeLabel} />
+                          ) : im.src ? (
+                            <CaseFigure key={i} src={im.src}
+                              alt={im.caption?.[locale] ?? block.heading[locale]}
+                              caption={im.caption?.[locale]} width={im.width} closeLabel={closeLabel} />
+                          ) : null,
+                        )}
+                      </section>
+                    ))}
                   </section>
                 </FadeIn>
               ))}

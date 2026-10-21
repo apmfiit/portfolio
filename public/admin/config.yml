@@ -97,11 +97,25 @@ collections:
             widget: list
             required: false
             add_to_top: false
-            fields:
+            fields: &section_images
               - { name: src, label: Файл (загрузить или выбрать), widget: image, required: false }
               - { name: row, label: Ряд (несколько файлов в одну строку), widget: list, required: false, field: { name: img, label: Файл, widget: image } }
               - { name: width, label: Ширина (text = по ширине текста), widget: select, required: false, options: ["text"] }
               - { name: caption, label: Подпись, widget: object, required: false, fields: *loc_string }
+
+          - name: blocks
+            label: Дополнительные блоки раздела
+            widget: list
+            required: false
+            summary: "{{fields.heading.ru}}"
+            fields:
+              - { name: heading, label: Заголовок, widget: object, fields: *loc_string }
+              - { name: body, label: Текст, widget: object, required: false, fields: *loc_text_list }
+              - name: images
+                label: Картинки
+                widget: list
+                required: false
+                fields: *section_images
 
   - name: settings
     label: Настройки сайта

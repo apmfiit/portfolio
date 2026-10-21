@@ -42,6 +42,12 @@ export type ProjectSection = {
   image?: string;
   caption?: LocalizedString;
   images?: SectionImage[];
+  // Additional narrative blocks under the same table-of-contents entry.
+  blocks?: {
+    heading: LocalizedString;
+    body?: LocalizedList;
+    images?: SectionImage[];
+  }[];
 };
 
 export type Project = {
