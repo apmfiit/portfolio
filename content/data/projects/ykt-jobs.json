@@ -93,21 +93,6 @@
       ]
     },
     {
-      "id": "goals",
-      "eyebrow": {
-        "ru": "Что хотели изменить",
-        "en": "What we wanted to change"
-      },
-      "body": {
-        "ru": [
-          "Помочь соискателям находить подходящую работу и откликаться, а работодателям — самостоятельно регистрировать компанию, публиковать вакансии и искать сотрудников."
-        ],
-        "en": [
-          "Help job seekers find suitable jobs and apply, and enable employers to register a company, post vacancies, and find employees on their own."
-        ]
-      }
-    },
-    {
       "id": "process",
       "eyebrow": {
         "ru": "Как подошёл к задаче",
